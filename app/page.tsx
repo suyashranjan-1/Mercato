@@ -42,7 +42,7 @@ export default function Home() {
     graphicDesignRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToShopifyStores = () => {
+  const scrollTOThumbnailDesign = () => {
     shopifyStoresRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -60,7 +60,7 @@ export default function Home() {
       <Navbar
         scrollToSEO={scrollToSEO}
         scrollToGraphicDesign={scrollToGraphicDesign}
-        scrollToShopifyStores={scrollToShopifyStores}
+        scrollTOThumbnailDesign={scrollTOThumbnailDesign}
         scrollToBrands={scrollToBrands}
         scrollToServices={scrollToServices}
       />
