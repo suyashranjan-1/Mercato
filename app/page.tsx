@@ -7,9 +7,9 @@ import { Spotlight } from "@/components/ui/spotlight";
 import Image from "next/image";
 import Link from "next/link";
 
-import WebsiteDesign from "./website-design";
+import SEO from "./seo";
 import GraphicDesign from "./graphic-design";
-import ShopifyStores from "./shopify-stores";
+import ThumbNailDesign from "./thumbnaildesign";
 import ContentCreation from "./contentcreation";
 import Videoediting from "./videoediting";
 import Services from "./services";
@@ -27,16 +27,16 @@ export default function Home() {
     setDropdownVisible(false);
   };
 
-  const websiteDesignRef = useRef<HTMLDivElement>(null);
+  const seoRef = useRef<HTMLDivElement>(null);
   const graphicDesignRef = useRef<HTMLDivElement>(null);
-  const shopifyStoresRef = useRef<HTMLDivElement>(null);
+  const thumbnailDesignRef = useRef<HTMLDivElement>(null);
   const contentcreation = useRef<HTMLDivElement>(null);
   const addrunningRef = useRef<HTMLDivElement>(null);
   const videoeditingRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const productphotographyRef = useRef<HTMLDivElement>(null);
   const scrollToSEO = () => {
-    websiteDesignRef.current?.scrollIntoView({
+    seoRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
@@ -48,7 +48,7 @@ export default function Home() {
   };
 
   const scrollTOThumbnailDesign = () => {
-    shopifyStoresRef.current?.scrollIntoView({ behavior: "smooth" });
+    thumbnailDesignRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollTOContentCreation = () => {
@@ -94,14 +94,14 @@ export default function Home() {
         <div className="w-full pt-20">
           <SliderOne />
         </div>
-        <div ref={websiteDesignRef}>
-          <WebsiteDesign />
+        <div ref={seoRef}>
+          <SEO />
         </div>
         <div ref={graphicDesignRef}>
           <GraphicDesign />
         </div>
-        <div ref={shopifyStoresRef}>
-          <ShopifyStores />
+        <div ref={thumbnailDesignRef}>
+          <ThumbNailDesign />
         </div>
         <div ref={contentcreation}>
           <ContentCreation />

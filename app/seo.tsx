@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 
-const WebsiteDesign = () => {
+const SEO = () => {
     return (   
     <div className="text-white">
  <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
@@ -112,4 +112,4 @@ const WebsiteDesign = () => {
     </div> );
 }
  
-export default WebsiteDesign;
+export default SEO;
