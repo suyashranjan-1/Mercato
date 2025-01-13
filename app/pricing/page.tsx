@@ -75,7 +75,7 @@ const Pricing = () => {
      bg-grid-white/[0.02] relative overflow-hidden">
 
 <Navbar
-             scrollToWebsiteDesign={() => {}}
+             scrollToSEO={() => {}}
              scrollToGraphicDesign={() => {}}
              scrollToShopifyStores={() => {}}
              scrollToBrands={() => {}}

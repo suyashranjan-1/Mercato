@@ -30,7 +30,7 @@ export default function Home() {
   const brandsRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
 
-  const scrollToWebsiteDesign = () => {
+  const scrollToSEO = () => {
     websiteDesignRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -54,11 +54,11 @@ export default function Home() {
   const scrollToServices = () => {
     servicesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-
+  
   return (
     <div className="w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <Navbar
-        scrollToWebsiteDesign={scrollToWebsiteDesign}
+        scrollToSEO={scrollToSEO}
         scrollToGraphicDesign={scrollToGraphicDesign}
         scrollToShopifyStores={scrollToShopifyStores}
         scrollToBrands={scrollToBrands}
