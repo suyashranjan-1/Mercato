@@ -80,8 +80,9 @@ const Pricing = () => {
              scrollTOThumbnailDesign={() => {}}
              scrollTOContentCreation={() => {}}
              scrollTOAdRunning={() => {}}
-             
-              scrollToServices={() => {}}
+             scrollToVideoEditing={() => {}}
+             scrollToServices={() => {}}
+             scrollToProductPhotography={() => {}}
       />
 
 <div className="flex items-center justify-center flex-col   ">

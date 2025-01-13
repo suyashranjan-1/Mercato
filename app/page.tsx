@@ -10,10 +10,12 @@ import Link from "next/link";
 import WebsiteDesign from "./website-design";
 import GraphicDesign from "./graphic-design";
 import ShopifyStores from "./shopify-stores";
-import Brands from "./brands";
+import ContentCreation from "./contentcreation";
+import Videoediting from "./videoediting";
 import Services from "./services";
 import FAQS from "./faq";
 import AdRunning from "./adrunning";
+import Productphotography from "./productphotography";
 import { InfiniteMovingCardsDemo } from "./snippets/infinite-moving-card-snippet";
 
 export default function Home() {
@@ -28,10 +30,11 @@ export default function Home() {
   const websiteDesignRef = useRef<HTMLDivElement>(null);
   const graphicDesignRef = useRef<HTMLDivElement>(null);
   const shopifyStoresRef = useRef<HTMLDivElement>(null);
-  const brandsRef = useRef<HTMLDivElement>(null);
+  const contentcreation = useRef<HTMLDivElement>(null);
   const addrunningRef = useRef<HTMLDivElement>(null);
+  const videoeditingRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
-
+  const productphotographyRef = useRef<HTMLDivElement>(null);
   const scrollToSEO = () => {
     websiteDesignRef.current?.scrollIntoView({
       behavior: "smooth",
@@ -49,10 +52,17 @@ export default function Home() {
   };
 
   const scrollTOContentCreation = () => {
-    brandsRef.current?.scrollIntoView({ behavior: "smooth" });
+    contentcreation.current?.scrollIntoView({ behavior: "smooth" });
   };
   const scrollTOAdRunning = () => {
     addrunningRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToVideoEditing = () => {
+    videoeditingRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const scrollToProductPhotography = () => {
+    productphotographyRef.current?.scrollIntoView({ behavior: "smooth" });
   };
   // Function to scroll to Services section
   const scrollToServices = () => {
@@ -68,6 +78,8 @@ export default function Home() {
         scrollTOContentCreation={scrollTOContentCreation}
         scrollToServices={scrollToServices}
         scrollTOAdRunning={scrollTOAdRunning}
+        scrollToVideoEditing={scrollToVideoEditing}
+        scrollToProductPhotography={scrollToProductPhotography}
       />
 
       <Spotlight className="hidden md:flex md:-top-80 left-80  " fill="white" />
@@ -91,12 +103,21 @@ export default function Home() {
         <div ref={shopifyStoresRef}>
           <ShopifyStores />
         </div>
-        <div ref={brandsRef}>
-          <Brands />
+        <div ref={contentcreation}>
+          <ContentCreation />
         </div>
+
         <div ref={addrunningRef}>
           <AdRunning />
         </div>
+
+        <div ref={videoeditingRef}>
+          <Videoediting />
+        </div>
+        <div ref={productphotographyRef}>
+          <Productphotography />
+        </div>
+         
         <div id ='services'>
         <Services />
         </div>
