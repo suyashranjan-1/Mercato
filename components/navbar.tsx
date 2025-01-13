@@ -11,7 +11,8 @@ interface NavbarProps {
   scrollToSEO: () => void;
   scrollToGraphicDesign: () => void;
   scrollTOThumbnailDesign: () => void;
-  scrollToBrands: () => void;
+  scrollTOContentCreation: () => void;
+  scrollTOAdRunning: () => void;
   scrollToServices: () => void; // Define scrollToServices function
 }
 
@@ -19,7 +20,8 @@ const Navbar = ({
   scrollToSEO,
   scrollToGraphicDesign,
   scrollTOThumbnailDesign,
-  scrollToBrands,
+  scrollTOContentCreation,
+  scrollTOAdRunning,
   scrollToServices, // Add scrollToServices to props
 }: NavbarProps) => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
@@ -65,15 +67,15 @@ const Navbar = ({
           <div onClick={scrollTOThumbnailDesign} className="hover:text-gray-50">
             Thumbnail Design
           </div>
-          <div onClick={scrollToBrands} className="hover:text-gray-50">
-            Brands
+          <div onClick={scrollTOContentCreation} className="hover:text-gray-50">
+            Content creation
           </div>
 
-          <div onClick={scrollToBrands} className="hover:text-gray-50">
-            Brands
+          <div onClick={scrollTOAdRunning} className="hover:text-gray-50">
+            Ads running
           </div>
 
-          <div onClick={scrollToBrands} className="hover:text-gray-50">
+          <div onClick={scrollTOContentCreation} className="hover:text-gray-50">
             Brands
           </div>
 

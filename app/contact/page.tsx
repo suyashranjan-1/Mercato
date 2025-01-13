@@ -126,8 +126,9 @@ export default function ContactForm() {
         scrollToSEO={() => {}}
         scrollToGraphicDesign={() => {}}
         scrollTOThumbnailDesign={() => {}}
-        scrollToBrands={() => {}}
+        scrollTOContentCreation={() => {}}
         scrollToServices={() => {}}
+        scrollTOAdRunning={() => {}}
       />
       <div className="md:flex items-start justify-center md:py-20 px-6">
         <div className="">

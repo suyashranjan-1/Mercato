@@ -78,7 +78,9 @@ const Pricing = () => {
              scrollToSEO={() => {}}
              scrollToGraphicDesign={() => {}}
              scrollTOThumbnailDesign={() => {}}
-             scrollToBrands={() => {}}
+             scrollTOContentCreation={() => {}}
+             scrollTOAdRunning={() => {}}
+             
               scrollToServices={() => {}}
       />
 

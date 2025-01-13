@@ -13,6 +13,7 @@ import ShopifyStores from "./shopify-stores";
 import Brands from "./brands";
 import Services from "./services";
 import FAQS from "./faq";
+import AdRunning from "./adrunning";
 import { InfiniteMovingCardsDemo } from "./snippets/infinite-moving-card-snippet";
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
   const graphicDesignRef = useRef<HTMLDivElement>(null);
   const shopifyStoresRef = useRef<HTMLDivElement>(null);
   const brandsRef = useRef<HTMLDivElement>(null);
+  const addrunningRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
 
   const scrollToSEO = () => {
@@ -46,10 +48,12 @@ export default function Home() {
     shopifyStoresRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToBrands = () => {
+  const scrollTOContentCreation = () => {
     brandsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-
+  const scrollTOAdRunning = () => {
+    addrunningRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   // Function to scroll to Services section
   const scrollToServices = () => {
     servicesRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -61,8 +65,9 @@ export default function Home() {
         scrollToSEO={scrollToSEO}
         scrollToGraphicDesign={scrollToGraphicDesign}
         scrollTOThumbnailDesign={scrollTOThumbnailDesign}
-        scrollToBrands={scrollToBrands}
+        scrollTOContentCreation={scrollTOContentCreation}
         scrollToServices={scrollToServices}
+        scrollTOAdRunning={scrollTOAdRunning}
       />
 
       <Spotlight className="hidden md:flex md:-top-80 left-80  " fill="white" />
@@ -88,6 +93,9 @@ export default function Home() {
         </div>
         <div ref={brandsRef}>
           <Brands />
+        </div>
+        <div ref={addrunningRef}>
+          <AdRunning />
         </div>
         <div id ='services'>
         <Services />
