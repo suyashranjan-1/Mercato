@@ -65,12 +65,9 @@ const Navbar = ({
             SEO
           </div>
           <div onClick={scrollToGraphicDesign} className="hover:text-gray-50">
-            Graphic Design
+            Design
           </div>
 
-          <div onClick={scrollTOThumbnailDesign} className="hover:text-gray-50">
-            Thumbnail Design
-          </div>
           <div onClick={scrollTOContentCreation} className="hover:text-gray-50">
             Content creation
           </div>
