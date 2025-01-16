@@ -40,8 +40,7 @@ const Videoediting = () => {
         </div>
 
         <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto">
-          From small businesses to large corporations, we have helped many
-          Videoediting elevate their business.
+        Choose Us to Transform Your Vision! From startups to global brands, we’ve empowered businesses with standout video content.
         </p>
 
         <div className="grid grid-cols-3  items-center justify-center  mx-auto md:w-3/5 cursor-pointer">

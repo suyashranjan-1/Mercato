@@ -11,8 +11,7 @@ const SEO = () => {
       </div>
       <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
         
-       Optimizing your online presence to drive traffic, increase visibility, and achieve results for your business.  
-        </p>
+      Effective SEO Strategies to Improve Visibility, Drive Organic Traffic, and Deliver Tangible Results.        </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-10">

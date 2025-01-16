@@ -33,11 +33,12 @@ const ThumbNailDesign = () => {
     >
       <div className=" p-4   mx-auto relative z-10  w-full ">
         <div className="text-4xl py-10 md:pb-8 md:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 bg-opacity-50">
-        Thumbnail Design <br />
+          Thumbnail Design <br />
         </div>
 
-        <p className="mt-4 text-lg font-normal  text-neutral-800 max-w-lg text-center mx-auto">  
-        We create eye-catching thumbnails that are designed to grab attention and drive engagement.
+        <p className="mt-4 text-lg font-normal  text-neutral-800 max-w-lg text-center mx-auto">
+          We create Captivating Thumbnails That Command Attention and Boost
+          Engagement.
         </p>
         <div className="md:flex items-center justify-center  px-10 ">
           {stores.map((store, index) => (

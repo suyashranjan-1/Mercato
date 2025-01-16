@@ -12,8 +12,7 @@ const GraphicDesign = () => {
       </div>
 
       <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto">
-        We create stunning visuals for your brand. From logos to social media
-        posts, we&apos;ve got you covered.
+        We are Bringing Your Brand to Life with Stunning Designs <br /> From Logos to Social Media and Beyond!
       </p>
       <div className="items-center md:flex justify-center md:mx-auto md:space-x-10">
       <motion.div

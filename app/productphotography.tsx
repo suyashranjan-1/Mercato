@@ -37,8 +37,7 @@ const Productphotography = () => {
         </div>
 
         <p className="mt-4 text-lg font-normal  text-neutral-800 max-w-lg text-center mx-auto">  
-        We create eye-catching thumbnails that are designed to grab attention and drive engagement.
-        </p>
+        We create Captivating Visuals That Showcase Your Products and Boost Engagement.        </p>
         <div className="md:flex items-center justify-center  px-10 ">
           {stores.map((store, index) => (
             <div

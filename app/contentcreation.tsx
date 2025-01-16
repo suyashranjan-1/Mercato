@@ -40,8 +40,9 @@ const Contentcreation = () => {
         </div>
 
         <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto">
-        We craft compelling content that is designed to engage, inform, and drive results.
-        </p>
+        Turning Ideas into Stories That Captivate, Inspire, and Deliver Results.
+
+</p>
 
         <div className="grid grid-cols-3  items-center justify-center  mx-auto md:w-3/5 cursor-pointer">
           {logos.map((logo, i) => (

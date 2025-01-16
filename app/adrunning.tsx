@@ -37,8 +37,8 @@ const ThumbNailDesign = () => {
         </div>
 
         <p className="mt-4 text-lg font-normal  text-neutral-800 max-w-lg text-center mx-auto">  
-        We create eye-catching thumbnails that are designed to grab attention and drive engagement.
-        </p>
+        We create Ad Campaigns That Catch Eyes, Spark Interest, and Drive Real Engagement.
+</p>
         <div className="md:flex items-center justify-center  px-10 ">
           {stores.map((store, index) => (
             <div
