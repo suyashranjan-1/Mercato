@@ -33,12 +33,12 @@ const ThumbNailDesign = () => {
     >
       <div className=" p-4   mx-auto relative z-10  w-full ">
         <div className="text-4xl py-10 md:pb-8 md:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 bg-opacity-50">
-        Ad Running <br />
+        Google Ads and Meta Ads <br />
         </div>
 
-        <p className="mt-4 text-lg font-normal  text-neutral-800 max-w-lg text-center mx-auto">  
-        We create Ad Campaigns That Catch Eyes, Spark Interest, and Drive Real Engagement.
-</p>
+        <p className="mt-4 text-lg font-normal  text-neutral-800 max-w-4xl text-center mx-auto">  
+        Increase your reach with targeted Google Ads and Meta Ads campaigns that drive targeted traffic and improve conversion rates. Our esteemed clients include Pinewood Studios, Healthy Living Essentials, and Velocity Fitness, all of whom trust us to fine-tune their Google Ads and Meta Ads campaigns for optimal performance and measurable results.
+        </p>
         <div className="md:flex items-center justify-center  px-10 ">
           {stores.map((store, index) => (
             <div

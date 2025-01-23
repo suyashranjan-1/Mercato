@@ -17,7 +17,7 @@ const Services = () => {
           text-neutral-300 max-w-lg 
           text-center mx-auto"
       >
-        From Website Design to Social Media Management, We’ve Got You Covered!
+        From Design to SEO, We’ve Got You Covered!
       </p>
 
       <CardHoverEffectDemo />

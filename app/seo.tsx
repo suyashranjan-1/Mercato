@@ -9,9 +9,9 @@ const SEO = () => {
       <div className="text-4xl  md:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-purple-500 to-sky-200 bg-opacity-50">
               SEO <br /> that works
       </div>
-      <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
+      <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-4xl text-center mx-auto px-4">
         
-      Effective SEO Strategies to Improve Visibility, Drive Organic Traffic, and Deliver Tangible Results.        </p>
+      At Mercato Agency, we deliver tailored SEO services to boost search rankings and drive organic traffic. Our expertise spans on-page, off-page, and technical SEO, ensuring visibility and sustainable growth. Success stories include Greenwood Landscaping, Modern Home Goods, and Techie Solutions.        </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-10">

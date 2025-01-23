@@ -99,12 +99,6 @@ export default function Home() {
         <div ref={graphicDesignRef}>
           <GraphicDesign />
         </div>
-        <div ref={thumbnailDesignRef}>
-          <ThumbNailDesign />
-        </div>
-        <div ref={contentcreation}>
-          <ContentCreation />
-        </div>
 
         <div ref={addrunningRef}>
           <AdRunning />

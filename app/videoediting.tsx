@@ -36,11 +36,11 @@ const Videoediting = () => {
       <div className=" p-4   mx-auto relative z-10  w-full pt-20 md:pt-32">
         <div className="text-4xl md:pb-8 md:text-7xl text-center 
         bg-clip-text text-transparent bg-gradient-to-b from-purple-500 to-sky-200 bg-opacity-50">
-          The best Videoediting <br /> choose us
+          Video Editing
         </div>
 
-        <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto">
-        Choose Us to Transform Your Vision! From startups to global brands, we’ve empowered businesses with standout video content.
+        <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-4xl text-center mx-auto">
+        We offer high-quality video editing services to help brands produce polished, engaging content. Our portfolio includes businesses like Fresh Farm Produce, StyleStreet Apparel, and Zenith Consulting, who utilize our social media video editing and promotional video editing services to create content that resonates with their audience.
         </p>
 
         <div className="grid grid-cols-3  items-center justify-center  mx-auto md:w-3/5 cursor-pointer">
@@ -65,7 +65,7 @@ const Videoediting = () => {
           )}
         >
           &quot;We got rid of nearly a dozen different tools because of what
-          Bird does for us.&quot;
+          Mercato agency does for us.&quot;
         </div>
 
         <div className="items-center flex justify-center flex-col text-white">
