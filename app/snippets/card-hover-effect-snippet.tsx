@@ -13,35 +13,34 @@ export const projects = [
         icon : <div className="bg-blue-100 p-4 rounded-full"><PiMonitor className="w-8 h-8 text-blue-600" /></div>,
         title: "SEO",
         description:
-          "We build fully responsive websites that look great on all devices. Our websites are designed to convert visitors into customers.",
+          "Unlock your online potential with expert SEO. We specialize in on-page, off-page, and technical SEO to improve search rankings, drive organic traffic, and grow your business.",
       
       },
       {
         icon : <div className="bg-blue-100 p-4 rounded-full"><PiStorefront className="w-8 h-8 text-blue-600" /></div>,
         title: "Design",
         description:
-          "From small stores to large online retailers, we have the expertise to build a store that will help you grow your business.",
-       
+          "Design that drives results. We craft compelling visuals, from eye-catching thumbnails to comprehensive branding solutions, that elevate your brand and connect with your audience.",
       },
       {
         icon : <div className="bg-blue-100 p-4 rounded-full"><PiLock className="w-8 h-8 text-blue-600" /></div>,
         title: "Ads",
         description:
-          "Secure authentication solutions for your website or app. We use the latest technology to keep your data safe.",
+          "Your guide to successful online advertising. We craft high-performing Google Ads & Meta Ads campaigns that deliver measurable results and help you achieve your marketing goals.",
       
       },
       {
         icon : <div className="bg-blue-100 p-4 rounded-full"><PiMegaphone className="w-8 h-8 text-blue-600" /></div>,
         title: "Video Editing",
         description:
-          "We offer social media management and ad creation services. We can help you grow your social media presence and reach new customers.",
+          "Transform your message with compelling video content. We specialize in crafting high-quality videos for social media, promotions, and more, that engage your audience and drive results.",
       
       },
       {
         icon : <div className="bg-blue-100 p-4 rounded-full"><PiAppStoreLogo className="w-8 h-8 text-blue-600" /></div>,
         title: "Product Photography",
         description:
-          "We build custom mobile apps for iOS and Android. Our apps are designed to be user-friendly and performant.",
+          " Product photography that drives sales. We capture high-quality images and provide expert editing to showcase your products in the best possible light, ensuring they stand out from the competition.",
       
       },
       {

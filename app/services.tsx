@@ -10,7 +10,7 @@ const Services = () => {
          bg-clip-text text-transparent bg-gradient-to-b
           from-blue-500 to-neutral-50 bg-opacity-50 mt-20"
       >
-        Streamline Your Business with Our Comprehensive Services
+        Simplify Your Business, Maximize Growth
       </div>
       <p
         className="mt-4 text-lg font-normal
