@@ -6,7 +6,7 @@ import SliderOne from "@/components/ui/slider";
 import { Spotlight } from "@/components/ui/spotlight";
 import Image from "next/image";
 import Link from "next/link";
-
+import { Analytics } from "@vercel/analytics/react"
 import SEO from "./seo";
 import GraphicDesign from "./graphic-design";
 import ThumbNailDesign from "./thumbnaildesign";
