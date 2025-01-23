@@ -12,7 +12,7 @@ const GraphicDesign = () => {
       </div>
 
       <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-4xl text-center mx-auto">
-      We specialize in creating unique thumbnail designs and customized graphic design solutions that captivate your audience. Our portfolio includes respected brands like Bella's Boutique, Crafted Café, and Urban Cycle, who rely on us to strengthen their digital presence with engaging and innovative visuals.
+      We specialize in creating unique thumbnail designs and customized graphic design solutions that captivate your audience. Our portfolio includes respected brands like Bella&apos;s Boutique, Crafted Café, and Urban Cycle, who rely on us to strengthen their digital presence with engaging and innovative visuals.
       </p>
       <div className="items-center md:flex justify-center md:mx-auto md:space-x-10">
       <motion.div

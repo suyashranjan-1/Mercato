@@ -38,7 +38,7 @@ const Productphotography = () => {
         </div>
 
         <p className="mt-4 text-lg font-normal  text-neutral-800 max-w-5xl text-center mx-auto">  
-        Mercato Agency provides professional product photography and expert product photo editing services. Some of the businesses in our portfolio include EcoCraft Goods, Rustic Charm Interiors, and Bella's Bakery, who trust us to capture and enhance their product images, driving engagement and increasing sales.        </p>
+        Mercato Agency provides professional product photography and expert product photo editing services. Some of the businesses in our portfolio include EcoCraft Goods, Rustic Charm Interiors, and Bella&apos;s Bakery, who trust us to capture and enhance their product images, driving engagement and increasing sales.        </p>
         <div className="md:flex items-center justify-center  px-10 ">
           {stores.map((store, index) => (
             <div
