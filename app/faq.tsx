@@ -22,7 +22,7 @@ const FAQS = () => {
         </div>
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger>What is Mercato Agency?</AccordionTrigger>
+            <AccordionTrigger>What is Mercato?</AccordionTrigger>
             <AccordionContent>
               Mercato Agency is a full-service digital marketing agency that
               provides a range of services to help businesses grow online.

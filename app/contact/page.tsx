@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-
+import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";
@@ -21,7 +21,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 import {
-  Form,
+  form,
   FormControl,
   FormDescription,
   FormField,
@@ -77,48 +77,30 @@ type FormValues = {
   terms: boolean;
 };
 
+
+
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const { toast } = useToast();
+  const form = useRef<HTMLFormElement>(null);
 
-  const form = useForm<FormValues>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      first_name: "",
-      last_name: "",
-      email: "",
-      job_title: "",
-      company_name: "",
-      help: "Learn More",
-      services: "SEO",
-      info: "",
-    },
-  });
-
-  async function onSubmit(data: z.infer<typeof FormSchema>) {
-    try {
-      setLoading(true);
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) {
-        throw new Error("Something went wrong");
-      }
-
-      setSubmitted(true);
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong",
-      });
-    } finally {
-      setLoading(false);
-    }
-  }
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!form.current) return;
+    emailjs
+      .sendForm('service_57dccsx', 'template_4ovd2wl', form.current, {
+        publicKey: '5_BKNco2OULcaqW0m',
+      })
+      .then(
+        () => {
+          alert('We have received your inquiry and will be contacting you via email shortly.');
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
+  };
 
   return (
     <div className=" w-full   md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden ">
@@ -170,229 +152,87 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <Form {...form}>
-          {!submitted ? (
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="
-            space-y-4
-            h-full
-            border rounded-3xl p-10
-            md:w-1/3
-            
-            
-                     
-                        "
-            >
-              <div className="md:flex items-center gap-6 ">
-                <FormField
-                  control={form.control}
-                  name="first_name"
-                  render={({ field }) => (
-                    <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                        First name *
-                      </FormLabel>
-                      <FormControl>
-                        <Input {...field} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="last_name"
-                  render={({ field }) => (
-                    <FormItem className="items-center justify-center  w-full">
-                      <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                        Last name *
-                      </FormLabel>
-                      <FormControl>
-                        <Input {...field} />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Email *
-                    </FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="company_name"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Company name?
-                    </FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="services"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                    Services you are interested in
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <div className="flex gap-4">
-                          <SelectItem value="Mobile App Develoment">
-                          Mobile App Develoment
-                          </SelectItem>
-                        </div>
-                        <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
-                        <SelectItem value="51-200">51-200</SelectItem>
-                        <SelectItem value="501-1000">501-1000</SelectItem>
-                        <SelectItem value="1000+">1000+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="help"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center  w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      How can we help ?
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger
-                        
-                        
-                        >
-                          <SelectValue placeholder="Select an option" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <div className="flex gap-4">
-                          <SelectItem value="Evaluate Mercato Agency for my company">
-                            Evaluate Mercato Agency for my company
-                          </SelectItem>
-                        </div>
-                        <SelectItem value="Learn More">Learn More</SelectItem>
-                        <SelectItem value="Get a Quote">Get a Quote</SelectItem>
-
-                        <SelectItem value="Other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="info"
-                render={({ field }) => (
-                  <FormItem className="items-center justify-center w-full">
-                    <FormLabel className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                      Anything else ?
-                    </FormLabel>
-                    <FormControl>
-                      <Textarea style={{ height: "100px" }} {...field} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <div className="flex gap-4 items-center">
-                <div>
-                  <Checkbox
-                    className="
-                outline
-                border-2
+          <form ref={form} onSubmit={sendEmail} className=" space-y-3 h-full border rounded-3xl p-10 md:w-1/3">
+              
+                <div className=" space-y-3 items-center justify-center w-full">
+                  <label className="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Full name *</label><br />
+                  <input type="text" required name="first_name" className="form-control, flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+                </div>
+                
+                <div className=" space-y-3 items-center justify-center w-full">
+                  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Email *</label>
+                  <input type="email" required name="email" className="form-control, flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+                </div>
+                <div className="  space-y-3 items-center justify-center w-full">
+                  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Company name? (if any)</label>
+                  <input type="text" name="company_name" className="form-control, flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+                </div>
+                <div className=" space-y-3 items-center justify-center w-full">
+                  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Services you are interested in</label>
+                  <Select name="services" required>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select an option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="SEO">SEO</SelectItem>
+                      <SelectItem value="Ads">Ads</SelectItem>
+                      <SelectItem value="Product Photography">Product Photography</SelectItem>
+                      <SelectItem value="Design">Design</SelectItem>
+                      <SelectItem value="Video Editing">Video Editing</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className=" space-y-3 items-center justify-center w-full">
+                  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">How can we help?</label>
+                  <Select name="help" required>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select an option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="Evaluate Mercato Agency for my company">Evaluate Mercato Agency for my company</SelectItem>
+                      <SelectItem value="Learn More">Learn More</SelectItem>
+                      <SelectItem value="Get a Quote">Get a Quote</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className=" space-y-3 items-center justify-center w-full">
+                  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">preferred time slot for an online meet or call!</label>
+                  <Select name="last_name" required>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select an option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="9:00 AM - 11:00 AM (IST)">9:00 AM - 11:00 AM (IST)</SelectItem>
+                      <SelectItem value="11:00 AM - 1:00 PM (IST)">11:00 AM - 1:00 PM (IST)</SelectItem>
+                      <SelectItem value="2:00 PM - 4:00 PM (IST)">2:00 PM - 4:00 PM (IST)</SelectItem>
+                      <SelectItem value="4:00 PM - 6:00 PM (IST)">4:00 PM - 6:00 PM (IST)</SelectItem>
+                      <SelectItem value="6:00 PM - 8:00 PM (IST)">6:00 PM - 8:00 PM (IST)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className=" space-y-3 items-center justify-center w-full">
+                  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Anything else?</label>
+                  <textarea name="info" className="form-control, flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"></textarea>
+                </div>
+                <div className="form-check, flex gap-4 items-center">
+                  <input required type="checkbox" name="terms" className="form-check-input, peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground, outline
+                
                 text-sm
                 font-light
-                bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400
-                "
-                  />
+                bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400"/>
+                  <label className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                    I agree to Mercato Agency&apos;s sending marketing communications related to Mercato Agency
+                  </label>
                 </div>
-                <div className="text-xs font-light  md:w-3/4 mb-1 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-                  I agree to Mercato Agency&apos; sending marketing communications related
-                  to Mercato Agency
+                <div className="flex items-center gap-4">
+                  <Button type="submit" className="btn btn-primary, text-sm font-light" disabled={loading}>
+                    Submit
+                  </Button>
                 </div>
-              </div>
+          </form>
 
-              <div className="flex items-center gap-4">
-                <Button
-                  type="submit"
-                  className="
-                            text-sm
-                            font-light
-                        
-                            "
-                  disabled={loading}
-                  onClick={() => form.handleSubmit(onSubmit)}
-                >
-                  Submit
-                </Button>
-              </div>
-            </form>
-          ) : (
-            <>
-              <div
-                className="
-        text-xl 
-        
-        md:text-2xl 
-        flex 
-        items-center
-        justify-center
-        flex-col
-        
 
- 
-        px-8
-
-        "
-              >
-                <div className="w-80 py-20">
-                  <PiSmiley className="text-6xl text-[#6c6684] mx-auto" />
-
-                  <div className="text-gray-500 font-light  text-center justify-center mx-auto py-10">
-                    We&apos;ve received your inquiry and will be contacting you
-                    via email shortly.
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
-        </Form>
       </div>
     </div>
   );

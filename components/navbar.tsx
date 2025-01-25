@@ -114,7 +114,7 @@ const Navbar = ({
 
             "
           >
-            Contact
+            Book a meeting
           </Link>
         </div>
       </div>
@@ -123,3 +123,7 @@ const Navbar = ({
 };
 
 export default Navbar;
+
+
+
+
