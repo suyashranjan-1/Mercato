@@ -197,7 +197,7 @@ export default function ContactForm() {
                   </Select>
                 </div>
                 <div className=" space-y-3 items-center justify-center w-full">
-                  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">preferred time slot for an online meet or call!</label>
+                  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Preferred time slot for an online meet or call!</label>
                   <Select name="last_name" required>
                     <SelectTrigger>
                       <SelectValue placeholder="Select an option" />
