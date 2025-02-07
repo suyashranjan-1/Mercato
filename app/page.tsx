@@ -99,13 +99,14 @@ export default function Home() {
           <GraphicDesign />
         </div>
         
+        
+        <div ref={videoeditingRef}>
+          <Videoediting />
+        </div>
         <div ref={addrunningRef}>
           <AdRunning />
         </div>
 
-        <div ref={videoeditingRef}>
-          <Videoediting />
-        </div>
         <div ref={productphotographyRef}>
           <Productphotography />
         </div>
