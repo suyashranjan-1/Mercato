@@ -9,7 +9,6 @@ import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react"
 import SEO from "./seo";
 import GraphicDesign from "./graphic-design";
-import ThumbNailDesign from "./thumbnaildesign";
 import ContentCreation from "./contentcreation";
 import Videoediting from "./videoediting";
 import Services from "./services";
@@ -93,13 +92,13 @@ export default function Home() {
         <div className="w-full pt-20">
           <SliderOne />
         </div>
-        
-        <div ref={graphicDesignRef}>
-          <GraphicDesign />
-        </div>
         <div ref={seoRef}>
           <SEO />
         </div>
+        <div ref={graphicDesignRef}>
+          <GraphicDesign />
+        </div>
+        
         <div ref={addrunningRef}>
           <AdRunning />
         </div>

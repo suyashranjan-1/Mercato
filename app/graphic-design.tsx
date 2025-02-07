@@ -15,7 +15,7 @@ const GraphicDesign = () => {
       </p>
       </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-10 px-5">
     <div className="grid gap-4">
         <div>
             <Image
