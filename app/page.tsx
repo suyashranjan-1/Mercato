@@ -93,13 +93,13 @@ export default function Home() {
         <div className="w-full pt-20">
           <SliderOne />
         </div>
-        <div ref={seoRef}>
-          <SEO />
-        </div>
+        
         <div ref={graphicDesignRef}>
           <GraphicDesign />
         </div>
-
+        <div ref={seoRef}>
+          <SEO />
+        </div>
         <div ref={addrunningRef}>
           <AdRunning />
         </div>
