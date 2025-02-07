@@ -33,7 +33,7 @@ const SEO = () => {
         <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-4xl text-center mx-auto">
         At Mercato Agency, we deliver tailored SEO services to boost search rankings and drive organic traffic. Our expertise spans on-page, off-page, and technical SEO, ensuring visibility and sustainable growth. Success stories include Greenwood Landscaping, Modern Home Goods, and Techie Solutions.        </p>
 
-        <div className="md:flex items-center justify-center  px-10 gap-1">
+        <div className="md:flex items-center justify-center    gap-1">
                   {logos.map((logos, index) => (
                     <div
                       key={index}
