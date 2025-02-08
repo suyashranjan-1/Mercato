@@ -7,11 +7,11 @@ const GraphicDesign = () => {
     <div className="text-white">
  <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
       <div className="text-4xl  md:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-purple-500 to-sky-200 bg-opacity-50 pb-2">
-      Thumbnail &<br /> Graphic Design
+      Graphic Design
       </div>
       <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-4xl text-center mx-auto px-4">
         
-      We specialize in creating unique thumbnail designs and customized graphic design solutions that captivate your audience. Our portfolio includes respected brands like Bella&apos;s Boutique, Crafted Café, and Urban Cycle, who rely on us to strengthen their digital presence with engaging and innovative visuals.
+      From logos to marketing materials, we create visually compelling designs that align with your brand identity. Our expertise has helped numerous businesses enhance their digital presence with impactful and innovative visuals.
       </p>
       </div>
 
@@ -52,7 +52,7 @@ const GraphicDesign = () => {
             width={500}
             height={500}
             priority
-            className="h-full max-w-full rounded-lg" src="/images/pic2.jpg" alt=""/>
+            className="h-full max-w-full rounded-lg" src="/images/pic4.jpg" alt=""/>
         </div>
         
     </div>
