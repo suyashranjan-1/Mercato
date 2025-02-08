@@ -54,8 +54,8 @@ const FormSchema = z.object({
     "SEO",
     "Video Editing",
     "Ads",
-    "Design",
-    "Product Photography",
+    "Graphic Design",
+    "Thumbnail Creation",
   ]),
   info: z.string(),
 });
@@ -71,8 +71,8 @@ type FormValues = {
     | "SEO"
     | "Video Editing"
     | "Ads"
-    | "Design"
-    | "Product Photography";
+    | "Graphic Design"
+    | "Thumbnail Creation";
   info: string;
   terms: boolean;
 };
@@ -174,8 +174,8 @@ export default function ContactForm() {
                     <SelectContent>
                       <SelectItem value="SEO">SEO</SelectItem>
                       <SelectItem value="Ads">Ads</SelectItem>
-                      <SelectItem value="Product Photography">Product Photography</SelectItem>
-                      <SelectItem value="Design">Design</SelectItem>
+                      <SelectItem value="Thumbnail Creation">Thumbnail Creation</SelectItem>
+                      <SelectItem value="Graphic Design">Graphic Design</SelectItem>
                       <SelectItem value="Video Editing">Video Editing</SelectItem>
                     </SelectContent>
                   </Select>
@@ -187,7 +187,7 @@ export default function ContactForm() {
                       <SelectValue placeholder="Select an option" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="Evaluate Mercato Agency for my company">Evaluate Mercato Agency for my company</SelectItem>
+                      <SelectItem value="Evaluate Mercato Agency for my company">Evaluate Mercato Agency <br/>for my company</SelectItem>
                       <SelectItem value="Learn More">Learn More</SelectItem>
                       <SelectItem value="Get a Quote">Get a Quote</SelectItem>
                       <SelectItem value="Other">Other</SelectItem>
