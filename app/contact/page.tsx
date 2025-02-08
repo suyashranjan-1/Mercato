@@ -129,30 +129,28 @@ export default function ContactForm() {
             Let&apos;s talk about how Mercato Agency can help your team work better.
           </div>
 
-          <div className="bg-[#f6f5f4] md:w-4/5 space-y-6 p-4 rounded-2xl my-4 hidden md:flex md:flex-col">
+          <div className="bg-[#f6f5f4] md:w-11/12  space-y-6 p-4 rounded-2xl my-4 hidden md:flex md:flex-col">
             <div className="flex gap-4 border-b ">
               <div className=" font-normal pb-4 ">
-                One flexible agency for your entire company to share knowledge,
-                ship projects, and collaborate.
+              One flexible agency for your entire company to optimize SEO, create stunning videos, run high-performing Google & Meta ads, design eye-catching thumbnails, and craft impactful graphics.
               </div>
             </div>
 
             <div className="flex gap-4 border-b ">
               <div className=" font-normal pb-4 ">
-                Enterprise features to securely manage user access and security.
+              Enterprise features to securely manage campaigns, analytics, and creative assets.
               </div>
             </div>
 
             <div className="flex gap-4  ">
               <div className=" font-normal pb-4 ">
-                Dedicated support to work with you on your setup and help you
-                build the best plan for your company.
+              Dedicated support to work with you on your strategy and help you build the best plan for your business growth.
               </div>
             </div>
           </div>
         </div>
 
-          <form ref={form} onSubmit={sendEmail} className=" space-y-3 h-full border rounded-3xl p-10 md:w-1/3">
+          <form ref={form} onSubmit={sendEmail} className=" space-y-3 h-full border rounded-3xl p-10 md:w-2/3">
               
                 <div className=" space-y-3 items-center justify-center w-full">
                   <label className="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Full name *</label><br />

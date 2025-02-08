@@ -41,8 +41,8 @@ const Navbar = ({
   return (
     <div>
       <div className="p-6 md:p-10 flex items-center justify-between z-50">
-        <div>
-          <Link className="cursor-pointer" href="/">
+        <div >
+          <Link className="cursor-pointer " href="/">
             <Image
               priority
               src="/logo/logo.png"
