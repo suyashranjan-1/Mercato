@@ -88,7 +88,7 @@ export default function Home() {
         </div>
         <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
         We turn your vision into success with strategic expertise and flawless execution.        </p>
-
+<br /><br /><br />
         <div ref={seoRef}>
           <SEO />
         </div>
