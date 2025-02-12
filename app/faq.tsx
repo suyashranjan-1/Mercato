@@ -28,6 +28,13 @@ const FAQS = () => {
               provides a range of services to help businesses grow online.
             </AccordionContent>
           </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>How can digital marketing help?</AccordionTrigger>
+            <AccordionContent>
+            Digital marketing boosts your online visibility, attracts targeted customers, and drives sales through social media, and ads.
+            </AccordionContent>
+          </AccordionItem>
+
           <AccordionItem value="item-2">
             <AccordionTrigger>How to start ?</AccordionTrigger>
             <AccordionContent>
@@ -35,14 +42,7 @@ const FAQS = () => {
               hours.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-3">
-            <AccordionTrigger>Pricing ?</AccordionTrigger>
-            <AccordionContent>
-              We offer custom tailored solutions for your business. Contact us
-              to get a quote.
-            </AccordionContent>
-          </AccordionItem>
-
+          
           <AccordionItem value="item-4">
             <AccordionTrigger>Support ?</AccordionTrigger>
             <AccordionContent>
