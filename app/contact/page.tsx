@@ -201,11 +201,11 @@ export default function ContactForm() {
                       <SelectValue placeholder="Select an option" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="9:00 AM - 11:00 AM (IST)">9:00 AM - 11:00 AM (IST)</SelectItem>
-                      <SelectItem value="11:00 AM - 1:00 PM (IST)">11:00 AM - 1:00 PM (IST)</SelectItem>
-                      <SelectItem value="2:00 PM - 4:00 PM (IST)">2:00 PM - 4:00 PM (IST)</SelectItem>
-                      <SelectItem value="4:00 PM - 6:00 PM (IST)">4:00 PM - 6:00 PM (IST)</SelectItem>
-                      <SelectItem value="6:00 PM - 8:00 PM (IST)">6:00 PM - 8:00 PM (IST)</SelectItem>
+                      <SelectItem value="9:00 AM - 11:00 AM (IST)">9:00 AM - 11:00 AM (UTC-5:00)</SelectItem>
+                      <SelectItem value="11:00 AM - 1:00 PM (IST)">11:00 AM - 1:00 PM (UTC-5:00)</SelectItem>
+                      <SelectItem value="2:00 PM - 4:00 PM (IST)">2:00 PM - 4:00 PM (UTC-5:00)</SelectItem>
+                      <SelectItem value="4:00 PM - 6:00 PM (IST)">4:00 PM - 6:00 PM (UTC-5:00)</SelectItem>
+                      <SelectItem value="6:00 PM - 8:00 PM (IST)">6:00 PM - 8:00 PM (UTC-5:00)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
