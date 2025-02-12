@@ -65,20 +65,21 @@ const Navbar = ({
             SEO
           </div>
           <div onClick={scrollToGraphicDesign} className="hover:text-gray-50">
-            Design
+            Graphic Design
           </div>
-          <div onClick={scrollTOAdRunning} className="hover:text-gray-50">
-          Ads
+          <div onClick={scrollToProductPhotography} className="hover:text-gray-50">
+            Thumbnail Creation
           </div>
-
           <div onClick={scrollToVideoEditing} className="hover:text-gray-50">
             Video editing
           </div>
 
-          <div onClick={scrollToProductPhotography} className="hover:text-gray-50">
-            Product photography
+          
+          <div onClick={scrollTOAdRunning} className="hover:text-gray-50">
+          Ads
           </div>
 
+          
         </div>
 
         <div className="flex md:hidden">

@@ -18,9 +18,9 @@ export const projects = [
       },
       {
         icon : <div className="bg-blue-100 p-4 rounded-full"><PiStorefront className="w-8 h-8 text-blue-600" /></div>,
-        title: "Design",
+        title: "Graphic Design",
         description:
-          "Design that drives results. We craft compelling visuals, from eye-catching thumbnails to comprehensive branding solutions, that elevate your brand and connect with your audience.",
+          "Graphic design that delivers impact. We create striking visuals, from attention-grabbing thumbnails to complete branding designs, that enhance your brand identity and engage your audience.",
       },
       {
         icon : <div className="bg-blue-100 p-4 rounded-full"><PiLock className="w-8 h-8 text-blue-600" /></div>,
@@ -38,9 +38,9 @@ export const projects = [
       },
       {
         icon : <div className="bg-blue-100 p-4 rounded-full"><PiAppStoreLogo className="w-8 h-8 text-blue-600" /></div>,
-        title: "Product Photography",
+        title: "Thumbnail Creation",
         description:
-          " Product photography that drives sales. We capture high-quality images and provide expert editing to showcase your products in the best possible light, ensuring they stand out from the competition.",
+          "Thumbnail creation that drives engagement. We design eye-catching thumbnails with expert attention to detail, ensuring your content stands out and grabs attention.",
       
       },
       {
