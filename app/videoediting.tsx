@@ -1,44 +1,48 @@
-"use client";
-
 import Image from "next/image";
+import React from "react";
 
-const stores = [
+import { Lora } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const font = Lora({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const logos = [
   {
-    image: "/images/image2.png",
-    quote: "Bird showed us to get started, what to do, and how to do it.",
-    name: "Jason Scer",
+    image: "/logo/logoipsum-248.svg",
   },
   {
-    image: "/images/shop-2.jpeg",
-    quote:
-      "We had no idea how to get started, but Bird showed us the way. And we were able to create something amazing.",
-    name: "John Prency",
+    image: "/logo/logoipsum-245.svg",
   },
-
   {
-    image: "/images/s-2.webp",
-    quote:
-      "The team at Bird is amazing. They helped us create a stunning store that we are proud of.",
-    name: "Miguel Martinez",
+    image: "/logo/logoipsum-225.svg",
+  },
+  {
+    image: "/logo/logoipsum-248.svg",
+  },
+  {
+    image: "/logo/logoipsum-249.svg",
+  },
+  {
+    image: "/logo/stripelogo.png",
   },
 ];
 
 const Videoediting = () => {
   return (
-    <section
-      className=" mt-10 md:py-10 bg-[#f6f5f4] w-full
-    rounded-3xl
-  
-  "
-    >
-      <div className=" p-4   mx-auto relative z-10  w-full ">
-        <div className="text-4xl py-10 md:pb-8 md:text-7xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 bg-opacity-50">
+    <div>
+      <div className=" p-4   mx-auto relative z-10  w-full pt-20 md:pt-32">
+        <div className="text-4xl md:pb-8 md:text-7xl text-center 
+        bg-clip-text text-transparent bg-gradient-to-b from-purple-500 to-sky-200 bg-opacity-50">
         Video Editing
         </div>
 
-        <p className="mt-4 text-lg font-normal  text-neutral-800 max-w-4xl text-center mx-auto">  
+        <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-4xl text-center mx-auto">
         We offer high-quality video editing services to help brands produce polished, engaging content. Our portfolio includes businesses like Fresh Farm Produce, StyleStreet Apparel, and Zenith Consulting, who utilize our social media video editing and promotional video editing services to create content that resonates with their audience.
         </p>
+
         <div className="md:flex items-center justify-center">
           <div className="flex flex-col items-center justify-center mt-10 w-full">
             <video 
@@ -56,10 +60,18 @@ const Videoediting = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
 export default Videoediting;
+
+
+
+
+
+
+
+
 
 
