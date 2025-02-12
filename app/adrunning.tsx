@@ -31,39 +31,25 @@ const AdRunning = () => {
         <p className="mt-4 text-lg font-normal  text-neutral-800 max-w-4xl text-center mx-auto">  
         Increase your reach with targeted Google Ads and Meta Ads campaigns that drive targeted traffic and improve conversion rates. Our esteemed clients include Pinewood Studios, Healthy Living Essentials, and Velocity Fitness, all of whom trust us to fine-tune their Google Ads and Meta Ads campaigns for optimal performance and measurable results.
         </p>
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-4 py-10 px-5">
-            <div className="grid gap-4">
-                <div>
-                    <Image
-                    width={500}
-                    height={600}
-                    priority
-                    className="h-full w-full rounded-lg object-cover" src="/images/ads1.jpg" alt=""/>
-                </div>
-                
-            </div>
-            <div className="grid gap-4">
-                <div>
-                    <Image
-                    width={500}
-                    height={500}
-                    priority
-                    className="h-full max-w-full rounded-lg" src="/images/ads3.jpg" alt=""/>
-                </div>
-                
-            </div>
-            <div className="grid gap-4">
-                <div>
-                    <Image
-                    width={500}
-                    height={500}
-                    priority
-                    className="h-full max-w-full rounded-lg" src="/images/ads2.jpg" alt=""/>
-                </div>
-                
-            </div>
-            
-      </div>
+        <div className="md:flex items-center justify-center    gap-1">
+                          {logos.map((logos, index) => (
+                            <div
+                              key={index}
+                              className="flex flex-col items-center justify-center mt-10 mx-auto"
+                            >
+                              <div className="flex flex-col items-center justify-center ">
+                                <Image
+                                  src={logos.image}
+                                  alt="shopify store"
+                                  width={500}
+                                  height={500}
+                                  className="rounded-lg mx-auto"
+                                />
+                                
+                              </div>
+                            </div>
+                          ))}
+                        </div>
       </div>
     </section>
   );
