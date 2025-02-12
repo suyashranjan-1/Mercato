@@ -45,8 +45,8 @@ const FAQS = () => {
           <AccordionItem value="item-4">
             <AccordionTrigger>Support ?</AccordionTrigger>
             <AccordionContent>
-              We offer support for all our clients. We are here to help you with
-              any issues or questions you may have.
+            We offer support for all our clients. We are here to help you with any issues or questions you may have. Feel free to reach out to us at <a href="mailto:support@mercato.agency">support@mercato.agency</a>.
+
             </AccordionContent>
           </AccordionItem>
         </Accordion>
