@@ -17,32 +17,33 @@ export function InfiniteMovingCardsDemo() {
 
 const testimonials = [
   {
+    title: "Crazy Good Thumbnails!",
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "I never realized how much a thumbnail affects video clicks until I got mine designed here. My YouTube views literally doubled! The team just gets it – the colors, the fonts, the vibe. Love it!",
+    name: "Vikram S., YouTuber",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
+"I had hours of messy footage and no clue how to make it look good. These guys turned it into a smooth, engaging video that actually keeps people watching. Super professional and super fast!" ,
+    name: "Neha M., Fitness Coach",
+    title: "Editing That Feels Like Magic!",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
-  },
-  {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+    quote: "I’ve tried DIY SEO, hired freelancers, and even wasted money on agencies that promised big results but did nothing. These guys? They actually know what they’re doing. My website’s finally ranking, and I’m getting real traffic. Worth every penny!" , 
+
+    name: "Amit R., Blogger",
+    title: "SEO That Actually Works!",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+"Running ads used to stress me out because I’d spend a ton and get nothing back. After handing things over to this team, my sales went up, and my ad costs went down. Now my ads actually make me money instead of just wasting it!",
+    name: "Priya K., E-commerce Owner",
+    title: "Google Ads That Don’t Burn Money!",
+  },
+  {
+    quote:
+      "I run a small business, and digital marketing felt overwhelming. These guys handled everything – SEO, ads, video content – and now I have customers finding me instead of me chasing them. It’s been a total game-changer!",
+    name: "Sandeep J., Entrepreneur",
+    title: "A Lifesaver for My Business!",
   },
 ];
