@@ -29,12 +29,11 @@ const FAQS = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>How can digital marketing help?</AccordionTrigger>
+            <AccordionTrigger>How can Mercato help?</AccordionTrigger>
             <AccordionContent>
-            Digital marketing boosts your online visibility, attracts targeted customers, and drives sales through social media, and ads.
+            Mercato boosts your online visibility, attracts targeted customers, and drives sales through social media, and ads.
             </AccordionContent>
           </AccordionItem>
-
           <AccordionItem value="item-2">
             <AccordionTrigger>How to start ?</AccordionTrigger>
             <AccordionContent>

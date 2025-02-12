@@ -194,21 +194,44 @@ export default function ContactForm() {
                     </SelectContent>
                   </Select>
                 </div>
-                <div className=" space-y-3 items-center justify-center w-full">
-                  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Preferred time slot for an online meet or call!</label>
-                  <Select name="last_name" required>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select an option" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="9:00 AM - 11:00 AM (IST)">9:00 AM - 11:00 AM (UTC-5:00)</SelectItem>
-                      <SelectItem value="11:00 AM - 1:00 PM (IST)">11:00 AM - 1:00 PM (UTC-5:00)</SelectItem>
-                      <SelectItem value="2:00 PM - 4:00 PM (IST)">2:00 PM - 4:00 PM (UTC-5:00)</SelectItem>
-                      <SelectItem value="4:00 PM - 6:00 PM (IST)">4:00 PM - 6:00 PM (UTC-5:00)</SelectItem>
-                      <SelectItem value="6:00 PM - 8:00 PM (IST)">6:00 PM - 8:00 PM (UTC-5:00)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+
+                <div className="space-y-3 items-center justify-center w-full">
+  <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+    Preferred date for an online meet or call!
+  </label>
+  <div className="flex space-x-2 w-full">
+    <Input
+      type="date"
+      name="last_name"
+      min={new Date().toISOString().split('T')[0]} // This sets minimum date to today
+      className="w-1/2"
+      required
+    />
+    <Select name="last_name" required>
+      <SelectTrigger>
+        <SelectValue placeholder="Select time slot" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="9:00 AM - 11:00 AM">
+          9:00 AM - 11:00 AM (UTC-5:00)
+        </SelectItem>
+        <SelectItem value="11:00 AM - 1:00 PM">
+          11:00 AM - 1:00 PM (UTC-5:00)
+        </SelectItem>
+        <SelectItem value="2:00 PM - 4:00 PM">
+          2:00 PM - 4:00 PM (UTC-5:00)
+        </SelectItem>
+        <SelectItem value="4:00 PM - 6:00 PM">
+          4:00 PM - 6:00 PM (UTC-5:00)
+        </SelectItem>
+        <SelectItem value="6:00 PM - 8:00 PM">
+          6:00 PM - 8:00 PM (UTC-5:00)
+        </SelectItem>
+      </SelectContent>
+    </Select>
+  </div>
+</div>
+
                 <div className=" space-y-3 items-center justify-center w-full">
                   <label className="text-sm bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Anything else?</label>
                   <textarea name="info" className="form-control, flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"></textarea>
