@@ -47,7 +47,7 @@ export const projects = [
         icon : <div className="bg-blue-100 p-4 rounded-full"><PiHeadsetFill className="w-8 h-8 text-blue-600" /></div>,
         title: "Support",
         description:
-          "We offer support for all our clients. We are here to help you with any issues or questions you may have.",
+          "We offer support for all our clients. Feel free to reach out to us at support@mercato.agency",
      
       },
 ];
