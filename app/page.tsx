@@ -89,9 +89,6 @@ export default function Home() {
         <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
         We turn your vision into success with strategic expertise and flawless execution.        </p>
 
-        <div className="w-full pt-20">
-          <SliderOne />
-        </div>
         <div ref={seoRef}>
           <SEO />
         </div>
