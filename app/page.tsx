@@ -1,5 +1,4 @@
 'use client'
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useState, useRef } from "react";
 import Navbar from "@/components/navbar";
 import SliderOne from "@/components/ui/slider";
@@ -117,7 +116,6 @@ export default function Home() {
         <InfiniteMovingCardsDemo />
         <FAQS />
       </div>
-      <SpeedInsights />
     </div>
   );
 }
