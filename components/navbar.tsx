@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+
 
 export function NavbarDemo() {
   return <Navbar className="top-2" />;
@@ -14,11 +16,12 @@ function Navbar({ className }: { className?: string }) {
       <div className="flex items-center justify-between bg-transparent px-6 py-2 border-b border-white/[0.2] backdrop-blur-lg">
         {/* Logo on the left */}
         <div className="flex items-center px-2">
-          <img 
+          {/* <img 
             src="/logo.png" 
             alt="Logo" 
             className="h-8 w-8 rounded-full" 
-          />
+          /> */}
+          <Image src="/logo.png" alt="Logo" width={100} height={100} />
         </div>
 
         {/* Menu items in the middle */}

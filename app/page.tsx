@@ -1,7 +1,6 @@
 'use client'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useState, useRef } from "react";
-// import {Navbar} from '../components/navbar'
 import { NavbarDemo } from "../components/navbar";
 import SliderOne from "@/components/ui/slider";
 import { Spotlight } from "@/components/ui/spotlight";
