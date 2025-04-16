@@ -25,7 +25,7 @@ function Navbar({ className }: { className?: string }) {
         </div>
 
         {/* Menu items in the middle */}
-        <Menu setActive={setActive} className="mx-auto ">
+        <Menu setActive={setActive} >
           <MenuItem setActive={setActive} active={active} item="Platform">
             <div className="text-sm grid grid-cols-2 gap-10 p-4 backdrop-blur-sm">
               <ProductItem
