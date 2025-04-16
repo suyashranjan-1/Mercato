@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Menu, MenuItem, ProductItem, HoveredLink } from "./ui/navbar-menu"; 
+import { Menu, MenuItem, ProductItem, HoveredLink } from "./ui/navbar-menu";
 
 const Navbar = () => {
   const [active, setActive] = useState<string | null>(null);
@@ -44,7 +44,7 @@ const Navbar = () => {
       </MenuItem>
 
       <MenuItem setActive={setActive} active={active} item="Products">
-      <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-2">
           <HoveredLink href="/docs">Instagram</HoveredLink>
           <HoveredLink href="/tutorials">Whatsapp</HoveredLink>
           <HoveredLink href="/tutorials">Messenger</HoveredLink>
@@ -52,17 +52,16 @@ const Navbar = () => {
         </div>
       </MenuItem>
 
-      <MenuItem setActive={setActive} active={active} item="Resouces">
-      <div className="flex flex-col space-y-2">
+      <MenuItem setActive={setActive} active={active} item="Resources">
+        <div className="flex flex-col space-y-2">
           <HoveredLink href="/docs">Resources</HoveredLink>
-          
         </div>
       </MenuItem>
 
       <MenuItem setActive={setActive} active={active} item="About">
-      <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-2">
           <HoveredLink href="/docs">About Us</HoveredLink>
-          <HoveredLink href="/tutorials">Carrer</HoveredLink>
+          <HoveredLink href="/tutorials">Career</HoveredLink>
           <HoveredLink href="/tutorials">Contact</HoveredLink>
         </div>
       </MenuItem>
