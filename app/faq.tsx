@@ -14,7 +14,7 @@ const FAQS = () => {
         "
     >
       <div className=" p-10 md:p-4 md:px-20">
-        <div className="text-2xl md:text-5xl font-bold text-black">
+        <div className="text-2xl md:text-5xl font-bold text-white">
           Have questions ?
         </div>
         <div className="  font-semibold text-2xl md:text-4xl text-gradient bg-gradient-to-r from-emerald-600 to-blue-300 bg-clip-text text-transparent">
