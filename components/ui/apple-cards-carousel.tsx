@@ -396,7 +396,7 @@ export const Card = ({
           {/* Displaying the 'para' in the collapsed card */}
           <motion.p
             layoutId={layout ? `para-${card.title}` : undefined}
-            className="absolute left-0 mt-[96%] pl-4 backdrop-blur-sm w-[100%]  mb-4  text-left font-sans text-md font-semibold text-white md:text-md"
+            className="absolute left-0 mt-[96%] px-2 backdrop-blur-sm w-[100%]  mb-4  text-left font-sans text-md font-semibold text-white md:text-md"
           >
             {card.para}
           </motion.p>
