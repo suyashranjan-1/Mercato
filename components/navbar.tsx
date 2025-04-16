@@ -7,16 +7,22 @@ const Navbar = () => {
 
   return (
     <Menu setActive={setActive}>
-      <MenuItem setActive={setActive} active={active} item="Products">
+      <MenuItem setActive={setActive} active={active} item="Platform">
         <div className="grid grid-cols-1 gap-4">
           <ProductItem
-            title="Awesome Product"
-            description="This is a really cool product."
+            title="Agent Studio"
+            description="This is a really cool studio"
             href="/product"
             src="https://via.placeholder.com/140x70"
           />
           <ProductItem
-            title="Next Level"
+            title="Autonomous Engine"
+            description="Unlock your potential."
+            href="/next"
+            src="https://via.placeholder.com/140x70"
+          />
+          <ProductItem
+            title="Knowledge Base"
             description="Unlock your potential."
             href="/next"
             src="https://via.placeholder.com/140x70"
@@ -24,16 +30,40 @@ const Navbar = () => {
         </div>
       </MenuItem>
 
-      <MenuItem setActive={setActive} active={active} item="Resources">
+      <MenuItem setActive={setActive} active={active} item="Solutions">
         <div className="flex flex-col space-y-2">
-          <HoveredLink href="/docs">Documentation</HoveredLink>
-          <HoveredLink href="/tutorials">Tutorials</HoveredLink>
+          <HoveredLink href="/docs">General Problem Solver</HoveredLink>
+          <HoveredLink href="/tutorials">Data Extractor</HoveredLink>
+          <HoveredLink href="/tutorials">Customer Service</HoveredLink>
+          <HoveredLink href="/tutorials">E-Commerce</HoveredLink>
+          <HoveredLink href="/tutorials">Sales</HoveredLink>
+          <HoveredLink href="/tutorials">Finance & Accounting</HoveredLink>
+          <HoveredLink href="/tutorials">Human Resources</HoveredLink>
+          <HoveredLink href="/tutorials">Others</HoveredLink>
+        </div>
+      </MenuItem>
+
+      <MenuItem setActive={setActive} active={active} item="Products">
+      <div className="flex flex-col space-y-2">
+          <HoveredLink href="/docs">Instagram</HoveredLink>
+          <HoveredLink href="/tutorials">Whatsapp</HoveredLink>
+          <HoveredLink href="/tutorials">Messenger</HoveredLink>
+          <HoveredLink href="/tutorials">TikTok</HoveredLink>
+        </div>
+      </MenuItem>
+
+      <MenuItem setActive={setActive} active={active} item="Resouces">
+      <div className="flex flex-col space-y-2">
+          <HoveredLink href="/docs">Resources</HoveredLink>
+          
         </div>
       </MenuItem>
 
       <MenuItem setActive={setActive} active={active} item="About">
-        <div className="text-sm text-neutral-700 dark:text-neutral-200">
-          Learn more about our mission and vision.
+      <div className="flex flex-col space-y-2">
+          <HoveredLink href="/docs">About Us</HoveredLink>
+          <HoveredLink href="/tutorials">Carrer</HoveredLink>
+          <HoveredLink href="/tutorials">Contact</HoveredLink>
         </div>
       </MenuItem>
     </Menu>
