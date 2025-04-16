@@ -1,7 +1,8 @@
 'use client'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useState, useRef } from "react";
-import Navbar from "@/components/navbar";
+// import {Navbar} from '../components/navbar'
+import { NavbarDemo } from "../components/navbar";
 import SliderOne from "@/components/ui/slider";
 import { Spotlight } from "@/components/ui/spotlight";
 import Image from "next/image";
@@ -70,16 +71,7 @@ export default function Home() {
   
   return (
     <div className="w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <Navbar
-        // scrollToSEO={scrollToSEO}
-        // scrollToGraphicDesign={scrollToGraphicDesign}
-        // scrollTOThumbnailDesign={scrollTOThumbnailDesign}
-        // scrollTOContentCreation={scrollTOContentCreation}
-        // scrollToServices={scrollToServices}
-        // scrollTOAdRunning={scrollTOAdRunning}
-        // scrollToVideoEditing={scrollToVideoEditing}
-        // scrollToProductPhotography={scrollToProductPhotography}
-      />
+      <NavbarDemo/>
 
       <Spotlight className="hidden md:flex md:-top-80 left-80  " fill="white" />
       <div className="p-4 mx-auto relative z-10 w-full pt-10 md:pt-20 px-2">
