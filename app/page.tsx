@@ -20,6 +20,7 @@ import { InfiniteMovingCardsDemo } from "./snippets/infinite-moving-card-snippet
 import { AppleCardsCarouselDemo } from "@/components/AppleCardsCarouselDemo";
 import { SparklesPreview } from "@/components/SparklesPreview";
 import { CarouselDemo } from "@/components/CarouselDemo";
+import { LampDemo } from "@/components/LampDemo";
 
 export default function Home() {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -83,6 +84,7 @@ export default function Home() {
         Boost Your Brand <br /> with Us
         </div> */}
         <SparklesPreview/>
+        <LampDemo/>
         
         {/* <p className="mt-4 text-lg font-normal  text-neutral-300 max-w-lg text-center mx-auto px-4">
         We turn your vision into success with strategic expertise and flawless execution.        </p>
