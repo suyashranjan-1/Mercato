@@ -11,7 +11,7 @@ export function AppleCardsCarouselDemo() {
 
   return (
     <div className="w-full h-full py-20 flex flex-col items-center justify-center">
-      <h2 className="text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans text-center mb-10 px-4">
+      <h2 className="text-xl md:text-5xl font-bold text-neutral-200 dark:text-neutral-200 font-sans text-center mb-10 px-4">
         Get to know your iSad.
       </h2>
 
@@ -82,19 +82,5 @@ const data = [
     src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     content: <DummyContent />,
     para: "Find your way with the latest advancements in mapping.",
-  },
-  {
-    category: "iOS",
-    title: "Photography just got better.",
-    src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-    para: "Capture your moments in breathtaking quality.",
-  },
-  {
-    category: "Hiring",
-    title: "Hiring for a Staff Software Engineer",
-    src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-    para: "Join us as we innovate and shape the future of technology.",
   },
 ];

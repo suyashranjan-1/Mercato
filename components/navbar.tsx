@@ -6,14 +6,14 @@ import Image from "next/image";
 import { Link } from "react-router-dom";
 
 export function NavbarDemo() {
-  return <Navbar className="top-2" />;
+  return <Navbar className="" />;
 }
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div className={cn("fixed top-0 w-full z-50", className)}>
-      <div className="flex items-center justify-between bg-transparent px-6 py-2 border-b border-white/[0.2] backdrop-blur-lg">
+    <div className={cn("fixed top-0 w-full z-50 ", className)}>
+      <div className="flex items-center justify-between bg-transparent px-6 py-2">
         {/* Logo on the left */}
         <div className="flex items-center px-2">
           {/* <img 
@@ -60,7 +60,7 @@ function Navbar({ className }: { className?: string }) {
 
           <MenuItem setActive={setActive} active={active} item="Solutions">
             <div className="flex flex-col space-y-4 text-sm bg-transparent">
-              <HoveredLink href="/web-dev">General Problem Solver</HoveredLink>
+              <HoveredLink href="/web-dev" >General Problem Solver</HoveredLink>
               <HoveredLink href="/interface-design">Data Extractor</HoveredLink>
               <HoveredLink href="/seo">Customer Service</HoveredLink>
               <HoveredLink href="/seo">E-Commerce</HoveredLink>
@@ -71,6 +71,24 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
 
+<<<<<<< HEAD
+=======
+          <MenuItem setActive={setActive} active={active} item="Products">
+            <div className="flex flex-col space-y-4 text-sm bg-transparent">
+              <HoveredLink href="/hobby">Instagram</HoveredLink>
+              <HoveredLink href="/individual">Whatsapp</HoveredLink>
+              <HoveredLink href="/team">TikTok</HoveredLink>
+              <HoveredLink href="/team">Messanger</HoveredLink>
+            </div>
+          </MenuItem>
+
+          <MenuItem setActive={setActive} active={active} item="Resources">
+            <div className="flex flex-col space-y-4 text-sm bg-transparent">
+              <HoveredLink href="/web-dev">Resources</HoveredLink>
+            </div>
+          </MenuItem>
+
+>>>>>>> 492d58007f8ecdc367f61cafeff976cc714677a2
           <MenuItem setActive={setActive} active={active} item="About">
             <div className="flex flex-col space-y-4 text-sm bg-transparent">
               <HoveredLink href="/ui/Pages/aboutUs">About Us</HoveredLink>
