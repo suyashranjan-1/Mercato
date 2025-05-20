@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-
+import { Link } from "react-router-dom";
 
 export function NavbarDemo() {
   return <Navbar className="top-2" />;
@@ -26,7 +26,9 @@ function Navbar({ className }: { className?: string }) {
 
         {/* Menu items in the middle */}
         <Menu setActive={setActive} >
-          <MenuItem setActive={setActive} active={active} item="Platform">
+
+
+          {/* <MenuItem setActive={setActive} active={active} item="Ai Agents">
             <div className="text-sm grid grid-cols-2 gap-10 p-4 backdrop-blur-sm">
               <ProductItem
                 title="Agent Studio"
@@ -47,6 +49,13 @@ function Navbar({ className }: { className?: string }) {
                 description="Never write from scratch again. Go from idea to blog in minutes."
               />
             </div>
+          </MenuItem> */}
+
+          <MenuItem setActive={setActive} active={active} item="Ai Agents">
+            <div className="flex flex-col space-y-4 text-sm bg-transparent">
+              <HoveredLink href="/hobby">View All Agents</HoveredLink>
+              <HoveredLink href="/individual">About Agents</HoveredLink>
+            </div>
           </MenuItem>
 
           <MenuItem setActive={setActive} active={active} item="Solutions">
@@ -62,27 +71,20 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
 
-          <MenuItem setActive={setActive} active={active} item="Products">
-            <div className="flex flex-col space-y-4 text-sm bg-transparent">
-              <HoveredLink href="/hobby">Instagram</HoveredLink>
-              <HoveredLink href="/individual">Whatsapp</HoveredLink>
-              <HoveredLink href="/team">TikTok</HoveredLink>
-            </div>
-          </MenuItem>
-
-          <MenuItem setActive={setActive} active={active} item="Resources">
-            <div className="flex flex-col space-y-4 text-sm bg-transparent">
-              <HoveredLink href="/web-dev">Resources</HoveredLink>
-            </div>
-          </MenuItem>
-
           <MenuItem setActive={setActive} active={active} item="About">
             <div className="flex flex-col space-y-4 text-sm bg-transparent">
-              <HoveredLink href="/web-dev">About Us</HoveredLink>
-              <HoveredLink href="/interface-design">Career</HoveredLink>
-              <HoveredLink href="/seo">Contact</HoveredLink>
+              <HoveredLink href="/ui/Pages/aboutUs">About Us</HoveredLink>
             </div>
           </MenuItem>
+
+
+          <MenuItem setActive={setActive} active={active} item="Contact">
+            <div className="flex flex-col space-y-4 text-sm bg-transparent">
+              <HoveredLink href="/ui/Pages/contactUs">Contact Us</HoveredLink>
+            </div>
+          </MenuItem>
+
+
         </Menu>
 
         {/* Signup button on the right */}

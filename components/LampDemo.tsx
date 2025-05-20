@@ -18,10 +18,10 @@ export function LampDemo() {
       >
         Boost Your Brand with US
         <br></br>
-        <br/>
+        <br />
         <p className="mt-4 text-lg font-normal text-neutral-300 max-w-lg text-center mx-auto px-4 tracking-wide">
-  We turn your vision into success with strategic expertise and flawless execution.
-</p>
+          We turn your vision into success with strategic expertise and flawless execution.
+        </p>
 
 
 
