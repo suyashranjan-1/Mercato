@@ -1,0 +1,349 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+import { NavbarDemo } from "@/components/navbar";
+
+export default function About() {
+    const [activeTab, setActiveTab] = useState('vision');
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
+
+    const teamMembers = [
+        {
+            id: 1,
+            name: 'Alex Johnson',
+            title: 'CEO & Founder',
+            description: 'Visionary leader with 10+ years in AI and digital transformation',
+            image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+        },
+        {
+            id: 2,
+            name: 'Mei Lin',
+            title: 'CTO',
+            description: 'AI expert specializing in machine learning and scalable systems',
+            image: 'https://images.unsplash.com/photo-1494790108755-2616b332c796?w=400&h=400&fit=crop&crop=face',
+        },
+        {
+            id: 3,
+            name: 'David Smith',
+            title: 'Lead Developer',
+            description: 'Full-stack architect building next-generation AI solutions',
+            image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
+        },
+    ];
+
+    const stats = [
+        { label: 'Companies Served', value: '10+', icon: '🏢' },
+        { label: 'Years of Experience', value: '8+', icon: '⏰' },
+        { label: 'Global Presence', value: '17', icon: '🌍' },
+        { label: 'AI Models Deployed', value: '100+', icon: '🤖' },
+    ];
+
+    const values = [
+        {
+            title: 'Innovation First',
+            description: 'We push the boundaries of what\'s possible with AI technology',
+            icon: '🚀',
+            color: 'from-blue-500 to-purple-600'
+        },
+        {
+            title: 'Ethical AI',
+            description: 'Building responsible AI that benefits humanity',
+            icon: '⚖️',
+            color: 'from-emerald-500 to-teal-600'
+        },
+        {
+            title: 'Collaboration',
+            description: 'Working together to create extraordinary solutions',
+            icon: '🤝',
+            color: 'from-orange-500 to-red-600'
+        },
+        {
+            title: 'Excellence',
+            description: 'Delivering exceptional quality in everything we do',
+            icon: '⭐',
+            color: 'from-purple-500 to-pink-600'
+        }
+    ];
+
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white overflow-hidden">
+            <NavbarDemo />
+            {/* Hero Section */}
+            <section className="relative min-h-screen flex items-center justify-center px-4 py-32">
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10"></div>
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
+                <div className={`max-w-7xl mx-auto text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <div className="inline-flex items-center px-6 py-2 mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-sm text-slate-300 hover:border-slate-600/50 transition-all duration-300">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
+                        About Our Agency
+                    </div>
+
+                    <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent leading-tight">
+                        Building the Future with
+                        <br />
+                        <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                            Artificial Intelligence
+                        </span>
+                    </h1>
+
+                    <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-12">
+                        We're a team of innovators, dreamers, and builders creating AI solutions that transform businesses
+                        and improve lives. <span className="text-white font-medium">Together, we're shaping tomorrow.</span>
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300">
+                            Join Our Mission
+                        </button>
+                        <button className="px-8 py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300">
+                            Our Story
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            {/* Stats Section */}
+            <section className="relative py-20 px-4 bg-gradient-to-r from-slate-900/30 to-slate-800/20">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {stats.map((stat, index) => (
+                            <div
+                                key={index}
+                                className="p-8 rounded-3xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 text-center hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-300 group"
+                                style={{ animationDelay: `${index * 100}ms` }}
+                            >
+                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    {stat.icon}
+                                </div>
+                                <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                                    {stat.value}
+                                </div>
+                                <div className="text-slate-300 font-medium">
+                                    {stat.label}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Vision & Mission Section */}
+            <section className="py-32 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-20">
+                        <div className="inline-flex items-center px-6 py-2 mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-sm text-slate-300">
+                            <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                            Our Philosophy
+                        </div>
+
+                        <h2 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto mb-8 leading-tight">
+                            Great things start with a
+                            <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"> vision</span>,
+                            built through <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">action</span>
+                        </h2>
+                    </div>
+
+                    <div className="relative mb-16">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-800/20 via-purple-600/20 to-blue-900/20 rounded-3xl blur-xl"></div>
+                        <div className="relative bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50">
+                            <div className="flex flex-wrap justify-center mb-8 gap-4">
+                                {['vision', 'values', 'approach'].map((tab) => (
+                                    <button
+                                        key={tab}
+                                        onClick={() => setActiveTab(tab)}
+                                        className={`px-8 py-4 rounded-2xl transition-all duration-300 font-semibold ${activeTab === tab
+                                            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25'
+                                            : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50'
+                                            }`}
+                                    >
+                                        {tab === 'vision' && 'Our Vision'}
+                                        {tab === 'values' && 'Core Values'}
+                                        {tab === 'approach' && 'Our Approach'}
+                                    </button>
+                                ))}
+                            </div>
+
+                            <div className="min-h-96">
+                                {activeTab === 'vision' && (
+                                    <div className="space-y-6 animate-fadeIn">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-center mb-8">
+                                            <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                                                Empowering humanity through intelligent technology
+                                            </span>
+                                        </h3>
+                                        <p className="text-xl text-slate-300 leading-relaxed max-w-4xl mx-auto text-center">
+                                            We envision a world where artificial intelligence amplifies human potential,
+                                            solving complex challenges and creating opportunities for growth, innovation, and prosperity.
+                                            Our mission is to develop AI solutions that are not just powerful, but ethical,
+                                            accessible, and designed to benefit all of humanity.
+                                        </p>
+                                    </div>
+                                )}
+
+                                {activeTab === 'values' && (
+                                    <div className="animate-fadeIn">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">
+                                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">
+                                                The principles that guide us
+                                            </span>
+                                        </h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            {values.map((value, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="p-8 rounded-2xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-300 group"
+                                                >
+                                                    <div className="flex items-center mb-4">
+                                                        <div className={`w-12 h-12 rounded-2xl bg-gradient-to-r ${value.color} flex items-center justify-center text-xl mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                                                            {value.icon}
+                                                        </div>
+                                                        <h4 className="text-xl font-bold text-white">{value.title}</h4>
+                                                    </div>
+                                                    <p className="text-slate-300 leading-relaxed">{value.description}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {activeTab === 'approach' && (
+                                    <div className="space-y-8 animate-fadeIn">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-center mb-8">
+                                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+                                                From concept to real-world impact
+                                            </span>
+                                        </h3>
+                                        <p className="text-xl text-slate-300 leading-relaxed max-w-4xl mx-auto text-center mb-12">
+                                            Our approach combines cutting-edge research with practical application. We start with
+                                            deep understanding of your challenges, design intelligent solutions, and iterate
+                                            continuously to ensure maximum impact and value.
+                                        </p>
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                            {[
+                                                { title: 'Research & Discovery', desc: 'Deep dive into challenges and opportunities', icon: '🔬' },
+                                                { title: 'Design & Build', desc: 'Create scalable, intelligent solutions', icon: '🛠️' },
+                                                { title: 'Deploy & Optimize', desc: 'Deliver results and continuous improvement', icon: '🚀' }
+                                            ].map((step, index) => (
+                                                <div key={index} className="text-center p-6 rounded-2xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 group">
+                                                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{step.icon}</div>
+                                                    <h4 className="text-xl font-bold mb-3 text-white">{step.title}</h4>
+                                                    <p className="text-slate-300">{step.desc}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Team Section */}
+            <section className="py-32 px-4 bg-gradient-to-br from-slate-900/50 to-slate-800/30">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-20">
+                        <div className="inline-flex items-center px-6 py-2 mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-sm text-slate-300">
+                            <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                            Our Team
+                        </div>
+
+                        <h2 className="text-5xl md:text-7xl font-bold max-w-6xl mx-auto mb-8 leading-tight">
+                            Meet the minds behind the
+                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> magic</span>
+                        </h2>
+
+                        <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
+                            Our diverse team of innovators, researchers, and builders work together to create
+                            AI solutions that make a difference in the world.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {teamMembers.map((member, index) => (
+                            <div
+                                key={member.id}
+                                className="group relative overflow-hidden rounded-3xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 hover:transform hover:scale-105"
+                                style={{ animationDelay: `${index * 150}ms` }}
+                            >
+                                <div className="aspect-square relative overflow-hidden">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                                </div>
+                                <div className="p-8">
+                                    <h3 className="text-2xl font-bold mb-2 text-white">{member.name}</h3>
+                                    <p className="text-lg text-blue-400 mb-4 font-medium">{member.title}</p>
+                                    <p className="text-slate-300 leading-relaxed">{member.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Join Us Section */}
+            <section className="py-32 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <div className="relative rounded-3xl overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+                        <div className="relative bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 p-16">
+                            <div className="text-center">
+                                <div className="inline-flex items-center px-6 py-2 mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-sm text-slate-300">
+                                    <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3 animate-pulse"></div>
+                                    Join Our Mission
+                                </div>
+
+                                <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                                    Ready to shape the
+                                    <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> future</span> with us?
+                                </h2>
+
+                                <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12">
+                                    We're always looking for brilliant minds who share our passion for innovation,
+                                    ethics, and making a positive impact through AI technology.
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <button className="px-12 py-6 bg-gradient-to-r from-emerald-600 to-blue-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-emerald-500/25 transform hover:scale-105 transition-all duration-300 text-lg">
+                                        View Open Positions
+                                    </button>
+                                    <button className="px-12 py-6 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-lg">
+                                        Get in Touch
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <style jsx>{`
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                .animate-fadeIn {
+                    animation: fadeIn 0.6s ease-out forwards;
+                }
+            `}</style>
+        </div>
+    );
+}
