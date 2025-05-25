@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ArrowRight, Check, Star, Globe, Zap, Shield, Users, Bot, Cpu, Code, Database, Menu, X } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
+import Footer from "@/components/Footer";
 
 const CustomAIAgentPage = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -92,29 +93,29 @@ const CustomAIAgentPage = () => {
 
     // Review the testimonials
 
-    const testimonials = [
-        {
-            name: "Sarah Johnson",
-            role: "CTO, MedTech Solutions",
-            company: "Healthcare",
-            rating: 5,
-            text: "The custom AI agent reduced our patient response time by 80% and improved satisfaction scores significantly."
-        },
-        {
-            name: "Michael Chen",
-            role: "Operations Director",
-            company: "E-commerce",
-            rating: 5,
-            text: "Our custom shopping assistant increased conversion rates by 35% and handles 90% of customer inquiries automatically."
-        },
-        {
-            name: "Emma Rodriguez",
-            role: "VP of Customer Success",
-            company: "Financial Services",
-            rating: 5,
-            text: "The fraud detection agent has prevented millions in losses while maintaining seamless customer experience."
-        }
-    ];
+    // const testimonials = [
+    //     {
+    //         name: "Sarah Johnson",
+    //         role: "CTO, MedTech Solutions",
+    //         company: "Healthcare",
+    //         rating: 5,
+    //         text: "The custom AI agent reduced our patient response time by 80% and improved satisfaction scores significantly."
+    //     },
+    //     {
+    //         name: "Michael Chen",
+    //         role: "Operations Director",
+    //         company: "E-commerce",
+    //         rating: 5,
+    //         text: "Our custom shopping assistant increased conversion rates by 35% and handles 90% of customer inquiries automatically."
+    //     },
+    //     {
+    //         name: "Emma Rodriguez",
+    //         role: "VP of Customer Success",
+    //         company: "Financial Services",
+    //         rating: 5,
+    //         text: "The fraud detection agent has prevented millions in losses while maintaining seamless customer experience."
+    //     }
+    // ];
 
     const faqs = [
         {
@@ -223,7 +224,7 @@ const CustomAIAgentPage = () => {
                                 <div className="text-blue-400 mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
                                     {capability.icon}
                                 </div>
-                                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">
+                                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-white">
                                     {capability.title}
                                 </h3>
                                 <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
@@ -316,101 +317,52 @@ const CustomAIAgentPage = () => {
                             </div>
                         ))}
                     </div>
-
-                    {/* Benefits Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
-                        <div>
-                            <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
-                                Reduce cost. Improve lead times. Fast.
-                            </h3>
-                            <div className="space-y-4 sm:space-y-6">
-                                {[
-                                    "Automate repetitive tasks and free up your team for strategic work",
-                                    "Reduce operational costs by up to 85% with intelligent automation",
-                                    "Scale operations instantly without hiring additional staff",
-                                    "Improve accuracy and eliminate human errors in critical processes"
-                                ].map((benefit, index) => (
-                                    <div key={index} className="flex items-start">
-                                        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-emerald-400 to-blue-600 flex items-center justify-center mr-3 sm:mr-4 mt-1 flex-shrink-0">
-                                            <Check className="w-2 h-2 sm:w-3 sm:h-3 text-white" />
-                                        </div>
-                                        <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
-                                            {benefit}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="relative">
-                            <div className="aspect-square rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-slate-700/50 flex items-center justify-center">
-                                <div className="text-center p-4 sm:p-6">
-                                    <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 flex items-center justify-center mx-auto">
-                                        <Bot className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white" />
-                                    </div>
-                                    <h4 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4">Custom AI Agent</h4>
-                                    <p className="text-slate-400 text-sm sm:text-base">Tailored specifically for your business needs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
-            {/* Testimonials Section */}
-            <section className="relative py-32 px-4 bg-gradient-to-r from-slate-900/30 to-slate-800/20">
+            {/* Industries Section */}
+            <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-900/50 to-slate-800/30">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-20">
-                        <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                            Customize <span className="bg-gradient-to-r from-yellow-400 to-orange-600 bg-clip-text text-transparent">AI agents</span> to your needs
+                    <div className="text-center mb-12 sm:mb-20">
+                        <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
+                            <div className="w-2 h-2 bg-purple-400 rounded-full mr-2 sm:mr-3 animate-pulse"></div>
+                            Industries
+                        </div>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
+                            Automating tasks,<br className="hidden sm:block" />
+                            one <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">industry</span> at a time
                         </h2>
-                        <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                            See how businesses across industries have transformed their operations with custom AI solutions.
+                        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
+                            From healthcare to finance, our custom AI agents are transforming businesses across every sector.
+                            Each solution is tailored to meet the unique challenges and opportunities of your industry.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {testimonials.map((testimonial, index) => (
-                            <div key={index} className="p-8 rounded-3xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-300">
-                                <div className="flex mb-4">
-                                    {[...Array(testimonial.rating)].map((_, i) => (
-                                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                                    ))}
-                                </div>
-                                <p className="text-slate-300 mb-6 leading-relaxed">
-                                    "{testimonial.text}"
-                                </p>
-                                <div>
-                                    <div className="font-semibold text-white">{testimonial.name}</div>
-                                    <div className="text-slate-400 text-sm">{testimonial.role}</div>
-                                    <div className="text-slate-500 text-sm">{testimonial.company}</div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                        {industries.map((industry, index) => (
+                            <div key={index} className="group cursor-pointer">
+                                <div className="p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-500 transform hover:scale-105">
+                                    <div className="text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                                        {industry.icon}
+                                    </div>
+                                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-white">
+                                        {industry.title}
+                                    </h3>
+                                    <p className="text-slate-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                                        {industry.description}
+                                    </p>
+                                    <div className="space-y-2">
+                                        {industry.features.map((feature, featureIndex) => (
+                                            <div key={featureIndex} className="flex items-center">
+                                                <Check className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 mr-2 sm:mr-3 flex-shrink-0" />
+                                                <span className="text-slate-300 text-xs sm:text-sm">{feature}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="relative py-32 px-4">
-                <div className="max-w-7xl mx-auto text-center">
-                    <div className="inline-flex items-center px-6 py-2 mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-sm text-slate-300">
-                        <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></div>
-                        Get Started Today
-                    </div>
-
-                    <h2 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
-                        Tailor-made <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">AI agent</span><br />
-                        solutions? Say no more.
-                    </h2>
-
-                    <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-12">
-                        Ready to transform your business with a custom AI solution? Our team of experts will work
-                        with you to design, develop, and deploy the perfect AI agent for your unique needs.
-                    </p>
-
-                    <button className="px-12 py-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-lg">
-                        Start Your Custom Project
-                    </button>
                 </div>
             </section>
 
@@ -447,6 +399,8 @@ const CustomAIAgentPage = () => {
                     </div>
                 </div>
             </section>
+
+            <Footer />
         </div>
     );
 };

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { NavbarDemo } from "@/components/navbar";
+import Footer from "@/components/Footer";
 
 // Add interface for isVisible state
 interface VisibilityState {
@@ -595,6 +596,7 @@ export default function AIAgentPage() {
                     }
                 }
             `}</style>
+            <Footer />
         </main>
     );
 }

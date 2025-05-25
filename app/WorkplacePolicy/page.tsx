@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Home, Users, Globe, Clock, Monitor, Calendar, MapPin, Shield, CheckCircle, AlertCircle, Briefcase, Coffee, Laptop, Video, Heart } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
+import Footer from "@/components/Footer";
 
 const WorkplacePolicyPage = () => {
     const [activeSection, setActiveSection] = useState('');
@@ -723,6 +724,7 @@ const WorkplacePolicyPage = () => {
                     </div>
                 </section>
             </div>
+            <Footer />
         </div>
     );
 };

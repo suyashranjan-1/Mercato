@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Shield, Lock, Eye, AlertTriangle, Users, Cloud, Server, FileText, Mail, Globe, Clock, CheckCircle, Key, Monitor, Database, Wifi, HardDrive, RefreshCw } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
+import Footer from "@/components/Footer";
 
 const SecurityPolicyPage = () => {
     const [activeSection, setActiveSection] = useState('');
@@ -532,6 +533,7 @@ const SecurityPolicyPage = () => {
                     </div>
                 </section>
             </div>
+            <Footer />
         </div>
     );
 };

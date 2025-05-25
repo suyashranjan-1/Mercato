@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavbarDemo } from "@/components/navbar";
 import { ChevronRight, FileText, User, CreditCard, Shield, AlertTriangle, Scale, Settings, Mail, Globe, Clock, CheckCircle, Lock, Users, Cloud, Server } from 'lucide-react';
+import Footer from "@/components/Footer";
 
 const TermsOfUsePage = () => {
     const [activeSection, setActiveSection] = useState('');
@@ -311,6 +312,7 @@ const TermsOfUsePage = () => {
                     animation: fade-in 0.8s ease-out;
                 }
             `}</style>
+            <Footer />
         </div>
     );
 };

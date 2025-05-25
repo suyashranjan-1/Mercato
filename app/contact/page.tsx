@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ArrowRight, Calendar, Clock, CheckCircle, Mail, User, Building, MessageSquare, Sparkles, Menu, X } from "lucide-react";
 import { NavbarDemo } from "@/components/navbar";
+import Footer from "@/components/Footer";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -441,6 +442,7 @@ export default function ContactForm() {
           .text-6xl { font-size: 2rem; }
         }
       `}</style>
+      <Footer />
     </div>
   );
 }

@@ -1,13 +1,17 @@
 "use client";
+import Footer from "@/components/Footer";
 
 import React, { useState, useEffect, useRef } from 'react';
 import { NavbarDemo } from "@/components/navbar";
-import { ChevronRight, Shield, Lock, Eye, Globe, Clock, Users, FileText, AlertCircle, CheckCircle } from 'lucide-react';
+import { X, Menu, ChevronRight, Shield, Lock, Eye, Globe, Clock, Users, FileText, AlertCircle, CheckCircle } from 'lucide-react';
 
 const PrivacyPolicyPage = () => {
     const [activeSection, setActiveSection] = useState('');
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+    const footerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -15,13 +19,22 @@ const PrivacyPolicyPage = () => {
             const progress = (window.scrollY / totalHeight) * 100;
             setScrollProgress(progress);
 
+            // Check if footer is in view to hide sidebar
+            if (footerRef.current) {
+                const footerRect = footerRef.current.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                const isFooterVisible = footerRect.top < viewportHeight;
+                setIsSidebarVisible(!isFooterVisible);
+            }
+
+            // Update active section
             const sectionIds = sections.map(s => s.id);
             let current = sectionIds[0];
             for (const id of sectionIds) {
                 const el = document.getElementById(id);
                 if (el) {
                     const rect = el.getBoundingClientRect();
-                    if (rect.top <= 100) {
+                    if (rect.top <= 150) {
                         current = id;
                     }
                 }
@@ -30,6 +43,7 @@ const PrivacyPolicyPage = () => {
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Initial call
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -46,8 +60,14 @@ const PrivacyPolicyPage = () => {
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            const navHeight = 80; // Account for fixed navbar
+            const elementPosition = element.offsetTop - navHeight;
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
             setActiveSection(sectionId);
+            setIsMobileMenuOpen(false);
         }
     };
 
@@ -61,9 +81,19 @@ const PrivacyPolicyPage = () => {
                 <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
             </div>
 
-            {/* Navigation Sidebar */}
-            <div className="fixed left-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
-                <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4">
+            {/* Mobile Menu Button */}
+            <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="fixed top-20 left-4 z-50 lg:hidden bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-xl p-3 hover:bg-slate-700/80 transition-all duration-300"
+            >
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+
+            {/* Desktop Navigation Sidebar */}
+            <div className={`fixed left-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block transition-all duration-500 ${
+                isSidebarVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
+            }`}>
+                <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 shadow-2xl">
                     <nav className="space-y-2">
                         {sections.map((section) => {
                             const IconComponent = section.icon;
@@ -71,13 +101,17 @@ const PrivacyPolicyPage = () => {
                                 <button
                                     key={section.id}
                                     onClick={() => scrollToSection(section.id)}
-                                    className={`flex items-center space-x-3 w-full p-3 rounded-xl transition-all duration-300 group ${activeSection === section.id
-                                        ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                                        : 'hover:bg-slate-700/50 text-slate-400'
-                                        }`}
+                                    className={`flex items-center space-x-3 w-full p-3 rounded-xl transition-all duration-300 group relative overflow-hidden ${
+                                        activeSection === section.id
+                                            ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30 shadow-lg shadow-blue-500/20'
+                                            : 'hover:bg-slate-700/50 text-slate-400 hover:text-slate-200'
+                                    }`}
                                 >
-                                    <IconComponent className="w-4 h-4" />
-                                    <span className="text-sm font-medium hidden xl:block">{section.title}</span>
+                                    <IconComponent className="w-4 h-4 relative z-10" />
+                                    <span className="text-sm font-medium hidden xl:block relative z-10">{section.title}</span>
+                                    {activeSection === section.id && (
+                                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-emerald-500/10 rounded-xl animate-pulse" />
+                                    )}
                                 </button>
                             );
                         })}
@@ -527,7 +561,7 @@ const PrivacyPolicyPage = () => {
                 </section>
 
                 {/* Footer CTA */}
-                <div className="text-center py-16">
+                {/* <div className="text-center py-16">
                     <div className="inline-flex items-center px-6 py-2 mb-6 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-sm text-slate-300">
                         <Shield className="w-4 h-4 mr-2" />
                         Questions about your data?
@@ -541,7 +575,7 @@ const PrivacyPolicyPage = () => {
                     <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300">
                         Contact Privacy Team
                     </button>
-                </div>
+                </div> */}
             </div>
 
             <style jsx>{`
@@ -553,6 +587,7 @@ const PrivacyPolicyPage = () => {
           animation: fade-in 0.8s ease-out;
         }
       `}</style>
+      <Footer />
         </div>
     );
 };

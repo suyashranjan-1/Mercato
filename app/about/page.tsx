@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { NavbarDemo } from "@/components/navbar";
+import Footer from "@/components/Footer";
 
 export default function About() {
     const [activeTab, setActiveTab] = useState('vision');
@@ -469,6 +470,7 @@ export default function About() {
                     animation: glow 2s ease-in-out infinite;
                 }
             `}</style>
+            <Footer />
         </div>
     );
 }
