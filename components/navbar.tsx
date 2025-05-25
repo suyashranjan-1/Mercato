@@ -16,6 +16,7 @@ function FloatingNavbar({ className }: { className?: string }) {
   const [visible, setVisible] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const { scrollYProgress } = useScroll();
 
   // Check screen size on mount and resize
@@ -54,6 +55,7 @@ function FloatingNavbar({ className }: { className?: string }) {
       const target = event.target as Element;
       if (mobileMenuOpen && !target.closest('.mobile-menu-container')) {
         setMobileMenuOpen(false);
+        setExpandedSection(null);
       }
     };
 
@@ -72,16 +74,37 @@ function FloatingNavbar({ className }: { className?: string }) {
     {
       title: "Solutions",
       items: [
-        { name: "General Problem Solver", href: "/web-dev" },
-        { name: "Data Extractor", href: "/interface-design" },
-        { name: "Customer Service", href: "/seo" },
-        { name: "E-Commerce", href: "/seo" },
-        { name: "Sales", href: "/seo" },
-        { name: "Finance & Accounting", href: "/seo" },
-        { name: "Human Resources", href: "/seo" },
-        { name: "Others", href: "/seo" }
+        { name: "General Problem Solver", href: "/general-problem-solver" },
+        { name: "Data Extraction", href: "/data-extraction" },
+        { name: "Customer Service", href: "/customer-service" },
+        { name: "E-Commerce", href: "/ecommerce" },
+        { name: "Sales", href: "/sales" },
+        { name: "Human Resources", href: "/human-resources" },
+        { name: "Finance & Accounting", href: "/finance-accounting" },
+        { name: "Healthcare", href: "/healthcare" },
+        { name: "Legal", href: "/legal" },
+        { name: "Property Management", href: "/property-management" },
+        { name: "Insurance", href: "/insurance" },
+        { name: "Custom AI Agents", href: "/custom-ai-agents" }
+      ]
+      
+    },
+    {
+      title: "Social Media",
+      items: [
+        { name: "Instagram", href: "/social-media/instagram" },
+        { name: "Facebook", href: "/social-media/facebook" },
+        { name: "LinkedIn", href: "/social-media/linkedin" },
+        { name: "Twitter (X)", href: "/social-media/twitter" },
+        { name: "YouTube", href: "/social-media/youtube" },
+        { name: "TikTok", href: "/social-media/tiktok" },
+        // { name: "Pinterest", href: "/social-media/pinterest" },
+        // { name: "Reddit", href: "/social-media/reddit" },
+        // { name: "Snapchat", href: "/social-media/snapchat" },
+        // { name: "Threads", href: "/social-media/threads" }
       ]
     },
+    
     {
       title: "About",
       items: [
@@ -115,6 +138,23 @@ function FloatingNavbar({ className }: { className?: string }) {
       />
     </div>
   );
+
+  const ChevronIcon = ({ isExpanded }: { isExpanded: boolean }) => (
+    <motion.svg
+      animate={{ rotate: isExpanded ? 180 : 0 }}
+      transition={{ duration: 0.2 }}
+      className="w-4 h-4 text-white/70"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </motion.svg>
+  );
+
+  const toggleSection = (sectionTitle: string) => {
+    setExpandedSection(expandedSection === sectionTitle ? null : sectionTitle);
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -180,23 +220,23 @@ function FloatingNavbar({ className }: { className?: string }) {
             </div>
           )}
 
-          {/* Desktop Sign Up Button */}
+          {/* Desktop Login & Sign Up Buttons */}
           {!isMobile && (
             <motion.div
-              className="hidden md:flex items-center flex-shrink-0"
+              className="hidden md:flex items-center gap-3 flex-shrink-0"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.3 }}
             >
               <motion.button
-                className="relative inline-flex h-10 lg:h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="relative inline-flex h-10 lg:h-11 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-purple-400/50 focus:ring-offset-2 focus:ring-offset-transparent"
+                whileHover={{ scale: 1.02, y: -1 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
               >
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-6 lg:px-8 py-1 text-sm lg:text-base font-medium text-white backdrop-blur-3xl hover:bg-gray-900 transition-colors duration-200">
-                  Sign Up
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-6 lg:px-7 py-1 text-sm lg:text-base font-medium text-white backdrop-blur-3xl hover:bg-gray-900/80 transition-all duration-300">
+                  Login
                 </span>
               </motion.button>
             </motion.div>
@@ -215,7 +255,7 @@ function FloatingNavbar({ className }: { className?: string }) {
           )}
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu with Foldable Sections */}
         <AnimatePresence>
           {isMobile && mobileMenuOpen && (
             <motion.div
@@ -223,56 +263,81 @@ function FloatingNavbar({ className }: { className?: string }) {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              className="md:hidden bg-black/95 backdrop-blur-lg border-b border-white/10 mobile-menu-container max-h-[50vh] overflow-y-auto"
+              className="md:hidden bg-black/95 backdrop-blur-lg border-b border-white/10 mobile-menu-container max-h-[70vh] overflow-y-auto"
             >
-              <div className="px-4 py-4 space-y-4">
+              <div className="px-4 py-4 space-y-2">
                 {menuItems.map((menuItem, index) => (
                   <motion.div
                     key={menuItem.title}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.3 }}
-                    className="space-y-2"
+                    className="border-b border-white/10 last:border-b-0"
                   >
-                    <h3 className="text-white font-semibold text-base border-b border-white/20 pb-1">
-                      {menuItem.title}
-                    </h3>
-                    <div className="space-y-1 ml-3">
-                      {menuItem.items.map((item, itemIndex) => (
+                    {/* Foldable Section Header */}
+                    <motion.button
+                      className="w-full flex items-center justify-between py-3 px-2 text-white font-medium text-left hover:bg-white/5 transition-colors duration-200"
+                      onClick={() => toggleSection(menuItem.title)}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <span className="text-base">{menuItem.title}</span>
+                      <ChevronIcon isExpanded={expandedSection === menuItem.title} />
+                    </motion.button>
+
+                    {/* Collapsible Content */}
+                    <AnimatePresence>
+                      {expandedSection === menuItem.title && (
                         <motion.div
-                          key={item.name}
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: (index * 0.1) + (itemIndex * 0.05), duration: 0.2 }}
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2, ease: "easeInOut" }}
+                          className="overflow-hidden"
                         >
-                          <Link
-                            href={item.href}
-                            className="block text-gray-300 hover:text-white py-1.5 px-2 rounded-md hover:bg-white/10 transition-colors duration-200 text-sm"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
+                          <div className="pb-3 pl-4 space-y-1">
+                            {menuItem.items.map((item, itemIndex) => (
+                              <motion.div
+                                key={item.name}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: itemIndex * 0.05, duration: 0.2 }}
+                              >
+                                <Link
+                                  href={item.href}
+                                  className="block text-gray-300 hover:text-white py-2 px-3 rounded-md hover:bg-white/10 transition-colors duration-200 text-sm"
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setExpandedSection(null);
+                                  }}
+                                >
+                                  {item.name}
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
                         </motion.div>
-                      ))}
-                    </div>
+                      )}
+                    </AnimatePresence>
                   </motion.div>
                 ))}
 
-                {/* Mobile Sign Up Button */}
+                {/* Mobile Auth Buttons */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.3 }}
-                  className="pt-3 border-t border-white/20"
+                  className="pt-4 mt-4 border-t border-white/20 space-y-3"
                 >
+                  {/* Login Button - Primary */}
                   <motion.button
-                    className="w-full relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    whileTap={{ scale: 0.95 }}
+                    className="w-full relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-purple-400/50"
+                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: 1.01 }}
                     transition={{ duration: 0.2 }}
                   >
                     <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black text-sm font-medium text-white backdrop-blur-3xl">
-                      Sign Up
+                    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black text-base font-medium text-white backdrop-blur-3xl">
+                      Login 
                     </span>
                   </motion.button>
                 </motion.div>
