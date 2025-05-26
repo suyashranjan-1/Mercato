@@ -839,31 +839,42 @@ export default function SalesPage() {
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
                             <div className="relative z-10">
                                 <div className="mb-8">
-                                    <div className="inline-flex w-28 h-28 rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 items-center justify-center text-5xl mb-6 animate-pulse shadow-2xl">
-                                        🎯
+                                    <div className={`inline-flex w-28 h-28 rounded-3xl bg-gradient-to-r ${salesCategory.agents[currentAgentIndex].color} items-center justify-center text-5xl mb-6 animate-pulse shadow-2xl`}>
+                                        {salesCategory.agents[currentAgentIndex].icon}
                                     </div>
                                     <h3 className="text-4xl font-bold text-white mb-6">
-                                        Lead Hunter AI
+                                        {salesCategory.agents[currentAgentIndex].name}
                                     </h3>
                                     <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                                        Advanced AI agent that automatically identifies, qualifies, and nurtures high-quality leads through intelligent prospecting, behavioral analysis, and personalized outreach campaigns that convert prospects into customers.
+                                        {salesCategory.agents[currentAgentIndex].description}
                                     </p>
                                 </div>
 
                                 <div className="flex justify-center space-x-3 mb-8">
-                                    <span className="px-4 py-2 bg-slate-700/50 text-slate-300 rounded-full text-sm border border-slate-600/50">
-                                        Lead Generation
-                                    </span>
-                                    <span className="px-4 py-2 bg-slate-700/50 text-slate-300 rounded-full text-sm border border-slate-600/50">
-                                        Prospect Qualification
-                                    </span>
-                                    <span className="px-4 py-2 bg-slate-700/50 text-slate-300 rounded-full text-sm border border-slate-600/50">
-                                        Automated Outreach
-                                    </span>
+                                    {salesCategory.agents[currentAgentIndex].tags.map((tag, index) => (
+                                        <span key={index} className="px-4 py-2 bg-slate-700/50 text-slate-300 rounded-full text-sm border border-slate-600/50">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="flex justify-center space-x-2">
+                                    {salesCategory.agents.map((_, index) => (
+                                        <button
+                                            key={index}
+                                            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentAgentIndex
+                                                ? 'bg-blue-500 scale-125 shadow-lg shadow-blue-500/50'
+                                                : 'bg-slate-600 hover:bg-slate-500'
+                                                }`}
+                                            onClick={() => setCurrentAgentIndex(index)}
+                                        />
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {/* Agent Slider */}
+                    <AgentSlider category={salesCategory} />
                 </div>
             </section>
 
