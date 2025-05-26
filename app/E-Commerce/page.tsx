@@ -637,7 +637,7 @@ export default function EcommercePage() {
                 </div>
             </section>
 
-            {/* Healthcare History Section */}
+            {/* E-commerce History Section */}
                         <section id="history" className="relative w-full py-32 px-4 bg-gradient-to-r from-slate-900/50 to-slate-800/30">
                             <div className="max-w-7xl mx-auto">
                                 <div className="text-center mb-20">
