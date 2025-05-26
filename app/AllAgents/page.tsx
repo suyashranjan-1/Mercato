@@ -1201,6 +1201,17 @@ export default function AIAgentsPage() {
                     rating: "4.8",
                     usage: "14.3k",
                     speed: "Fast"
+                },
+                {
+                    "id": 28,
+                    "name": "Risk Assessment AI Agent",
+                    "description": "Evaluate risk profiles, identify potential vulnerabilities, and provide recommendations for risk mitigation strategies.",
+                    "icon": "📊",
+                    "color": "from-yellow-500 to-orange-600",
+                    "tags": ["Risk", "Assessment", "Mitigation"],
+                    "rating": "4.7",
+                    "usage": "10.8k",
+                    "speed": "Medium"
                 }
             ]
         },

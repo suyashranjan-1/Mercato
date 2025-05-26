@@ -29,15 +29,26 @@ const insuranceCategory: InsuranceCategory = {
     "description": "Revolutionary AI agents transforming claims processing, risk assessment, fraud detection, and customer service across the insurance industry.",
     "agents": [
         {
-            "id": 19,
-            "name": "Claims Processing AI Agent",
-            "description": "Automatically process insurance claims, verify documentation, assess damages, and expedite settlements with intelligent automation.",
-            "icon": "📋",
-            "color": "from-blue-500 to-indigo-600",
-            "tags": ["Claims", "Processing", "Automation"],
-            "rating": "4.9",
-            "usage": "18.7k",
-            "speed": "Ultra Fast"
+            id: 27,
+            name: "Insurance Claims AI Agent",
+            description: "Streamline claims processing with automated assessment, fraud detection, and policy verification for faster claim resolution.",
+            icon: "🏛️",
+            color: "from-indigo-500 to-blue-600",
+            tags: ["Claims", "Assessment", "Fraud Detection"],
+            rating: "4.8",
+            usage: "14.3k",
+            speed: "Fast"
+        },
+        {
+            "id": 28,
+            "name": "Risk Assessment AI Agent",
+            "description": "Evaluate risk profiles, identify potential vulnerabilities, and provide recommendations for risk mitigation strategies.",
+            "icon": "📊",
+            "color": "from-yellow-500 to-orange-600",
+            "tags": ["Risk", "Assessment", "Mitigation"],
+            "rating": "4.7",
+            "usage": "10.8k",
+            "speed": "Medium"
         }
     ]
 };
