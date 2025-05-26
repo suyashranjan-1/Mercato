@@ -29,70 +29,92 @@ const ecommerceCategory: EcommerceCategory = {
     "description": "Revolutionary shopping experiences powered by AI that boost conversions, personalize customer journeys, and maximize revenue with intelligent automation.",
     "agents": [
         {
-            "id": 1,
+            "id": 45,
             "name": "Product Recommendation AI Agent",
-            "description": "Delivers hyper-personalized product suggestions based on real-time behavior, purchase history, and predictive analytics to boost conversions by 67%.",
-            "icon": "🛒",
-            "color": "from-blue-500 to-indigo-600",
-            "tags": ["Personalization", "ML Recommendations", "Conversion Optimization"],
+            "description": "Increase conversions by delivering personalized product recommendations based on user behavior and preferences.",
+            "icon": "🛍️",
+            "color": "from-pink-500 to-rose-600",
+            "tags": ["Recommendation", "Personalization", "Conversion"],
             "rating": "4.9",
-            "usage": "28.5k",
-            "speed": "Real-time"
-        },
-        {
-            "id": 2,
-            "name": "Customer Support Chat Agent",
-            "description": "24/7 intelligent chat support that handles order inquiries, returns, product questions, and seamlessly escalates complex issues to human agents.",
-            "icon": "💬",
-            "color": "from-green-500 to-emerald-600",
-            "tags": ["Live Chat", "Order Support", "Multilingual"],
-            "rating": "4.8",
-            "usage": "45.2k",
+            "usage": "18.7k",
             "speed": "Instant"
         },
         {
-            "id": 3,
-            "name": "Inventory Forecasting Agent",
-            "description": "AI-powered demand prediction that optimizes stock levels, prevents stockouts, and reduces carrying costs with 94% accuracy forecasting.",
+            "id": 46,
+            "name": "Inventory Forecasting AI Agent",
+            "description": "Predict stock levels, avoid overstocking or understocking, and ensure timely restocking using historical sales data.",
             "icon": "📦",
-            "color": "from-purple-500 to-pink-600",
-            "tags": ["Inventory Management", "Demand Forecasting", "Supply Chain"],
-            "rating": "4.9",
-            "usage": "18.7k",
-            "speed": "Daily Updates"
-        },
-        {
-            "id": 4,
-            "name": "Price Optimization Agent",
-            "description": "Dynamic pricing AI that analyzes competitor prices, market demand, and customer behavior to maximize profit margins and sales velocity.",
-            "icon": "💰",
             "color": "from-yellow-500 to-orange-600",
-            "tags": ["Dynamic Pricing", "Competitive Analysis", "Revenue Optimization"],
-            "rating": "4.7",
-            "usage": "12.3k",
-            "speed": "Hourly"
-        },
-        {
-            "id": 5,
-            "name": "Review Analytics Agent",
-            "description": "Intelligent sentiment analysis and review monitoring that extracts actionable insights from customer feedback to improve products and service.",
-            "icon": "⭐",
-            "color": "from-teal-500 to-cyan-600",
-            "tags": ["Sentiment Analysis", "Review Management", "Customer Insights"],
+            "tags": ["Forecasting", "Inventory", "Logistics"],
             "rating": "4.8",
-            "usage": "22.1k",
-            "speed": "Real-time"
+            "usage": "13.4k",
+            "speed": "Fast"
         },
         {
-            "id": 6,
-            "name": "Abandoned Cart Recovery Agent",
-            "description": "Smart cart abandonment recovery with personalized email sequences, targeted offers, and behavioral triggers to recover 35% of lost sales.",
-            "icon": "🔄",
-            "color": "from-red-500 to-pink-600",
-            "tags": ["Cart Recovery", "Email Marketing", "Behavioral Analysis"],
+            "id": 47,
+            "name": "Customer Review Summarizer AI Agent",
+            "description": "Summarize product reviews to extract key sentiments and help customers quickly understand product pros and cons.",
+            "icon": "📝",
+            "color": "from-blue-500 to-indigo-600",
+            "tags": ["Reviews", "Summarization", "NLP"],
+            "rating": "4.7",
+            "usage": "10.2k",
+            "speed": "Medium"
+        },
+        {
+            "id": 48,
+            "name": "Order Tracking AI Agent",
+            "description": "Provide real-time order tracking updates and automated responses to customer delivery inquiries.",
+            "icon": "🚚",
+            "color": "from-green-500 to-emerald-600",
+            "tags": ["Order Tracking", "Logistics", "Support"],
+            "rating": "4.8",
+            "usage": "15.6k",
+            "speed": "Instant"
+        },
+        {
+            "id": 49,
+            "name": "Cart Abandonment Recovery AI Agent",
+            "description": "Recover lost sales by sending personalized follow-ups and discount offers to users who abandon their carts.",
+            "icon": "🛒",
+            "color": "from-violet-500 to-purple-600",
+            "tags": ["Recovery", "Abandoned Carts", "Sales"],
             "rating": "4.9",
-            "usage": "31.8k",
-            "speed": "Automated"
+            "usage": "17.1k",
+            "speed": "Fast"
+        },
+        {
+            "id": 50,
+            "name": "Price Optimization AI Agent",
+            "description": "Analyze market trends and competitor pricing to dynamically adjust product prices for maximum profit and competitiveness.",
+            "icon": "💲",
+            "color": "from-amber-500 to-yellow-600",
+            "tags": ["Pricing", "Optimization", "Analytics"],
+            "rating": "4.8",
+            "usage": "11.9k",
+            "speed": "Medium"
+        },
+        {
+            "id": 51,
+            "name": "E-commerce Chatbot AI Agent",
+            "description": "Engage with online shoppers using natural language to answer questions, recommend products, and assist with checkout.",
+            "icon": "🤖",
+            "color": "from-cyan-500 to-blue-600",
+            "tags": ["Chatbot", "Support", "Engagement"],
+            "rating": "4.9",
+            "usage": "20.3k",
+            "speed": "Instant"
+        },
+        {
+            "id": 52,
+            "name": "Return & Refund AI Agent",
+            "description": "Automate return and refund processes, ensure policy compliance, and provide quick resolutions to customer issues.",
+            "icon": "↩️",
+            "color": "from-red-500 to-rose-600",
+            "tags": ["Returns", "Refunds", "Automation"],
+            "rating": "4.7",
+            "usage": "9.8k",
+            "speed": "Fast"
         }
     ]
 };
@@ -598,7 +620,7 @@ export default function EcommercePage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                            Data Extraction AI is <span className="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">Transforming Industries</span>
+                        E-commerce AI is <span className="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">Transforming Industries</span>
                         </h2>
                     </div>
 
@@ -621,17 +643,18 @@ export default function EcommercePage() {
                                 <div className="text-center mb-20">
                                     <div className="inline-flex items-center px-6 py-3 mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-sm text-slate-300">
                                         <Clock className="w-5 h-5 mr-3 text-blue-400" />
-                                        Data Extraction Timeline
+                                        E-commerce Timeline
                                     </div>
             
                                     <h2 className="text-5xl md:text-7xl font-bold max-w-6xl mx-auto mb-8 leading-tight">
-                                    From Manual Data Entry to <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">AI-Powered Data Extraction</span>
+                                    From Manual Processes to <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                                    AI-Powered E-commerce Operations</span>
                                     </h2>
             
                                     <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                                    Data handling has evolved dramatically — from error-prone manual entry and spreadsheet overload to today’s intelligent, 
-                                    AI-driven data extraction systems. 
-                                    Discover how AI agents are transforming the way businesses collect, extract, and utilize data across industries.
+                                    E-commerce used to rely heavily on manual work — uploading products, adjusting prices, managing inventory, 
+                                    and handling customer queries. 
+                                    Now, AI agents have automated these tasks, eliminating human errors and making operations faster, smarter, and more efficient.
                                     </p>
                                 </div>
             
@@ -645,16 +668,15 @@ export default function EcommercePage() {
                                                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4">
                                                     <Brain className="w-6 h-6 text-white" />
                                                 </div>
-                                                <h3 className="text-2xl font-bold text-white">The AI Data Extraction Revolution</h3>
+                                                <h3 className="text-2xl font-bold text-white">The E-commerce AI Revolution</h3>
                                             </div>
                                             <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                            In a world overflowing with unstructured information, Data Extraction AI Agents are transforming how businesses unlock insights and drive decisions. 
-                                            What once took hours of manual labor — parsing documents, pulling values from PDFs, emails, databases, 
-                                            and websites — now happens in seconds with intelligent, automated precision.
+                                            AI agents are now at the core of modern e-commerce. 
+                                            From intelligent product recommendations and real-time customer support to dynamic pricing and sentiment analysis — 
+                                            these agents personalize the shopping experience and streamline backend operations.
                                             </p>
                                             <p className="text-slate-400 text-lg leading-relaxed">
-                                            From scraping web content to extracting financial data from invoices or pulling insights from customer reviews, 
-                                            these agents aren’t just fast — they’re accurate, scalable, and context-aware.
+                                            They understand user behavior, automate decision-making, and help businesses scale effortlessly.
                                             </p>
                                         </div>
             
@@ -663,12 +685,15 @@ export default function EcommercePage() {
                                                 <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                                     <TrendingUp className="w-6 h-6 text-white" />
                                                 </div>
-                                                <h3 className="text-2xl font-bold text-white">What's Next?</h3>
+                                                <h3 className="text-2xl font-bold text-white">What's Next in E-commerce AI?</h3>
                                             </div>
                                             <p className="text-slate-400 text-lg leading-relaxed">
-                                            The future of data extraction lies in autonomous AI pipelines — agents that not only extract data, but understand its context, 
-                                            enrich it with external sources, and trigger downstream actions automatically. Imagine AI that reads an invoice, 
-                                            verifies it against purchase orders, updates your system, and alerts finance — all without human intervention.
+                                            The future of e-commerce lies in fully autonomous AI pipelines.
+                                            </p>
+                                            <p className="text-slate-400 text-lg leading-relaxed">
+                                            Imagine AI agents that discover trending products, launch optimized ad campaigns, 
+                                            manage returns, and improve customer journeys — all without human intervention. 
+                                            From product discovery to final delivery, AI will power the entire e-commerce workflow.
                                             </p>
                                         </div>
                                     </div>
@@ -686,12 +711,14 @@ export default function EcommercePage() {
                                     </div>
             
                                     <h2 className="text-5xl md:text-7xl font-bold max-w-6xl mx-auto mb-8 leading-tight">
-                                    Why Data Extraction AI Agents Are <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">Game Changers</span>
+                                    Why E-commerce AI Agents Are <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">Game Changers</span>
                                     </h2>
             
                                     <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                                    Discover how AI-powered Data Extraction Agents are revolutionizing how organizations handle information. These aren’t just tools — they’re intelligent, 
-                                    always-on experts designed to pull value from data chaos and deliver real-time insights that power decisions, automation, and growth.
+                                    E-commerce AI Agents are revolutionizing online retail. These aren’t just bots — 
+                                    they’re intelligent systems that analyze behavior, automate operations, and drive growth. 
+                                    From personalized shopping experiences to real-time decision-making, 
+                                    AI agents are helping brands scale faster, sell smarter, and operate leaner.
                                     </p>
                                 </div>
             
@@ -737,13 +764,13 @@ export default function EcommercePage() {
                                     </div>
             
                                     <h2 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto mb-8 leading-tight">
-                                        Meet Your <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Data Extraction AI Team</span> Team
+                                        Meet Your <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">E-commerce AI Team</span> Team
                                     </h2>
             
                                     <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                                    Specialized AI agents designed to redefine support — delivering fast, personalized, 
-                                    and 24/7 customer service across platforms, industries, and languages. From automating responses to intelligently routing issues, 
-                                    these AI agents eliminate bottlenecks, reduce ticket volume, and boost customer satisfaction by over 90%.
+                                    Your AI-powered retail crew works 24/7 — understanding customers, optimizing product listings, 
+                                    adjusting prices in real-time, and handling queries instantly. Whether it’s an AI chatbot that converts, 
+                                    or a recommendation engine that increases order value, these agents are built to enhance customer journeys and maximize ROI.
                                     </p>
                                 </div>
             
@@ -813,8 +840,9 @@ export default function EcommercePage() {
                                     </h2>
             
                                     <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                                    Our AI Data Extraction Agents are engineered for impact. From boosting satisfaction to slashing response times, 
-                                    they deliver tangible results that drive business growth and operational efficiency — all while enhancing the data extraction experience.
+                                    Our AI E-commerce Agents are engineered for impact. From boosting satisfaction to slashing response times, 
+                                    they deliver tangible results that drive business growth and operational efficiency — 
+                                    all while enhancing the e-commerce experience.
                                     </p>
                                 </div>
             
@@ -834,11 +862,11 @@ export default function EcommercePage() {
             
                                 <div className="bg-gradient-to-r from-green-900/20 to-emerald-900/20 backdrop-blur-sm border border-green-700/30 rounded-3xl p-12 text-center">
                                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                                        Average ROI: <span className="text-green-400">210% in First Year</span>
+                                        Average ROI: <span className="text-green-400">350% in First Year</span>
                                     </h3>
                                     <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-8">
-                                    Organizations leveraging our Customer Service AI Agents experience an
-                                     average return of $2.10 for every dollar invested, thanks to rapid resolution cycles, 
+                                    Organizations leveraging our E-commerce AI Agents experience an
+                                     average return of $3.50 for every dollar invested, thanks to rapid resolution cycles, 
                                     intelligent automation, and strategic insights that
                                     </p>
                                     {/* <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105">
@@ -853,11 +881,12 @@ export default function EcommercePage() {
                             <div className="max-w-7xl mx-auto">
                                 <div className="text-center mb-20">
                                     <h2 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto mb-8 leading-tight">
-                                    Ready to Transform the Way You <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Solve Problems?</span>
+                                    Ready to Transform Your <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">E-commerce Strategy?</span>
                                     </h2>
                                     <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                                    Join thousands of forward-thinking organizations already using AI agents to tackle their toughest challenges, 
-                                    streamline operations, and unlock new growth opportunities.
+                                    Join leading D2C brands and global marketplaces already using AI agents to optimize customer experience, 
+                                    reduce costs, and unlock powerful growth —
+                                     from storefront to supply chain.
                                     </p>
                                 </div>
             
@@ -912,7 +941,7 @@ export default function EcommercePage() {
                                         </div>
                                     </div>
             
-                                    <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
+                                    {/* <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
                                         <h3 className="text-2xl font-bold text-white mb-6">Request a Demo</h3>
                                         <form className="space-y-6">
                                             <div>
@@ -956,7 +985,7 @@ export default function EcommercePage() {
                                                 Schedule Demo
                                             </button>
                                         </form>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </section>
