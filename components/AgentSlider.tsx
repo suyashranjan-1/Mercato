@@ -104,7 +104,7 @@ const AgentCard = ({
                         onClick={handleTryNow}
                         className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-400 rounded-lg hover:bg-gradient-to-r hover:from-blue-600/30 hover:to-purple-600/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 transform-gpu"
                     >
-                        <span className="text-sm font-medium">Try Now</span>
+                        <span className="text-sm font-medium">Demo</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </button>
                 </div>
