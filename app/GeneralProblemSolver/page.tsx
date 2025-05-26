@@ -31,15 +31,257 @@ const problemSolvingCategory: ProblemSolvingCategory = {
     "agents": [
         {
             "id": 1,
-            "name": "Strategic Analysis AI Agent",
-            "description": "Analyze complex business problems, identify root causes, and provide data-driven strategic recommendations.",
-            "icon": "🎯",
-            "color": "from-blue-500 to-indigo-600",
-            "tags": ["Strategy", "Analysis", "Decision Making"],
-            "rating": "4.8",
-            "usage": "12.3k",
+            "name": "Universal Problem Solver",
+            "description": "Advanced AI agent capable of analyzing complex problems across multiple domains and providing actionable solutions with detailed reasoning.",
+            "icon": "🧠",
+            "color": "from-blue-500 to-purple-600",
+            "tags": ["Problem Solving", "Analysis", "Multi-domain"],
+            "rating": "4.9",
+            "usage": "12.5k",
             "speed": "Fast"
         },
+        {
+            "id": 2,
+            "name": "Task Automation AI Agent",
+            "description": "Streamline your workflow by automating repetitive tasks and optimizing business processes with intelligent task management.",
+            "icon": "⚡",
+            "color": "from-emerald-500 to-blue-600",
+            "tags": ["Automation", "Workflow", "Efficiency"],
+            "rating": "4.8",
+            "usage": "8.3k",
+            "speed": "Ultra Fast"
+        },
+        {
+            "id": 3,
+            "name": "Smart Decision Maker",
+            "description": "Make informed decisions with AI-powered analysis that evaluates multiple factors and provides recommendations.",
+            "icon": "🎯",
+            "color": "from-orange-500 to-red-600",
+            "tags": ["Decision Making", "Analysis", "Strategy"],
+            "rating": "4.7",
+            "usage": "6.8k",
+            "speed": "Fast"
+        },
+        {
+            "id": 44,
+            "name": "Customer Service AI Agent",
+            "description": "Automate and personalize customer support with 24/7 AI-driven interaction.",
+            "icon": "💬",
+            "color": "from-blue-400 to-indigo-500",
+            "tags": ["Customer Support", "Chatbot", "Service"],
+            "rating": "4.8",
+            "usage": "14.2k",
+            "speed": "Fast"
+        },
+        {
+            "id": 45,
+            "name": "Data Extraction AI Agent",
+            "description": "Extract structured data from unstructured documents like PDFs, emails, and reports.",
+            "icon": "📄",
+            "color": "from-teal-500 to-cyan-600",
+            "tags": ["Data Extraction", "OCR", "Documents"],
+            "rating": "4.7",
+            "usage": "10.9k",
+            "speed": "Medium"
+        },
+        {
+            "id": 46,
+            "name": "Email Categorization & Triage AI Agent",
+            "description": "Organize and prioritize incoming emails for better workflow efficiency.",
+            "icon": "📧",
+            "color": "from-green-400 to-blue-500",
+            "tags": ["Email", "Productivity", "Categorization"],
+            "rating": "4.6",
+            "usage": "9.3k",
+            "speed": "Fast"
+        },
+        {
+            "id": 47,
+            "name": "Appointment Management AI Agent",
+            "description": "Automatically schedule, reschedule, and send reminders for appointments.",
+            "icon": "📆",
+            "color": "from-indigo-500 to-blue-600",
+            "tags": ["Calendar", "Scheduling", "Productivity"],
+            "rating": "4.7",
+            "usage": "8.5k",
+            "speed": "Fast"
+        },
+        {
+            "id": 48,
+            "name": "Interview Scheduler AI Agent",
+            "description": "Coordinate interview times between candidates and recruiters efficiently.",
+            "icon": "🗓️",
+            "color": "from-purple-500 to-pink-500",
+            "tags": ["HR", "Scheduling", "Interviews"],
+            "rating": "4.8",
+            "usage": "7.4k",
+            "speed": "Medium"
+        },
+        {
+            "id": 49,
+            "name": "Data Entry AI Agent",
+            "description": "Automate repetitive data entry tasks with high speed and accuracy.",
+            "icon": "⌨️",
+            "color": "from-gray-500 to-blue-500",
+            "tags": ["Data Entry", "Automation", "Efficiency"],
+            "rating": "4.6",
+            "usage": "13.1k",
+            "speed": "Ultra Fast"
+        },
+        {
+            "id": 50,
+            "name": "Billing Management AI Agent",
+            "description": "Handle invoices, billing cycles, and payment reminders seamlessly.",
+            "icon": "🧾",
+            "color": "from-amber-500 to-orange-500",
+            "tags": ["Billing", "Finance", "Automation"],
+            "rating": "4.7",
+            "usage": "10.3k",
+            "speed": "Fast"
+        },
+        {
+            "id": 51,
+            "name": "Transaction Monitoring AI Agent",
+            "description": "Detect and report suspicious transactions in real time.",
+            "icon": "💳",
+            "color": "from-red-500 to-pink-600",
+            "tags": ["Finance", "Fraud Detection", "Monitoring"],
+            "rating": "4.9",
+            "usage": "11.7k",
+            "speed": "Instant"
+        },
+        {
+            "id": 52,
+            "name": "Budget Management AI Agent",
+            "description": "Track expenses, analyze budgets, and suggest savings opportunities.",
+            "icon": "📊",
+            "color": "from-lime-500 to-green-600",
+            "tags": ["Budget", "Finance", "Tracking"],
+            "rating": "4.8",
+            "usage": "9.6k",
+            "speed": "Fast"
+        },
+        {
+            "id": 53,
+            "name": "Document Review AI Agent",
+            "description": "Analyze and summarize lengthy documents with legal or technical content.",
+            "icon": "📚",
+            "color": "from-blue-600 to-indigo-700",
+            "tags": ["Documents", "Review", "Summarization"],
+            "rating": "4.6",
+            "usage": "7.2k",
+            "speed": "Medium"
+        },
+        {
+            "id": 54,
+            "name": "Contract Management AI Agent",
+            "description": "Automate contract lifecycle management and compliance monitoring.",
+            "icon": "📝",
+            "color": "from-gray-600 to-blue-700",
+            "tags": ["Contracts", "Legal", "Compliance"],
+            "rating": "4.8",
+            "usage": "8.6k",
+            "speed": "Fast"
+        },
+        {
+            "id": 55,
+            "name": "Data Collection AI Agent",
+            "description": "Collect structured and unstructured data from multiple sources automatically.",
+            "icon": "🔍",
+            "color": "from-purple-400 to-blue-500",
+            "tags": ["Data", "Automation", "Collection"],
+            "rating": "4.7",
+            "usage": "11.0k",
+            "speed": "Medium"
+        },
+        {
+            "id": 56,
+            "name": "Invoice Processing AI Agent",
+            "description": "Extract and process data from invoices with automated validation.",
+            "icon": "🧮",
+            "color": "from-pink-400 to-red-500",
+            "tags": ["Invoices", "Finance", "Processing"],
+            "rating": "4.9",
+            "usage": "10.8k",
+            "speed": "Fast"
+        },
+        {
+            "id": 57,
+            "name": "Payroll Calculation AI Agent",
+            "description": "Calculate employee salaries, tax deductions, and generate payslips.",
+            "icon": "💼",
+            "color": "from-yellow-400 to-orange-500",
+            "tags": ["Payroll", "HR", "Finance"],
+            "rating": "4.8",
+            "usage": "9.1k",
+            "speed": "Medium"
+        },
+        {
+            "id": 58,
+            "name": "Legal Document Classifier AI Agent",
+            "description": "Automatically categorize legal documents for faster retrieval and compliance.",
+            "icon": "⚖️",
+            "color": "from-indigo-600 to-blue-700",
+            "tags": ["Legal", "Classification", "AI"],
+            "rating": "4.7",
+            "usage": "6.4k",
+            "speed": "Fast"
+        },
+        {
+            "id": 59,
+            "name": "Social Media Content AI Agent",
+            "description": "Create, schedule, and analyze social media content using AI.",
+            "icon": "📱",
+            "color": "from-pink-500 to-yellow-500",
+            "tags": ["Social Media", "Content", "Marketing"],
+            "rating": "4.8",
+            "usage": "13.2k",
+            "speed": "Fast"
+        },
+        {
+            "id": 60,
+            "name": "ETL (Extract, Transform, Load) AI Agent",
+            "description": "Automate ETL pipelines for seamless data migration and analytics workflows.",
+            "icon": "🔄",
+            "color": "from-green-500 to-teal-600",
+            "tags": ["ETL", "Data", "Pipeline"],
+            "rating": "4.7",
+            "usage": "7.8k",
+            "speed": "Fast"
+        },
+        {
+            "id": 61,
+            "name": "RFP AI Agent",
+            "description": "Generate, evaluate, and respond to Requests for Proposals using AI.",
+            "icon": "📌",
+            "color": "from-red-500 to-orange-600",
+            "tags": ["RFP", "Bidding", "Automation"],
+            "rating": "4.6",
+            "usage": "6.2k",
+            "speed": "Medium"
+        },
+        {
+            "id": 62,
+            "name": "Loan Processing AI Agent",
+            "description": "Automate credit assessment, documentation, and loan approval workflows.",
+            "icon": "🏦",
+            "color": "from-blue-400 to-indigo-500",
+            "tags": ["Loans", "Finance", "Automation"],
+            "rating": "4.7",
+            "usage": "9.5k",
+            "speed": "Fast"
+        },
+        {
+            "id": 63,
+            "name": "Suspicious Activity Reporting AI Agent",
+            "description": "Identify and report suspicious activities for regulatory compliance.",
+            "icon": "🚨",
+            "color": "from-red-600 to-pink-600",
+            "tags": ["Compliance", "Monitoring", "Security"],
+            "rating": "4.9",
+            "usage": "8.8k",
+            "speed": "Fast"
+        }
     ]
 };
 
@@ -734,11 +976,11 @@ export default function ProblemSolvingPage() {
                     {/* Agent Slider */}
                     <AgentSlider category={problemSolvingCategory} />
 
-                    <div className="text-center">
+                    {/* <div className="text-center">
                         <button className="px-10 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-slate-100 hover:shadow-2xl hover:shadow-white/10 transform hover:scale-105 transition-all duration-300 text-lg">
                             Explore All {problemSolvingCategory.agents.length} AI Agents
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
@@ -784,9 +1026,9 @@ export default function ProblemSolvingPage() {
                          average return of $4.30 for every dollar invested, thanks to rapid resolution cycles, 
                         intelligent automation, and strategic insights that
                         </p>
-                        <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105">
+                        {/* <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105">
                             Calculate Your ROI
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </section>
@@ -855,7 +1097,10 @@ export default function ProblemSolvingPage() {
                             </div>
                         </div>
 
-                        <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
+
+                        {/* Demo Form section  */}
+
+                        {/* <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
                             <h3 className="text-2xl font-bold text-white mb-6">Request a Demo</h3>
                             <form className="space-y-6">
                                 <div>
@@ -899,7 +1144,7 @@ export default function ProblemSolvingPage() {
                                     Schedule Demo
                                 </button>
                             </form>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
