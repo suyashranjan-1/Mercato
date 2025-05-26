@@ -536,7 +536,7 @@ export default function HealthcarePage() {
             
             
             // Navbar Component
-<NavbarDemo />
+            <NavbarDemo />
             <FloatingElements />
 
             {/* Hero Section */}
