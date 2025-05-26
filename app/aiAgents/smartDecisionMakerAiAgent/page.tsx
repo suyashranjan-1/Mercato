@@ -4,13 +4,13 @@ import { MessageCircle, Clock, Users, Star, CheckCircle, ArrowRight, Bot, Headph
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 
-export default function BillingManagementAIAgent() {
+export default function SmartDecisionMakerAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [visibleSections, setVisibleSections] = useState(new Set());
     const [activeStep, setActiveStep] = useState(0);
     const observerRef = useRef<IntersectionObserver | null>(null);
-
+    
     useEffect(() => {
         setIsVisible(true);
 
@@ -46,152 +46,158 @@ export default function BillingManagementAIAgent() {
             clearInterval(stepInterval);
         };
     }, []);
-
+    
+    // Stats relevant to Smart Decision Maker AI Agent
     const stats = [
-        { label: 'Invoice Processing Time', value: '<3s/invoice', icon: Clock, color: 'from-blue-500 to-cyan-500' },
-        { label: 'Billing Accuracy', value: '99.99%', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
-        { label: 'Automated Payments', value: '98%', icon: Star, color: 'from-yellow-500 to-orange-500' },
-        { label: 'System Uptime', value: '99.99%', icon: Zap, color: 'from-purple-500 to-pink-500' },
+        { label: 'Avg Decision Time', value: '<2s', icon: Clock, color: 'from-blue-500 to-cyan-500' },
+        { label: 'Accuracy (in A/B tests)', value: '99.2%', icon: Star, color: 'from-yellow-500 to-orange-500' },
+        { label: 'Automated Decisions', value: '1M+/day', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
+        { label: 'System Uptime', value: '99.999%', icon: Zap, color: 'from-purple-500 to-pink-500' },
     ];
 
+    // Smart Decision Maker Features (SEO optimized)
     const features = [
         {
-            title: 'Automated Invoice Generation',
-            description: 'Create and send invoices instantly with AI-driven extraction from service logs, contracts, and order systems.',
-            icon: Zap,
+            title: 'Automated Decision Intelligence',
+            description: 'Make complex business decisions instantly using AI-driven data analysis, pattern recognition, and predictive analytics.',
+            icon: Brain,
             gradient: 'from-blue-500 to-cyan-500'
         },
         {
-            title: 'Payment Reminders & Tracking',
-            description: 'AI monitors due dates and sends smart reminders to clients, reducing late payments.',
-            icon: MessageCircle,
+            title: 'Multi-Source Data Fusion',
+            description: 'Aggregate and analyze structured & unstructured data from ERP, CRM, IoT, and cloud sources for holistic decisions.',
+            icon: Database,
             gradient: 'from-purple-500 to-pink-500'
         },
         {
-            title: 'Fraud Detection',
-            description: 'Real-time anomaly detection and flagging for suspicious billing activities or duplicate charges.',
-            icon: Shield,
+            title: 'Scenario Simulation',
+            description: 'Run “what-if” simulations to forecast outcomes and mitigate risks before executing critical decisions.',
+            icon: BarChart3,
             gradient: 'from-emerald-500 to-teal-500'
         },
         {
-            title: 'Multi-Currency & Tax Handling',
-            description: 'Automatically applies correct taxes and currency conversions for global billing.',
-            icon: Globe,
+            title: 'Explainable AI',
+            description: 'Transparent, auditable decision logic — every AI decision comes with clear rationale and regulatory compliance.',
+            icon: Shield,
             gradient: 'from-orange-500 to-red-500'
         },
         {
-            title: 'Recurring Billing Automation',
-            description: 'Automates subscription, SaaS, and retainer billing cycles, reducing manual workload.',
-            icon: Database,
+            title: 'Human-in-the-Loop Options',
+            description: 'Seamlessly involve human experts for oversight, overrides, and ethical decision-making at key checkpoints.',
+            icon: Users,
             gradient: 'from-indigo-500 to-purple-500'
         },
         {
-            title: 'Analytics Dashboard',
-            description: 'Visualize revenue, outstanding payments, and cash flow with actionable insights.',
-            icon: BarChart3,
+            title: 'Real-Time Alerting',
+            description: 'Instant notifications for anomalies, urgent business events, or compliance thresholds being crossed.',
+            icon: Zap,
             gradient: 'from-pink-500 to-rose-500'
         },
         {
-            title: 'Secure Payment Integrations',
-            description: 'Supports Stripe, PayPal, ACH, credit cards, and more with PCI DSS compliance.',
+            title: 'Self-Learning Algorithms',
+            description: 'Continuously improves decision accuracy based on live feedback, business outcomes, and user corrections.',
             icon: Cpu,
             gradient: 'from-rose-500 to-pink-500'
         },
         {
-            title: 'Customer Self-Service Portal',
-            description: 'Clients can view statements, pay invoices, and download receipts 24/7.',
-            icon: Users,
+            title: 'Custom Policy Engine',
+            description: 'Define, update, and enforce business rules and governance policies for consistent, rule-based automation.',
+            icon: Settings,
             gradient: 'from-amber-500 to-orange-500'
         }
     ];
 
+    // Smart Decision Maker - How It Works
     const howItWorks = [
         {
             step: 1,
-            title: 'Invoice Data Collection',
-            description: 'AI gathers billing data from integrated sources (ERP, CRM, order systems).',
-            icon: MessageSquare,
+            title: 'Data Ingestion',
+            description: 'Connects instantly to your business databases, APIs, and live data feeds to gather all relevant decision data.',
+            icon: Database,
             color: 'from-blue-500 to-cyan-500'
         },
         {
             step: 2,
-            title: 'Automated Invoice Creation',
-            description: 'System generates detailed, accurate invoices and applies relevant taxes/currencies.',
+            title: 'AI Analysis & Simulation',
+            description: 'Runs advanced ML models, pattern analysis, and simulates multiple scenarios for risk and outcome prediction.',
             icon: Brain,
             color: 'from-purple-500 to-pink-500'
         },
         {
             step: 3,
-            title: 'Delivery & Payment Tracking',
-            description: 'Invoices sent via email/portal; AI monitors payment status and sends reminders.',
-            icon: Mail,
+            title: 'Decision Recommendation',
+            description: 'Presents optimal actions with confidence scores, rationale, and optional human approval for mission-critical steps.',
+            icon: Cpu,
             color: 'from-emerald-500 to-teal-500'
         },
         {
             step: 4,
-            title: 'Analytics & Compliance',
-            description: 'All transactions are logged, analyzed, and reported for compliance and audits.',
-            icon: BarChart3,
+            title: 'Execution & Feedback Loop',
+            description: 'Executes approved decisions and learns from real-world outcomes to fine-tune future recommendations.',
+            icon: CheckCircle,
             color: 'from-orange-500 to-red-500'
         }
     ];
 
+    // Integrations for Decision Automation
     const integrations = [
-        { name: 'Stripe', category: 'Payments', logo: '💳' },
-        { name: 'PayPal', category: 'Payments', logo: '🅿️' },
-        { name: 'QuickBooks', category: 'Accounting', logo: '💵' },
-        { name: 'Xero', category: 'Accounting', logo: '📘' },
-        { name: 'SAP', category: 'ERP', logo: '🗄️' },
-        { name: 'Oracle', category: 'ERP', logo: '🧮' },
-        { name: 'FreshBooks', category: 'Accounting', logo: '🍃' },
-        { name: 'Zoho Books', category: 'Accounting', logo: '📒' },
-        { name: 'Plaid', category: 'Banking', logo: '🏦' },
-        { name: 'Salesforce', category: 'CRM', logo: '🏢' },
-        { name: 'Shopify', category: 'E-commerce', logo: '🛒' },
-        { name: 'NetSuite', category: 'ERP', logo: '🔗' },
-        { name: 'Square', category: 'Payments', logo: '⬛' },
-        { name: 'Braintree', category: 'Payments', logo: '🅱️' },
-        { name: 'Custom API', category: 'Integration', logo: '🔌' },
-        { name: 'Google Sheets', category: 'Spreadsheet', logo: '📊' },
+        { name: 'SAP', category: 'ERP', logo: '🏢' },
+        { name: 'Oracle', category: 'ERP', logo: '🔮' },
+        { name: 'Salesforce', category: 'CRM', logo: '📈' },
+        { name: 'Microsoft Dynamics', category: 'CRM', logo: '👥' },
+        { name: 'AWS', category: 'Cloud', logo: '☁️' },
+        { name: 'Azure', category: 'Cloud', logo: '🌐' },
+        { name: 'Google Cloud', category: 'Cloud', logo: '🔗' },
+        { name: 'Snowflake', category: 'Data', logo: '❄️' },
+        { name: 'Kafka', category: 'Streaming', logo: '💡' },
+        { name: 'Slack', category: 'Notifications', logo: '💬' },
+        { name: 'Tableau', category: 'Analytics', logo: '📊' },
+        { name: 'Power BI', category: 'Analytics', logo: '📉' },
+        { name: 'Zapier', category: 'Workflow', logo: '⚡' },
+        { name: 'Jira', category: 'Project', logo: '🔖' },
+        { name: 'ServiceNow', category: 'ITSM', logo: '🛠️' },
+        { name: 'Twilio', category: 'Alerting', logo: '📲' },
     ];
 
+    // Channels for Decision Notifications
     const channels = [
-        { name: 'Web Dashboard', icon: MessageCircle, description: 'Manage all billing activities in one place' },
-        { name: 'Email Delivery', icon: Mail, description: 'Invoices and reminders sent automatically to clients' },
-        { name: 'Self-Service Portal', icon: Users, description: 'Clients pay, download, and view bills 24/7' },
-        { name: 'Mobile App', icon: Smartphone, description: 'Monitor and manage billing on the go' }
+        { name: 'Slack Alerts', icon: MessageCircle, description: 'Get real-time decision notifications in Slack channels.' },
+        { name: 'Email Reports', icon: Mail, description: 'Automated decision logs and rationale sent to your inbox.' },
+        { name: 'SMS Alerts', icon: Phone, description: 'Instant SMS notifications for urgent actions.' },
+        { name: 'Mobile App', icon: Smartphone, description: 'Approve, override, or review decisions on the go.' }
     ];
 
+    // Business Benefits for SEO
     const benefits = [
         {
-            title: 'Faster Payments',
-            description: 'Accelerate cash flow with real-time reminders and easy payment options.',
-            percentage: '2x',
-            metric: 'payment speed'
+            title: 'Accelerate Business Outcomes',
+            description: 'Reduce decision cycles from days to seconds for mission-critical operations.',
+            percentage: '95%',
+            metric: 'faster execution'
         },
         {
-            title: 'Reduce Errors',
-            description: 'AI validation eliminates manual mistakes and duplicate invoices.',
-            percentage: '99.99%',
-            metric: 'accuracy'
+            title: 'Reduce Risk & Bias',
+            description: 'Consistent, data-driven decisions minimize human error and cognitive bias.',
+            percentage: '83%',
+            metric: 'risk reduction'
         },
         {
-            title: 'Lower Costs',
-            description: 'Decrease administrative workload and save up to 70% on billing operations.',
-            percentage: '70%',
-            metric: 'cost savings'
+            title: 'Maximize ROI',
+            description: 'Optimize resource allocation and seize revenue opportunities at optimal timing.',
+            percentage: '3.4x',
+            metric: 'average ROI'
         },
         {
-            title: 'Improve Compliance',
-            description: 'Automatic audit trails and tax calculations keep you compliant everywhere.',
+            title: 'Enforce Compliance',
+            description: 'Automatically enforce regulatory and corporate policies across all automated decisions.',
             percentage: '100%',
-            metric: 'compliance'
+            metric: 'policy adherence'
         },
         {
-            title: 'Delight Customers',
-            description: 'Clients enjoy 24/7 access, clear statements, and flexible payment methods.',
-            percentage: '90%',
-            metric: 'customer satisfaction'
+            title: 'Scale Decision-Making',
+            description: 'Support thousands of automated decisions per second, across teams and geographies.',
+            percentage: '∞',
+            metric: 'scalability'
         }
     ];
 
@@ -232,12 +238,12 @@ export default function BillingManagementAIAgent() {
                 <div className={`w-full max-w-7xl mx-auto text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300 hover:border-slate-600/50 transition-all duration-300">
                         <Bot className="w-4 h-4 mr-2 text-blue-400 animate-pulse" />
-                        AI-Powered Billing Management
+                        AI-Powered Decision Making
                         <div className="ml-2 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent leading-tight">
-                        Billing Management
+                        Smart Decision Maker
                         <br />
                         <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-glow">
                             AI Agent
@@ -245,12 +251,12 @@ export default function BillingManagementAIAgent() {
                     </h1>
 
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-                        Automate invoicing, payment tracking, reminders, and compliance. Accelerate revenue collection, reduce errors, and delight customers with 24/7 self-service—all secured by enterprise-grade AI.
+                        Revolutionize your business operations with AI-powered decision making that is fast, transparent, and data-driven. Make smarter choices, faster—across any process, any department, any scale.
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
-                            Launch Billing AI
+                            Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
@@ -272,10 +278,10 @@ export default function BillingManagementAIAgent() {
                                         <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full animate-pulse"></div>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold">Billing Management AI Agent</h3>
+                                        <h3 className="text-lg font-semibold">Smart Decision Maker AI Agent</h3>
                                         <div className="text-slate-400 text-sm flex items-center gap-2">
                                             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
-                                            Online • Processing instantly
+                                            Online • Making decisions instantly
                                         </div>
                                     </div>
                                 </div>
@@ -285,50 +291,45 @@ export default function BillingManagementAIAgent() {
                                         <div className="text-xs text-slate-400">Accuracy</div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-blue-400">&lt;3s</div>
-                                        <div className="text-xs text-slate-400">Per Invoice</div>
+                                        <div className="text-sm font-medium text-blue-400">&lt; 2s</div>
+                                        <div className="text-xs text-slate-400">Avg Decision</div>
                                     </div>
                                 </div>
                             </div>
-                            {/* Chat Interface */}
+
+                            {/* Chat/Decision Interface */}
                             <div className="space-y-4 mb-6">
                                 <div className="flex gap-3 animate-slideInLeft">
                                     <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Generate monthly invoices for all SaaS customers and send reminders for overdue bills.</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">8:10 AM</span>
+                                        <span className="text-sm">Should we approve this $120,000 IT budget for Q3? Risks, ROI?</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">2:34 PM</span>
                                     </div>
                                 </div>
+                                
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">Invoices generated and sent. 3 overdue reminders delivered. Payments tracked in dashboard.</span>
-                                        <span className="text-xs text-blue-100 mt-1 block">8:11 AM</span>
+                                        <span className="text-sm">Based on forecasted savings and project risk analysis, approval is recommended. Predicted ROI: 3.9x. See detailed rationale and compliance log attached.</span>
+                                        <span className="text-xs text-blue-100 mt-1 block">2:34 PM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                                         <Bot className="w-4 h-4 text-white" />
                                     </div>
                                 </div>
+
                                 <div className="flex gap-3 animate-slideInLeft" style={{ animationDelay: '1s' }}>
                                     <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Please export payment history for Q1 and check for any duplicate charges.</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">8:12 AM</span>
-                                    </div>
-                                </div>
-                                <div className="flex gap-3 animate-slideInLeft" style={{ animationDelay: '1.2s' }}>
-                                    <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
-                                        <Users className="w-4 h-4 text-slate-300" />
-                                    </div>
-                                    <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">And create a summary of top overdue accounts.</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">8:13 AM</span>
+                                        <span className="text-sm">Override: Require manual approval for spend over $100k.</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">2:35 PM</span>
                                     </div>
                                 </div>
                             </div>
+
                             {/* Typing Indicator */}
                             <div className="flex gap-3 justify-end">
                                 <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-3 border border-blue-500/30">
@@ -338,7 +339,7 @@ export default function BillingManagementAIAgent() {
                                             <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
                                             <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                                         </div>
-                                        <span className="text-xs text-blue-300">AI is typing...</span>
+                                        <span className="text-xs text-blue-300">AI is processing...</span>
                                     </div>
                                 </div>
                                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
@@ -383,22 +384,25 @@ export default function BillingManagementAIAgent() {
                 </div>
             </section>
 
-            {/* How It Works Section */}
-            <section id="how-it-works" className="py-16 sm:py-24 lg:py-32 px-4">
+             {/* How It Works Section */}
+             <section id="how-it-works" className="py-16 sm:py-24 lg:py-32 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('how-it-works') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Settings className="w-4 h-4 mr-2 text-emerald-400 animate-spin-slow" />
                             How It Works
                         </div>
+
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            From invoice to payment in
+                            From data to decision in
                             <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> seconds</span>
                         </h2>
                     </div>
+
                     <div className="relative">
                         {/* Connection Lines */}
                         <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-slate-700 to-transparent transform -translate-y-1/2"></div>
+                        
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {howItWorks.map((step, index) => {
                                 const IconComponent = step.icon;
@@ -416,8 +420,10 @@ export default function BillingManagementAIAgent() {
                                                 {step.step}
                                             </div>
                                         </div>
+
                                         <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white">{step.title}</h3>
                                         <div className="text-slate-300 leading-relaxed text-sm sm:text-base">{step.description}</div>
+
                                         {/* Animated Arrow */}
                                         {index < howItWorks.length - 1 && (
                                             <div className="hidden lg:block absolute top-8 -right-4 text-slate-600">
@@ -440,11 +446,13 @@ export default function BillingManagementAIAgent() {
                             <Zap className="w-4 h-4 mr-2 text-emerald-400" />
                             Powerful Features
                         </div>
+
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             Everything you need for
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> smart billing</span>
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> smart decision making</span>
                         </h2>
                     </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         {features.map((feature, index) => {
                             const IconComponent = feature.icon;
@@ -477,11 +485,13 @@ export default function BillingManagementAIAgent() {
                             <Globe className="w-4 h-4 mr-2 text-blue-400" />
                             Integration Channels
                         </div>
+
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Connect billing with all your
-                            <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> business platforms</span>
+                            Deploy across all your
+                            <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> business systems</span>
                         </h2>
                     </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                         {channels.map((channel, index) => {
                             const IconComponent = channel.icon;
@@ -500,6 +510,7 @@ export default function BillingManagementAIAgent() {
                             );
                         })}
                     </div>
+
                     {/* Integration Platforms Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                         {integrations.map((integration, index) => (
@@ -527,11 +538,13 @@ export default function BillingManagementAIAgent() {
                             <BarChart3 className="w-4 h-4 mr-2 text-emerald-400" />
                             Business Impact
                         </div>
+
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Transform billing operations
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with AI</span>
+                            Make smarter, faster decisions
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> at scale</span>
                         </h2>
                     </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {benefits.map((benefit, index) => (
                             <div
@@ -564,15 +577,18 @@ export default function BillingManagementAIAgent() {
                             <Brain className="w-4 h-4 mr-2 text-purple-400" />
                             AI Capabilities
                         </div>
+
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Smart AI for
-                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> next-gen billing</span>
+                            Advanced AI for
+                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> strategic decisions</span>
                         </h2>
                     </div>
+
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         {/* AI Brain Visualization */}
                         <div className={`relative transform transition-all duration-1000 ${isInView('capabilities') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                             <div className="relative">
+                                {/* Central AI Core */}
                                 <div className="relative w-80 h-80 mx-auto">
                                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
                                     <div className="relative w-full h-full bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-full border border-slate-600/50 backdrop-blur-sm flex items-center justify-center">
@@ -580,12 +596,13 @@ export default function BillingManagementAIAgent() {
                                             <Brain className="w-16 h-16 text-white animate-pulse" />
                                         </div>
                                     </div>
+                                    
                                     {/* Floating Capability Nodes */}
                                     {[
-                                        { label: 'Payments', angle: 0, color: 'from-blue-500 to-cyan-500' },
-                                        { label: 'ML', angle: 60, color: 'from-emerald-500 to-teal-500' },
-                                        { label: 'Tax', angle: 120, color: 'from-orange-500 to-red-500' },
-                                        { label: 'Analytics', angle: 180, color: 'from-purple-500 to-pink-500' },
+                                        { label: 'Predictive', angle: 0, color: 'from-blue-500 to-cyan-500' },
+                                        { label: 'Explainable', angle: 60, color: 'from-emerald-500 to-teal-500' },
+                                        { label: 'Policy', angle: 120, color: 'from-orange-500 to-red-500' },
+                                        { label: 'Simulation', angle: 180, color: 'from-purple-500 to-pink-500' },
                                         { label: 'Security', angle: 240, color: 'from-yellow-500 to-orange-500' },
                                         { label: 'API', angle: 300, color: 'from-indigo-500 to-purple-500' }
                                     ].map((node, index) => {
@@ -610,43 +627,44 @@ export default function BillingManagementAIAgent() {
                                 </div>
                             </div>
                         </div>
+
                         {/* Capabilities List */}
                         <div className={`space-y-8 transform transition-all duration-1000 ${isInView('capabilities') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                             {[
                                 {
-                                    title: 'Automated Billing Workflows',
-                                    description: 'Configure, automate, and monitor every aspect of the billing lifecycle.',
-                                    icon: Cpu,
+                                    title: 'Predictive Analytics',
+                                    description: 'Forecasts outcomes, trends, and risks in real time using advanced ML models.',
+                                    icon: BarChart3,
                                     color: 'from-blue-500 to-cyan-500'
                                 },
                                 {
-                                    title: 'Machine Learning Analytics',
-                                    description: 'Predict late payments, flag anomalies, and optimize cash flow with AI.',
-                                    icon: Brain,
+                                    title: 'Explainable Decisions',
+                                    description: 'Provides clear, auditable reasoning for every decision made, supporting regulatory needs.',
+                                    icon: Shield,
                                     color: 'from-purple-500 to-pink-500'
                                 },
                                 {
-                                    title: 'Global Tax & Compliance',
-                                    description: 'Automatic tax calculation, country-specific compliance, and audit-ready logs.',
-                                    icon: Shield,
+                                    title: 'Policy Enforcement Engine',
+                                    description: 'Customizable business rules and compliance logic ensure safe, reliable automation.',
+                                    icon: Settings,
                                     color: 'from-emerald-500 to-teal-500'
                                 },
                                 {
-                                    title: 'Payment Gateway Integration',
-                                    description: 'Connect to all major payment platforms and automate reconciliation.',
-                                    icon: Database,
+                                    title: 'Scenario Simulations',
+                                    description: 'Test decisions under multiple what-if conditions before execution.',
+                                    icon: Cpu,
                                     color: 'from-orange-500 to-red-500'
                                 },
                                 {
-                                    title: 'Real-time Analytics',
-                                    description: 'Monitor billing KPIs, payment status, and client trends in real time.',
-                                    icon: BarChart3,
+                                    title: 'Security & Auditability',
+                                    description: 'Enterprise-grade encryption, access logs, and compliance with GDPR/SOX.',
+                                    icon: Shield,
                                     color: 'from-indigo-500 to-purple-500'
                                 },
                                 {
-                                    title: 'Enterprise Security',
-                                    description: 'PCI DSS, GDPR, and SOC 2 compliance, with end-to-end encryption.',
-                                    icon: Shield,
+                                    title: 'API-first Architecture',
+                                    description: 'Easily integrates with your existing tools, data lakes, and business processes.',
+                                    icon: Database,
                                     color: 'from-cyan-500 to-blue-500'
                                 }
                             ].map((capability, index) => {
@@ -678,15 +696,18 @@ export default function BillingManagementAIAgent() {
                     <div className={`transform transition-all duration-1000 ${isInView('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Zap className="w-4 h-4 mr-2 text-emerald-400" />
-                            Ready for Smart Billing?
+                            Ready to Transform?
                         </div>
+
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-                            Start automating your
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> billing today</span>
+                            Start making smarter
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> business decisions today</span>
                         </h2>
+
                         <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed">
-                            Join finance teams already using AI to accelerate collections, cut costs, and improve customer experience. Get started in minutes with a free trial!
+                            Join the world’s most innovative organizations leveraging AI for automated, transparent, and strategic business decisions. Get started in minutes with a free trial.
                         </p>
+
                         {/* Trust Indicators */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
@@ -704,48 +725,61 @@ export default function BillingManagementAIAgent() {
                     </div>
                 </div>
             </section>
+
             <Footer />
+
             {/* Custom Styles */}
             <style jsx>{`
                 @keyframes float {
                     0%, 100% { transform: translateY(0px); }
                     50% { transform: translateY(-10px); }
                 }
+                
                 @keyframes slideUp {
                     from { opacity: 0; transform: translateY(30px); }
                     to { opacity: 1; transform: translateY(0px); }
                 }
+                
                 @keyframes slideInLeft {
                     from { opacity: 0; transform: translateX(-30px); }
                     to { opacity: 1; transform: translateX(0px); }
                 }
+                
                 @keyframes slideInRight {
                     from { opacity: 0; transform: translateX(30px); }
                     to { opacity: 1; transform: translateX(0px); }
                 }
+                
                 @keyframes glow {
                     0%, 100% { filter: brightness(1); }
                     50% { filter: brightness(1.2); }
                 }
+                
                 @keyframes spin-slow {
                     from { transform: rotate(0deg); }
                     to { transform: rotate(360deg); }
                 }
+                
                 .animate-float {
                     animation: float 6s ease-in-out infinite;
                 }
+                
                 .animate-slideUp {
                     animation: slideUp 0.8s ease-out forwards;
                 }
+                
                 .animate-slideInLeft {
                     animation: slideInLeft 0.8s ease-out forwards;
                 }
+                
                 .animate-slideInRight {
                     animation: slideInRight 0.8s ease-out forwards;
                 }
+                
                 .animate-glow {
                     animation: glow 3s ease-in-out infinite;
                 }
+                
                 .animate-spin-slow {
                     animation: spin-slow 3s linear infinite;
                 }
