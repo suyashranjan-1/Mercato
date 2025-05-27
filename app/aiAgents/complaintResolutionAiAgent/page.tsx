@@ -1,39 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-// 🚩 FIX: Import all icons as named imports
-import {
-    MessageCircle,
-    Clock,
-    Users,
-    Star,
-    CheckCircle,
-    ArrowRight,
-    Bot,
-    Headphones,
-    Shield,
-    Zap,
-    BarChart3,
-    Globe,
-    Play,
-    ChevronRight,
-    Brain,
-    Cpu,
-    Database,
-    ArrowLeftCircle,
-    Settings,
-    Phone,
-    Mail,
-    MessageSquare,
-    Smartphone,
-    PackageCheck,
-    FileWarning,
-    Receipt,
-} from 'lucide-react';
+import { MessageCircle, Clock, Users, Star, CheckCircle, ArrowRight, Bot, Headphones, Shield, Zap, BarChart3, Globe, Play, ChevronRight, Brain, Cpu, Database, Settings, Phone, Mail, MessageSquare, Smartphone, FileWarning } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 
-
-export default function ReturnRefundAIAgent() {
+export default function ComplaintResolutionAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [visibleSections, setVisibleSections] = useState(new Set());
@@ -47,7 +18,6 @@ export default function ReturnRefundAIAgent() {
         const handleScroll = () => setScrollY(window.scrollY);
         window.addEventListener('scroll', handleScroll);
 
-        // Intersection Observer for scroll animations
         observerRef.current = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -59,12 +29,10 @@ export default function ReturnRefundAIAgent() {
             { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
         );
 
-        // Observe all sections with IDs
         document.querySelectorAll('[id]').forEach((el) => {
             observerRef.current?.observe(el);
         });
 
-        // Auto-cycle through steps
         const stepInterval = setInterval(() => {
             setActiveStep(prev => (prev + 1) % 4);
         }, 3000);
@@ -77,58 +45,58 @@ export default function ReturnRefundAIAgent() {
     }, []);
 
     const stats = [
-        { label: 'Avg Refund Time', value: '<2m', icon: Clock, color: 'from-blue-500 to-cyan-500' },
-        { label: 'Customer Satisfaction', value: '97%', icon: Star, color: 'from-yellow-500 to-orange-500' },
-        { label: 'Automated Returns', value: '93%', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
+        { label: 'Avg Resolution Time', value: '1.6m', icon: Clock, color: 'from-blue-500 to-cyan-500' },
+        { label: 'Complaints Resolved', value: '99%', icon: CheckCircle, color: 'from-yellow-500 to-orange-500' },
+        { label: 'Customer Satisfaction', value: '96%', icon: Star, color: 'from-emerald-500 to-teal-500' },
         { label: 'System Uptime', value: '99.99%', icon: Zap, color: 'from-purple-500 to-pink-500' },
     ];
 
     const features = [
         {
-            title: 'Instant Return & Refund Processing',
-            description: 'Automate return requests and refunds with AI, reducing manual reviews and customer wait time.',
-            icon: Receipt,
+            title: 'Automated Complaint Triage',
+            description: 'AI instantly categorizes and prioritizes complaints for rapid and accurate resolution.',
+            icon: FileWarning,
             gradient: 'from-blue-500 to-cyan-500'
         },
         {
-            title: 'Multi-Channel Support',
-            description: 'Handle return and refund queries across chat, email, app, and phone with unified workflows.',
-            icon: MessageCircle,
+            title: 'Smart Escalation',
+            description: 'Automatically escalates unresolved or critical issues to the right human agents.',
+            icon: Users,
             gradient: 'from-purple-500 to-pink-500'
         },
         {
-            title: 'Fraud & Abuse Detection',
-            description: 'AI identifies suspicious patterns, blocks fraudulent returns, and keeps your operations secure.',
-            icon: Shield,
+            title: 'Multi-Channel Support',
+            description: 'Accept and resolve complaints from chat, email, social media, phone, and app.',
+            icon: MessageCircle,
+            gradient: 'from-emerald-500 to-teal-500'
+        },
+        {
+            title: 'Sentiment & Urgency Detection',
+            description: 'AI analyzes tone and urgency, adjusting response and escalation accordingly.',
+            icon: Brain,
             gradient: 'from-orange-500 to-red-500'
         },
         {
             title: 'Real-Time Status Updates',
-            description: 'Automatically notify customers at every step—return received, refund approved, completed.',
+            description: 'Keep customers informed at every stage of their complaint’s lifecycle.',
             icon: Zap,
-            gradient: 'from-emerald-500 to-teal-500'
-        },
-        {
-            title: 'Policy Guidance',
-            description: 'AI explains your policies clearly to customers and applies the correct rules for every case.',
-            icon: Settings,
             gradient: 'from-indigo-500 to-purple-500'
         },
         {
-            title: 'Advanced Analytics',
-            description: 'Gain insights on refund rates, reasons, and agent performance with visual dashboards.',
+            title: 'Root Cause Analytics',
+            description: 'Identify recurring issues and improvement opportunities with actionable analytics.',
             icon: BarChart3,
             gradient: 'from-pink-500 to-rose-500'
         },
         {
-            title: 'Omnichannel Integration',
-            description: 'Works with e-commerce, POS, CRM, and warehouse systems for seamless returns.',
-            icon: Globe,
+            title: 'Policy-Adherence Engine',
+            description: 'Ensures all resolutions comply with your policies and regulatory requirements.',
+            icon: Settings,
             gradient: 'from-rose-500 to-pink-500'
         },
         {
             title: 'Customer Self-Service',
-            description: 'Let customers initiate and track returns/refunds instantly online or via your app.',
+            description: 'Allows users to track and update complaints anytime via web, mobile, or chat.',
             icon: Smartphone,
             gradient: 'from-amber-500 to-orange-500'
         }
@@ -137,91 +105,90 @@ export default function ReturnRefundAIAgent() {
     const howItWorks = [
         {
             step: 1,
-            title: 'Return/Refund Request',
-            description: 'Customer submits a return or refund request via chat, email, mobile app, or web portal.',
+            title: 'Complaint Submission',
+            description: 'Customers file complaints via chat, app, email, phone, or social media.',
             icon: MessageSquare,
             color: 'from-blue-500 to-cyan-500'
         },
         {
             step: 2,
-            title: 'AI Review & Policy Match',
-            description: 'AI verifies the request, matches it to your return policy, and checks for fraud or eligibility.',
+            title: 'AI Diagnosis & Routing',
+            description: 'AI analyzes complaint type, urgency, and sentiment, and assigns the case appropriately.',
             icon: Brain,
             color: 'from-purple-500 to-pink-500'
         },
         {
             step: 3,
-            title: 'Approval & Tracking',
-            description: 'AI approves eligible requests automatically and shares tracking or instructions with the customer.',
-            icon: PackageCheck,
+            title: 'Automated Resolution or Escalation',
+            description: 'AI resolves or escalates the issue, following business rules and customer history.',
+            icon: Cpu,
             color: 'from-emerald-500 to-teal-500'
         },
         {
             step: 4,
-            title: 'Refund & Resolution',
-            description: 'Refund is processed, inventory is updated, and customer receives confirmation—all tracked by AI.',
-            icon: Database,
+            title: 'Tracking & Feedback',
+            description: 'Customer receives resolution, satisfaction survey, and can rate or reopen the case.',
+            icon: BarChart3,
             color: 'from-orange-500 to-red-500'
         }
     ];
 
     const integrations = [
-        { name: 'Shopify', category: 'E-commerce', logo: '🛒' },
-        { name: 'Magento', category: 'E-commerce', logo: '🧩' },
-        { name: 'WooCommerce', category: 'E-commerce', logo: '🛍️' },
-        { name: 'Stripe', category: 'Payments', logo: '💳' },
-        { name: 'PayPal', category: 'Payments', logo: '💲' },
         { name: 'Zendesk', category: 'Support', logo: '🎫' },
         { name: 'Salesforce', category: 'CRM', logo: '☁️' },
-        { name: 'QuickBooks', category: 'Finance', logo: '📒' },
-        { name: 'Twilio', category: 'SMS', logo: '📲' },
+        { name: 'Intercom', category: 'Chat', logo: '🔔' },
         { name: 'Slack', category: 'Communication', logo: '💬' },
+        { name: 'Twilio', category: 'SMS', logo: '📲' },
+        { name: 'WhatsApp', category: 'Messaging', logo: '📱' },
+        { name: 'Facebook Messenger', category: 'Social', logo: '💭' },
+        { name: 'Instagram', category: 'Social', logo: '📸' },
+        { name: 'Shopify', category: 'E-commerce', logo: '🛒' },
         { name: 'Google Sheets', category: 'Spreadsheet', logo: '📄' },
-        { name: 'S3', category: 'Storage', logo: '🗄️' },
-        { name: 'Mailchimp', category: 'Email', logo: '📧' },
+        { name: 'HubSpot', category: 'CRM', logo: '📈' },
+        { name: 'Microsoft Teams', category: 'Communication', logo: '👥' },
+        { name: 'WordPress', category: 'Website', logo: '📝' },
         { name: 'NetSuite', category: 'ERP', logo: '💼' },
-        { name: 'UPS', category: 'Logistics', logo: '🚚' },
-        { name: 'FedEx', category: 'Logistics', logo: '✈️' }
+        { name: 'S3', category: 'Storage', logo: '🗄️' },
+        { name: 'Power BI', category: 'Analytics', logo: '📊' },
     ];
 
-
     const channels = [
-        { name: 'Website Portal', icon: Globe, description: 'Customers can request and track returns online' },
-        { name: 'Mobile App', icon: Smartphone, description: 'App-based return and refund self-service' },
-        { name: 'Email Support', icon: Mail, description: 'Process refund/return requests via email' },
-        { name: 'Phone Support', icon: Phone, description: 'Voice-enabled return and refund handling' }
+        { name: 'Website Chat', icon: MessageCircle, description: 'Customers can submit and manage complaints online' },
+        { name: 'Email Support', icon: Mail, description: 'Receive and resolve complaints via email' },
+        { name: 'Phone Support', icon: Phone, description: 'Voice-enabled complaint handling' },
+        { name: 'Mobile App', icon: Smartphone, description: 'App-based complaint submission and tracking' }
     ];
 
     const benefits = [
         {
-            title: 'Reduce Refund Time',
-            description: 'Automated workflows get refunds to customers in minutes, not days.',
+            title: 'Accelerate Complaint Resolution',
+            description: 'AI resolves complaints in minutes, not days, boosting trust and retention.',
             percentage: '80%',
-            metric: 'faster refunds'
+            metric: 'faster resolutions'
         },
         {
-            title: 'Cut Manual Workload',
-            description: 'AI handles repetitive return/refund requests, freeing up your support team.',
+            title: 'Reduce Manual Workload',
+            description: 'Automate repetitive complaint handling, freeing agents for complex cases.',
             percentage: '70%',
-            metric: 'less manual work'
+            metric: 'workload reduction'
         },
         {
-            title: 'Increase Customer Trust',
-            description: 'Quick, transparent returns and refunds boost loyalty and repeat purchases.',
-            percentage: '+20%',
-            metric: 'trust increase'
+            title: 'Increase Customer Loyalty',
+            description: 'Quick, transparent complaint handling increases satisfaction and loyalty.',
+            percentage: '+25%',
+            metric: 'loyalty boost'
         },
         {
-            title: 'Minimize Fraud',
-            description: 'AI detects and blocks abusive refund/return patterns to protect revenue.',
-            percentage: '-40%',
-            metric: 'fraud rate'
+            title: 'Minimize Escalations',
+            description: 'AI resolves most issues at the first touch, reducing escalations and churn.',
+            percentage: '-60%',
+            metric: 'fewer escalations'
         },
         {
-            title: 'Enhance Compliance',
-            description: 'Maintain regulatory and policy compliance with automated logging and documentation.',
+            title: 'Drive Continuous Improvement',
+            description: 'Surface root causes and trends for proactive business improvement.',
             percentage: '100%',
-            metric: 'compliance'
+            metric: 'issue analysis'
         }
     ];
 
@@ -232,7 +199,6 @@ export default function ReturnRefundAIAgent() {
             <NavbarDemo />
             {/* Hero Section */}
             <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 py-16 sm:py-20 lg:py-32">
-                {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10"></div>
                 <div
                     className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
@@ -242,7 +208,6 @@ export default function ReturnRefundAIAgent() {
                     className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
                     style={{ transform: `translateY(${scrollY * -0.1}px)`, animationDelay: '1s' }}
                 ></div>
-                {/* Floating AI Elements */}
                 <div className="absolute inset-0 pointer-events-none">
                     {[...Array(20)].map((_, i) => (
                         <div
@@ -260,18 +225,18 @@ export default function ReturnRefundAIAgent() {
                 <div className={`w-full max-w-7xl mx-auto text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300 hover:border-slate-600/50 transition-all duration-300">
                         <Bot className="w-4 h-4 mr-2 text-blue-400 animate-pulse" />
-                        AI-Powered Return & Refunds
+                        AI-Powered Complaint Resolution
                         <div className="ml-2 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
                     </div>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent leading-tight">
-                        Return & Refund
+                        Complaint Resolution
                         <br />
                         <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-glow">
                             AI Agent
                         </span>
                     </h1>
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-                        Automate returns and refunds with AI for <span className="text-white font-medium">instant customer satisfaction</span>, real-time fraud detection, and seamless integration—across every channel.
+                        Resolve customer complaints in real time with AI. Instantly triage, escalate, and close cases with full compliance and actionable insights—across every channel.
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
@@ -283,10 +248,8 @@ export default function ReturnRefundAIAgent() {
                             Watch Demo
                         </button>
                     </div>
-                    {/* Enhanced AI Agent Preview */}
                     <div className="relative max-w-5xl mx-auto">
                         <div className="relative bg-slate-900/50 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 group">
-                            {/* Agent Status Bar */}
                             <div className="flex items-center justify-between mb-6 p-4 bg-slate-800/40 rounded-2xl">
                                 <div className="flex items-center gap-3">
                                     <div className="relative">
@@ -296,39 +259,38 @@ export default function ReturnRefundAIAgent() {
                                         <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full animate-pulse"></div>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold">Return & Refund AI Agent</h3>
+                                        <h3 className="text-lg font-semibold">Complaint Resolution AI Agent</h3>
                                         <div className="text-slate-400 text-sm flex items-center gap-2">
                                             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
-                                            Online • Processing instantly
+                                            Online • Resolving complaints
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-emerald-400">97%</div>
-                                        <div className="text-xs text-slate-400">Satisfaction</div>
+                                        <div className="text-sm font-medium text-yellow-400">99%</div>
+                                        <div className="text-xs text-slate-400">Resolved</div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-blue-400">&lt;2m</div>
-                                        <div className="text-xs text-slate-400">Avg Refund</div>
+                                        <div className="text-sm font-medium text-blue-400">1.6m</div>
+                                        <div className="text-xs text-slate-400">Avg Time</div>
                                     </div>
                                 </div>
                             </div>
-                            {/* Chat Interface */}
                             <div className="space-y-4 mb-6">
                                 <div className="flex gap-3 animate-slideInLeft">
                                     <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">I want to return my shoes. Order #5678 was delivered today but is too small.</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">2:34 PM</span>
+                                        <span className="text-sm">I received the wrong item in my order. Can you help?</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">10:12 AM</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">Your return for Order #5678 is approved. Please use the attached label for free return shipping. Refund will be issued once received.</span>
-                                        <span className="text-xs text-blue-100 mt-1 block">2:34 PM</span>
+                                        <span className="text-sm">Sorry for the mix-up! We’ve initiated a replacement for you and arranged a return pickup. You’ll receive status updates shortly.</span>
+                                        <span className="text-xs text-blue-100 mt-1 block">10:12 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                                         <Bot className="w-4 h-4 text-white" />
@@ -339,21 +301,20 @@ export default function ReturnRefundAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">How long will it take for my refund?</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">2:35 PM</span>
+                                        <span className="text-sm">Thank you. How can I track my complaint?</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">10:13 AM</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '1.2s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">Refunds are processed within 2 minutes of receiving the returned item. You’ll get a confirmation email and SMS as soon as it’s done.</span>
-                                        <span className="text-xs text-blue-100 mt-1 block">2:35 PM</span>
+                                        <span className="text-sm">Track your complaint status and updates anytime from your dashboard or mobile app.</span>
+                                        <span className="text-xs text-blue-100 mt-1 block">10:13 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                                         <Bot className="w-4 h-4 text-white" />
                                     </div>
                                 </div>
                             </div>
-                            {/* Typing Indicator */}
                             <div className="flex gap-3 justify-end">
                                 <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-3 border border-blue-500/30">
                                     <div className="flex items-center gap-2">
@@ -373,7 +334,6 @@ export default function ReturnRefundAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Stats Section */}
             <section id="stats" className="relative py-16 sm:py-20 px-4 bg-gradient-to-r from-slate-900/30 to-slate-800/20">
                 <div className="max-w-7xl mx-auto">
@@ -406,7 +366,6 @@ export default function ReturnRefundAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* How It Works Section */}
             <section id="how-it-works" className="py-16 sm:py-24 lg:py-32 px-4">
                 <div className="max-w-7xl mx-auto">
@@ -416,12 +375,11 @@ export default function ReturnRefundAIAgent() {
                             How It Works
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            From request to refund in
+                            From complaint to resolution in
                             <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> minutes</span>
                         </h2>
                     </div>
                     <div className="relative">
-                        {/* Connection Lines */}
                         <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-slate-700 to-transparent transform -translate-y-1/2"></div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {howItWorks.map((step, index) => {
@@ -433,7 +391,6 @@ export default function ReturnRefundAIAgent() {
                                         className={`relative text-center transform transition-all duration-700 ${isInView('how-it-works') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${isActive ? 'scale-105' : ''}`}
                                         style={{ animationDelay: `${index * 200}ms` }}
                                     >
-                                        {/* Step Number */}
                                         <div className={`relative z-10 w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center transition-all duration-500 ${isActive ? 'animate-pulse' : ''}`}>
                                             <IconComponent className="w-8 h-8 text-white" />
                                             <div className="absolute -top-2 -right-2 w-6 h-6 bg-slate-900 border-2 border-slate-700 rounded-full flex items-center justify-center text-xs font-bold">
@@ -454,7 +411,6 @@ export default function ReturnRefundAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Features Section */}
             <section id="features" className="py-16 sm:py-24 lg:py-32 px-4 bg-gradient-to-br from-slate-900/50 to-slate-800/30">
                 <div className="max-w-7xl mx-auto">
@@ -465,7 +421,7 @@ export default function ReturnRefundAIAgent() {
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             Everything you need for
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> hassle-free returns</span>
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> effective complaint resolution</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -491,7 +447,6 @@ export default function ReturnRefundAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Integration Channels Section */}
             <section id="channels" className="py-16 sm:py-24 lg:py-32 px-4">
                 <div className="max-w-7xl mx-auto">
@@ -501,7 +456,7 @@ export default function ReturnRefundAIAgent() {
                             Integration Channels
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Support returns and refunds on
+                            Accept and resolve complaints across
                             <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> every channel</span>
                         </h2>
                     </div>
@@ -523,7 +478,6 @@ export default function ReturnRefundAIAgent() {
                             );
                         })}
                     </div>
-                    {/* Integration Platforms Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                         {integrations.map((integration, index) => (
                             <div
@@ -541,18 +495,17 @@ export default function ReturnRefundAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Benefits Section */}
             <section id="benefits" className="py-16 sm:py-24 lg:py-32 px-4 bg-gradient-to-br from-slate-900/50 to-slate-800/30">
                 <div className="max-w-7xl mx-auto">
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('benefits') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <BarChart3 className="w-4 h-4 mr-2 text-emerald-400" />
-                            Agent Impact
+                            Business Impact
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Transform returns & refunds
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with AI efficiency</span>
+                            Resolve complaints, retain customers
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with AI</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -578,7 +531,6 @@ export default function ReturnRefundAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Agent Capabilities Section */}
             <section id="capabilities" className="py-16 sm:py-24 lg:py-32 px-4">
                 <div className="max-w-7xl mx-auto">
@@ -588,8 +540,8 @@ export default function ReturnRefundAIAgent() {
                             AI Capabilities
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            AI that understands
-                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> every return</span>
+                            AI that understands and resolves
+                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> every complaint</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -606,12 +558,12 @@ export default function ReturnRefundAIAgent() {
                                     </div>
                                     {/* Floating Capability Nodes */}
                                     {[
-                                        { label: 'Policy', angle: 0, color: 'from-blue-500 to-cyan-500' },
-                                        { label: 'Fraud', angle: 60, color: 'from-emerald-500 to-teal-500' },
-                                        { label: 'Self-Serve', angle: 120, color: 'from-orange-500 to-red-500' },
+                                        { label: 'Triage', angle: 0, color: 'from-blue-500 to-cyan-500' },
+                                        { label: 'Escalate', angle: 60, color: 'from-emerald-500 to-teal-500' },
+                                        { label: 'Sentiment', angle: 120, color: 'from-orange-500 to-red-500' },
                                         { label: 'Analytics', angle: 180, color: 'from-purple-500 to-pink-500' },
-                                        { label: 'Integration', angle: 240, color: 'from-yellow-500 to-orange-500' },
-                                        { label: 'Real-Time', angle: 300, color: 'from-indigo-500 to-purple-500' }
+                                        { label: 'Policy', angle: 240, color: 'from-yellow-500 to-orange-500' },
+                                        { label: 'Self-Service', angle: 300, color: 'from-indigo-500 to-purple-500' }
                                     ].map((node, index) => {
                                         const x = Math.cos((node.angle * Math.PI) / 180) * 120;
                                         const y = Math.sin((node.angle * Math.PI) / 180) * 120;
@@ -638,39 +590,39 @@ export default function ReturnRefundAIAgent() {
                         <div className={`space-y-8 transform transition-all duration-1000 ${isInView('capabilities') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                             {[
                                 {
-                                    title: 'Policy-Aware Automation',
-                                    description: 'AI matches every request to your business rules and regional policies.',
-                                    icon: Settings,
+                                    title: 'AI Triage & Prioritization',
+                                    description: 'Automatically categorizes and assigns complaints based on urgency and topic.',
+                                    icon: FileWarning,
                                     color: 'from-blue-500 to-cyan-500'
                                 },
                                 {
-                                    title: 'Fraud Detection',
-                                    description: 'Detects suspicious return/refund activity in real time.',
-                                    icon: Shield,
+                                    title: 'Smart Escalation',
+                                    description: 'Escalates complex cases with full context to the right human team.',
+                                    icon: Users,
                                     color: 'from-purple-500 to-pink-500'
                                 },
                                 {
-                                    title: 'Self-Service Portal',
-                                    description: 'Customers initiate and track returns/refunds without waiting for an agent.',
-                                    icon: Smartphone,
+                                    title: 'Sentiment & Intent Analysis',
+                                    description: 'Understands customer emotion and urgency for better handling.',
+                                    icon: Brain,
                                     color: 'from-emerald-500 to-teal-500'
                                 },
                                 {
-                                    title: 'Analytics & Reporting',
-                                    description: 'Track all return reasons, refund rates, and agent efficiency.',
+                                    title: 'Root Cause Analytics',
+                                    description: 'Identifies trends and root problems across thousands of complaints.',
                                     icon: BarChart3,
                                     color: 'from-orange-500 to-red-500'
                                 },
                                 {
-                                    title: 'Seamless Integration',
-                                    description: 'Connects with your e-commerce, CRM, and warehouse tools.',
-                                    icon: Globe,
+                                    title: 'Policy-Adherent Solutions',
+                                    description: 'Ensures every resolution fits your business rules and compliance needs.',
+                                    icon: Settings,
                                     color: 'from-indigo-500 to-purple-500'
                                 },
                                 {
-                                    title: 'Real-Time Customer Updates',
-                                    description: 'Send instant status, instructions, and confirmations on every channel.',
-                                    icon: Zap,
+                                    title: 'Customer Self-Service',
+                                    description: '24/7 complaint submission, tracking, and feedback from any device.',
+                                    icon: Smartphone,
                                     color: 'from-cyan-500 to-blue-500'
                                 }
                             ].map((capability, index) => {
@@ -701,20 +653,19 @@ export default function ReturnRefundAIAgent() {
                     <div className={`transform transition-all duration-1000 ${isInView('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Zap className="w-4 h-4 mr-2 text-emerald-400" />
-                            Ready to Transform Returns?
+                            Ready to Resolve Complaints Faster?
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-                            Start automating returns & refunds
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with AI</span>
+                            Start delighting customers
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with AI-driven complaint resolution</span>
                         </h2>
                         <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed">
-                            Empower your agents and customers with instant, transparent, and secure return and refund automation. Book a demo or access use cases to see how it works for your business.
+                            Empower your support team and boost customer trust with the Complaint Resolution AI Agent. Try the demo or watch it in action!
                         </p>
-                        {/* Trust Indicators */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
                                 { label: 'Enterprise Ready', value: 'SOC 2 / GDPR' },
-                                { label: 'Setup Time', value: '1 to 3 Days' },
+                                { label: 'Quick Integration', value: '< 2 Days' },
                                 { label: 'Agent Friendly', value: 'No-code Dashboard' },
                                 { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (
@@ -728,7 +679,6 @@ export default function ReturnRefundAIAgent() {
                 </div>
             </section>
             <Footer />
-            {/* Custom Styles */}
             <style jsx>{`
                 @keyframes float {
                     0%, 100% { transform: translateY(0px); }

@@ -1,39 +1,12 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-// 🚩 FIX: Import all icons as named imports
 import {
-    MessageCircle,
-    Clock,
-    Users,
-    Star,
-    CheckCircle,
-    ArrowRight,
-    Bot,
-    Headphones,
-    Shield,
-    Zap,
-    BarChart3,
-    Globe,
-    Play,
-    ChevronRight,
-    Brain,
-    Cpu,
-    Database,
-    ArrowLeftCircle,
-    Settings,
-    Phone,
-    Mail,
-    MessageSquare,
-    Smartphone,
-    PackageCheck,
-    FileWarning,
-    Receipt,
+    MessageCircle, Clock, Users, Star, CheckCircle, ArrowRight, Bot, Shield, Zap, BarChart3, Globe, Play, ChevronRight, Brain, Cpu, Database, Settings, Phone, Mail, MessageSquare, Smartphone, Receipt, PackageCheck
 } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 
-
-export default function ReturnRefundAIAgent() {
+export default function ReturnHandlingAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [visibleSections, setVisibleSections] = useState(new Set());
@@ -43,11 +16,9 @@ export default function ReturnRefundAIAgent() {
     useEffect(() => {
         setIsVisible(true);
 
-        // Parallax scroll effect
         const handleScroll = () => setScrollY(window.scrollY);
         window.addEventListener('scroll', handleScroll);
 
-        // Intersection Observer for scroll animations
         observerRef.current = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -59,12 +30,10 @@ export default function ReturnRefundAIAgent() {
             { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
         );
 
-        // Observe all sections with IDs
         document.querySelectorAll('[id]').forEach((el) => {
             observerRef.current?.observe(el);
         });
 
-        // Auto-cycle through steps
         const stepInterval = setInterval(() => {
             setActiveStep(prev => (prev + 1) % 4);
         }, 3000);
@@ -77,58 +46,58 @@ export default function ReturnRefundAIAgent() {
     }, []);
 
     const stats = [
-        { label: 'Avg Refund Time', value: '<2m', icon: Clock, color: 'from-blue-500 to-cyan-500' },
-        { label: 'Customer Satisfaction', value: '97%', icon: Star, color: 'from-yellow-500 to-orange-500' },
-        { label: 'Automated Returns', value: '93%', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
+        { label: 'Avg Handling Time', value: '<1m', icon: Clock, color: 'from-blue-500 to-cyan-500' },
+        { label: 'Customer Satisfaction', value: '98%', icon: Star, color: 'from-yellow-500 to-orange-500' },
+        { label: 'Automated Returns', value: '95%', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
         { label: 'System Uptime', value: '99.99%', icon: Zap, color: 'from-purple-500 to-pink-500' },
     ];
 
     const features = [
         {
-            title: 'Instant Return & Refund Processing',
-            description: 'Automate return requests and refunds with AI, reducing manual reviews and customer wait time.',
+            title: 'Instant Return Processing',
+            description: 'AI instantly verifies and processes return requests, reducing manual review and customer wait time.',
             icon: Receipt,
             gradient: 'from-blue-500 to-cyan-500'
         },
         {
             title: 'Multi-Channel Support',
-            description: 'Handle return and refund queries across chat, email, app, and phone with unified workflows.',
+            description: 'Handle returns via chat, email, app, and phone with a unified workflow and full context.',
             icon: MessageCircle,
             gradient: 'from-purple-500 to-pink-500'
         },
         {
-            title: 'Fraud & Abuse Detection',
-            description: 'AI identifies suspicious patterns, blocks fraudulent returns, and keeps your operations secure.',
+            title: 'Fraud Detection',
+            description: 'Advanced algorithms flag suspicious return patterns and reduce abuse.',
             icon: Shield,
             gradient: 'from-orange-500 to-red-500'
         },
         {
-            title: 'Real-Time Status Updates',
-            description: 'Automatically notify customers at every step—return received, refund approved, completed.',
+            title: 'Real-Time Updates',
+            description: 'Notifies customers at every step—request received, item returned, refund processed.',
             icon: Zap,
             gradient: 'from-emerald-500 to-teal-500'
         },
         {
             title: 'Policy Guidance',
-            description: 'AI explains your policies clearly to customers and applies the correct rules for every case.',
+            description: 'AI explains return policies and applies the correct rules to each case.',
             icon: Settings,
             gradient: 'from-indigo-500 to-purple-500'
         },
         {
-            title: 'Advanced Analytics',
-            description: 'Gain insights on refund rates, reasons, and agent performance with visual dashboards.',
+            title: 'Powerful Analytics',
+            description: 'Dashboards for trends, efficiency, and customer feedback on the returns process.',
             icon: BarChart3,
             gradient: 'from-pink-500 to-rose-500'
         },
         {
-            title: 'Omnichannel Integration',
-            description: 'Works with e-commerce, POS, CRM, and warehouse systems for seamless returns.',
+            title: 'Seamless Integration',
+            description: 'Connects with e-commerce, CRM, POS, and warehouse systems for end-to-end automation.',
             icon: Globe,
             gradient: 'from-rose-500 to-pink-500'
         },
         {
-            title: 'Customer Self-Service',
-            description: 'Let customers initiate and track returns/refunds instantly online or via your app.',
+            title: 'Self-Service Portal',
+            description: 'Customers can start and track returns instantly via web or mobile app.',
             icon: Smartphone,
             gradient: 'from-amber-500 to-orange-500'
         }
@@ -137,30 +106,30 @@ export default function ReturnRefundAIAgent() {
     const howItWorks = [
         {
             step: 1,
-            title: 'Return/Refund Request',
-            description: 'Customer submits a return or refund request via chat, email, mobile app, or web portal.',
+            title: 'Return Request Initiated',
+            description: 'Customer starts a return via chat, app, or online portal.',
             icon: MessageSquare,
             color: 'from-blue-500 to-cyan-500'
         },
         {
             step: 2,
-            title: 'AI Review & Policy Match',
-            description: 'AI verifies the request, matches it to your return policy, and checks for fraud or eligibility.',
+            title: 'AI Policy Validation',
+            description: 'ReturnHandlingAiAgent checks eligibility, policy compliance, and fraud indicators.',
             icon: Brain,
             color: 'from-purple-500 to-pink-500'
         },
         {
             step: 3,
-            title: 'Approval & Tracking',
-            description: 'AI approves eligible requests automatically and shares tracking or instructions with the customer.',
+            title: 'Approval & Instructions',
+            description: 'Customer receives instant approval (or next steps) and return shipping instructions.',
             icon: PackageCheck,
             color: 'from-emerald-500 to-teal-500'
         },
         {
             step: 4,
-            title: 'Refund & Resolution',
-            description: 'Refund is processed, inventory is updated, and customer receives confirmation—all tracked by AI.',
-            icon: Database,
+            title: 'Return Completion & Feedback',
+            description: 'AI tracks item receipt, triggers refund, and collects customer feedback for continuous improvement.',
+            icon: BarChart3,
             color: 'from-orange-500 to-red-500'
         }
     ];
@@ -184,42 +153,41 @@ export default function ReturnRefundAIAgent() {
         { name: 'FedEx', category: 'Logistics', logo: '✈️' }
     ];
 
-
     const channels = [
-        { name: 'Website Portal', icon: Globe, description: 'Customers can request and track returns online' },
-        { name: 'Mobile App', icon: Smartphone, description: 'App-based return and refund self-service' },
-        { name: 'Email Support', icon: Mail, description: 'Process refund/return requests via email' },
-        { name: 'Phone Support', icon: Phone, description: 'Voice-enabled return and refund handling' }
+        { name: 'Web Portal', icon: Globe, description: 'Start and track returns online' },
+        { name: 'Mobile App', icon: Smartphone, description: 'Self-service return on your app' },
+        { name: 'Email Support', icon: Mail, description: 'Request returns via email' },
+        { name: 'Phone Support', icon: Phone, description: 'Voice-enabled return handling' }
     ];
 
     const benefits = [
         {
-            title: 'Reduce Refund Time',
-            description: 'Automated workflows get refunds to customers in minutes, not days.',
-            percentage: '80%',
-            metric: 'faster refunds'
+            title: 'Accelerate Returns',
+            description: 'Reduce the average handling time for returns from days to minutes.',
+            percentage: '85%',
+            metric: 'faster returns'
         },
         {
-            title: 'Cut Manual Workload',
-            description: 'AI handles repetitive return/refund requests, freeing up your support team.',
+            title: 'Reduce Manual Work',
+            description: 'Automate repetitive return processes so your team can focus on higher value interactions.',
             percentage: '70%',
-            metric: 'less manual work'
+            metric: 'manual work cut'
         },
         {
-            title: 'Increase Customer Trust',
-            description: 'Quick, transparent returns and refunds boost loyalty and repeat purchases.',
+            title: 'Boost Satisfaction',
+            description: 'Transparent and fast returns increase trust and repeat sales.',
             percentage: '+20%',
-            metric: 'trust increase'
+            metric: 'customer trust'
         },
         {
-            title: 'Minimize Fraud',
-            description: 'AI detects and blocks abusive refund/return patterns to protect revenue.',
+            title: 'Detect Fraud Early',
+            description: 'Advanced AI flags abusive return patterns and prevents losses.',
             percentage: '-40%',
             metric: 'fraud rate'
         },
         {
-            title: 'Enhance Compliance',
-            description: 'Maintain regulatory and policy compliance with automated logging and documentation.',
+            title: 'Compliance & Insights',
+            description: 'Maintain compliance and audit trails, and get actionable return analytics.',
             percentage: '100%',
             metric: 'compliance'
         }
@@ -232,7 +200,6 @@ export default function ReturnRefundAIAgent() {
             <NavbarDemo />
             {/* Hero Section */}
             <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 py-16 sm:py-20 lg:py-32">
-                {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10"></div>
                 <div
                     className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
@@ -260,18 +227,18 @@ export default function ReturnRefundAIAgent() {
                 <div className={`w-full max-w-7xl mx-auto text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300 hover:border-slate-600/50 transition-all duration-300">
                         <Bot className="w-4 h-4 mr-2 text-blue-400 animate-pulse" />
-                        AI-Powered Return & Refunds
+                        AI Return Handling Agent
                         <div className="ml-2 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
                     </div>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent leading-tight">
-                        Return & Refund
+                        Return Handling
                         <br />
                         <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-glow">
                             AI Agent
                         </span>
                     </h1>
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-                        Automate returns and refunds with AI for <span className="text-white font-medium">instant customer satisfaction</span>, real-time fraud detection, and seamless integration—across every channel.
+                        Automate, streamline, and secure your returns process with AI. <span className="text-white font-medium">Delight customers</span>, protect your revenue, and give your team more time for what matters.
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
@@ -283,7 +250,7 @@ export default function ReturnRefundAIAgent() {
                             Watch Demo
                         </button>
                     </div>
-                    {/* Enhanced AI Agent Preview */}
+                    {/* AI Agent Preview */}
                     <div className="relative max-w-5xl mx-auto">
                         <div className="relative bg-slate-900/50 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 group">
                             {/* Agent Status Bar */}
@@ -296,21 +263,21 @@ export default function ReturnRefundAIAgent() {
                                         <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full animate-pulse"></div>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold">Return & Refund AI Agent</h3>
+                                        <h3 className="text-lg font-semibold">Return Handling AI Agent</h3>
                                         <div className="text-slate-400 text-sm flex items-center gap-2">
                                             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
-                                            Online • Processing instantly
+                                            Online • Processing returns
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-emerald-400">97%</div>
+                                        <div className="text-sm font-medium text-emerald-400">98%</div>
                                         <div className="text-xs text-slate-400">Satisfaction</div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-blue-400">&lt;2m</div>
-                                        <div className="text-xs text-slate-400">Avg Refund</div>
+                                        <div className="text-sm font-medium text-blue-400">&lt;1m</div>
+                                        <div className="text-xs text-slate-400">Avg Handling</div>
                                     </div>
                                 </div>
                             </div>
@@ -321,14 +288,14 @@ export default function ReturnRefundAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">I want to return my shoes. Order #5678 was delivered today but is too small.</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">2:34 PM</span>
+                                        <span className="text-sm">I'd like to return a shirt I ordered last week, order #4321.</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">11:05 AM</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">Your return for Order #5678 is approved. Please use the attached label for free return shipping. Refund will be issued once received.</span>
-                                        <span className="text-xs text-blue-100 mt-1 block">2:34 PM</span>
+                                        <span className="text-sm">No problem! Your return for order #4321 is eligible. Please use the attached label for free shipping. You'll be notified when your refund is processed.</span>
+                                        <span className="text-xs text-blue-100 mt-1 block">11:05 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                                         <Bot className="w-4 h-4 text-white" />
@@ -339,14 +306,14 @@ export default function ReturnRefundAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">How long will it take for my refund?</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">2:35 PM</span>
+                                        <span className="text-sm">How long will my refund take?</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">11:06 AM</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '1.2s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">Refunds are processed within 2 minutes of receiving the returned item. You’ll get a confirmation email and SMS as soon as it’s done.</span>
-                                        <span className="text-xs text-blue-100 mt-1 block">2:35 PM</span>
+                                        <span className="text-sm">Refunds are processed within 1 minute after we receive your returned item. You'll get an email and SMS update.</span>
+                                        <span className="text-xs text-blue-100 mt-1 block">11:06 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                                         <Bot className="w-4 h-4 text-white" />
@@ -417,11 +384,10 @@ export default function ReturnRefundAIAgent() {
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             From request to refund in
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> minutes</span>
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> seconds</span>
                         </h2>
                     </div>
                     <div className="relative">
-                        {/* Connection Lines */}
                         <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-slate-700 to-transparent transform -translate-y-1/2"></div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {howItWorks.map((step, index) => {
@@ -433,7 +399,6 @@ export default function ReturnRefundAIAgent() {
                                         className={`relative text-center transform transition-all duration-700 ${isInView('how-it-works') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${isActive ? 'scale-105' : ''}`}
                                         style={{ animationDelay: `${index * 200}ms` }}
                                     >
-                                        {/* Step Number */}
                                         <div className={`relative z-10 w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center transition-all duration-500 ${isActive ? 'animate-pulse' : ''}`}>
                                             <IconComponent className="w-8 h-8 text-white" />
                                             <div className="absolute -top-2 -right-2 w-6 h-6 bg-slate-900 border-2 border-slate-700 rounded-full flex items-center justify-center text-xs font-bold">
@@ -461,11 +426,11 @@ export default function ReturnRefundAIAgent() {
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('features') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Zap className="w-4 h-4 mr-2 text-emerald-400" />
-                            Powerful Features
+                            Return Features
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             Everything you need for
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> hassle-free returns</span>
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> effortless returns</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -498,10 +463,10 @@ export default function ReturnRefundAIAgent() {
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('channels') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Globe className="w-4 h-4 mr-2 text-blue-400" />
-                            Integration Channels
+                            Return Channels
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Support returns and refunds on
+                            Returns made easy on
                             <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> every channel</span>
                         </h2>
                     </div>
@@ -551,8 +516,8 @@ export default function ReturnRefundAIAgent() {
                             Agent Impact
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Transform returns & refunds
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with AI efficiency</span>
+                            Transform returns with
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> AI automation</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -588,8 +553,8 @@ export default function ReturnRefundAIAgent() {
                             AI Capabilities
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            AI that understands
-                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> every return</span>
+                            AI for smart, secure returns
+                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> at any scale</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -668,7 +633,7 @@ export default function ReturnRefundAIAgent() {
                                     color: 'from-indigo-500 to-purple-500'
                                 },
                                 {
-                                    title: 'Real-Time Customer Updates',
+                                    title: 'Real-Time Updates',
                                     description: 'Send instant status, instructions, and confirmations on every channel.',
                                     icon: Zap,
                                     color: 'from-cyan-500 to-blue-500'
@@ -701,21 +666,20 @@ export default function ReturnRefundAIAgent() {
                     <div className={`transform transition-all duration-1000 ${isInView('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Zap className="w-4 h-4 mr-2 text-emerald-400" />
-                            Ready to Transform Returns?
+                            Ready to Automate Returns?
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-                            Start automating returns & refunds
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with AI</span>
+                            Start automating returns with
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> Return AI</span>
                         </h2>
                         <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed">
-                            Empower your agents and customers with instant, transparent, and secure return and refund automation. Book a demo or access use cases to see how it works for your business.
+                            Get seamless onboarding, dedicated support, and proven automation to transform your returns and refunds experience—today.
                         </p>
-                        {/* Trust Indicators */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
                                 { label: 'Enterprise Ready', value: 'SOC 2 / GDPR' },
-                                { label: 'Setup Time', value: '1 to 3 Days' },
-                                { label: 'Agent Friendly', value: 'No-code Dashboard' },
+                                { label: 'Setup Time', value: '1-3 Days' },
+                                { label: 'Agent Friendly', value: 'No-Code Dashboard' },
                                 { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (
                                 <div key={index} className="text-center">
