@@ -166,32 +166,32 @@ const MercatoHomepage = () => {
         }
     ];
 
-    // const testimonials = [
-    //     {
-    //         name: "Sarah Chen",
-    //         company: "TechFlow Solutions",
-    //         role: "CEO & Founder",
-    //         content: "Mercato's AI agents completely transformed our customer support operations. We went from 24-hour response times to instant replies, and our customer satisfaction scores increased by 60%. The ROI was immediate.",
-    //         rating: 5,
-    //         avatar: "SC"
-    //     },
-    //     {
-    //         name: "Marcus Rodriguez",
-    //         company: "Premier Real Estate Group",
-    //         role: "Sales Director",
-    //         content: "The lead qualification bot is incredible. It pre-qualifies leads before they even reach our sales team, increasing our close rate from 12% to 28%. It's like having a full-time sales assistant that never sleeps.",
-    //         rating: 5,
-    //         avatar: "MR"
-    //     },
-    //     {
-    //         name: "Jennifer Walsh",
-    //         company: "Digital Marketing Pro",
-    //         role: "Agency Owner",
-    //         content: "Mercato's automation saved us 20+ hours per week on client communication and project management. We can now handle 3x more clients with the same team size. Absolutely game-changing for our agency.",
-    //         rating: 5,
-    //         avatar: "JW"
-    //     }
-    // ];
+    const testimonials = [
+        {
+            name: "Sarah Chen",
+            company: "TechFlow Solutions",
+            role: "CEO & Founder",
+            content: "Mercato's AI agents completely transformed our customer support operations. We went from 24-hour response times to instant replies, and our customer satisfaction scores increased by 60%. The ROI was immediate.",
+            rating: 5,
+            avatar: "SC"
+        },
+        {
+            name: "Marcus Rodriguez",
+            company: "Premier Real Estate Group",
+            role: "Sales Director",
+            content: "The lead qualification bot is incredible. It pre-qualifies leads before they even reach our sales team, increasing our close rate from 12% to 28%. It's like having a full-time sales assistant that never sleeps.",
+            rating: 5,
+            avatar: "MR"
+        },
+        {
+            name: "Jennifer Walsh",
+            company: "Digital Marketing Pro",
+            role: "Agency Owner",
+            content: "Mercato's automation saved us 20+ hours per week on client communication and project management. We can now handle 3x more clients with the same team size. Absolutely game-changing for our agency.",
+            rating: 5,
+            avatar: "JW"
+        }
+    ];
 
     const trustedCompanies = [
         "TechFlow Solutions", "Premier Real Estate", "Digital Pro Agency", "Growth Labs", "Scale Ventures"
@@ -403,7 +403,7 @@ const MercatoHomepage = () => {
                 </section>
 
                 {/* Testimonials Section */}
-                {/* <section id="testimonials" className="py-24 px-4 bg-gradient-to-r from-gray-900/30 to-gray-800/20 backdrop-blur-sm">
+                <section id="testimonials" className="py-24 px-4 bg-gradient-to-r from-gray-900/30 to-gray-800/20 backdrop-blur-sm">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-16">
                             <motion.div
@@ -456,7 +456,7 @@ const MercatoHomepage = () => {
                             ))}
                         </div>
                     </div>
-                </section> */}
+                </section>
 
                 {/* Final CTA Section */}
                 <section className="py-24 px-4">

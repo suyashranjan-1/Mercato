@@ -574,9 +574,9 @@ export default function EmailCategorizationTriageAiAgent() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
                                 { label: 'Enterprise Grade', value: 'SOC 2 Type II' },
-                                { label: 'Setup Time', value: '< 5 Min' },
-                                { label: 'Free Trial', value: '14 Days' },
-                                { label: 'Support', value: '24/7/365' }
+                                { label: 'Setup Time', value: '1 to 3 Days' },
+                                // { label: 'Free Trial', value: '14 Days' },
+                                { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (
                                 <div key={index} className="text-center">
                                     <div className="text-2xl font-bold text-white mb-1">{item.value}</div>

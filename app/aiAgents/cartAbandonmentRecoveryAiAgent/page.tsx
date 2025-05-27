@@ -680,8 +680,8 @@ export default function CartAbandonmentRecoveryAIAgent() {
                         </p>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
-                                { label: 'E-commerce Ready', value: '1-Minute Setup' },
-                                { label: 'Free Trial', value: '14 Days' },
+                                { label: 'E-commerce Ready', value: '1 to 3 Days' },
+                                // { label: 'Free Trial', value: '14 Days' },
                                 { label: 'ROI Guarantee', value: '37%+' },
                                 { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (

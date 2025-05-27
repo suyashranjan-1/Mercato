@@ -245,7 +245,7 @@ export default function TransactionMonitoringAIAgent() {
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
-                            Start Monitoring
+                            Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
@@ -685,8 +685,8 @@ export default function TransactionMonitoringAIAgent() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
                                 { label: 'Enterprise Ready', value: 'SOC 2 Certified' },
-                                { label: 'Quick Setup', value: '< 5 Minutes' },
-                                { label: 'Free Trial', value: '14 Days' },
+                                { label: 'Quick Setup', value: '1 to 3 Days' },
+                                // { label: 'Free Trial', value: '14 Days' },
                                 { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (
                                 <div key={index} className="text-center">

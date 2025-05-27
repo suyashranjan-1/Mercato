@@ -256,7 +256,7 @@ export default function SuspiciousActivityReportingAIAgent() {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-red-600 to-blue-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-red-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
-                            Deploy Agent
+                            Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
@@ -712,9 +712,9 @@ export default function SuspiciousActivityReportingAIAgent() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
                                 { label: 'Enterprise Grade', value: 'SOC 2 & ISO 27001' },
-                                { label: 'Rapid Deployment', value: '< 10 Minutes' },
-                                { label: 'Free Trial', value: '14 Days' },
-                                { label: 'Support', value: '24/7 Security Team' }
+                                { label: 'Setup Time', value: '1 to 3 Days' },
+                                // { label: 'Free Trial', value: '14 Days' },
+                                { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (
                                 <div key={index} className="text-center">
                                     <div className="text-2xl font-bold text-white mb-1">{item.value}</div>

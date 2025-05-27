@@ -694,9 +694,9 @@ export default function DataExtractorAIAgent() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
                                 { label: 'Compliance', value: 'GDPR Ready' },
-                                { label: 'Setup Time', value: '< 5 Min' },
+                                { label: 'Setup Time', value: '1 to 3 Days' },
                                 { label: 'Free Tier', value: '1,000 Docs' },
-                                { label: 'Support', value: '24/7 SLA' }
+                                { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (
                                 <div key={index} className="text-center">
                                     <div className="text-2xl font-bold text-white mb-1">{item.value}</div>

@@ -298,7 +298,7 @@ export default function LoanProcessingAIAgent() {
                         </button>
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             <Play className="w-4 h-4" />
-                            See Live Demo
+                            Watch Demo
                         </button>
                     </div>
                     {/* Enhanced AI Agent Preview */}
@@ -695,8 +695,8 @@ export default function LoanProcessingAIAgent() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
                                 { label: 'Bank-Grade Security', value: 'PCI DSS / GDPR' },
-                                { label: 'Instant Setup', value: '< 10 Minutes' },
-                                { label: 'Free Trial', value: '14 Days' },
+                                { label: 'Setup Time', value: '1 to 3 Days' },
+                                // { label: 'Free Trial', value: '14 Days' },
                                 { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (
                                 <div key={index} className="text-center">

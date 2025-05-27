@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-import { Clock, Star, CheckCircle, Zap, BarChart3, Database, Users, Shield, Settings, Cpu, Brain, ArrowRight, Bot, Play, ChevronRight, Globe, Mail, Smartphone, FileText } from 'lucide-react';
+import { Bot, Globe, Zap, BarChart3, Database, MessageCircle, Settings, Cpu, Shield, Play, ArrowRight, ChevronRight, Users, Clock, Star, CheckCircle, Smartphone, Mail, MessageSquare, DollarSign, TrendingUp, TrendingDown, PieChart, LineChart, Tag, ListOrdered, Brain } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 
-export default function PayrollCalculationAIAgent() {
+export default function PriceOptimizationAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [visibleSections, setVisibleSections] = useState(new Set());
@@ -43,152 +43,197 @@ export default function PayrollCalculationAIAgent() {
         };
     }, []);
 
-    // Stats for Payroll Calculation AI Agent
+    // Stats for Price Optimization AI Agent
     const stats = [
-        { label: 'Avg Payroll Calculation Time', value: '<2s', icon: Clock, color: 'from-blue-500 to-cyan-500' },
-        { label: 'Accuracy Rate', value: '99.99%', icon: Star, color: 'from-yellow-500 to-orange-500' },
-        { label: 'Payslips Processed Per Month', value: '500K+', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
-        { label: 'System Uptime', value: '99.999%', icon: Zap, color: 'from-purple-500 to-pink-500' },
+        { label: 'SKUs Optimized', value: '120K+', icon: Tag, color: 'from-blue-500 to-cyan-500' },
+        { label: 'Revenue Increase', value: '+18%', icon: TrendingUp, color: 'from-yellow-500 to-orange-500' },
+        { label: 'ROI Achieved', value: '7x', icon: Star, color: 'from-emerald-500 to-teal-500' },
+        { label: 'System Uptime', value: '99.99%', icon: Zap, color: 'from-purple-500 to-pink-500' },
     ];
 
+    // Features for Price Optimization AI Agent
     const features = [
         {
-            title: 'Automated Payroll Calculation',
-            description: 'Calculate salaries, wages, bonuses, overtime, and deductions for any pay cycle—instantly and accurately.',
-            icon: Cpu,
+            title: 'AI-Driven Dynamic Pricing',
+            description: 'Automatically adjust prices in real-time based on demand, competitor pricing, seasonality, and inventory.',
+            icon: DollarSign,
             gradient: 'from-blue-500 to-cyan-500'
         },
         {
-            title: 'Multi-Country Compliance',
-            description: 'Handles local tax laws, benefit rules, deductions, and statutory requirements for over 50 countries.',
-            icon: Shield,
+            title: 'Competitor Price Monitoring',
+            description: 'Track and react to competitor price changes instantly for every SKU.',
+            icon: TrendingDown,
             gradient: 'from-purple-500 to-pink-500'
         },
         {
-            title: 'Overtime & Shift Management',
-            description: 'Auto-calculates overtime, holiday, and variable shift pay with custom business rules.',
-            icon: Clock,
+            title: 'Multi-Channel Sync',
+            description: 'Update prices across web, mobile, POS, and marketplaces like Amazon, eBay, and Shopify.',
+            icon: Globe,
             gradient: 'from-emerald-500 to-teal-500'
         },
         {
-            title: 'Tax & Deduction Automation',
-            description: 'Accurately calculates withholdings, taxes, social security, and benefit deductions for every employee type.',
-            icon: Settings,
+            title: 'Profit Optimization',
+            description: 'Balance margin and sales goals with AI-suggested price points for maximum profit.',
+            icon: LineChart,
             gradient: 'from-orange-500 to-red-500'
         },
         {
-            title: 'Seamless ERP & HRIS Integration',
-            description: 'Syncs with leading HR, ERP, and time-tracking systems for end-to-end automation.',
-            icon: Database,
+            title: 'Custom Rule Engine',
+            description: 'Set min/max prices, brand, or promo rules. AI respects your business logic.',
+            icon: Settings,
             gradient: 'from-indigo-500 to-purple-500'
         },
         {
-            title: 'Self-Service Payslip Portal',
-            description: 'Employees can securely view/download payslips and tax documents online or via mobile.',
-            icon: Smartphone,
+            title: 'Elasticity Analytics',
+            description: 'Visualize demand sensitivity and price elasticity for smarter decisions.',
+            icon: PieChart,
             gradient: 'from-pink-500 to-rose-500'
         },
         {
-            title: 'Multi-Currency Support',
-            description: 'Supports payroll in any currency with real-time exchange rates and localizations.',
-            icon: Globe,
+            title: 'Alerting & Reporting',
+            description: 'Get instant alerts for price wars, profit drops, or market shifts. Export detailed reports.',
+            icon: Mail,
             gradient: 'from-amber-500 to-orange-500'
         },
         {
-            title: 'Audit Trail & Reporting',
-            description: 'Every edit, approval, and calculation is logged for compliance and audit readiness.',
-            icon: BarChart3,
-            gradient: 'from-yellow-500 to-green-500'
+            title: 'Seamless ERP Integration',
+            description: 'Plug into SAP, Oracle, NetSuite, and more with secure, real-time sync.',
+            icon: Database,
+            gradient: 'from-cyan-500 to-blue-500'
         }
     ];
 
+    // How It Works for Price Optimization AI Agent
     const howItWorks = [
         {
             step: 1,
-            title: 'Data Collection',
-            description: 'Import timesheets, attendance, leave, and HRIS data from multiple sources.',
+            title: 'Connect Data Sources',
+            description: 'Import product, sales, competitor, and market data from ERP, e-commerce, or spreadsheets.',
             icon: Database,
             color: 'from-blue-500 to-cyan-500'
         },
         {
             step: 2,
-            title: 'AI-Driven Calculation',
-            description: 'AI calculates gross/net pay, deductions, overtime, and compliance for every employee.',
-            icon: Cpu,
+            title: 'AI Analysis & Modeling',
+            description: 'AI identifies patterns, demand curves, and market opportunities for every product.',
+            icon: Brain,
             color: 'from-purple-500 to-pink-500'
         },
         {
             step: 3,
-            title: 'Approval & Audit',
-            description: 'Auto-flag exceptions for HR/finance approval. Every step is tracked for audit.',
-            icon: Users,
+            title: 'Dynamic Price Optimization',
+            description: 'Algorithm recommends or auto-updates optimal prices across all channels.',
+            icon: DollarSign,
             color: 'from-emerald-500 to-teal-500'
         },
         {
             step: 4,
-            title: 'Payslip Generation & Distribution',
-            description: 'Generate payslips, tax forms, and direct deposit files. Employees are notified instantly.',
-            icon: FileText,
+            title: 'Monitor & Adjust',
+            description: 'Track performance, receive alerts, and fine-tune strategies in real time.',
+            icon: BarChart3,
             color: 'from-orange-500 to-red-500'
         }
     ];
 
+    // Integrations for Price Optimization
     const integrations = [
-        { name: 'ADP', category: 'Payroll', logo: '💼' },
-        { name: 'Workday', category: 'HRIS', logo: '📋' },
-        { name: 'SAP SuccessFactors', category: 'ERP', logo: '🏢' },
-        { name: 'Oracle HCM', category: 'ERP', logo: '🔮' },
-        { name: 'QuickBooks', category: 'Accounting', logo: '📊' },
-        { name: 'BambooHR', category: 'HRIS', logo: '🎋' },
-        { name: 'Kronos', category: 'Time Tracking', logo: '⏰' },
-        { name: 'Gusto', category: 'Payroll', logo: '🦸‍♂️' },
-        { name: 'Xero', category: 'Accounting', logo: '🧾' },
-        { name: 'Paychex', category: 'Payroll', logo: '💰' },
-        { name: 'Zenefits', category: 'HRIS', logo: '🧘' },
-        { name: 'Rippling', category: 'HRIS', logo: '🌊' },
-        { name: 'Slack', category: 'Collaboration', logo: '💬' },
-        { name: 'Teams', category: 'Collaboration', logo: '👥' },
-        { name: 'Email', category: 'Communication', logo: '📧' },
-        { name: 'Google Sheets', category: 'Productivity', logo: '📄' },
+        { name: 'Amazon', category: 'Marketplace', logo: '🛒' },
+        { name: 'Shopify', category: 'E-commerce', logo: '🛍️' },
+        { name: 'Walmart', category: 'Marketplace', logo: '🏪' },
+        { name: 'eBay', category: 'Marketplace', logo: '💻' },
+        { name: 'Magento', category: 'E-commerce', logo: '🧩' },
+        { name: 'WooCommerce', category: 'E-commerce', logo: '🛒' },
+        { name: 'SAP', category: 'ERP', logo: '🟦' },
+        { name: 'Oracle', category: 'ERP', logo: '🟠' },
+        { name: 'NetSuite', category: 'ERP', logo: '💼' },
+        { name: 'QuickBooks', category: 'Accounting', logo: '📒' },
+        { name: 'Google Sheets', category: 'Spreadsheet', logo: '📄' },
+        { name: 'Excel', category: 'Spreadsheet', logo: '📈' },
+        { name: 'Stripe', category: 'Payments', logo: '💳' },
+        { name: 'Slack', category: 'Communication', logo: '💬' },
+        { name: 'Twilio', category: 'Alerts', logo: '📲' },
+        { name: 'S3', category: 'Storage', logo: '🗄️' },
     ];
 
+    // Channels for Price Optimization
     const channels = [
-        { name: 'Web Portal', icon: Globe, description: 'Payroll dashboard for HR/finance and employee self-service' },
-        { name: 'Mobile App', icon: Smartphone, description: 'Access payslips, tax docs, and notifications on mobile devices' },
-        { name: 'Email Delivery', icon: Mail, description: 'Automated payslip and tax form delivery to employee inboxes' },
-        { name: 'ERP/HRIS Integration', icon: Database, description: 'Sync payroll data from your HRIS, ERP, or timekeeping system' }
+        { name: 'Web Dashboard', icon: Globe, description: 'Manage and monitor every price in one place' },
+        { name: 'API Access', icon: Settings, description: 'Automate pricing workflows and integrations' },
+        { name: 'Email/SMS Alerts', icon: Mail, description: 'Get notifications for price changes, wars, and market shifts' },
+        { name: 'Mobile App', icon: Smartphone, description: 'Update, approve, and monitor on the go' }
     ];
 
+    // Benefits for Price Optimization
     const benefits = [
         {
-            title: 'Accelerate Payroll Cycles',
-            description: 'Reduce payroll processing from days to seconds—ensure timely, accurate employee payments.',
-            percentage: '95%',
-            metric: 'time savings'
+            title: 'Boost Revenue',
+            description: 'Maximize sales and profit with real-time, AI-powered price changes.',
+            percentage: '+18%',
+            metric: 'revenue growth'
         },
         {
-            title: 'Eliminate Manual Errors',
-            description: 'AI automates calculations, compliance, and reporting—minimizing costly human mistakes.',
-            percentage: '99.99%',
-            metric: 'accuracy'
+            title: 'Increase Margins',
+            description: 'Optimize price points for every product and channel—no manual guesswork.',
+            percentage: '+16%',
+            metric: 'margin increase'
         },
         {
-            title: 'Stay Always Compliant',
-            description: 'Automatically updates with the latest tax and statutory rules for every location.',
+            title: 'React to Market Faster',
+            description: 'AI monitors and reacts to competitors and demand instantly, 24/7.',
             percentage: '100%',
-            metric: 'compliance'
+            metric: 'market agility'
         },
         {
-            title: 'Lower Payroll Costs',
-            description: 'Reduce overhead by automating repetitive payroll, tax, and reporting tasks.',
-            percentage: '60%',
-            metric: 'cost reduction'
+            title: 'Save Time & Resources',
+            description: 'Automate tedious pricing tasks—free up your team for strategy.',
+            percentage: '90%',
+            metric: 'manual effort saved'
         },
         {
-            title: 'Effortless Audits & Reporting',
-            description: 'Instant access to payroll reports and full audit trails for easy compliance.',
-            percentage: '100%',
-            metric: 'audit readiness'
+            title: 'Reduce Price Wars',
+            description: 'AI sets prices that protect profit even in competitive markets.',
+            percentage: '-40%',
+            metric: 'price war risk'
+        }
+    ];
+
+    // Capabilities for Price Optimization
+    const capabilities = [
+        {
+            title: 'Dynamic Price Calculation',
+            description: 'AI calculates and tests optimal price points using demand, seasonality, and elasticity.',
+            icon: DollarSign,
+            color: 'from-blue-500 to-cyan-500'
+        },
+        {
+            title: 'Competitor & Market Tracking',
+            description: 'Track, analyze, and react to market and competitor price changes in real time.',
+            icon: TrendingDown,
+            color: 'from-purple-500 to-pink-500'
+        },
+        {
+            title: 'Rule-Based Pricing',
+            description: 'Custom logic for min/max prices, MAP, promotions, and more.',
+            icon: Settings,
+            color: 'from-emerald-500 to-teal-500'
+        },
+        {
+            title: 'Profit & Margin Protection',
+            description: 'Ensure every price change meets your margin targets.',
+            icon: LineChart,
+            color: 'from-orange-500 to-red-500'
+        },
+        {
+            title: 'Multi-Channel Sync',
+            description: 'Push price updates across stores, marketplaces, and POS instantly.',
+            icon: Globe,
+            color: 'from-indigo-500 to-purple-500'
+        },
+        {
+            title: 'Comprehensive Analytics',
+            description: 'See the impact of pricing changes on sales, profit, elasticity, and more.',
+            icon: BarChart3,
+            color: 'from-cyan-500 to-blue-500'
         }
     ];
 
@@ -199,6 +244,7 @@ export default function PayrollCalculationAIAgent() {
             <NavbarDemo />
             {/* Hero Section */}
             <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 py-16 sm:py-20 lg:py-32">
+                {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10"></div>
                 <div
                     className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
@@ -208,7 +254,6 @@ export default function PayrollCalculationAIAgent() {
                     className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
                     style={{ transform: `translateY(${scrollY * -0.1}px)`, animationDelay: '1s' }}
                 ></div>
-                {/* Floating AI Elements */}
                 <div className="absolute inset-0 pointer-events-none">
                     {[...Array(20)].map((_, i) => (
                         <div
@@ -226,18 +271,18 @@ export default function PayrollCalculationAIAgent() {
                 <div className={`w-full max-w-7xl mx-auto text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300 hover:border-slate-600/50 transition-all duration-300">
                         <Bot className="w-4 h-4 mr-2 text-blue-400 animate-pulse" />
-                        AI-Powered Payroll Calculation
+                        AI-Powered Price Optimization
                         <div className="ml-2 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
                     </div>
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent leading-tight">
-                        Payroll Calculation
+                        Price Optimization
                         <br />
                         <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-glow">
                             AI Agent
                         </span>
                     </h1>
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-                        Automate, accelerate, and ensure payroll accuracy for your organization. Calculate salaries, deductions, and taxes in seconds—across any country, currency, or pay cycle—with full audit and compliance.
+                        Maximize revenue, profit, and competitiveness with AI-powered dynamic pricing. Instantly analyze, optimize, and update prices across every channel—automatically.
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
@@ -249,6 +294,7 @@ export default function PayrollCalculationAIAgent() {
                             Watch Demo
                         </button>
                     </div>
+                    {/* Agent Preview */}
                     <div className="relative max-w-5xl mx-auto">
                         <div className="relative bg-slate-900/50 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 group">
                             <div className="flex items-center justify-between mb-6 p-4 bg-slate-800/40 rounded-2xl">
@@ -260,37 +306,38 @@ export default function PayrollCalculationAIAgent() {
                                         <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full animate-pulse"></div>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold">Payroll Calculation AI Agent</h3>
+                                        <h3 className="text-lg font-semibold">Price Optimization AI Agent</h3>
                                         <div className="text-slate-400 text-sm flex items-center gap-2">
                                             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
-                                            Online • Calculating payroll instantly
+                                            Online • Optimizing prices
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-emerald-400">4.9★</div>
-                                        <div className="text-xs text-slate-400">Accuracy</div>
+                                        <div className="text-sm font-medium text-blue-400">120K+</div>
+                                        <div className="text-xs text-slate-400">SKUs</div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-blue-400">&lt; 2s</div>
-                                        <div className="text-xs text-slate-400">Avg Calculation</div>
+                                        <div className="text-sm font-medium text-yellow-400">+18%</div>
+                                        <div className="text-xs text-slate-400">Revenue</div>
                                     </div>
                                 </div>
                             </div>
+                            {/* Chat Interface */}
                             <div className="space-y-4 mb-6">
                                 <div className="flex gap-3 animate-slideInLeft">
                                     <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Calculate payroll for May 2025 for all employees in the India office including bonuses and overtime.</span>
+                                        <span className="text-sm">What’s the optimal price for our new headphones on Amazon?</span>
                                         <span className="text-xs text-slate-400 mt-1 block">10:10 AM</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">Payroll calculated for 214 employees. Bonuses and overtime processed. Tax and provident fund deductions applied. Payslips ready for distribution.</span>
+                                        <span className="text-sm">AI suggests $129.99 based on demand, competition, and margin. Click to apply across Amazon and Shopify.</span>
                                         <span className="text-xs text-blue-100 mt-1 block">10:10 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
@@ -302,11 +349,21 @@ export default function PayrollCalculationAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Flag any payroll with missing time entries or unapproved overtime for review.</span>
+                                        <span className="text-sm">Alert me if any competitor drops price by &gt;5%.</span>
                                         <span className="text-xs text-slate-400 mt-1 block">10:11 AM</span>
                                     </div>
                                 </div>
+                                <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '1.2s' }}>
+                                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
+                                        <span className="text-sm">Configured! You’ll receive SMS and email notifications for price drops on tracked SKUs.</span>
+                                        <span className="text-xs text-blue-100 mt-1 block">10:11 AM</span>
+                                    </div>
+                                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                                        <Bot className="w-4 h-4 text-white" />
+                                    </div>
+                                </div>
                             </div>
+                            {/* Typing Indicator */}
                             <div className="flex gap-3 justify-end">
                                 <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-3 border border-blue-500/30">
                                     <div className="flex items-center gap-2">
@@ -315,7 +372,7 @@ export default function PayrollCalculationAIAgent() {
                                             <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
                                             <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                                         </div>
-                                        <span className="text-xs text-blue-300">AI is calculating...</span>
+                                        <span className="text-xs text-blue-300">AI is typing...</span>
                                     </div>
                                 </div>
                                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
@@ -367,7 +424,7 @@ export default function PayrollCalculationAIAgent() {
                             How It Works
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            From timesheet to payslip in
+                            From data to optimized price in
                             <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> seconds</span>
                         </h2>
                     </div>
@@ -413,7 +470,7 @@ export default function PayrollCalculationAIAgent() {
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             Everything you need for
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> effortless payroll automation</span>
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> intelligent pricing</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -448,8 +505,8 @@ export default function PayrollCalculationAIAgent() {
                             Integration Channels
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Connect with all your
-                            <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> HR and payroll tools</span>
+                            Optimize prices across all your
+                            <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> selling platforms</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -470,6 +527,7 @@ export default function PayrollCalculationAIAgent() {
                             );
                         })}
                     </div>
+                    {/* Integration Platforms Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                         {integrations.map((integration, index) => (
                             <div
@@ -496,8 +554,8 @@ export default function PayrollCalculationAIAgent() {
                             Business Impact
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Transform payroll with speed, accuracy, and compliance
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> at scale</span>
+                            Maximize profit & growth
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with AI pricing</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -528,31 +586,34 @@ export default function PayrollCalculationAIAgent() {
                 <div className="max-w-7xl mx-auto">
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('capabilities') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
-                            <Brain className="w-4 h-4 mr-2 text-purple-400" />
+                            <Cpu className="w-4 h-4 mr-2 text-purple-400" />
                             AI Capabilities
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             Advanced AI for
-                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> global payroll automation</span>
+                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> price optimization</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* AI Brain Visualization */}
                         <div className={`relative transform transition-all duration-1000 ${isInView('capabilities') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                             <div className="relative">
+                                {/* Central AI Core */}
                                 <div className="relative w-80 h-80 mx-auto">
                                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
                                     <div className="relative w-full h-full bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-full border border-slate-600/50 backdrop-blur-sm flex items-center justify-center">
                                         <div className="w-32 h-32 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                                            <Brain className="w-16 h-16 text-white animate-pulse" />
+                                            <Cpu className="w-16 h-16 text-white animate-pulse" />
                                         </div>
                                     </div>
+                                    {/* Floating Capability Nodes */}
                                     {[
-                                        { label: 'Compliance', angle: 0, color: 'from-blue-500 to-cyan-500' },
-                                        { label: 'Multi-Country', angle: 60, color: 'from-emerald-500 to-teal-500' },
-                                        { label: 'Audit', angle: 120, color: 'from-orange-500 to-red-500' },
-                                        { label: 'Payroll Rules', angle: 180, color: 'from-purple-500 to-pink-500' },
-                                        { label: 'Security', angle: 240, color: 'from-yellow-500 to-orange-500' },
-                                        { label: 'API', angle: 300, color: 'from-indigo-500 to-purple-500' }
+                                        { label: 'Dynamic', angle: 0, color: 'from-blue-500 to-cyan-500' },
+                                        { label: 'Market', angle: 60, color: 'from-emerald-500 to-teal-500' },
+                                        { label: 'Rules', angle: 120, color: 'from-orange-500 to-red-500' },
+                                        { label: 'Profit', angle: 180, color: 'from-purple-500 to-pink-500' },
+                                        { label: 'Sync', angle: 240, color: 'from-yellow-500 to-orange-500' },
+                                        { label: 'Analytics', angle: 300, color: 'from-indigo-500 to-purple-500' }
                                     ].map((node, index) => {
                                         const x = Math.cos((node.angle * Math.PI) / 180) * 120;
                                         const y = Math.sin((node.angle * Math.PI) / 180) * 120;
@@ -575,45 +636,9 @@ export default function PayrollCalculationAIAgent() {
                                 </div>
                             </div>
                         </div>
+                        {/* Capabilities List */}
                         <div className={`space-y-8 transform transition-all duration-1000 ${isInView('capabilities') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-                            {[
-                                {
-                                    title: 'Global Compliance',
-                                    description: 'Auto-updates for local tax, social, and labor laws in over 50 countries.',
-                                    icon: Shield,
-                                    color: 'from-blue-500 to-cyan-500'
-                                },
-                                {
-                                    title: 'Multi-Country/Multi-Currency',
-                                    description: 'Handles payroll for distributed teams and pays in local currencies.',
-                                    icon: Globe,
-                                    color: 'from-purple-500 to-pink-500'
-                                },
-                                {
-                                    title: 'Complete Audit Trail',
-                                    description: 'Every action and edit is logged for effortless audits.',
-                                    icon: BarChart3,
-                                    color: 'from-emerald-500 to-teal-500'
-                                },
-                                {
-                                    title: 'Custom Payroll Rules',
-                                    description: 'Supports unlimited pay cycles, deduction rules, bonuses, and overtime.',
-                                    icon: Settings,
-                                    color: 'from-orange-500 to-red-500'
-                                },
-                                {
-                                    title: 'Bank-Grade Security',
-                                    description: 'AES-256 encryption, role-based access, SOC 2/ISO 27001 certified.',
-                                    icon: Shield,
-                                    color: 'from-yellow-500 to-orange-500'
-                                },
-                                {
-                                    title: 'API-First Integration',
-                                    description: 'Easily connect to any HR, ERP, or banking system.',
-                                    icon: Database,
-                                    color: 'from-indigo-500 to-purple-500'
-                                }
-                            ].map((capability, index) => {
+                            {capabilities.map((capability, index) => {
                                 const IconComponent = capability.icon;
                                 return (
                                     <div
@@ -641,19 +666,22 @@ export default function PayrollCalculationAIAgent() {
                     <div className={`transform transition-all duration-1000 ${isInView('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Zap className="w-4 h-4 mr-2 text-emerald-400" />
-                            Ready to Automate Payroll?
+                            Ready to Optimize?
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-                            Start automating payroll
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> for your workforce</span>
+                            Start increasing revenue
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with AI pricing today</span>
                         </h2>
                         <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed">
-                            Join global HR and finance teams using AI to ensure timely, compliant, and accurate payroll. Get started in minutes with a free trial.
+                            Join retailers, brands, and e-commerce leaders using AI to price smarter and sell more. Try Price Optimization AI Agent free—get results in days, not months.
                         </p>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
+
+                        
+                        {/* Trust Indicators */}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 pt-8 border-t border-slate-700/50">
                             {[
-                                { label: 'Bank-Grade Security', value: 'AES-256' },
-                                { label: 'Setup Time', value: '1 to 3 Days' },
+                                { label: 'Enterprise Ready', value: 'SOC 2 / GDPR' },
+                                { label: 'Quick Setup', value: '< 5 Minutes' },
                                 // { label: 'Free Trial', value: '14 Days' },
                                 { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (
@@ -667,6 +695,7 @@ export default function PayrollCalculationAIAgent() {
                 </div>
             </section>
             <Footer />
+            {/* Custom Styles */}
             <style jsx>{`
                 @keyframes float {
                     0%, 100% { transform: translateY(0px); }
