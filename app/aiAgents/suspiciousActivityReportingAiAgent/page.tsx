@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, Clock, Users, Star, CheckCircle, ArrowRight, Bot, Headphones, Shield, Zap, BarChart3, Globe, Play, ChevronRight, Brain, Cpu, Database, Settings, Phone, Mail, MessageSquare, Smartphone } from 'lucide-react';
+import { MessageCircle, Clock, Users, Star, CheckCircle, ArrowRight, Bot, Headphones, Shield, Zap, BarChart3, Globe, Play, ChevronRight, Brain, Cpu, Database, Settings, Phone, Mail, MessageSquare, Smartphone, AlertTriangle, Eye, FileText, Search, ActivitySquare } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 
-export default function SocialMediaContentAIAgent() {
+export default function SuspiciousActivityReportingAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [visibleSections, setVisibleSections] = useState(new Set());
@@ -47,151 +47,157 @@ export default function SocialMediaContentAIAgent() {
         };
     }, []);
 
+    // Stats for Suspicious Activity Reporting AI Agent
     const stats = [
-        { label: 'Content Generation Time', value: '<3s', icon: Clock, color: 'from-blue-500 to-cyan-500' },
-        { label: 'Engagement Boost', value: '5x+', icon: Star, color: 'from-yellow-500 to-orange-500' },
-        { label: 'Scheduling Accuracy', value: '99%', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
-        { label: 'System Uptime', value: '99.99%', icon: Zap, color: 'from-purple-500 to-pink-500' },
+        { label: 'Avg Detection Time', value: '<2s', icon: Clock, color: 'from-blue-500 to-cyan-500' },
+        { label: 'Accuracy Rate', value: '99.1%', icon: Star, color: 'from-yellow-500 to-orange-500' },
+        { label: 'False Positive Reduction', value: '78%', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
+        { label: 'System Uptime', value: '99.995%', icon: Zap, color: 'from-purple-500 to-pink-500' },
     ];
 
+    // Features specific for Suspicious Activity Reporting
     const features = [
         {
-            title: 'Instant Content Creation',
-            description: 'Generate creative, high-impact social posts, captions, and hashtags in seconds using the latest AI models.',
-            icon: Zap,
+            title: 'Real-Time Threat Detection',
+            description: 'Instantly detect suspicious activity and anomalies across digital channels, devices, and user behaviors using AI-powered analytics.',
+            icon: AlertTriangle,
+            gradient: 'from-red-500 to-yellow-500'
+        },
+        {
+            title: 'Automated Incident Reporting',
+            description: 'Seamlessly generate and submit detailed incident reports with all relevant evidence and context included.',
+            icon: FileText,
             gradient: 'from-blue-500 to-cyan-500'
         },
         {
-            title: 'Multi-Platform Publishing',
-            description: 'Effortlessly publish and schedule posts across Instagram, Twitter, Facebook, LinkedIn, TikTok, and more—all from one dashboard.',
+            title: 'Multi-Channel Awareness',
+            description: 'Monitor threats across chat, email, mobile, web, and third-party integrations with unified intelligence.',
             icon: Globe,
             gradient: 'from-purple-500 to-pink-500'
         },
         {
-            title: 'Brand Voice Personalization',
-            description: 'Customize the AI to match your brand’s tone and guidelines for every piece of content.',
-            icon: Users,
-            gradient: 'from-emerald-500 to-teal-500'
+            title: 'Privacy-First Data Handling',
+            description: 'Strict access controls and end-to-end encryption ensure all sensitive information remains secure and compliant.',
+            icon: Shield,
+            gradient: 'from-orange-500 to-red-500'
         },
         {
-            title: 'AI-Driven Insights',
-            description: 'Get real-time analytics on engagement, best posting times, and trending topics to maximize your reach.',
+            title: 'Actionable Analytics',
+            description: 'Gain real-time insights into suspicious patterns, detection rates, and compliance status with advanced dashboards.',
             icon: BarChart3,
             gradient: 'from-indigo-500 to-purple-500'
         },
         {
-            title: 'Content Calendar Automation',
-            description: 'Organize, schedule, and automate your campaign calendar to keep your feeds consistently active.',
-            icon: Settings,
-            gradient: 'from-orange-500 to-red-500'
-        },
-        {
-            title: 'Smart Hashtag Generator',
-            description: 'AI recommends optimal, trending hashtags tailored to your content and audience.',
-            icon: MessageCircle,
+            title: 'AI-Powered Evidence Gathering',
+            description: 'Automatically collect logs, screenshots, and conversation records to support investigations.',
+            icon: Search,
             gradient: 'from-pink-500 to-rose-500'
         },
         {
-            title: 'Visual Content Suggestions',
-            description: 'Get AI-powered recommendations for images, videos, and graphics to enhance every post.',
-            icon: Brain,
+            title: 'Escalation Automation',
+            description: 'Route high-risk incidents to security teams or authorities instantly, with complete case details.',
+            icon: Users,
             gradient: 'from-rose-500 to-pink-500'
         },
         {
-            title: 'Team Collaboration',
-            description: 'Collaborate with your team, approve drafts, and manage permissions to streamline your content workflow.',
-            icon: Users,
+            title: 'Continuous Learning',
+            description: 'AI learns from new threats and user feedback to improve detection accuracy and reduce manual workload.',
+            icon: Brain,
             gradient: 'from-amber-500 to-orange-500'
         }
     ];
 
+    // Steps for "How it Works"
     const howItWorks = [
         {
             step: 1,
-            title: 'Content Idea',
-            description: 'Input a topic, campaign, or product. The AI analyzes trends and your brand voice.',
-            icon: MessageSquare,
-            color: 'from-blue-500 to-cyan-500'
+            title: 'Suspicious Event Detected',
+            description: 'AI constantly monitors all channels and surfaces suspicious behaviors, transactions, or communications.',
+            icon: Eye,
+            color: 'from-cyan-500 to-blue-500'
         },
         {
             step: 2,
-            title: 'AI Content Creation',
-            description: 'AI instantly generates social posts, captions, and hashtags tailored for each platform.',
-            icon: Brain,
-            color: 'from-purple-500 to-pink-500'
+            title: 'AI Investigation',
+            description: 'The system analyzes context, cross-references data sources, and assigns risk scores in real time.',
+            icon: ActivitySquare,
+            color: 'from-red-500 to-yellow-500'
         },
         {
             step: 3,
-            title: 'One-Click Publishing',
-            description: 'Approve or edit the content, then schedule or publish it across multiple platforms with a single click.',
-            icon: Cpu,
-            color: 'from-emerald-500 to-teal-500'
+            title: 'Report Generation',
+            description: 'AI creates a comprehensive, auditable incident report including evidence, chronology, and recommended actions.',
+            icon: FileText,
+            color: 'from-purple-500 to-pink-500'
         },
         {
             step: 4,
-            title: 'Analyze & Optimize',
-            description: 'Track engagement and let the AI optimize future posts for even better results.',
-            icon: BarChart3,
+            title: 'Escalation & Response',
+            description: 'Critical or unresolved cases are escalated to security teams or authorities for further action, while AI continues to monitor.',
+            icon: Users,
             color: 'from-orange-500 to-red-500'
         }
     ];
 
+    // Integration platforms
     const integrations = [
-        { name: 'Instagram', category: 'Social', logo: '📸' },
-        { name: 'Facebook', category: 'Social', logo: '📘' },
-        { name: 'Twitter/X', category: 'Social', logo: '🐦' },
-        { name: 'LinkedIn', category: 'Professional', logo: '💼' },
-        { name: 'TikTok', category: 'Social', logo: '🎶' },
-        { name: 'YouTube', category: 'Video', logo: '▶️' },
-        { name: 'Pinterest', category: 'Social', logo: '📌' },
+        { name: 'Splunk', category: 'SIEM', logo: '📊' },
         { name: 'Slack', category: 'Collaboration', logo: '💬' },
-        { name: 'Canva', category: 'Design', logo: '🎨' },
-        { name: 'Google Drive', category: 'Storage', logo: '☁️' },
-        { name: 'Hootsuite', category: 'Scheduling', logo: '🦉' },
-        { name: 'Buffer', category: 'Scheduling', logo: '📅' },
-        { name: 'Zapier', category: 'Automation', logo: '🤖' },
-        { name: 'Trello', category: 'Project Management', logo: '🗂️' },
-        { name: 'Shopify', category: 'E-commerce', logo: '🛒' },
-        { name: 'WordPress', category: 'Website', logo: '📝' },
+        { name: 'Microsoft Teams', category: 'Collaboration', logo: '👥' },
+        { name: 'PagerDuty', category: 'Incident Response', logo: '🚨' },
+        { name: 'AWS Security Hub', category: 'Cloud Security', logo: '☁️' },
+        { name: 'Okta', category: 'Identity', logo: '🔒' },
+        { name: 'Salesforce', category: 'CRM', logo: '🏢' },
+        { name: 'Google Workspace', category: 'Productivity', logo: '📎' },
+        { name: 'ServiceNow', category: 'ITSM', logo: '📝' },
+        { name: 'Twilio', category: 'Notifications', logo: '📲' },
+        { name: 'Jira', category: 'Ticketing', logo: '🎟️' },
+        { name: 'Zendesk', category: 'Support', logo: '🎫' },
+        { name: 'AWS S3', category: 'Storage', logo: '🗄️' },
+        { name: 'Azure Sentinel', category: 'SIEM', logo: '🛡️' },
+        { name: 'IBM QRadar', category: 'SIEM', logo: '🧠' },
+        { name: 'Box', category: 'Storage', logo: '📦' },
     ];
 
+    // Supported channels
     const channels = [
-        { name: 'Instagram', icon: Globe, description: 'Post images, reels, and stories' },
-        { name: 'Facebook', icon: Globe, description: 'Share updates, links, and more' },
-        { name: 'Twitter/X', icon: Globe, description: 'Tweet and schedule threads' },
-        { name: 'LinkedIn', icon: Globe, description: 'Professional content and company news' }
+        { name: 'Web Portal', icon: Globe, description: 'Report or manage incidents from a secure web dashboard' },
+        { name: 'Mobile App', icon: Smartphone, description: 'On-the-go suspicious activity alerts and reporting' },
+        { name: 'Email Alerts', icon: Mail, description: 'Receive and respond to incidents via email' },
+        { name: 'Phone Hotline', icon: Phone, description: 'Dedicated line for urgent or sensitive incident reporting' }
     ];
 
+    // Benefits for Suspicious Activity Reporting
     const benefits = [
         {
-            title: 'Create Content Faster',
-            description: 'Go from idea to viral-ready post in seconds—never miss a trend or moment.',
-            percentage: '97%',
-            metric: 'time saved'
+            title: 'Accelerate Threat Response',
+            description: 'Reduce detection and response times from hours to seconds with automated AI-driven workflows.',
+            percentage: '95%',
+            metric: 'faster threat response'
         },
         {
-            title: 'Boost Engagement',
-            description: 'Posts optimized by AI deliver up to 5x more likes, shares, and comments.',
-            percentage: '5x',
-            metric: 'engagement'
+            title: 'Minimize False Positives',
+            description: 'Intelligent filtering reduces noise and focuses your security team on real threats.',
+            percentage: '78%',
+            metric: 'reduction in false alerts'
         },
         {
-            title: 'Consistent Brand Messaging',
-            description: 'Maintain your brand’s unique voice and quality across every channel and post.',
+            title: 'Boost Compliance',
+            description: 'Automated reporting ensures full audit trails and regulatory compliance with minimal manual effort.',
             percentage: '100%',
-            metric: 'consistency'
+            metric: 'policy coverage'
         },
         {
-            title: 'Automate Scheduling',
-            description: 'Keep your feeds active 24/7 with automated, optimized post timing.',
+            title: '24/7 Monitoring',
+            description: 'Round-the-clock vigilance with no downtime, ensuring threats are never missed.',
             percentage: '24/7',
-            metric: 'automation'
+            metric: 'continuous protection'
         },
         {
-            title: 'Collaborative Workflows',
-            description: 'Empower teams to co-create, review, and approve content easily.',
-            percentage: '3x',
-            metric: 'team efficiency'
+            title: 'Reduce Investigation Overhead',
+            description: 'Let AI gather and organize evidence, freeing up your experts for high-value analysis.',
+            percentage: '4x',
+            metric: 'investigation efficiency'
         }
     ];
 
@@ -203,13 +209,13 @@ export default function SocialMediaContentAIAgent() {
             {/* Hero Section */}
             <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 py-16 sm:py-20 lg:py-32">
                 {/* Animated Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-transparent to-blue-600/10"></div>
                 <div
-                    className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
+                    className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse"
                     style={{ transform: `translateY(${scrollY * 0.1}px)` }}
                 ></div>
                 <div
-                    className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
+                    className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
                     style={{ transform: `translateY(${scrollY * -0.1}px)`, animationDelay: '1s' }}
                 ></div>
 
@@ -218,7 +224,7 @@ export default function SocialMediaContentAIAgent() {
                     {[...Array(20)].map((_, i) => (
                         <div
                             key={i}
-                            className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-float"
+                            className="absolute w-1 h-1 bg-red-400/30 rounded-full animate-float"
                             style={{
                                 left: `${Math.random() * 100}%`,
                                 top: `${Math.random() * 100}%`,
@@ -231,31 +237,31 @@ export default function SocialMediaContentAIAgent() {
 
                 <div className={`w-full max-w-7xl mx-auto text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300 hover:border-slate-600/50 transition-all duration-300">
-                        <Bot className="w-4 h-4 mr-2 text-blue-400 animate-pulse" />
-                        AI-Powered Social Media Content
+                        <Bot className="w-4 h-4 mr-2 text-red-400 animate-pulse" />
+                        AI-Powered Suspicious Activity Reporting
                         <div className="ml-2 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent leading-tight">
-                        Social Media Content
+                        Suspicious Activity
                         <br />
-                        <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-glow">
-                            AI Agent
+                        <span className="bg-gradient-to-r from-red-400 to-blue-600 bg-clip-text text-transparent animate-glow">
+                            Reporting AI Agent
                         </span>
                     </h1>
 
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-                        Supercharge your social strategy with AI that creates, schedules, and optimizes posts for every major platform. 24/7 content generation, trend analysis, and brand consistency—instantly.
+                        Instantly detect, report, and escalate suspicious activities with enterprise AI. <span className="text-white font-medium">Automate compliance, protect your organization 24/7,</span> and reduce manual overhead with advanced, secure incident reporting.
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
-                            Create Agent
+                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-red-600 to-blue-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-red-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                            Deploy Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             <Play className="w-4 h-4" />
-                            Watch Demo
+                            Watch Overview
                         </button>
                     </div>
 
@@ -266,49 +272,49 @@ export default function SocialMediaContentAIAgent() {
                             <div className="flex items-center justify-between mb-6 p-4 bg-slate-800/40 rounded-2xl">
                                 <div className="flex items-center gap-3">
                                     <div className="relative">
-                                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                                        <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-blue-600 rounded-2xl flex items-center justify-center">
                                             <Bot className="w-6 h-6 text-white" />
                                         </div>
                                         <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full animate-pulse"></div>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold">Social Media AI Agent</h3>
+                                        <h3 className="text-lg font-semibold">Suspicious Activity AI Agent</h3>
                                         <div className="text-slate-400 text-sm flex items-center gap-2">
                                             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
-                                            Online • Generating content
+                                            Active • Monitoring in real-time
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-emerald-400">5x</div>
-                                        <div className="text-xs text-slate-400">Engagement</div>
+                                        <div className="text-sm font-medium text-emerald-400">99.1%</div>
+                                        <div className="text-xs text-slate-400">Detection Accuracy</div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-blue-400">&lt; 3s</div>
-                                        <div className="text-xs text-slate-400">Generation</div>
+                                        <div className="text-sm font-medium text-blue-400">&lt; 2s</div>
+                                        <div className="text-xs text-slate-400">Avg Detection</div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Chat Interface */}
+                            {/* Chat/Incident Interface */}
                             <div className="space-y-4 mb-6">
                                 <div className="flex gap-3 animate-slideInLeft">
                                     <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">What's a catchy caption for our new summer collection?</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">10:21 AM</span>
+                                        <span className="text-sm">Unusual login detected from a new device. User: jdoe, Location: Russia. Action needed?</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">3:42 PM</span>
                                     </div>
                                 </div>
                                 
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
-                                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">"Make every day a splash! 🌞 Dive into our summer styles now. #SummerVibes #NewArrivals"</span>
-                                        <span className="text-xs text-blue-100 mt-1 block">10:21 AM</span>
+                                    <div className="bg-gradient-to-r from-red-600 to-blue-600 rounded-2xl p-3 max-w-sm">
+                                        <span className="text-sm">Alert acknowledged. Multi-factor authentication triggered for jdoe. Security team notified & evidence collected.</span>
+                                        <span className="text-xs text-blue-100 mt-1 block">3:42 PM</span>
                                     </div>
-                                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                                    <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center">
                                         <Bot className="w-4 h-4 text-white" />
                                     </div>
                                 </div>
@@ -318,35 +324,25 @@ export default function SocialMediaContentAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Can you suggest trending hashtags for tech launches?</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">10:22 AM</span>
-                                    </div>
-                                </div>
-
-                                <div className="flex gap-3 animate-slideInLeft" style={{ animationDelay: '1s' }}>
-                                    <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
-                                        <Users className="w-4 h-4 text-slate-300" />
-                                    </div>
-                                    <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Can you suggest trending hashtags for tech launches?</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">10:22 AM</span>
+                                        <span className="text-sm">Please generate a compliance report for this incident.</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">3:43 PM</span>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Typing Indicator */}
                             <div className="flex gap-3 justify-end">
-                                <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-3 border border-blue-500/30">
+                                <div className="bg-gradient-to-r from-red-600/20 to-blue-600/20 rounded-2xl p-3 border border-red-500/30">
                                     <div className="flex items-center gap-2">
                                         <div className="flex gap-1">
-                                            <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
-                                            <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                                            <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                                            <div className="w-2 h-2 bg-red-400 rounded-full animate-bounce"></div>
+                                            <div className="w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                                            <div className="w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                                         </div>
-                                        <span className="text-xs text-blue-300">AI is typing...</span>
+                                        <span className="text-xs text-red-300">AI is processing...</span>
                                     </div>
                                 </div>
-                                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                                <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-blue-600 rounded-full flex items-center justify-center">
                                     <Bot className="w-4 h-4 text-white" />
                                 </div>
                             </div>
@@ -388,8 +384,8 @@ export default function SocialMediaContentAIAgent() {
                 </div>
             </section>
 
-             {/* How It Works Section */}
-             <section id="how-it-works" className="py-16 sm:py-24 lg:py-32 px-4">
+            {/* How It Works Section */}
+            <section id="how-it-works" className="py-16 sm:py-24 lg:py-32 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('how-it-works') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
@@ -398,7 +394,7 @@ export default function SocialMediaContentAIAgent() {
                         </div>
 
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            From idea to viral post in
+                            From detection to resolution in
                             <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> seconds</span>
                         </h2>
                     </div>
@@ -406,7 +402,7 @@ export default function SocialMediaContentAIAgent() {
                     <div className="relative">
                         {/* Connection Lines */}
                         <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-slate-700 to-transparent transform -translate-y-1/2"></div>
-
+                        
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {howItWorks.map((step, index) => {
                                 const IconComponent = step.icon;
@@ -447,13 +443,13 @@ export default function SocialMediaContentAIAgent() {
                 <div className="max-w-7xl mx-auto">
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('features') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
-                            <Zap className="w-4 h-4 mr-2 text-emerald-400" />
-                            Powerful Features
+                            <AlertTriangle className="w-4 h-4 mr-2 text-red-400" />
+                            Key Features
                         </div>
 
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             Everything you need for
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> viral social content</span>
+                            <span className="bg-gradient-to-r from-red-400 to-blue-600 bg-clip-text text-transparent"> robust suspicious activity reporting</span>
                         </h2>
                     </div>
 
@@ -487,12 +483,12 @@ export default function SocialMediaContentAIAgent() {
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('channels') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Globe className="w-4 h-4 mr-2 text-blue-400" />
-                            Supported Platforms
+                            Supported Channels
                         </div>
 
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Publish everywhere your
-                            <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> audience is</span>
+                            Secure reporting across all your
+                            <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> digital touchpoints</span>
                         </h2>
                     </div>
 
@@ -540,12 +536,12 @@ export default function SocialMediaContentAIAgent() {
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('benefits') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <BarChart3 className="w-4 h-4 mr-2 text-emerald-400" />
-                            Business Impact
+                            Security Impact
                         </div>
 
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Deliver viral content
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> at scale</span>
+                            Raise your security posture
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> with next-gen AI reporting</span>
                         </h2>
                     </div>
 
@@ -584,7 +580,7 @@ export default function SocialMediaContentAIAgent() {
 
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             Advanced AI for
-                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> creative content</span>
+                            <span className="bg-gradient-to-r from-red-400 to-blue-600 bg-clip-text text-transparent"> suspicious activity reporting</span>
                         </h2>
                     </div>
 
@@ -594,21 +590,21 @@ export default function SocialMediaContentAIAgent() {
                             <div className="relative">
                                 {/* Central AI Core */}
                                 <div className="relative w-80 h-80 mx-auto">
-                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
                                     <div className="relative w-full h-full bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-full border border-slate-600/50 backdrop-blur-sm flex items-center justify-center">
-                                        <div className="w-32 h-32 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                                        <div className="w-32 h-32 bg-gradient-to-r from-red-600 to-blue-600 rounded-full flex items-center justify-center">
                                             <Brain className="w-16 h-16 text-white animate-pulse" />
                                         </div>
                                     </div>
-
+                                    
                                     {/* Floating Capability Nodes */}
                                     {[
-                                        { label: 'NLP', angle: 0, color: 'from-blue-500 to-cyan-500' },
-                                        { label: 'Vision', angle: 60, color: 'from-emerald-500 to-teal-500' },
-                                        { label: 'Trend', angle: 120, color: 'from-orange-500 to-red-500' },
-                                        { label: 'Analytics', angle: 180, color: 'from-purple-500 to-pink-500' },
-                                        { label: 'Scheduling', angle: 240, color: 'from-yellow-500 to-orange-500' },
-                                        { label: 'API', angle: 300, color: 'from-indigo-500 to-purple-500' }
+                                        { label: 'Threat Intel', angle: 0, color: 'from-red-500 to-yellow-500' },
+                                        { label: 'NLP', angle: 60, color: 'from-blue-500 to-cyan-500' },
+                                        { label: 'Anomaly', angle: 120, color: 'from-orange-500 to-red-500' },
+                                        { label: 'Evidence', angle: 180, color: 'from-purple-500 to-pink-500' },
+                                        { label: 'Compliance', angle: 240, color: 'from-yellow-500 to-orange-500' },
+                                        { label: 'SIEM', angle: 300, color: 'from-indigo-500 to-purple-500' }
                                     ].map((node, index) => {
                                         const x = Math.cos((node.angle * Math.PI) / 180) * 120;
                                         const y = Math.sin((node.angle * Math.PI) / 180) * 120;
@@ -636,40 +632,40 @@ export default function SocialMediaContentAIAgent() {
                         <div className={`space-y-8 transform transition-all duration-1000 ${isInView('capabilities') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                             {[
                                 {
-                                    title: 'Natural Language Generation',
-                                    description: 'Crafts engaging copy, captions, and hashtags in your brand voice, powered by the latest LLMs.',
+                                    title: 'Real-Time Anomaly Detection',
+                                    description: 'Identifies abnormal behaviors, access patterns, and potential threats as they happen.',
+                                    icon: AlertTriangle,
+                                    color: 'from-red-500 to-yellow-500'
+                                },
+                                {
+                                    title: 'Natural Language Processing',
+                                    description: 'Extracts intent and context from reports, emails, and chat logs for better incident understanding.',
                                     icon: MessageCircle,
                                     color: 'from-blue-500 to-cyan-500'
                                 },
                                 {
-                                    title: 'Visual Suggestion Engine',
-                                    description: 'Recommends trending images, videos, and layouts for maximum impact.',
-                                    icon: Brain,
-                                    color: 'from-purple-500 to-pink-500'
-                                },
-                                {
-                                    title: 'Trend Analysis',
-                                    description: 'Identifies what’s hot in your industry and suggests relevant content ideas and hashtags.',
-                                    icon: BarChart3,
+                                    title: 'Automated Evidence Collection',
+                                    description: 'Gathers logs, screenshots, and communication records for every incident, reducing manual work.',
+                                    icon: Search,
                                     color: 'from-emerald-500 to-teal-500'
                                 },
                                 {
-                                    title: 'Automated Scheduling',
-                                    description: 'Finds and schedules the best post times for each platform to maximize reach.',
-                                    icon: Settings,
+                                    title: 'Compliance Automation',
+                                    description: 'Ensures all required steps, documentation, and notifications for regulatory mandates are followed.',
+                                    icon: FileText,
                                     color: 'from-orange-500 to-red-500'
                                 },
                                 {
-                                    title: 'Real-Time Analytics',
-                                    description: 'Monitors engagement and audience growth, adjusting strategy dynamically.',
-                                    icon: BarChart3,
+                                    title: 'SIEM Integration',
+                                    description: 'Seamless integration with leading security platforms for end-to-end visibility and response.',
+                                    icon: Database,
                                     color: 'from-indigo-500 to-purple-500'
                                 },
                                 {
-                                    title: 'API Integrations',
-                                    description: 'Connects seamlessly with your tools for content import, export, and automation.',
-                                    icon: Database,
-                                    color: 'from-cyan-500 to-blue-500'
+                                    title: 'Continuous Threat Learning',
+                                    description: 'AI models evolve based on new threats and analyst feedback for ever-improving detection.',
+                                    icon: Brain,
+                                    color: 'from-purple-500 to-pink-500'
                                 }
                             ].map((capability, index) => {
                                 const IconComponent = capability.icon;
@@ -700,25 +696,25 @@ export default function SocialMediaContentAIAgent() {
                     <div className={`transform transition-all duration-1000 ${isInView('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Zap className="w-4 h-4 mr-2 text-emerald-400" />
-                            Ready to Go Viral?
+                            Ready to Secure?
                         </div>
 
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-                            Start growing your audience with
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> AI-powered content today</span>
+                            Start reporting suspicious activity with
+                            <span className="bg-gradient-to-r from-red-400 to-blue-600 bg-clip-text text-transparent"> AI speed and accuracy</span>
                         </h2>
 
                         <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed">
-                            Join thousands of creators and brands using AI to dominate social media. Launch your first campaign free in minutes!
+                            Join security leaders using AI to detect and report threats instantly. Get started today with a free trial and see the difference automated incident reporting can make for your organization.
                         </p>
 
                         {/* Trust Indicators */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
-                                { label: 'Multi-Platform Ready', value: '15+ Platforms' },
-                                { label: 'Quick Start', value: '< 5 Minutes' },
+                                { label: 'Enterprise Grade', value: 'SOC 2 & ISO 27001' },
+                                { label: 'Rapid Deployment', value: '< 10 Minutes' },
                                 { label: 'Free Trial', value: '14 Days' },
-                                { label: 'Support', value: '24/7 Available' }
+                                { label: 'Support', value: '24/7 Security Team' }
                             ].map((item, index) => (
                                 <div key={index} className="text-center">
                                     <div className="text-2xl font-bold text-white mb-1">{item.value}</div>
@@ -738,41 +734,52 @@ export default function SocialMediaContentAIAgent() {
                     0%, 100% { transform: translateY(0px); }
                     50% { transform: translateY(-10px); }
                 }
+                
                 @keyframes slideUp {
                     from { opacity: 0; transform: translateY(30px); }
                     to { opacity: 1; transform: translateY(0px); }
                 }
+                
                 @keyframes slideInLeft {
                     from { opacity: 0; transform: translateX(-30px); }
                     to { opacity: 1; transform: translateX(0px); }
                 }
+                
                 @keyframes slideInRight {
                     from { opacity: 0; transform: translateX(30px); }
                     to { opacity: 1; transform: translateX(0px); }
                 }
+                
                 @keyframes glow {
                     0%, 100% { filter: brightness(1); }
                     50% { filter: brightness(1.2); }
                 }
+                
                 @keyframes spin-slow {
                     from { transform: rotate(0deg); }
                     to { transform: rotate(360deg); }
                 }
+                
                 .animate-float {
                     animation: float 6s ease-in-out infinite;
                 }
+                
                 .animate-slideUp {
                     animation: slideUp 0.8s ease-out forwards;
                 }
+                
                 .animate-slideInLeft {
                     animation: slideInLeft 0.8s ease-out forwards;
                 }
+                
                 .animate-slideInRight {
                     animation: slideInRight 0.8s ease-out forwards;
                 }
+                
                 .animate-glow {
                     animation: glow 3s ease-in-out infinite;
                 }
+                
                 .animate-spin-slow {
                     animation: spin-slow 3s linear infinite;
                 }

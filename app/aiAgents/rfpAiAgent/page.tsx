@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, Clock, Users, Star, CheckCircle, ArrowRight, Bot, Headphones, Shield, Zap, BarChart3, Globe, Play, ChevronRight, Brain, Cpu, Database, Settings, Phone, Mail, MessageSquare, Smartphone } from 'lucide-react';
+import { FileText, Clock, Star, CheckCircle, Zap, BarChart3, Database, Users, Shield, Settings, Cpu, Brain, ArrowRight, Bot, Play, ChevronRight, Globe, Mail, Smartphone } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 
-export default function SocialMediaContentAIAgent() {
+export default function RfpAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [visibleSections, setVisibleSections] = useState(new Set());
@@ -14,11 +14,9 @@ export default function SocialMediaContentAIAgent() {
     useEffect(() => {
         setIsVisible(true);
 
-        // Parallax scroll effect
         const handleScroll = () => setScrollY(window.scrollY);
         window.addEventListener('scroll', handleScroll);
 
-        // Intersection Observer for scroll animations
         observerRef.current = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -30,12 +28,10 @@ export default function SocialMediaContentAIAgent() {
             { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
         );
 
-        // Observe all sections with IDs
         document.querySelectorAll('[id]').forEach((el) => {
             observerRef.current?.observe(el);
         });
 
-        // Auto-cycle through steps
         const stepInterval = setInterval(() => {
             setActiveStep(prev => (prev + 1) % 4);
         }, 3000);
@@ -47,151 +43,152 @@ export default function SocialMediaContentAIAgent() {
         };
     }, []);
 
+    // Stats for RFP AI Agent
     const stats = [
-        { label: 'Content Generation Time', value: '<3s', icon: Clock, color: 'from-blue-500 to-cyan-500' },
-        { label: 'Engagement Boost', value: '5x+', icon: Star, color: 'from-yellow-500 to-orange-500' },
-        { label: 'Scheduling Accuracy', value: '99%', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
-        { label: 'System Uptime', value: '99.99%', icon: Zap, color: 'from-purple-500 to-pink-500' },
+        { label: 'Avg RFP Draft Time', value: '<2m', icon: Clock, color: 'from-blue-500 to-cyan-500' },
+        { label: 'Review Accuracy', value: '99.5%', icon: Star, color: 'from-yellow-500 to-orange-500' },
+        { label: 'RFPs Processed/Month', value: '20K+', icon: CheckCircle, color: 'from-emerald-500 to-teal-500' },
+        { label: 'System Uptime', value: '99.999%', icon: Zap, color: 'from-purple-500 to-pink-500' },
     ];
 
     const features = [
         {
-            title: 'Instant Content Creation',
-            description: 'Generate creative, high-impact social posts, captions, and hashtags in seconds using the latest AI models.',
-            icon: Zap,
+            title: 'Automated RFP Drafting',
+            description: 'Create, edit, and standardize RFPs in minutes using AI-driven templates and best-practices.',
+            icon: FileText,
             gradient: 'from-blue-500 to-cyan-500'
         },
         {
-            title: 'Multi-Platform Publishing',
-            description: 'Effortlessly publish and schedule posts across Instagram, Twitter, Facebook, LinkedIn, TikTok, and more—all from one dashboard.',
-            icon: Globe,
+            title: 'Requirement Extraction',
+            description: 'AI scans documents and emails to auto-extract technical, legal, and business requirements.',
+            icon: Cpu,
             gradient: 'from-purple-500 to-pink-500'
         },
         {
-            title: 'Brand Voice Personalization',
-            description: 'Customize the AI to match your brand’s tone and guidelines for every piece of content.',
-            icon: Users,
+            title: 'Vendor Response Analysis',
+            description: 'Instantly reviews and scores vendor proposals against requirements, compliance, and pricing.',
+            icon: BarChart3,
             gradient: 'from-emerald-500 to-teal-500'
         },
         {
-            title: 'AI-Driven Insights',
-            description: 'Get real-time analytics on engagement, best posting times, and trending topics to maximize your reach.',
-            icon: BarChart3,
-            gradient: 'from-indigo-500 to-purple-500'
-        },
-        {
-            title: 'Content Calendar Automation',
-            description: 'Organize, schedule, and automate your campaign calendar to keep your feeds consistently active.',
-            icon: Settings,
+            title: 'Collaboration & Approval Workflow',
+            description: 'Route RFPs and responses for multi-level review, redlining, and stakeholder approvals.',
+            icon: Users,
             gradient: 'from-orange-500 to-red-500'
         },
         {
-            title: 'Smart Hashtag Generator',
-            description: 'AI recommends optimal, trending hashtags tailored to your content and audience.',
-            icon: MessageCircle,
+            title: 'Compliance & Risk Checks',
+            description: 'Flags missing clauses, risky terms, and ensures RFPs meet regulatory and internal standards.',
+            icon: Shield,
+            gradient: 'from-indigo-500 to-purple-500'
+        },
+        {
+            title: 'Knowledge Base Integration',
+            description: 'Leverage prior RFPs, FAQs, and winning responses to auto-populate and optimize answers.',
+            icon: Database,
             gradient: 'from-pink-500 to-rose-500'
         },
         {
-            title: 'Visual Content Suggestions',
-            description: 'Get AI-powered recommendations for images, videos, and graphics to enhance every post.',
-            icon: Brain,
-            gradient: 'from-rose-500 to-pink-500'
+            title: 'Multi-Format Support',
+            description: 'Export and manage RFPs in Word, PDF, Excel, or online portals. Supports multi-language workflows.',
+            icon: Globe,
+            gradient: 'from-amber-500 to-orange-500'
         },
         {
-            title: 'Team Collaboration',
-            description: 'Collaborate with your team, approve drafts, and manage permissions to streamline your content workflow.',
-            icon: Users,
-            gradient: 'from-amber-500 to-orange-500'
+            title: 'Real-Time Status Tracking',
+            description: 'Monitor RFP progress, deadlines, vendor engagement, and response quality in live dashboards.',
+            icon: Zap,
+            gradient: 'from-rose-500 to-pink-500'
         }
     ];
 
     const howItWorks = [
         {
             step: 1,
-            title: 'Content Idea',
-            description: 'Input a topic, campaign, or product. The AI analyzes trends and your brand voice.',
-            icon: MessageSquare,
+            title: 'Draft & Import',
+            description: 'AI drafts new RFPs or imports and standardizes existing documents from any format.',
+            icon: FileText,
             color: 'from-blue-500 to-cyan-500'
         },
         {
             step: 2,
-            title: 'AI Content Creation',
-            description: 'AI instantly generates social posts, captions, and hashtags tailored for each platform.',
-            icon: Brain,
+            title: 'Requirement Definition',
+            description: 'Extracts and structures requirements, evaluation criteria, and deadlines with AI.',
+            icon: Cpu,
             color: 'from-purple-500 to-pink-500'
         },
         {
             step: 3,
-            title: 'One-Click Publishing',
-            description: 'Approve or edit the content, then schedule or publish it across multiple platforms with a single click.',
-            icon: Cpu,
+            title: 'Vendor Engagement',
+            description: 'Distributes RFPs, collects responses, and facilitates Q&A with vendors.',
+            icon: Users,
             color: 'from-emerald-500 to-teal-500'
         },
         {
             step: 4,
-            title: 'Analyze & Optimize',
-            description: 'Track engagement and let the AI optimize future posts for even better results.',
+            title: 'Scoring & Decision',
+            description: 'Analyzes responses, scores vendors, and generates reports for fast, confident selection.',
             icon: BarChart3,
             color: 'from-orange-500 to-red-500'
         }
     ];
 
     const integrations = [
-        { name: 'Instagram', category: 'Social', logo: '📸' },
-        { name: 'Facebook', category: 'Social', logo: '📘' },
-        { name: 'Twitter/X', category: 'Social', logo: '🐦' },
-        { name: 'LinkedIn', category: 'Professional', logo: '💼' },
-        { name: 'TikTok', category: 'Social', logo: '🎶' },
-        { name: 'YouTube', category: 'Video', logo: '▶️' },
-        { name: 'Pinterest', category: 'Social', logo: '📌' },
+        { name: 'SAP Ariba', category: 'Procurement', logo: '🏢' },
+        { name: 'Coupa', category: 'Procurement', logo: '💼' },
+        { name: 'Salesforce', category: 'CRM', logo: '📈' },
+        { name: 'Oracle', category: 'ERP', logo: '🔮' },
+        { name: 'DocuSign', category: 'E-signature', logo: '✍️' },
+        { name: 'Google Drive', category: 'Storage', logo: '🌍' },
+        { name: 'SharePoint', category: 'Collaboration', logo: '🔗' },
+        { name: 'Box', category: 'Storage', logo: '🗃️' },
         { name: 'Slack', category: 'Collaboration', logo: '💬' },
-        { name: 'Canva', category: 'Design', logo: '🎨' },
-        { name: 'Google Drive', category: 'Storage', logo: '☁️' },
-        { name: 'Hootsuite', category: 'Scheduling', logo: '🦉' },
-        { name: 'Buffer', category: 'Scheduling', logo: '📅' },
-        { name: 'Zapier', category: 'Automation', logo: '🤖' },
-        { name: 'Trello', category: 'Project Management', logo: '🗂️' },
-        { name: 'Shopify', category: 'E-commerce', logo: '🛒' },
-        { name: 'WordPress', category: 'Website', logo: '📝' },
+        { name: 'Teams', category: 'Collaboration', logo: '👥' },
+        { name: 'Dropbox', category: 'Storage', logo: '📁' },
+        { name: 'Jira', category: 'Project', logo: '🏷️' },
+        { name: 'OneDrive', category: 'Storage', logo: '☁️' },
+        { name: 'Zendesk', category: 'Support', logo: '🎫' },
+        { name: 'NetSuite', category: 'ERP', logo: '🌐' },
+        { name: 'AWS S3', category: 'Cloud', logo: '☁️' },
     ];
 
     const channels = [
-        { name: 'Instagram', icon: Globe, description: 'Post images, reels, and stories' },
-        { name: 'Facebook', icon: Globe, description: 'Share updates, links, and more' },
-        { name: 'Twitter/X', icon: Globe, description: 'Tweet and schedule threads' },
-        { name: 'LinkedIn', icon: Globe, description: 'Professional content and company news' }
+        { name: 'Web Portal', icon: Globe, description: 'Create and manage RFPs online' },
+        { name: 'Email Integration', icon: Mail, description: 'Send/receive RFPs and responses by email' },
+        { name: 'Mobile App', icon: Smartphone, description: 'Track, review, and collaborate on RFPs from anywhere' },
+        { name: 'Collaboration Tools', icon: Users, description: 'Integrate with Slack, Teams, and SharePoint' }
     ];
 
     const benefits = [
         {
-            title: 'Create Content Faster',
-            description: 'Go from idea to viral-ready post in seconds—never miss a trend or moment.',
-            percentage: '97%',
-            metric: 'time saved'
+            title: 'Accelerate RFP Cycles',
+            description: 'Reduce RFP creation, review, and vendor selection from weeks to days or hours.',
+            percentage: '80%',
+            metric: 'cycle time reduction'
         },
         {
-            title: 'Boost Engagement',
-            description: 'Posts optimized by AI deliver up to 5x more likes, shares, and comments.',
-            percentage: '5x',
-            metric: 'engagement'
-        },
-        {
-            title: 'Consistent Brand Messaging',
-            description: 'Maintain your brand’s unique voice and quality across every channel and post.',
+            title: 'Enhance Compliance',
+            description: 'Ensure every RFP meets legal, regulatory, and internal standards automatically.',
             percentage: '100%',
-            metric: 'consistency'
+            metric: 'compliance'
         },
         {
-            title: 'Automate Scheduling',
-            description: 'Keep your feeds active 24/7 with automated, optimized post timing.',
-            percentage: '24/7',
-            metric: 'automation'
+            title: 'Increase Proposal Quality',
+            description: 'AI-driven scoring and feedback improve vendor responses and selection confidence.',
+            percentage: '95%',
+            metric: 'quality improvement'
         },
         {
-            title: 'Collaborative Workflows',
-            description: 'Empower teams to co-create, review, and approve content easily.',
-            percentage: '3x',
-            metric: 'team efficiency'
+            title: 'Lower Administrative Overhead',
+            description: 'Automate repetitive tasks and free up procurement and legal teams.',
+            percentage: '60%',
+            metric: 'cost reduction'
+        },
+        {
+            title: 'Effortless Auditability',
+            description: 'Every edit, comment, and approval is logged for audit and reporting.',
+            percentage: '100%',
+            metric: 'audit readiness'
         }
     ];
 
@@ -212,7 +209,6 @@ export default function SocialMediaContentAIAgent() {
                     className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
                     style={{ transform: `translateY(${scrollY * -0.1}px)`, animationDelay: '1s' }}
                 ></div>
-
                 {/* Floating AI Elements */}
                 <div className="absolute inset-0 pointer-events-none">
                     {[...Array(20)].map((_, i) => (
@@ -228,26 +224,22 @@ export default function SocialMediaContentAIAgent() {
                         ></div>
                     ))}
                 </div>
-
                 <div className={`w-full max-w-7xl mx-auto text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300 hover:border-slate-600/50 transition-all duration-300">
                         <Bot className="w-4 h-4 mr-2 text-blue-400 animate-pulse" />
-                        AI-Powered Social Media Content
+                        AI-Powered RFP Automation
                         <div className="ml-2 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
                     </div>
-
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent leading-tight">
-                        Social Media Content
+                        RFP (Request for Proposal)
                         <br />
                         <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-glow">
                             AI Agent
                         </span>
                     </h1>
-
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-                        Supercharge your social strategy with AI that creates, schedules, and optimizes posts for every major platform. 24/7 content generation, trend analysis, and brand consistency—instantly.
+                        Accelerate your procurement, compliance, and vendor selection process. The RFP AI Agent drafts, analyzes, scores, and tracks RFPs—so you can focus on strategic decisions with confidence.
                     </div>
-
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             Create Agent
@@ -258,11 +250,9 @@ export default function SocialMediaContentAIAgent() {
                             Watch Demo
                         </button>
                     </div>
-
                     {/* Enhanced AI Agent Preview */}
                     <div className="relative max-w-5xl mx-auto">
                         <div className="relative bg-slate-900/50 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 group">
-                            {/* Agent Status Bar */}
                             <div className="flex items-center justify-between mb-6 p-4 bg-slate-800/40 rounded-2xl">
                                 <div className="flex items-center gap-3">
                                     <div className="relative">
@@ -272,69 +262,53 @@ export default function SocialMediaContentAIAgent() {
                                         <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full animate-pulse"></div>
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-semibold">Social Media AI Agent</h3>
+                                        <h3 className="text-lg font-semibold">RFP AI Agent</h3>
                                         <div className="text-slate-400 text-sm flex items-center gap-2">
                                             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
-                                            Online • Generating content
+                                            Online • Drafting & scoring instantly
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-emerald-400">5x</div>
-                                        <div className="text-xs text-slate-400">Engagement</div>
+                                        <div className="text-sm font-medium text-emerald-400">4.9★</div>
+                                        <div className="text-xs text-slate-400">Accuracy</div>
                                     </div>
                                     <div className="text-right">
-                                        <div className="text-sm font-medium text-blue-400">&lt; 3s</div>
-                                        <div className="text-xs text-slate-400">Generation</div>
+                                        <div className="text-sm font-medium text-blue-400">&lt; 2m</div>
+                                        <div className="text-xs text-slate-400">Draft Time</div>
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Chat Interface */}
                             <div className="space-y-4 mb-6">
                                 <div className="flex gap-3 animate-slideInLeft">
                                     <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">What's a catchy caption for our new summer collection?</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">10:21 AM</span>
+                                        <span className="text-sm">Draft a cloud services RFP with compliance, SLAs, and pricing breakdowns.</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">10:22 AM</span>
                                     </div>
                                 </div>
-                                
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">"Make every day a splash! 🌞 Dive into our summer styles now. #SummerVibes #NewArrivals"</span>
-                                        <span className="text-xs text-blue-100 mt-1 block">10:21 AM</span>
+                                        <span className="text-sm">RFP drafted with compliance, SLA, and pricing sections. Template ready for review and vendor distribution.</span>
+                                        <span className="text-xs text-blue-100 mt-1 block">10:22 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                                         <Bot className="w-4 h-4 text-white" />
                                     </div>
                                 </div>
-
                                 <div className="flex gap-3 animate-slideInLeft" style={{ animationDelay: '1s' }}>
                                     <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Can you suggest trending hashtags for tech launches?</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">10:22 AM</span>
-                                    </div>
-                                </div>
-
-                                <div className="flex gap-3 animate-slideInLeft" style={{ animationDelay: '1s' }}>
-                                    <div className="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center">
-                                        <Users className="w-4 h-4 text-slate-300" />
-                                    </div>
-                                    <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Can you suggest trending hashtags for tech launches?</span>
-                                        <span className="text-xs text-slate-400 mt-1 block">10:22 AM</span>
+                                        <span className="text-sm">Score vendor proposals by requirements coverage and pricing.</span>
+                                        <span className="text-xs text-slate-400 mt-1 block">10:23 AM</span>
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Typing Indicator */}
                             <div className="flex gap-3 justify-end">
                                 <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-3 border border-blue-500/30">
                                     <div className="flex items-center gap-2">
@@ -343,7 +317,7 @@ export default function SocialMediaContentAIAgent() {
                                             <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
                                             <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                                         </div>
-                                        <span className="text-xs text-blue-300">AI is typing...</span>
+                                        <span className="text-xs text-blue-300">AI is processing...</span>
                                     </div>
                                 </div>
                                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
@@ -354,7 +328,6 @@ export default function SocialMediaContentAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Stats Section */}
             <section id="stats" className="relative py-16 sm:py-20 px-4 bg-gradient-to-r from-slate-900/30 to-slate-800/20">
                 <div className="max-w-7xl mx-auto">
@@ -387,26 +360,21 @@ export default function SocialMediaContentAIAgent() {
                     </div>
                 </div>
             </section>
-
-             {/* How It Works Section */}
-             <section id="how-it-works" className="py-16 sm:py-24 lg:py-32 px-4">
+            {/* How It Works Section */}
+            <section id="how-it-works" className="py-16 sm:py-24 lg:py-32 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('how-it-works') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Settings className="w-4 h-4 mr-2 text-emerald-400 animate-spin-slow" />
                             How It Works
                         </div>
-
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            From idea to viral post in
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> seconds</span>
+                            From draft to decision in
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> minutes</span>
                         </h2>
                     </div>
-
                     <div className="relative">
-                        {/* Connection Lines */}
                         <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-slate-700 to-transparent transform -translate-y-1/2"></div>
-
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {howItWorks.map((step, index) => {
                                 const IconComponent = step.icon;
@@ -417,18 +385,14 @@ export default function SocialMediaContentAIAgent() {
                                         className={`relative text-center transform transition-all duration-700 ${isInView('how-it-works') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${isActive ? 'scale-105' : ''}`}
                                         style={{ animationDelay: `${index * 200}ms` }}
                                     >
-                                        {/* Step Number */}
                                         <div className={`relative z-10 w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center transition-all duration-500 ${isActive ? 'animate-pulse' : ''}`}>
                                             <IconComponent className="w-8 h-8 text-white" />
                                             <div className="absolute -top-2 -right-2 w-6 h-6 bg-slate-900 border-2 border-slate-700 rounded-full flex items-center justify-center text-xs font-bold">
                                                 {step.step}
                                             </div>
                                         </div>
-
                                         <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white">{step.title}</h3>
                                         <div className="text-slate-300 leading-relaxed text-sm sm:text-base">{step.description}</div>
-
-                                        {/* Animated Arrow */}
                                         {index < howItWorks.length - 1 && (
                                             <div className="hidden lg:block absolute top-8 -right-4 text-slate-600">
                                                 <ChevronRight className="w-6 h-6 animate-pulse" />
@@ -441,7 +405,6 @@ export default function SocialMediaContentAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Features Section */}
             <section id="features" className="py-16 sm:py-24 lg:py-32 px-4 bg-gradient-to-br from-slate-900/50 to-slate-800/30">
                 <div className="max-w-7xl mx-auto">
@@ -450,13 +413,11 @@ export default function SocialMediaContentAIAgent() {
                             <Zap className="w-4 h-4 mr-2 text-emerald-400" />
                             Powerful Features
                         </div>
-
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             Everything you need for
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> viral social content</span>
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> smarter RFP management</span>
                         </h2>
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         {features.map((feature, index) => {
                             const IconComponent = feature.icon;
@@ -480,22 +441,19 @@ export default function SocialMediaContentAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Integration Channels Section */}
             <section id="channels" className="py-16 sm:py-24 lg:py-32 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className={`text-center mb-12 sm:mb-16 lg:mb-20 transform transition-all duration-1000 ${isInView('channels') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Globe className="w-4 h-4 mr-2 text-blue-400" />
-                            Supported Platforms
+                            Integration Channels
                         </div>
-
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Publish everywhere your
-                            <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> audience is</span>
+                            Connect to your
+                            <span className="bg-gradient-to-r from-blue-400 to-cyan-600 bg-clip-text text-transparent"> RFP ecosystem</span>
                         </h2>
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
                         {channels.map((channel, index) => {
                             const IconComponent = channel.icon;
@@ -514,8 +472,6 @@ export default function SocialMediaContentAIAgent() {
                             );
                         })}
                     </div>
-
-                    {/* Integration Platforms Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                         {integrations.map((integration, index) => (
                             <div
@@ -533,7 +489,6 @@ export default function SocialMediaContentAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Benefits Section */}
             <section id="benefits" className="py-16 sm:py-24 lg:py-32 px-4 bg-gradient-to-br from-slate-900/50 to-slate-800/30">
                 <div className="max-w-7xl mx-auto">
@@ -542,13 +497,11 @@ export default function SocialMediaContentAIAgent() {
                             <BarChart3 className="w-4 h-4 mr-2 text-emerald-400" />
                             Business Impact
                         </div>
-
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Deliver viral content
+                            Drive next-level procurement and compliance
                             <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> at scale</span>
                         </h2>
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {benefits.map((benefit, index) => (
                             <div
@@ -572,7 +525,6 @@ export default function SocialMediaContentAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* Agent Capabilities Section */}
             <section id="capabilities" className="py-16 sm:py-24 lg:py-32 px-4">
                 <div className="max-w-7xl mx-auto">
@@ -581,18 +533,14 @@ export default function SocialMediaContentAIAgent() {
                             <Brain className="w-4 h-4 mr-2 text-purple-400" />
                             AI Capabilities
                         </div>
-
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
                             Advanced AI for
-                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> creative content</span>
+                            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"> intelligent RFP automation</span>
                         </h2>
                     </div>
-
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        {/* AI Brain Visualization */}
                         <div className={`relative transform transition-all duration-1000 ${isInView('capabilities') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
                             <div className="relative">
-                                {/* Central AI Core */}
                                 <div className="relative w-80 h-80 mx-auto">
                                     <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
                                     <div className="relative w-full h-full bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-full border border-slate-600/50 backdrop-blur-sm flex items-center justify-center">
@@ -600,15 +548,13 @@ export default function SocialMediaContentAIAgent() {
                                             <Brain className="w-16 h-16 text-white animate-pulse" />
                                         </div>
                                     </div>
-
-                                    {/* Floating Capability Nodes */}
                                     {[
-                                        { label: 'NLP', angle: 0, color: 'from-blue-500 to-cyan-500' },
-                                        { label: 'Vision', angle: 60, color: 'from-emerald-500 to-teal-500' },
-                                        { label: 'Trend', angle: 120, color: 'from-orange-500 to-red-500' },
-                                        { label: 'Analytics', angle: 180, color: 'from-purple-500 to-pink-500' },
-                                        { label: 'Scheduling', angle: 240, color: 'from-yellow-500 to-orange-500' },
-                                        { label: 'API', angle: 300, color: 'from-indigo-500 to-purple-500' }
+                                        { label: 'Drafting', angle: 0, color: 'from-blue-500 to-cyan-500' },
+                                        { label: 'Extraction', angle: 60, color: 'from-emerald-500 to-teal-500' },
+                                        { label: 'Scoring', angle: 120, color: 'from-orange-500 to-red-500' },
+                                        { label: 'Compliance', angle: 180, color: 'from-purple-500 to-pink-500' },
+                                        { label: 'Integration', angle: 240, color: 'from-yellow-500 to-orange-500' },
+                                        { label: 'Analytics', angle: 300, color: 'from-indigo-500 to-purple-500' }
                                     ].map((node, index) => {
                                         const x = Math.cos((node.angle * Math.PI) / 180) * 120;
                                         const y = Math.sin((node.angle * Math.PI) / 180) * 120;
@@ -631,45 +577,43 @@ export default function SocialMediaContentAIAgent() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Capabilities List */}
                         <div className={`space-y-8 transform transition-all duration-1000 ${isInView('capabilities') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
                             {[
                                 {
-                                    title: 'Natural Language Generation',
-                                    description: 'Crafts engaging copy, captions, and hashtags in your brand voice, powered by the latest LLMs.',
-                                    icon: MessageCircle,
+                                    title: 'AI-Driven Drafting',
+                                    description: 'Drafts RFPs using previous templates, requirements, and best-practices.',
+                                    icon: FileText,
                                     color: 'from-blue-500 to-cyan-500'
                                 },
                                 {
-                                    title: 'Visual Suggestion Engine',
-                                    description: 'Recommends trending images, videos, and layouts for maximum impact.',
-                                    icon: Brain,
+                                    title: 'Requirement Extraction',
+                                    description: 'Extracts technical, legal, and business requirements from any source.',
+                                    icon: Cpu,
                                     color: 'from-purple-500 to-pink-500'
                                 },
                                 {
-                                    title: 'Trend Analysis',
-                                    description: 'Identifies what’s hot in your industry and suggests relevant content ideas and hashtags.',
+                                    title: 'Automated Scoring',
+                                    description: 'Scores vendor responses based on criteria, price, and compliance.',
                                     icon: BarChart3,
                                     color: 'from-emerald-500 to-teal-500'
                                 },
                                 {
-                                    title: 'Automated Scheduling',
-                                    description: 'Finds and schedules the best post times for each platform to maximize reach.',
-                                    icon: Settings,
+                                    title: 'Audit-Ready Compliance',
+                                    description: 'Tracks changes, approvals, and ensures RFPs meet all standards.',
+                                    icon: Shield,
                                     color: 'from-orange-500 to-red-500'
                                 },
                                 {
-                                    title: 'Real-Time Analytics',
-                                    description: 'Monitors engagement and audience growth, adjusting strategy dynamically.',
-                                    icon: BarChart3,
-                                    color: 'from-indigo-500 to-purple-500'
+                                    title: 'Seamless Integration',
+                                    description: 'Connects to procurement, CRM, storage, and e-signature platforms.',
+                                    icon: Database,
+                                    color: 'from-yellow-500 to-orange-500'
                                 },
                                 {
-                                    title: 'API Integrations',
-                                    description: 'Connects seamlessly with your tools for content import, export, and automation.',
-                                    icon: Database,
-                                    color: 'from-cyan-500 to-blue-500'
+                                    title: 'Dashboards & Analytics',
+                                    description: 'Gives insights into RFP status, bottlenecks, and vendor engagement.',
+                                    icon: Zap,
+                                    color: 'from-indigo-500 to-purple-500'
                                 }
                             ].map((capability, index) => {
                                 const IconComponent = capability.icon;
@@ -693,30 +637,25 @@ export default function SocialMediaContentAIAgent() {
                     </div>
                 </div>
             </section>
-
             {/* CTA Section */}
             <section id="cta" className="py-16 sm:py-24 lg:py-32 px-4 bg-gradient-to-br from-slate-900/50 to-slate-800/30">
                 <div className="max-w-4xl mx-auto text-center">
                     <div className={`transform transition-all duration-1000 ${isInView('cta') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
                             <Zap className="w-4 h-4 mr-2 text-emerald-400" />
-                            Ready to Go Viral?
+                            Ready to Transform RFPs?
                         </div>
-
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-                            Start growing your audience with
-                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> AI-powered content today</span>
+                            Start automating RFPs
+                            <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> today</span>
                         </h2>
-
                         <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed">
-                            Join thousands of creators and brands using AI to dominate social media. Launch your first campaign free in minutes!
+                            Join procurement, legal, and business teams using AI for RFP creation, analysis, and selection. Get started in minutes with a free trial.
                         </p>
-
-                        {/* Trust Indicators */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-slate-700/50">
                             {[
-                                { label: 'Multi-Platform Ready', value: '15+ Platforms' },
-                                { label: 'Quick Start', value: '< 5 Minutes' },
+                                { label: 'Bank-Grade Security', value: 'AES-256' },
+                                { label: 'Quick Setup', value: '< 5 Minutes' },
                                 { label: 'Free Trial', value: '14 Days' },
                                 { label: 'Support', value: '24/7 Available' }
                             ].map((item, index) => (
@@ -729,10 +668,7 @@ export default function SocialMediaContentAIAgent() {
                     </div>
                 </div>
             </section>
-
             <Footer />
-
-            {/* Custom Styles */}
             <style jsx>{`
                 @keyframes float {
                     0%, 100% { transform: translateY(0px); }
