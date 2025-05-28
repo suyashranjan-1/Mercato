@@ -1,10 +1,14 @@
-
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, Play, Star, Users, Zap, Shield, Clock, Heart, TrendingUp, Award, CheckCircle, ArrowRight, Calendar, FileText, Brain, Layers, Lightbulb, Activity, Database, Lock, Globe, Phone, Mail, MapPin, Target, RefreshCw, HeartHandshake, Building2, UserCheck, DollarSign, BarChart3, MessageCircle, Headphones, Bot, Smile, ThumbsUp, Timer, AlertCircle, Search } from "lucide-react";
+import { useRouter } from "next/navigation";
+import Head from "next/head";
+import { ChevronDown, Star, Users, Zap, Shield, Clock, TrendingUp, Award, CheckCircle, ArrowRight, Brain, Database, Globe, Phone, Mail, MapPin, DollarSign, BarChart3, MessageCircle, Bot, Smile, ThumbsUp, Timer } from "lucide-react";
 import Footer from "@/components/Footer";
 import { NavbarDemo } from "@/components/navbar";
 import { AgentSlider } from "@/components/AgentSlider";
+import ContactForm from "@/app/contact/page";
+
+// --- TYPES & DATA ---
 
 interface Agent {
     id: number;
@@ -24,103 +28,101 @@ interface CustomerServiceCategory {
     agents: Agent[];
 }
 
-// Customer Service agents data
 const customerServiceCategory: CustomerServiceCategory = {
-    "name": "Customer Service AI Agents",
-    "description": "Transforming customer interactions with intelligent, personalized support that works 24/7 across all channels.",
-    "agents": [
+    name: "Customer Service AI Agents",
+    description: "Transforming customer interactions with intelligent, personalized support that works 24/7 across all channels. Discover AI-powered solutions for instant support, live chat, complaint resolution, multichannel engagement, and more. Improve satisfaction, reduce costs, and streamline your customer service operations with Mercato's AI agents.",
+    agents: [
         {
-            "id": 7,
-            "name": "Customer Support AI Agent",
-            "description": "Provide instant customer support with intelligent responses, ticket routing, and issue resolution capabilities.",
-            "icon": "🎧",
-            "color": "from-blue-500 to-indigo-600",
-            "tags": ["Support", "Chat", "Tickets"],
-            "rating": "4.9",
-            "usage": "22.1k",
-            "speed": "Instant"
+            id: 7,
+            name: "Customer Support AI Agent",
+            description: "Provide instant customer support with intelligent responses, ticket routing, and issue resolution capabilities. Enhance customer experience and boost loyalty with always-on AI-powered support.",
+            icon: "🎧",
+            color: "from-blue-500 to-indigo-600",
+            tags: ["Support", "Chat", "Tickets", "24/7"],
+            rating: "4.9",
+            usage: "22.1k",
+            speed: "Instant"
         },
         {
-            "id": 8,
-            "name": "Live Chat AI Agent",
-            "description": "Engage customers in real-time with contextual conversations, product recommendations, and seamless handoffs.",
-            "icon": "💬",
-            "color": "from-green-500 to-teal-600",
-            "tags": ["Live Chat", "Real-time", "Engagement"],
-            "rating": "4.8",
-            "usage": "18.6k",
-            "speed": "Instant"
+            id: 8,
+            name: "Live Chat AI Agent",
+            description: "Engage customers in real-time with contextual conversations, product recommendations, and seamless handoffs. Increase conversion rates and customer engagement with AI live chat.",
+            icon: "💬",
+            color: "from-green-500 to-teal-600",
+            tags: ["Live Chat", "Real-time", "Engagement", "Conversion"],
+            rating: "4.8",
+            usage: "18.6k",
+            speed: "Instant"
         },
         {
-            "id": 9,
-            "name": "Complaint Resolution AI Agent",
-            "description": "Handle customer complaints with empathy, systematic problem-solving, and satisfaction tracking.",
-            "icon": "🛠️",
-            "color": "from-red-500 to-pink-600",
-            "tags": ["Complaints", "Resolution", "Satisfaction"],
-            "rating": "4.7",
-            "usage": "7.9k",
-            "speed": "Fast"
+            id: 9,
+            name: "Complaint Resolution AI Agent",
+            description: "Handle customer complaints with empathy, systematic problem-solving, and satisfaction tracking. Reduce churn by resolving issues quickly and effectively.",
+            icon: "🛠️",
+            color: "from-red-500 to-pink-600",
+            tags: ["Complaints", "Resolution", "Satisfaction", "Retention"],
+            rating: "4.7",
+            usage: "7.9k",
+            speed: "Fast"
         },
         {
-            "id": 61,
-            "name": "Customer Service AI Agent",
-            "description": "Assist customers across multiple channels with queries, issues, and requests using natural language processing.",
-            "icon": "🤖",
-            "color": "from-sky-500 to-blue-700",
-            "tags": ["Customer Service", "Multichannel", "NLP"],
-            "rating": "4.8",
-            "usage": "20.3k",
-            "speed": "Fast"
+            id: 61,
+            name: "Customer Service AI Agent",
+            description: "Assist customers across multiple channels with queries, issues, and requests using natural language processing. Deliver consistent, accurate answers and streamline customer journeys.",
+            icon: "🤖",
+            color: "from-sky-500 to-blue-700",
+            tags: ["Customer Service", "Multichannel", "NLP", "Omnichannel"],
+            rating: "4.8",
+            usage: "20.3k",
+            speed: "Fast"
         },
         {
-            "id": 62,
-            "name": "Email Categorization & Triage AI Agent",
-            "description": "Automatically sort and prioritize incoming customer emails for faster and more efficient resolution.",
-            "icon": "📬",
-            "color": "from-purple-500 to-indigo-700",
-            "tags": ["Email", "Sorting", "Triage"],
-            "rating": "4.7",
-            "usage": "14.2k",
-            "speed": "Medium"
+            id: 62,
+            name: "Email Categorization & Triage AI Agent",
+            description: "Automatically sort and prioritize incoming customer emails for faster and more efficient resolution. Improve agent productivity and email response rates.",
+            icon: "📬",
+            color: "from-purple-500 to-indigo-700",
+            tags: ["Email", "Sorting", "Triage", "Productivity"],
+            rating: "4.7",
+            usage: "14.2k",
+            speed: "Medium"
         },
         {
-            "id": 63,
-            "name": "Customer Experience AI Agent",
-            "description": "Track and optimize customer satisfaction through surveys, sentiment analysis, and engagement insights.",
-            "icon": "📊",
-            "color": "from-yellow-500 to-orange-600",
-            "tags": ["Experience", "Satisfaction", "Sentiment Analysis"],
-            "rating": "4.8",
-            "usage": "9.8k",
-            "speed": "Fast"
+            id: 63,
+            name: "Customer Experience AI Agent",
+            description: "Track and optimize customer satisfaction through surveys, sentiment analysis, and engagement insights. Drive continuous improvement with actionable analytics.",
+            icon: "📊",
+            color: "from-yellow-500 to-orange-600",
+            tags: ["Experience", "Satisfaction", "Sentiment Analysis", "Analytics"],
+            rating: "4.8",
+            usage: "9.8k",
+            speed: "Fast"
         },
         {
-            "id": 64,
-            "name": "Return Handling AI Agent",
-            "description": "Automate return requests and refund processes, ensuring customer satisfaction and policy compliance.",
-            "icon": "↩️",
-            "color": "from-red-400 to-yellow-500",
-            "tags": ["Returns", "Refunds", "Automation"],
-            "rating": "4.6",
-            "usage": "8.3k",
-            "speed": "Fast"
+            id: 64,
+            name: "Return Handling AI Agent",
+            description: "Automate return requests and refund processes, ensuring customer satisfaction and policy compliance. Simplify returns management and improve customer trust.",
+            icon: "↩️",
+            color: "from-red-400 to-yellow-500",
+            tags: ["Returns", "Refunds", "Automation", "Trust"],
+            rating: "4.6",
+            usage: "8.3k",
+            speed: "Fast"
         },
         {
-            "id": 65,
-            "name": "Inventory Management AI Agent",
-            "description": "Track inventory levels, manage restocking alerts, and reduce fulfillment delays.",
-            "icon": "📦",
-            "color": "from-orange-500 to-green-600",
-            "tags": ["Inventory", "Supply Chain", "Automation"],
-            "rating": "4.7",
-            "usage": "10.7k",
-            "speed": "Medium"
+            id: 65,
+            name: "Inventory Management AI Agent",
+            description: "Track inventory levels, manage restocking alerts, and reduce fulfillment delays. Ensure smooth operations and prevent stockouts with AI-driven inventory management.",
+            icon: "📦",
+            color: "from-orange-500 to-green-600",
+            tags: ["Inventory", "Supply Chain", "Automation", "Restocking"],
+            rating: "4.7",
+            usage: "10.7k",
+            speed: "Medium"
         }
     ]
 };
 
-// Customer service timeline data
 interface TimelineItem {
     year: string;
     title: string;
@@ -185,7 +187,6 @@ const customerServiceTimeline: TimelineItem[] = [
     }
 ];
 
-// Enhanced statistics data
 const stats = [
     { number: "92%", label: "Customer Satisfaction Rate", icon: ThumbsUp, color: "from-green-500 to-emerald-500" },
     { number: "24/7", label: "Always Available Support", icon: Clock, color: "from-blue-500 to-cyan-500" },
@@ -193,7 +194,6 @@ const stats = [
     { number: "97%", label: "Issue Resolution Rate", icon: CheckCircle, color: "from-purple-500 to-pink-500" }
 ];
 
-// Enhanced advantages data
 const advantages = [
     {
         title: "🚀 Instant Response Times",
@@ -262,7 +262,6 @@ const advantages = [
     }
 ];
 
-// ROI Statistics
 const roiStats = [
     { metric: "67%", label: "Reduction in Average Handling Time", icon: Timer },
     { metric: "60%", label: "Decrease in Ticket Escalation Rate", icon: ArrowRight },
@@ -272,7 +271,6 @@ const roiStats = [
     { metric: "390%", label: "Average ROI in First Year", icon: TrendingUp }
 ];
 
-// Industry Impact Stats
 const industryStats = [
     { number: "91%", description: "of businesses are actively investing in AI customer service solutions within 12 months" },
     { number: "$142B", description: "projected AI customer service market size by 2027" },
@@ -280,13 +278,13 @@ const industryStats = [
     { number: "68%", description: "improvement in customer satisfaction with AI-powered support implementation" }
 ];
 
-// Animated Counter Component
+// --- COMPONENTS ---
+
 interface AnimatedCounterProps {
     end: number | string;
     duration?: number;
     suffix?: string;
 }
-
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterProps) => {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
@@ -301,16 +299,8 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
             },
             { threshold: 0.1 }
         );
-
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
+        if (ref.current) observer.observe(ref.current);
+        return () => { if (ref.current) observer.unobserve(ref.current); };
     }, [isVisible]);
 
     useEffect(() => {
@@ -319,7 +309,6 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
             const animate = (currentTime: DOMHighResTimeStamp) => {
                 if (!startTime) startTime = currentTime;
                 const progress = Math.min((currentTime - startTime) / duration, 1);
-
                 if (typeof end === 'string' && end.includes('%')) {
                     const numericEnd = parseInt(end);
                     setCount(Math.floor(progress * numericEnd));
@@ -338,7 +327,6 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
                 } else {
                     setCount(Math.floor(progress * end));
                 }
-
                 if (progress < 1) {
                     requestAnimationFrame(animate);
                 }
@@ -365,7 +353,6 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
     return <span ref={ref}>{formatCount()}</span>;
 };
 
-// Enhanced Timeline Component
 const Timeline = () => {
     const [visibleItems, setVisibleItems] = useState<number[]>([]);
     const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -373,7 +360,6 @@ const Timeline = () => {
     useEffect(() => {
         const observers = itemRefs.current.map((ref, index) => {
             if (!ref) return null;
-
             const observer = new IntersectionObserver(
                 ([entry]) => {
                     if (entry.isIntersecting) {
@@ -382,11 +368,9 @@ const Timeline = () => {
                 },
                 { threshold: 0.2 }
             );
-
             observer.observe(ref);
             return observer;
         });
-
         return () => {
             observers.forEach(observer => observer?.disconnect());
         };
@@ -399,10 +383,7 @@ const Timeline = () => {
                 <div
                     key={index}
                     ref={el => itemRefs.current[index] = el}
-                    className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
-                        ? 'opacity-100 translate-x-0'
-                        : 'opacity-0 translate-x-8'
-                        }`}
+                    className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                 >
                     <div className="absolute left-6 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full border-4 border-slate-900 group-hover:scale-125 transition-all duration-300 shadow-lg shadow-blue-500/25">
@@ -430,111 +411,21 @@ const Timeline = () => {
     );
 };
 
-{/* Agent Slider */}
-                    <AgentSlider category={customerServiceCategory} />
+const FloatingElements = () => (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-60"></div>
+        <div className="absolute top-40 right-20 w-3 h-3 bg-purple-400 rounded-full animate-pulse opacity-40"></div>
+        <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-50"></div>
+        <div className="absolute top-60 right-1/3 w-2 h-2 bg-pink-400 rounded-full animate-pulse opacity-30"></div>
+        <div className="absolute bottom-20 right-10 w-3 h-3 bg-indigo-400 rounded-full animate-ping opacity-40"></div>
+    </div>
+);
 
-// Enhanced Agent Card Component
-interface AgentCardProps {
-    agent: Agent;
-    index: number;
-}
+// --- MAIN PAGE ---
 
-const AgentCard = ({ agent, index }: AgentCardProps) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => setIsVisible(true), index * 100);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, [index]);
-
-    return (
-        <div
-            ref={ref}
-            className={`transition-all duration-700 ${isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-8'
-                }`}
-        >
-            <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 hover:bg-slate-800/60 transition-all duration-500 group hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10 h-full">
-                <div className="flex items-center justify-between mb-6">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${agent.color} flex items-center justify-center text-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
-                        {agent.icon}
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                        <span className="text-white font-medium">{agent.rating}</span>
-                    </div>
-                </div>
-
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
-                    {agent.name}
-                </h3>
-                <p className="text-slate-400 mb-6 leading-relaxed text-sm">
-                    {agent.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                    {agent.tags.map((tag, tagIndex) => (
-                        <span
-                            key={tagIndex}
-                            className="px-3 py-1 bg-slate-700/50 text-slate-300 rounded-full text-xs hover:bg-slate-600/50 transition-colors duration-300"
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
-
-                <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center text-sm text-slate-400">
-                        <Users className="w-4 h-4 mr-1" />
-                        {agent.usage} users
-                    </div>
-                    <div className="flex items-center text-sm text-slate-400">
-                        <Zap className="w-4 h-4 mr-1" />
-                        {agent.speed}
-                    </div>
-                </div>
-
-                <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group-hover:transform group-hover:scale-105">
-                    Try Agent Free
-                </button>
-            </div>
-        </div>
-    );
-};
-
-// Floating Animation Component
-const FloatingElements = () => {
-    return (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full animate-ping opacity-60"></div>
-            <div className="absolute top-40 right-20 w-3 h-3 bg-purple-400 rounded-full animate-pulse opacity-40"></div>
-            <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-50"></div>
-            <div className="absolute top-60 right-1/3 w-2 h-2 bg-pink-400 rounded-full animate-pulse opacity-30"></div>
-            <div className="absolute bottom-20 right-10 w-3 h-3 bg-indigo-400 rounded-full animate-ping opacity-40"></div>
-        </div>
-    );
-};
-
-// Main Component
 export default function CustomerServicePage() {
+    const router = useRouter();
+    const [showContactForm, setShowContactForm] = useState(false);
     const [currentAgentIndex, setCurrentAgentIndex] = useState<number>(0);
 
     useEffect(() => {
@@ -544,15 +435,68 @@ export default function CustomerServicePage() {
         return () => clearInterval(interval);
     }, []);
 
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Customer Service AI Agents | Mercato",
+        "description": customerServiceCategory.description,
+        "url": "https://mercato.ai/customer-service-ai-agents",
+        "mainEntity": [
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What are AI customer service agents?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "AI customer service agents are intelligent software solutions that automate and enhance customer support, providing instant answers, ticket routing, and resolution across multiple channels."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How can AI improve my customer service?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "AI improves customer service by delivering 24/7 support, reducing response times, personalizing interactions, and increasing satisfaction through intelligent automation and analytics."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is my customer data secure with Mercato's AI agents?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Mercato's AI agents use enterprise-grade security, encryption, and compliance standards to ensure all customer data is protected and private."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="w-full min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white overflow-hidden">
-            {/* Navbar Component */}
+            <Head>
+                <title>Customer Service AI Agents | 24/7 Intelligent Support | Mercato</title>
+                <meta name="description" content="Mercato's Customer Service AI Agents deliver instant, 24/7 support, complaint resolution, live chat, and more. Boost satisfaction, reduce costs, and transform your customer experience with AI-powered automation." />
+                <meta name="keywords" content="Customer Service AI, AI Agents, AI Support, Live Chat AI, Complaint Resolution, Email Triage, Customer Experience, Returns Automation, Inventory AI, Multichannel, Omnichannel, Support Automation, Mercato" />
+                <meta property="og:title" content="Customer Service AI Agents | Mercato" />
+                <meta property="og:description" content="Upgrade your customer service with AI agents that provide instant, personalized, and scalable support 24/7. Trusted by 50,000+ businesses worldwide." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://mercato.ai/customer-service-ai-agents" />
+                <meta property="og:image" content="https://mercato.ai/og-customer-service.jpg" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Customer Service AI Agents | Mercato" />
+                <meta name="twitter:description" content="Mercato's Customer Service AI Agents deliver instant, 24/7 support, complaint resolution, live chat, and more. Boost satisfaction, reduce costs, and transform your customer experience with AI-powered automation." />
+                <meta name="twitter:image" content="https://mercato.ai/og-customer-service.jpg" />
+                <link rel="canonical" href="https://mercato.ai/customer-service-ai-agents" />
+                <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
+            </Head>
             <NavbarDemo />
             <FloatingElements />
 
-            {/* Hero Section */}
+            {/* HERO SECTION */}
             <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 py-32">
-                {/* Enhanced Animated Background */}
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
                     <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -576,25 +520,13 @@ export default function CustomerServicePage() {
                     </h1>
 
                     <p className="text-xl md:text-2xl lg:text-3xl text-slate-400 max-w-5xl mx-auto leading-relaxed mb-12 animate-fade-in-up delay-200">
-                    Transform your support strategy with AI agents that not only understand and resolve issues instantly — but also empathize with customers in real-time. 
-                    Boost satisfaction rates by up to 92%, reduce response times by 85%, and deliver 24/7 intelligent service across every channel.
+                        Transform your support strategy with AI agents that not only understand and resolve issues instantly — but also empathize with customers in real-time. 
+                        Boost satisfaction rates by up to 92%, reduce response times by 85%, and deliver 24/7 intelligent service across every channel.
                         <span className="text-white font-medium bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                             {" "}Experience next-generation customer care.
                         </span>
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-fade-in-up delay-400">
-                        <button className="group px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center text-lg">
-                            Start Free 30-Day Trial
-                            <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-                        </button>
-                        <button className="group px-10 py-5 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 flex items-center text-lg">
-                            <Play className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                            Watch 2-Min Demo
-                        </button>
-                    </div>
-
-                    {/* Enhanced Stats Section */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-fade-in-up delay-600">
                         {stats.map((stat, index) => (
                             <div key={index} className="text-center group">
@@ -609,8 +541,6 @@ export default function CustomerServicePage() {
                         ))}
                     </div>
                 </div>
-
-                {/* Enhanced Scroll Indicator */}
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
                     <div className="flex flex-col items-center space-y-2">
                         <span className="text-slate-400 text-xs">Scroll to explore</span>
@@ -619,7 +549,7 @@ export default function CustomerServicePage() {
                 </div>
             </section>
 
-            {/* Industry Impact Section */}
+            {/* INDUSTRY IMPACT */}
             <section className="relative w-full py-20 px-4 bg-gradient-to-r from-slate-900/80 to-slate-800/60">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
@@ -627,7 +557,6 @@ export default function CustomerServicePage() {
                             Customer Service AI is <span className="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">Transforming the Industry</span>
                         </h2>
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {industryStats.map((stat, index) => (
                             <div key={index} className="text-center p-6 bg-slate-800/40 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300">
@@ -641,7 +570,7 @@ export default function CustomerServicePage() {
                 </div>
             </section>
 
-            {/* Healthcare History Section */}
+            {/* TIMELINE / HISTORY */}
             <section id="history" className="relative w-full py-32 px-4 bg-gradient-to-r from-slate-900/50 to-slate-800/30">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
@@ -649,17 +578,14 @@ export default function CustomerServicePage() {
                             <Clock className="w-5 h-5 mr-3 text-blue-400" />
                             Customer Service Timeline
                         </div>
-
                         <h2 className="text-5xl md:text-7xl font-bold max-w-6xl mx-auto mb-8 leading-tight">
-                        From Human Touch to AI-Driven <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Customer Service</span>
+                            From Human Touch to AI-Driven <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Customer Service</span>
                         </h2>
-
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                        Customer service has evolved from traditional call centers and manual ticket handling to AI-powered, personalized support that works 24/7. 
-                        Discover how intelligent AI agents are transforming customer experiences across industries by delivering instant resolutions, predictive assistance, and empathetic interactions.
+                            Customer service has evolved from traditional call centers and manual ticket handling to AI-powered, personalized support that works 24/7. 
+                            Discover how intelligent AI agents are transforming customer experiences across industries by delivering instant resolutions, predictive assistance, and empathetic interactions.
                         </p>
                     </div>
-
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                         <div>
                             <Timeline />
@@ -673,17 +599,15 @@ export default function CustomerServicePage() {
                                     <h3 className="text-2xl font-bold text-white">🧠 The AI Customer Service Revolution</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                Customer service has entered a new era — one driven by intelligent AI agents that deliver fast, accurate, and 
-                                empathetic support at scale. Building on centuries of innovation in logic, systems thinking, and decision science, 
-                                today's AI-powered customer service systems are transforming how businesses connect with their customers.
-                                    
+                                    Customer service has entered a new era — one driven by intelligent AI agents that deliver fast, accurate, and 
+                                    empathetic support at scale. Building on centuries of innovation in logic, systems thinking, and decision science, 
+                                    today's AI-powered customer service systems are transforming how businesses connect with their customers.
                                 </p>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                These advanced AI agents analyze millions of customer interactions, detect intent and emotion, resolve queries instantly, 
-                                and continuously learn to improve future responses. They don't just answer questions — they deliver experiences
+                                    These advanced AI agents analyze millions of customer interactions, detect intent and emotion, resolve queries instantly, 
+                                    and continuously learn to improve future responses. They don't just answer questions — they deliver experiences
                                 </p>
                             </div>
-
                             <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 hover:bg-slate-800/60 transition-all duration-300">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
@@ -692,9 +616,9 @@ export default function CustomerServicePage() {
                                     <h3 className="text-2xl font-bold text-white">What's Next?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                The future of AI in customer service is not just automation — it’s augmentation. AI agents will become real-time collaborators, capable of 
-                                Predicting complex issues before they arise Tailoring solutions to organization-specific environments 
-                                Learning from every decision made Coordinating teams and systems with intelligent precision
+                                    The future of AI in customer service is not just automation — it’s augmentation. AI agents will become real-time collaborators, capable of 
+                                    Predicting complex issues before they arise Tailoring solutions to organization-specific environments 
+                                    Learning from every decision made Coordinating teams and systems with intelligent precision
                                 </p>
                             </div>
                         </div>
@@ -702,7 +626,7 @@ export default function CustomerServicePage() {
                 </div>
             </section>
 
-            {/* Enhanced Advantages Section */}
+            {/* ADVANTAGES */}
             <section id="benefits" className="relative w-full py-32 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
@@ -710,17 +634,14 @@ export default function CustomerServicePage() {
                             <Award className="w-5 h-5 mr-3 text-emerald-400" />
                             Competitive Advantages
                         </div>
-
                         <h2 className="text-5xl md:text-7xl font-bold max-w-6xl mx-auto mb-8 leading-tight">
-                        Why Customer Service AI Agents are <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">Game Changers</span>
+                            Why Customer Service AI Agents are <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">Game Changers</span>
                         </h2>
-
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                        Discover how AI-powered customer service agents are transforming organizational decision-making, accelerating innovation, 
-                        and delivering strategic clarity at scale. These agents aren’t just tools — they’re always-on experts designed to turn complexity into actionable insight.
+                            Discover how AI-powered customer service agents are transforming organizational decision-making, accelerating innovation, 
+                            and delivering strategic clarity at scale. These agents aren’t just tools — they’re always-on experts designed to turn complexity into actionable insight.
                         </p>
                     </div>
-
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {advantages.map((advantage, index) => (
                             <div key={index} className="group">
@@ -733,11 +654,9 @@ export default function CustomerServicePage() {
                                             {advantage.title}
                                         </h3>
                                     </div>
-
                                     <p className="text-slate-400 text-lg leading-relaxed mb-8">
                                         {advantage.description}
                                     </p>
-
                                     <div className="space-y-4">
                                         {advantage.benefits.map((benefit, idx) => (
                                             <div key={idx} className="flex items-center group-hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${idx * 50}ms` }}>
@@ -753,7 +672,7 @@ export default function CustomerServicePage() {
                 </div>
             </section>
 
-            {/* AI Agents Showcase */}
+            {/* AI AGENTS SHOWCASE */}
             <section id="agents" className="relative w-full py-32 px-4 bg-gradient-to-br from-slate-900/50 to-slate-800/30">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
@@ -761,18 +680,14 @@ export default function CustomerServicePage() {
                             <Brain className="w-5 h-5 mr-3 text-purple-400" />
                             AI Agents Portfolio
                         </div>
-
                         <h2 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto mb-8 leading-tight">
                             Meet Your <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Customer Service AI</span> Team
                         </h2>
-
                         <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                        Specialized AI agents engineered to tackle customer service challenges across departments and industries — from strategic bottlenecks to operational inefficiencies. 
-                        These always-on problem solvers work 24/7 to keep your business agile, intelligent, and resilient.
+                            Specialized AI agents engineered to tackle customer service challenges across departments and industries — from strategic bottlenecks to operational inefficiencies. 
+                            These always-on problem solvers work 24/7 to keep your business agile, intelligent, and resilient.
                         </p>
                     </div>
-
-                    {/* Featured Agent Carousel */}
                     <div className="mb-20">
                         <div className="bg-gradient-to-r from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-12 text-center relative overflow-hidden">
                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
@@ -788,7 +703,6 @@ export default function CustomerServicePage() {
                                         {customerServiceCategory.agents[currentAgentIndex].description}
                                     </p>
                                 </div>
-
                                 <div className="flex justify-center space-x-3 mb-8">
                                     {customerServiceCategory.agents[currentAgentIndex].tags.map((tag, index) => (
                                         <span key={index} className="px-4 py-2 bg-slate-700/50 text-slate-300 rounded-full text-sm border border-slate-600/50">
@@ -796,7 +710,6 @@ export default function CustomerServicePage() {
                                         </span>
                                     ))}
                                 </div>
-
                                 <div className="flex justify-center space-x-2">
                                     {customerServiceCategory.agents.map((_, index) => (
                                         <button
@@ -812,19 +725,11 @@ export default function CustomerServicePage() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Agent Slider */}
                     <AgentSlider category={customerServiceCategory} />
-
-                    {/* <div className="text-center">
-                        <button className="px-10 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-slate-100 hover:shadow-2xl hover:shadow-white/10 transform hover:scale-105 transition-all duration-300 text-lg">
-                            Explore All {customerServiceCategory.agents.length} AI Agents
-                        </button>
-                    </div> */}
                 </div>
             </section>
 
-            {/* ROI Section */}
+            {/* ROI SECTION */}
             <section id="roi" className="relative w-full py-32 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
@@ -832,17 +737,14 @@ export default function CustomerServicePage() {
                             <BarChart3 className="w-5 h-5 mr-3 text-green-400" />
                             Return on Investment
                         </div>
-
                         <h2 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto mb-8 leading-tight">
                             Measurable <span className="bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">Results</span> That Matter
                         </h2>
-
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                        Our AI Customer Service agents deliver quantifiable improvements across all key metrics,
-                        ensuring your investment generates real value for your business and organization.
+                            Our AI Customer Service agents deliver quantifiable improvements across all key metrics,
+                            ensuring your investment generates real value for your business and organization.
                         </p>
                     </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                         {roiStats.map((stat, index) => (
                             <div key={index} className="text-center p-8 bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl hover:border-slate-600/50 hover:bg-slate-800/60 transition-all duration-300 group hover:transform hover:scale-105">
@@ -856,50 +758,35 @@ export default function CustomerServicePage() {
                             </div>
                         ))}
                     </div>
-
                     <div className="bg-gradient-to-r from-green-900/20 to-emerald-900/20 backdrop-blur-sm border border-green-700/30 rounded-3xl p-12 text-center">
                         <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
                             Average ROI: <span className="text-green-400">430% in First Year</span>
                         </h3>
                         <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-8">
-                        Organizations leveraging our Customer Service AI Agents experience an
-                         average return of $4.30 for every dollar invested, thanks to rapid resolution cycles, 
-                        intelligent automation, and strategic insights that
+                            Organizations leveraging our Customer Service AI Agents experience an
+                            average return of $4.30 for every dollar invested, thanks to rapid resolution cycles, 
+                            intelligent automation, and strategic insights that
                         </p>
-                        <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105">
-                            Calculate Your ROI
-                        </button>
                     </div>
                 </div>
             </section>
 
-            {/* Contact Section */}
+            {/* CONTACT SECTION - CTA BUTTON ONLY */}
             <section id="contact" className="relative w-full py-32 px-4 bg-gradient-to-br from-slate-900/50 to-slate-800/30">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto mb-8 leading-tight">
-                        Ready to Transform the Way You <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Solve Problems?</span>
+                            Ready to Transform the Way You <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Serve Customers?</span>
                         </h2>
                         <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                        Join thousands of forward-thinking organizations already using AI agents to tackle their toughest challenges, 
-                        streamline operations, and unlock new growth opportunities.
+                            Join thousands of forward-thinking organizations already using AI agents to deliver world-class support, streamline operations, and scale customer satisfaction.
                         </p>
                     </div>
-
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         <div className="space-y-8">
                             <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
-                                <h3 className="text-2xl font-bold text-white mb-6">Get Started Today</h3>
-                                <div className="space-y-6">
-                                    <div className="flex items-center">
-                                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
-                                            <UserCheck className="w-6 h-6 text-white" />
-                                        </div>
-                                        <div>
-                                            <h4 className="text-white font-semibold">Free 30-Day Trial</h4>
-                                            <p className="text-slate-400">No credit card required</p>
-                                        </div>
-                                    </div>
+                                <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
+                                <div className="space-y-6"> 
                                     <div className="flex items-center">
                                         <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
                                             <Phone className="w-6 h-6 text-white" />
@@ -914,78 +801,43 @@ export default function CustomerServicePage() {
                                             <Shield className="w-6 h-6 text-white" />
                                         </div>
                                         <div>
-                                            <h4 className="text-white font-semibold">HIPAA Compliant</h4>
-                                            <p className="text-slate-400">Enterprise-grade security</p>
+                                            <h4 className="text-white font-semibold">Enterprise Security</h4>
+                                            <p className="text-slate-400">Compliance & privacy ensured</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div className="space-y-4">
                                 <div className="flex items-center text-slate-300">
                                     <Mail className="w-5 h-5 mr-3 text-blue-400" />
-                                    contact@mercato.ai
+                                    contact@mercato.agency
                                 </div>
-                                <div className="flex items-center text-slate-300">
+                                {/* <div className="flex items-center text-slate-300">
                                     <Phone className="w-5 h-5 mr-3 text-green-400" />
                                     +91 0000000000
-                                </div>
+                                </div> */}
                                 <div className="flex items-center text-slate-300">
                                     <MapPin className="w-5 h-5 mr-3 text-purple-400" />
-                                    Bangalore, India
+                                    Noida, India
                                 </div>
                             </div>
                         </div>
-
-                        <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
-                            <h3 className="text-2xl font-bold text-white mb-6">Request a Demo</h3>
-                            <form className="space-y-6">
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder="Full Name"
-                                        className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="email"
-                                        placeholder="Email Address"
-                                        className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder="Organization Name"
-                                        className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                                    />
-                                </div>
-                                <div>
-                                    <select className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white focus:border-blue-500 focus:outline-none transition-colors duration-300">
-                                        <option>Organization Size</option>
-                                        <option>1-10 employees</option>
-                                        <option>11-50 employees</option>
-                                        <option>51-200 employees</option>
-                                        <option>200+ employees</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <textarea
-                                        placeholder="Tell us about your healthcare challenges..."
-                                        rows="4"
-                                        className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none transition-colors duration-300 resize-none"
-                                    ></textarea>
-                                </div>
-                                <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
-                                    Schedule Demo
-                                </button>
-                            </form>
+                        <div className="flex flex-col items-center justify-center bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
+                            <h3 className="text-2xl font-bold text-white mb-6">Contact Our Sales Team</h3>
+                            <p className="text-slate-400 text-lg mb-8 text-center">
+                                Have questions or want a personalized walkthrough?
+                                Our experts are ready to help you get started with Customer Service AI Agents.
+                            </p>
+                            <button
+                                onClick={() => router.push('/contact')}
+                                className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 text-lg text-center"
+                            >
+                                Contact Us
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
-
 
             {/* Custom CSS for animations */}
             <style jsx>{`
@@ -999,7 +851,6 @@ export default function CustomerServicePage() {
                         transform: translateY(0);
                     }
                 }
-                
                 @keyframes fade-in-up {
                     from {
                         opacity: 0;
@@ -1010,7 +861,6 @@ export default function CustomerServicePage() {
                         transform: translateY(0);
                     }
                 }
-                
                 @keyframes gradient {
                     0%, 100% {
                         background-position: 0% 50%;
@@ -1019,11 +869,9 @@ export default function CustomerServicePage() {
                         background-position: 100% 50%;
                     }
                 }
-                
                 .animate-fade {
                     animation: fade-in 1s ease-out;
                 }
-                
                 .animate-fade-up {
                     animation: fade-in-up 1s ease-out;
                 }
@@ -1031,5 +879,4 @@ export default function CustomerServicePage() {
             <Footer />
         </div>
     );
-};
-
+}
