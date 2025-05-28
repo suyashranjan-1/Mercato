@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
     const platformLinks = [
-        { name: 'AI Agent Platform', href: '#' },
+        // { name: 'AI Agent Platform', href: '#' },
         { name: 'AI Agents', href: '#' },
         { name: 'Agentic Workflows', href: '#' },
         { name: 'AgentOS', href: '#' },
@@ -30,7 +30,7 @@ const Footer = () => {
 
     const companyLinks = [
         { name: 'About Us', href: '#' },
-        { name: 'Career', href: '#' },
+        // { name: 'Career', href: '#' },
         { name: 'Contact', href: '#' },
         { name: 'Request Demo', href: '#' }
     ];
@@ -38,9 +38,9 @@ const Footer = () => {
     const legalLinks = [
         { name: 'Privacy Policy', href: '#' },
         { name: 'Security', href: '#' },
-        { name: 'Data Protection', href: '#' },
         { name: 'Terms of Use', href: '#' },
-        { name: 'Imprint', href: '#' }
+        { name: 'Data Protection', href: '#' },
+        // { name: 'Imprint', href: '#' }
     ];
 
     const socialLinks = [

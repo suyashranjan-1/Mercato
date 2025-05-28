@@ -4,6 +4,8 @@ import { ChevronDown, Play, Star, Users, Zap, Shield, Clock, Heart, TrendingUp, 
 import Footer from "@/components/Footer";
 import { NavbarDemo } from "@/components/navbar";
 import { AgentSlider } from "@/components/AgentSlider";
+import ContactForm from "@/app/contact/page";
+import { useRouter } from "next/navigation";
 
 interface Agent {
     id: number;
@@ -531,6 +533,7 @@ const FloatingElements = () => {
 
 // Main Component
 export default function EcommercePage() {
+    const router = useRouter();
     const [currentAgentIndex, setCurrentAgentIndex] = useState<number>(0);
 
     useEffect(() => {
@@ -579,16 +582,6 @@ export default function EcommercePage() {
                         </span>
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-fade-in-up delay-400">
-                        <button className="group px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center text-lg">
-                            Start Free 30-Day Trial
-                            <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-                        </button>
-                        <button className="group px-10 py-5 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 flex items-center text-lg">
-                            <Play className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                            Watch E-commerce Demo
-                        </button>
-                    </div>
 
                     {/* Enhanced Stats Section */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-fade-in-up delay-600">
@@ -896,15 +889,6 @@ export default function EcommercePage() {
                                             <h3 className="text-2xl font-bold text-white mb-6">Get Started Today</h3>
                                             <div className="space-y-6">
                                                 <div className="flex items-center">
-                                                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
-                                                        <UserCheck className="w-6 h-6 text-white" />
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="text-white font-semibold">Free 30-Day Trial</h4>
-                                                        <p className="text-slate-400">No credit card required</p>
-                                                    </div>
-                                                </div>
-                                                <div className="flex items-center">
                                                     <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-4">
                                                         <Phone className="w-6 h-6 text-white" />
                                                     </div>
@@ -928,64 +912,32 @@ export default function EcommercePage() {
                                         <div className="space-y-4">
                                             <div className="flex items-center text-slate-300">
                                                 <Mail className="w-5 h-5 mr-3 text-blue-400" />
-                                                contact@mercato.ai
+                                                contact@mercato.agency
                                             </div>
-                                            <div className="flex items-center text-slate-300">
+                                            {/* <div className="flex items-center text-slate-300">
                                                 <Phone className="w-5 h-5 mr-3 text-green-400" />
                                                 +91 0000000000
-                                            </div>
+                                            </div> */}
                                             <div className="flex items-center text-slate-300">
                                                 <MapPin className="w-5 h-5 mr-3 text-purple-400" />
-                                                Bangalore, India
+                                                Noida, India
                                             </div>
                                         </div>
                                     </div>
             
-                                    {/* <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
-                                        <h3 className="text-2xl font-bold text-white mb-6">Request a Demo</h3>
-                                        <form className="space-y-6">
-                                            <div>
-                                                <input
-                                                    type="text"
-                                                    placeholder="Full Name"
-                                                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                                                />
-                                            </div>
-                                            <div>
-                                                <input
-                                                    type="email"
-                                                    placeholder="Email Address"
-                                                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                                                />
-                                            </div>
-                                            <div>
-                                                <input
-                                                    type="text"
-                                                    placeholder="Organization Name"
-                                                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none transition-colors duration-300"
-                                                />
-                                            </div>
-                                            <div>
-                                                <select className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white focus:border-blue-500 focus:outline-none transition-colors duration-300">
-                                                    <option>Organization Size</option>
-                                                    <option>1-10 employees</option>
-                                                    <option>11-50 employees</option>
-                                                    <option>51-200 employees</option>
-                                                    <option>200+ employees</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <textarea
-                                                    placeholder="Tell us about your healthcare challenges..."
-                                                    rows="4"
-                                                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-blue-500 focus:outline-none transition-colors duration-300 resize-none"
-                                                ></textarea>
-                                            </div>
-                                            <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
-                                                Schedule Demo
-                                            </button>
-                                        </form>
-                                    </div> */}
+                                    <div className="flex flex-col items-center justify-center bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8">
+                            <h3 className="text-2xl font-bold text-white mb-6">Contact Our Sales Team</h3>
+                            <p className="text-slate-400 text-lg mb-8 text-center">
+                                Have questions or want a personalized walkthrough?
+                                Our experts are ready to help you get started with Customer Service AI Agents.
+                            </p>
+                            <button
+                                onClick={() => router.push('/contact')}
+                                className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 text-lg text-center"
+                            >
+                                Contact Us
+                            </button>
+                        </div>
                                 </div>
                             </div>
                         </section>

@@ -42,7 +42,7 @@ const SecurityPolicyPage = () => {
         { id: 'incident', title: 'Incident Response', icon: AlertTriangle },
         { id: 'monitoring', title: 'Monitoring & Auditing', icon: Eye },
         { id: 'physical', title: 'Physical Security', icon: Server },
-        { id: 'contact', title: 'Contact', icon: Mail }
+        // { id: 'contact', title: 'Contact', icon: Mail }
     ];
 
     const scrollToSection = (sectionId: string) => {
@@ -521,17 +521,17 @@ const SecurityPolicyPage = () => {
                 </section>
 
                 {/* Contact Section */}
-                <section id="contact" className="mb-16 scroll-mt-20">
+                {/* <section id="contact" className="mb-16 scroll-mt-20">
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <Mail className="w-8 h-8 text-cyan-400" />
                             Contact & Questions
                         </h2>
                         <div className="space-y-4 text-slate-300 leading-relaxed">
-                            <p>For questions about this Security Policy, please contact Mercato at <a href="mailto:security@mercato.com" className="text-cyan-400 underline">security@mercato.com</a> or by mail at Mercato Agency, Attn: Security, [Street Address], [City, Country].</p>
+                            <p>For questions about this Security Policy, please contact Mercato at <a href="mailto:contact@mercato.agency" className="text-cyan-400 underline">contact@mercato.agency</a> or by mail at Mercato Agency, Attn: Security, [Street Address], [City, Country].</p>
                         </div>
                     </div>
-                </section>
+                </section> */}
             </div>
             <Footer />
         </div>

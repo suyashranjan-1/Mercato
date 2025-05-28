@@ -1,6 +1,5 @@
 "use client";
 import Footer from "@/components/Footer";
-
 import React from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { NavbarDemo } from "@/components/navbar";
@@ -10,7 +9,6 @@ import {
     MessageSquare,
     CheckCircle,
     Star,
-    Play,
     ArrowRight,
     Users,
     Zap,
@@ -19,15 +17,12 @@ import {
     ShoppingCart,
     Mail,
     Phone,
-    MapPin,
-    Menu,
-    X
 } from 'lucide-react';
 
 // Google Gemini Effect Component
 const GoogleGeminiEffect = ({ pathLengths }: { pathLengths: MotionValue<number>[] }) => {
     return (
-        <div className="fixed inset-0 -z-10">
+        <div className="fixed inset-0 -z-10" aria-hidden>
             <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-full h-[890px] -top-60 md:-top-40 flex items-center justify-center bg-transparent absolute"></div>
                 <svg
@@ -89,7 +84,16 @@ const GoogleGeminiEffect = ({ pathLengths }: { pathLengths: MotionValue<number>[
 };
 
 const MercatoHomepage = () => {
-    const { scrollYProgress } = useScroll();
+    // Safe usage of useScroll for framer-motion >=10, fallback for older versions or SSR
+    let scrollYProgress: MotionValue<number>;
+    try {
+        // @ts-ignore
+        scrollYProgress = useScroll().scrollYProgress;
+    } catch (e) {
+        // fallback: static MotionValue(1)
+        // @ts-ignore
+        scrollYProgress = { get: () => 1, onChange: () => {}, set: () => {}, destroy: () => {} };
+    }
     const pathLengths = [
         useTransform(scrollYProgress, [0, 0.2], [0, 1]),
         useTransform(scrollYProgress, [0.1, 0.3], [0, 1]),
@@ -102,22 +106,22 @@ const MercatoHomepage = () => {
         {
             icon: <MessageSquare className="w-8 h-8" />,
             title: "Automate Customer Support",
-            description: "AI-powered chatbots that handle customer inquiries 24/7, reducing response time by 90% and improving satisfaction scores."
+            description: "AI-powered chatbots that handle customer inquiries 24/7, reducing response time by 90% and improving satisfaction scores. Improve your business reputation and customer loyalty with reliable support automation."
         },
         {
             icon: <Calendar className="w-8 h-8" />,
             title: "AI Scheduling Assistant",
-            description: "Smart scheduling that finds optimal meeting times, manages your calendar automatically, and eliminates back-and-forth emails."
+            description: "Smart scheduling that finds optimal meeting times, manages your calendar automatically, and eliminates back-and-forth emails. Enhance productivity with seamless calendar integration."
         },
         {
             icon: <Target className="w-8 h-8" />,
             title: "Lead Qualification Bots",
-            description: "Intelligent lead scoring and qualification that identifies your best prospects instantly and routes them to your sales team."
+            description: "Intelligent lead scoring and qualification that identifies your best prospects instantly and routes them to your sales team. Convert more leads into customers with data-driven sales automation."
         },
         {
             icon: <Bot className="w-8 h-8" />,
             title: "Task Management AI",
-            description: "Automated workflow management that prioritizes and assigns tasks based on urgency, capacity, and business objectives."
+            description: "Automated workflow management that prioritizes and assigns tasks based on urgency, capacity, and business objectives. Streamline your operations with advanced task automation."
         }
     ];
 
@@ -206,7 +210,7 @@ const MercatoHomepage = () => {
             <NavbarDemo />
 
             {/* Main Content */}
-            <div className="relative z-10">
+            <main className="relative z-10">
                 {/* Hero Section */}
                 <section className="relative min-h-screen flex items-center justify-center px-4 pt-20">
                     <div className="max-w-7xl mx-auto text-center">
@@ -232,23 +236,18 @@ const MercatoHomepage = () => {
                                 We build AI-powered agents that automate your repetitive tasks—so you can focus on what matters most: growing your business.
                             </p>
 
+                            {/* CONTACT FORM BUTTON */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-                                <motion.button
+                                <motion.a
+                                    href="#contact"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center"
+                                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center cursor-pointer"
+                                    aria-label="Contact Us"
                                 >
-                                    Book a Demo
-                                    <ArrowRight className="w-5 h-5 ml-2" />
-                                </motion.button>
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="px-8 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-white font-semibold rounded-xl hover:bg-gray-700/50 hover:border-gray-600/50 transition-all duration-300 flex items-center justify-center"
-                                >
-                                    <Play className="w-5 h-5 mr-2" />
-                                    See AI in Action
-                                </motion.button>
+                                    <Phone className="w-5 h-5 mr-2" />
+                                    Contact Us
+                                </motion.a>
                             </div>
 
                             {/* Trusted by section */}
@@ -269,7 +268,7 @@ const MercatoHomepage = () => {
                 {/* What We Do Section */}
                 <section id="services" className="py-24 px-4">
                     <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
+                        <header className="text-center mb-16">
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -277,17 +276,20 @@ const MercatoHomepage = () => {
                                 viewport={{ once: true }}
                             >
                                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-                                    AI That <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Works for You</span>
+                                    <span>
+                                        <span className="text-white">AI That </span>
+                                        <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Works for You</span>
+                                    </span>
                                 </h2>
                                 <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                                     Custom AI agents designed to handle your most time-consuming tasks with precision, intelligence, and 24/7 availability.
                                 </p>
                             </motion.div>
-                        </div>
+                        </header>
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {services.map((service, index) => (
-                                <motion.div
+                                <motion.article
                                     key={index}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -301,7 +303,7 @@ const MercatoHomepage = () => {
                                     </div>
                                     <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
                                     <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
-                                </motion.div>
+                                </motion.article>
                             ))}
                         </div>
                     </div>
@@ -310,7 +312,7 @@ const MercatoHomepage = () => {
                 {/* How It Works Section */}
                 <section id="how-it-works" className="py-24 px-4 bg-gradient-to-r from-gray-900/30 to-gray-800/20 backdrop-blur-sm">
                     <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
+                        <header className="text-center mb-16">
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -324,7 +326,7 @@ const MercatoHomepage = () => {
                                     Three simple steps to transform your business operations with intelligent AI automation.
                                 </p>
                             </motion.div>
-                        </div>
+                        </header>
 
                         <div className="grid md:grid-cols-3 gap-12">
                             {steps.map((step, index) => (
@@ -341,8 +343,6 @@ const MercatoHomepage = () => {
                                     </div>
                                     <h3 className="text-2xl font-bold mb-4 text-white">{step.title}</h3>
                                     <p className="text-gray-400 leading-relaxed">{step.description}</p>
-
-                                    {/* Connection line */}
                                     {index < steps.length - 1 && (
                                         <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent transform translate-x-8"></div>
                                     )}
@@ -355,7 +355,7 @@ const MercatoHomepage = () => {
                 {/* Use Cases Section */}
                 <section id="use-cases" className="py-24 px-4">
                     <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
+                        <header className="text-center mb-16">
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -369,11 +369,11 @@ const MercatoHomepage = () => {
                                     See how businesses across industries are using Mercato AI agents to drive measurable results and scale operations.
                                 </p>
                             </motion.div>
-                        </div>
+                        </header>
 
                         <div className="grid md:grid-cols-3 gap-8">
                             {useCases.map((useCase, index) => (
-                                <motion.div
+                                <motion.article
                                     key={index}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -396,7 +396,7 @@ const MercatoHomepage = () => {
                                         <CheckCircle className="w-4 h-4 mr-2" />
                                         {useCase.metrics}
                                     </div>
-                                </motion.div>
+                                </motion.article>
                             ))}
                         </div>
                     </div>
@@ -405,7 +405,7 @@ const MercatoHomepage = () => {
                 {/* Testimonials Section */}
                 <section id="testimonials" className="py-24 px-4 bg-gradient-to-r from-gray-900/30 to-gray-800/20 backdrop-blur-sm">
                     <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
+                        <header className="text-center mb-16">
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -419,11 +419,11 @@ const MercatoHomepage = () => {
                                     Real results from real businesses who transformed their operations with Mercato AI agents.
                                 </p>
                             </motion.div>
-                        </div>
+                        </header>
 
                         <div className="grid md:grid-cols-3 gap-8">
                             {testimonials.map((testimonial, index) => (
-                                <motion.div
+                                <motion.article
                                     key={index}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -433,33 +433,29 @@ const MercatoHomepage = () => {
                                     className="p-8 rounded-2xl bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 hover:border-blue-500/50 hover:bg-gray-800/60 transition-all duration-300"
                                 >
                                     <div className="flex items-center mb-6">
-                                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center text-white font-bold mr-4">
-                                            {testimonial.avatar}
-                                        </div>
+                                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center text-white font-bold mr-4">{testimonial.avatar}</div>
                                         <div>
                                             <h4 className="font-bold text-white">{testimonial.name}</h4>
                                             <p className="text-sm text-gray-400">{testimonial.role}</p>
                                             <p className="text-sm text-blue-300">{testimonial.company}</p>
                                         </div>
                                     </div>
-
                                     <div className="flex mb-4">
                                         {[...Array(testimonial.rating)].map((_, i) => (
                                             <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                                         ))}
                                     </div>
-
                                     <p className="text-gray-300 leading-relaxed italic">
                                         "{testimonial.content}"
                                     </p>
-                                </motion.div>
+                                </motion.article>
                             ))}
                         </div>
                     </div>
                 </section>
 
                 {/* Final CTA Section */}
-                <section className="py-24 px-4">
+                <section className="py-24 px-4" id="contact">
                     <div className="max-w-4xl mx-auto text-center">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -471,28 +467,33 @@ const MercatoHomepage = () => {
                                 Ready to <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Automate</span> Your Business?
                             </h2>
                             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-                                Join hundreds of businesses already saving time and money with custom AI agents. Book your free consultation today.
+                                Join hundreds of businesses already saving time and money with custom AI agents. Get in touch with us today.
                             </p>
 
+                            
+                            {/* Contact form or button */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                                <motion.button
+                                <motion.a
+                                    href="contact@mercato.agency"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center text-lg"
+                                    aria-label="Email Mercato"
                                 >
-                                    Start Automating Now
-                                    <ArrowRight className="w-5 h-5 ml-2" />
-                                </motion.button>
-                                <motion.button
+                                    <Mail className="w-5 h-5 mr-2" />
+                                    Email Us
+                                </motion.a>
+                                {/* <motion.a
+                                    href="tel:+1234567890"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     className="px-8 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-white font-semibold rounded-xl hover:bg-gray-700/50 hover:border-gray-600/50 transition-all duration-300 flex items-center justify-center text-lg"
+                                    aria-label="Call Mercato"
                                 >
                                     <Phone className="w-5 h-5 mr-2" />
-                                    Schedule Free Call
-                                </motion.button>
+                                    Call Us
+                                </motion.a> */}
                             </div>
-
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                                 <div>
                                     <div className="text-3xl font-bold text-blue-400 mb-2">500+</div>
@@ -516,7 +517,7 @@ const MercatoHomepage = () => {
                 </section>
 
                 <Footer />
-            </div>
+            </main>
         </div>
     );
 };

@@ -296,10 +296,6 @@ const TermsOfUsePage = () => {
                     <p className="text-slate-400 mb-8 max-w-2xl mx-auto">
                         Contact our legal team for detailed information about your rights and obligations under these Terms of Use.
                     </p>
-
-                    <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-emerald-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300">
-                        Contact Legal Team
-                    </button>
                 </div>
             </div>
 

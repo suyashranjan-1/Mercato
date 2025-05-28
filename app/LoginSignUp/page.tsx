@@ -12,10 +12,6 @@ import {
   CheckCircle,
   Chrome,
   Phone,
-  Shield,
-  Clock,
-  Users,
-  Sparkles
 } from 'lucide-react';
 
 const MercatoAuthPage = () => {
@@ -32,33 +28,70 @@ const MercatoAuthPage = () => {
     password: '',
     confirmPassword: ''
   });
+  const [agreeTerms, setAgreeTerms] = useState(false);
+  const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     // Parallax scroll effect
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  const validateForm = () => {
+    let errors: { [key: string]: string } = {};
+
+    if (currentView === 'signup') {
+      if (!formData.name.trim()) errors.name = "Name is required";
+    }
+    if (!formData.email.trim()) errors.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Email is invalid";
+
+    if (!formData.phone.trim()) errors.phone = "Phone number is required";
+    else if (!/^[0-9+\-\s()]+$/.test(formData.phone)) errors.phone = "Phone number is invalid";
+
+    if (!formData.password) errors.password = "Password is required";
+    else if (formData.password.length < 6) errors.password = "Password must be at least 6 characters";
+
+    if (currentView === 'signup') {
+      if (!formData.confirmPassword) errors.confirmPassword = "Confirm password is required";
+      else if (formData.password !== formData.confirmPassword) errors.confirmPassword = "Passwords do not match";
+      if (!agreeTerms) errors.agreeTerms = "You must agree to Terms of Service and Privacy Policy";
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormErrors({ ...formErrors, [e.target.name]: '' });
+  };
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAgreeTerms(e.target.checked);
+    setFormErrors({ ...formErrors, agreeTerms: '' });
   };
 
   const handleSubmit = async () => {
+    if (!validateForm()) return;
     setIsLoading(true);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
     setIsLoading(false);
+    // Here you would handle login/signup logic and redirect as needed
   };
 
   const toggleView = () => {
     setCurrentView(currentView === 'login' ? 'signup' : 'login');
     setFormData({ name: '', email: '', phone: '', password: '', confirmPassword: '' });
+    setFormErrors({});
+    setAgreeTerms(false);
   };
 
   const LoadingSpinner = () => (
@@ -116,7 +149,7 @@ const MercatoAuthPage = () => {
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-center min-h-[calc(100vh-100px)] px-4 py-8">
         <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          
+
           {/* Left Side - Marketing Content */}
           <div className={`space-y-6 sm:space-y-8 text-center lg:text-left transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-4 sm:mb-6 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300 hover:border-slate-600/50 transition-all duration-300 animate-slideDown">
@@ -190,7 +223,7 @@ const MercatoAuthPage = () => {
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-800/20 via-purple-600/20 to-blue-900/20 blur-xl"></div>
               <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 p-6 sm:p-8 shadow-2xl">
-                
+
                 {/* Form Header */}
                 <div className="text-center mb-6 sm:mb-8">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-sm mb-4 sm:mb-6 backdrop-blur-sm">
@@ -222,9 +255,11 @@ const MercatoAuthPage = () => {
                         placeholder="Full Name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full pl-11 pr-4 py-3 sm:py-4 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300"
+                        className={`w-full pl-11 pr-4 py-3 sm:py-4 bg-slate-800/50 border ${formErrors.name ? 'border-red-500' : 'border-slate-700/50'} rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300`}
                         required
+                        autoComplete="name"
                       />
+                      {formErrors.name && <div className="text-xs text-red-400 mt-1">{formErrors.name}</div>}
                     </div>
                   )}
 
@@ -237,9 +272,11 @@ const MercatoAuthPage = () => {
                       placeholder="Email Address"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full pl-11 pr-4 py-3 sm:py-4 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300"
+                      className={`w-full pl-11 pr-4 py-3 sm:py-4 bg-slate-800/50 border ${formErrors.email ? 'border-red-500' : 'border-slate-700/50'} rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300`}
                       required
+                      autoComplete="email"
                     />
+                    {formErrors.email && <div className="text-xs text-red-400 mt-1">{formErrors.email}</div>}
                   </div>
 
                   {/* Phone Field */}
@@ -251,9 +288,11 @@ const MercatoAuthPage = () => {
                       placeholder="Phone Number"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full pl-11 pr-4 py-3 sm:py-4 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300"
+                      className={`w-full pl-11 pr-4 py-3 sm:py-4 bg-slate-800/50 border ${formErrors.phone ? 'border-red-500' : 'border-slate-700/50'} rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300`}
                       required
+                      autoComplete="tel"
                     />
+                    {formErrors.phone && <div className="text-xs text-red-400 mt-1">{formErrors.phone}</div>}
                   </div>
 
                   {/* Password Field */}
@@ -265,16 +304,19 @@ const MercatoAuthPage = () => {
                       placeholder="Password"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className="w-full pl-11 pr-11 py-3 sm:py-4 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300"
+                      className={`w-full pl-11 pr-11 py-3 sm:py-4 bg-slate-800/50 border ${formErrors.password ? 'border-red-500' : 'border-slate-700/50'} rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300`}
                       required
+                      autoComplete={currentView === 'login' ? "current-password" : "new-password"}
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-300 transition-colors duration-200"
+                      tabIndex={-1}
                     >
                       {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                     </button>
+                    {formErrors.password && <div className="text-xs text-red-400 mt-1">{formErrors.password}</div>}
                   </div>
 
                   {/* Confirm Password Field (Signup only) */}
@@ -287,16 +329,19 @@ const MercatoAuthPage = () => {
                         placeholder="Confirm Password"
                         value={formData.confirmPassword}
                         onChange={handleInputChange}
-                        className="w-full pl-11 pr-11 py-3 sm:py-4 bg-slate-800/50 border border-slate-700/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300"
+                        className={`w-full pl-11 pr-11 py-3 sm:py-4 bg-slate-800/50 border ${formErrors.confirmPassword ? 'border-red-500' : 'border-slate-700/50'} rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500/50 focus:bg-slate-800/70 focus:scale-[1.02] transition-all duration-300`}
                         required
+                        autoComplete="new-password"
                       />
                       <button
                         type="button"
                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-300 transition-colors duration-200"
+                        tabIndex={-1}
                       >
                         {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                       </button>
+                      {formErrors.confirmPassword && <div className="text-xs text-red-400 mt-1">{formErrors.confirmPassword}</div>}
                     </div>
                   )}
 
@@ -306,6 +351,7 @@ const MercatoAuthPage = () => {
                       <button
                         type="button"
                         className="text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200"
+                        tabIndex={0}
                       >
                         Forgot your password?
                       </button>
@@ -318,10 +364,12 @@ const MercatoAuthPage = () => {
                       <input
                         type="checkbox"
                         id="terms"
+                        checked={agreeTerms}
+                        onChange={handleCheckboxChange}
                         className="mt-1 w-4 h-4 text-blue-600 bg-slate-800 border-slate-600 rounded focus:ring-blue-500 focus:ring-2"
                         required
                       />
-                      <label htmlFor="terms" className="text-sm text-slate-400 leading-relaxed">
+                      <label htmlFor="terms" className="text-sm text-slate-400 leading-relaxed select-none cursor-pointer">
                         I agree to the{' '}
                         <span className="text-blue-400 hover:text-blue-300 cursor-pointer transition-colors duration-200">
                           Terms of Service
@@ -331,6 +379,7 @@ const MercatoAuthPage = () => {
                           Privacy Policy
                         </span>
                       </label>
+                      {formErrors.agreeTerms && <div className="text-xs text-red-400 mt-1">{formErrors.agreeTerms}</div>}
                     </div>
                   )}
 
@@ -346,7 +395,7 @@ const MercatoAuthPage = () => {
                         <LoadingSpinner />
                       ) : (
                         <>
-                          {currentView === 'login' ? 'Sign In to Dashboard' : 'Start Free Trial'}
+                          {currentView === 'login' ? 'Sign In' : 'Sign Up'}
                           <ArrowRight className="w-5 h-5" />
                         </>
                       )}
@@ -384,7 +433,7 @@ const MercatoAuthPage = () => {
                       onClick={toggleView}
                       className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
                     >
-                      {currentView === 'login' ? 'Sign up free' : 'Sign in'}
+                      {currentView === 'login' ? 'Sign up' : 'Sign in'}
                     </button>
                   </p>
                 </div>
