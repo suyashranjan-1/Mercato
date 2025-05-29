@@ -17,6 +17,7 @@ interface Agent {
     rating: string;
     usage: string;
     speed: string;
+    path?: string;
 }
 
 interface ProblemSolvingCategory {
@@ -26,262 +27,285 @@ interface ProblemSolvingCategory {
 }
 
 // Problem Solving agents data
-const problemSolvingCategory: ProblemSolvingCategory = {
-    "name": "Problem Solving AI Agents",
-    "description": "Intelligent AI agents designed to tackle complex challenges across industries, providing innovative solutions and strategic insights.",
-    "agents": [
+export const problemSolvingCategory: Category = {
+    name: "Problem Solving AI Agents",
+    description: "Intelligent AI agents designed to tackle complex challenges across industries, providing innovative solutions and strategic insights.",
+    agents: [
         {
-            "id": 1,
-            "name": "Universal Problem Solver",
-            "description": "Advanced AI agent capable of analyzing complex problems across multiple domains and providing actionable solutions with detailed reasoning.",
-            "icon": "🧠",
-            "color": "from-blue-500 to-purple-600",
-            "tags": ["Problem Solving", "Analysis", "Multi-domain"],
-            "rating": "4.9",
-            "usage": "12.5k",
-            "speed": "Fast"
+            id: 1,
+            name: "Universal Problem Solver",
+            description: "Advanced AI agent capable of analyzing complex problems across multiple domains and providing actionable solutions with detailed reasoning.",
+            icon: <>🧠</>,
+            color: "from-blue-500 to-purple-600",
+            tags: ["Problem Solving", "Analysis", "Multi-domain"],
+            rating: "4.9",
+            usage: "12.5k",
+            speed: "Fast",
+            path: "/agents/universal-problem-solver"
         },
         {
-            "id": 2,
-            "name": "Task Automation AI Agent",
-            "description": "Streamline your workflow by automating repetitive tasks and optimizing business processes with intelligent task management.",
-            "icon": "⚡",
-            "color": "from-emerald-500 to-blue-600",
-            "tags": ["Automation", "Workflow", "Efficiency"],
-            "rating": "4.8",
-            "usage": "8.3k",
-            "speed": "Ultra Fast"
+            id: 2,
+            name: "Task Automation AI Agent",
+            description: "Streamline your workflow by automating repetitive tasks and optimizing business processes with intelligent task management.",
+            icon: <>⚡</>,
+            color: "from-emerald-500 to-blue-600",
+            tags: ["Automation", "Workflow", "Efficiency"],
+            rating: "4.8",
+            usage: "8.3k",
+            speed: "Ultra Fast",
+            path: "/agents/task-automation-ai-agent"
         },
         {
-            "id": 3,
-            "name": "Smart Decision Maker",
-            "description": "Make informed decisions with AI-powered analysis that evaluates multiple factors and provides recommendations.",
-            "icon": "🎯",
-            "color": "from-orange-500 to-red-600",
-            "tags": ["Decision Making", "Analysis", "Strategy"],
-            "rating": "4.7",
-            "usage": "6.8k",
-            "speed": "Fast"
+            id: 3,
+            name: "Smart Decision Maker",
+            description: "Make informed decisions with AI-powered analysis that evaluates multiple factors and provides recommendations.",
+            icon: <>🎯</>,
+            color: "from-orange-500 to-red-600",
+            tags: ["Decision Making", "Analysis", "Strategy"],
+            rating: "4.7",
+            usage: "6.8k",
+            speed: "Fast",
+            path: "/agents/smart-decision-maker"
         },
         {
-            "id": 44,
-            "name": "Customer Service AI Agent",
-            "description": "Automate and personalize customer support with 24/7 AI-driven interaction.",
-            "icon": "💬",
-            "color": "from-blue-400 to-indigo-500",
-            "tags": ["Customer Support", "Chatbot", "Service"],
-            "rating": "4.8",
-            "usage": "14.2k",
-            "speed": "Fast"
+            id: 44,
+            name: "Customer Service AI Agent",
+            description: "Automate and personalize customer support with 24/7 AI-driven interaction.",
+            icon: <>💬</>,
+            color: "from-blue-400 to-indigo-500",
+            tags: ["Customer Support", "Chatbot", "Service"],
+            rating: "4.8",
+            usage: "14.2k",
+            speed: "Fast",
+            path: "/agents/customer-service-ai-agent"
         },
         {
-            "id": 45,
-            "name": "Data Extraction AI Agent",
-            "description": "Extract structured data from unstructured documents like PDFs, emails, and reports.",
-            "icon": "📄",
-            "color": "from-teal-500 to-cyan-600",
-            "tags": ["Data Extraction", "OCR", "Documents"],
-            "rating": "4.7",
-            "usage": "10.9k",
-            "speed": "Medium"
+            id: 45,
+            name: "Data Extraction AI Agent",
+            description: "Extract structured data from unstructured documents like PDFs, emails, and reports.",
+            icon: <>📄</>,
+            color: "from-teal-500 to-cyan-600",
+            tags: ["Data Extraction", "OCR", "Documents"],
+            rating: "4.7",
+            usage: "10.9k",
+            speed: "Medium",
+            path: "/agents/data-extraction-ai-agent"
         },
         {
-            "id": 46,
-            "name": "Email Categorization & Triage AI Agent",
-            "description": "Organize and prioritize incoming emails for better workflow efficiency.",
-            "icon": "📧",
-            "color": "from-green-400 to-blue-500",
-            "tags": ["Email", "Productivity", "Categorization"],
-            "rating": "4.6",
-            "usage": "9.3k",
-            "speed": "Fast"
+            id: 46,
+            name: "Email Categorization & Triage AI Agent",
+            description: "Organize and prioritize incoming emails for better workflow efficiency.",
+            icon: <>📧</>,
+            color: "from-green-400 to-blue-500",
+            tags: ["Email", "Productivity", "Categorization"],
+            rating: "4.6",
+            usage: "9.3k",
+            speed: "Fast",
+            path: "/agents/email-categorization-and-triage-ai-agent"
         },
         {
-            "id": 47,
-            "name": "Appointment Management AI Agent",
-            "description": "Automatically schedule, reschedule, and send reminders for appointments.",
-            "icon": "📆",
-            "color": "from-indigo-500 to-blue-600",
-            "tags": ["Calendar", "Scheduling", "Productivity"],
-            "rating": "4.7",
-            "usage": "8.5k",
-            "speed": "Fast"
+            id: 47,
+            name: "Appointment Management AI Agent",
+            description: "Automatically schedule, reschedule, and send reminders for appointments.",
+            icon: <>📆</>,
+            color: "from-indigo-500 to-blue-600",
+            tags: ["Calendar", "Scheduling", "Productivity"],
+            rating: "4.7",
+            usage: "8.5k",
+            speed: "Fast",
+            path: "/agents/appointment-management-ai-agent"
         },
         {
-            "id": 48,
-            "name": "Interview Scheduler AI Agent",
-            "description": "Coordinate interview times between candidates and recruiters efficiently.",
-            "icon": "🗓️",
-            "color": "from-purple-500 to-pink-500",
-            "tags": ["HR", "Scheduling", "Interviews"],
-            "rating": "4.8",
-            "usage": "7.4k",
-            "speed": "Medium"
+            id: 48,
+            name: "Interview Scheduler AI Agent",
+            description: "Coordinate interview times between candidates and recruiters efficiently.",
+            icon: <>🗓️</>,
+            color: "from-purple-500 to-pink-500",
+            tags: ["HR", "Scheduling", "Interviews"],
+            rating: "4.8",
+            usage: "7.4k",
+            speed: "Medium",
+            path: "/agents/interview-scheduler-ai-agent"
         },
         {
-            "id": 49,
-            "name": "Data Entry AI Agent",
-            "description": "Automate repetitive data entry tasks with high speed and accuracy.",
-            "icon": "⌨️",
-            "color": "from-gray-500 to-blue-500",
-            "tags": ["Data Entry", "Automation", "Efficiency"],
-            "rating": "4.6",
-            "usage": "13.1k",
-            "speed": "Ultra Fast"
+            id: 49,
+            name: "Data Entry AI Agent",
+            description: "Automate repetitive data entry tasks with high speed and accuracy.",
+            icon: <>⌨️</>,
+            color: "from-gray-500 to-blue-500",
+            tags: ["Data Entry", "Automation", "Efficiency"],
+            rating: "4.6",
+            usage: "13.1k",
+            speed: "Ultra Fast",
+            path: "/agents/data-entry-ai-agent"
         },
         {
-            "id": 50,
-            "name": "Billing Management AI Agent",
-            "description": "Handle invoices, billing cycles, and payment reminders seamlessly.",
-            "icon": "🧾",
-            "color": "from-amber-500 to-orange-500",
-            "tags": ["Billing", "Finance", "Automation"],
-            "rating": "4.7",
-            "usage": "10.3k",
-            "speed": "Fast"
+            id: 50,
+            name: "Billing Management AI Agent",
+            description: "Handle invoices, billing cycles, and payment reminders seamlessly.",
+            icon: <>🧾</>,
+            color: "from-amber-500 to-orange-500",
+            tags: ["Billing", "Finance", "Automation"],
+            rating: "4.7",
+            usage: "10.3k",
+            speed: "Fast",
+            path: "/agents/billing-management-ai-agent"
         },
         {
-            "id": 51,
-            "name": "Transaction Monitoring AI Agent",
-            "description": "Detect and report suspicious transactions in real time.",
-            "icon": "💳",
-            "color": "from-red-500 to-pink-600",
-            "tags": ["Finance", "Fraud Detection", "Monitoring"],
-            "rating": "4.9",
-            "usage": "11.7k",
-            "speed": "Instant"
+            id: 51,
+            name: "Transaction Monitoring AI Agent",
+            description: "Detect and report suspicious transactions in real time.",
+            icon: <>💳</>,
+            color: "from-red-500 to-pink-600",
+            tags: ["Finance", "Fraud Detection", "Monitoring"],
+            rating: "4.9",
+            usage: "11.7k",
+            speed: "Instant",
+            path: "/agents/transaction-monitoring-ai-agent"
         },
         {
-            "id": 52,
-            "name": "Budget Management AI Agent",
-            "description": "Track expenses, analyze budgets, and suggest savings opportunities.",
-            "icon": "📊",
-            "color": "from-lime-500 to-green-600",
-            "tags": ["Budget", "Finance", "Tracking"],
-            "rating": "4.8",
-            "usage": "9.6k",
-            "speed": "Fast"
+            id: 52,
+            name: "Budget Management AI Agent",
+            description: "Track expenses, analyze budgets, and suggest savings opportunities.",
+            icon: <>📊</>,
+            color: "from-lime-500 to-green-600",
+            tags: ["Budget", "Finance", "Tracking"],
+            rating: "4.8",
+            usage: "9.6k",
+            speed: "Fast",
+            path: "/agents/budget-management-ai-agent"
         },
         {
-            "id": 53,
-            "name": "Document Review AI Agent",
-            "description": "Analyze and summarize lengthy documents with legal or technical content.",
-            "icon": "📚",
-            "color": "from-blue-600 to-indigo-700",
-            "tags": ["Documents", "Review", "Summarization"],
-            "rating": "4.6",
-            "usage": "7.2k",
-            "speed": "Medium"
+            id: 53,
+            name: "Document Review AI Agent",
+            description: "Analyze and summarize lengthy documents with legal or technical content.",
+            icon: <>📚</>,
+            color: "from-blue-600 to-indigo-700",
+            tags: ["Documents", "Review", "Summarization"],
+            rating: "4.6",
+            usage: "7.2k",
+            speed: "Medium",
+            path: "/agents/document-review-ai-agent"
         },
         {
-            "id": 54,
-            "name": "Contract Management AI Agent",
-            "description": "Automate contract lifecycle management and compliance monitoring.",
-            "icon": "📝",
-            "color": "from-gray-600 to-blue-700",
-            "tags": ["Contracts", "Legal", "Compliance"],
-            "rating": "4.8",
-            "usage": "8.6k",
-            "speed": "Fast"
+            id: 54,
+            name: "Contract Management AI Agent",
+            description: "Automate contract lifecycle management and compliance monitoring.",
+            icon: <>📝</>,
+            color: "from-gray-600 to-blue-700",
+            tags: ["Contracts", "Legal", "Compliance"],
+            rating: "4.8",
+            usage: "8.6k",
+            speed: "Fast",
+            path: "/agents/contract-management-ai-agent"
         },
         {
-            "id": 55,
-            "name": "Data Collection AI Agent",
-            "description": "Collect structured and unstructured data from multiple sources automatically.",
-            "icon": "🔍",
-            "color": "from-purple-400 to-blue-500",
-            "tags": ["Data", "Automation", "Collection"],
-            "rating": "4.7",
-            "usage": "11.0k",
-            "speed": "Medium"
+            id: 55,
+            name: "Data Collection AI Agent",
+            description: "Collect structured and unstructured data from multiple sources automatically.",
+            icon: <>🔍</>,
+            color: "from-purple-400 to-blue-500",
+            tags: ["Data", "Automation", "Collection"],
+            rating: "4.7",
+            usage: "11.0k",
+            speed: "Medium",
+            path: "/agents/data-collection-ai-agent"
         },
         {
-            "id": 56,
-            "name": "Invoice Processing AI Agent",
-            "description": "Extract and process data from invoices with automated validation.",
-            "icon": "🧮",
-            "color": "from-pink-400 to-red-500",
-            "tags": ["Invoices", "Finance", "Processing"],
-            "rating": "4.9",
-            "usage": "10.8k",
-            "speed": "Fast"
+            id: 56,
+            name: "Invoice Processing AI Agent",
+            description: "Extract and process data from invoices with automated validation.",
+            icon: <>🧮</>,
+            color: "from-pink-400 to-red-500",
+            tags: ["Invoices", "Finance", "Processing"],
+            rating: "4.9",
+            usage: "10.8k",
+            speed: "Fast",
+            path: "/agents/invoice-processing-ai-agent"
         },
         {
-            "id": 57,
-            "name": "Payroll Calculation AI Agent",
-            "description": "Calculate employee salaries, tax deductions, and generate payslips.",
-            "icon": "💼",
-            "color": "from-yellow-400 to-orange-500",
-            "tags": ["Payroll", "HR", "Finance"],
-            "rating": "4.8",
-            "usage": "9.1k",
-            "speed": "Medium"
+            id: 57,
+            name: "Payroll Calculation AI Agent",
+            description: "Calculate employee salaries, tax deductions, and generate payslips.",
+            icon: <>💼</>,
+            color: "from-yellow-400 to-orange-500",
+            tags: ["Payroll", "HR", "Finance"],
+            rating: "4.8",
+            usage: "9.1k",
+            speed: "Medium",
+            path: "/agents/payroll-calculation-ai-agent"
         },
         {
-            "id": 58,
-            "name": "Legal Document Classifier AI Agent",
-            "description": "Automatically categorize legal documents for faster retrieval and compliance.",
-            "icon": "⚖️",
-            "color": "from-indigo-600 to-blue-700",
-            "tags": ["Legal", "Classification", "AI"],
-            "rating": "4.7",
-            "usage": "6.4k",
-            "speed": "Fast"
+            id: 58,
+            name: "Legal Document Classifier AI Agent",
+            description: "Automatically categorize legal documents for faster retrieval and compliance.",
+            icon: <>⚖️</>,
+            color: "from-indigo-600 to-blue-700",
+            tags: ["Legal", "Classification", "AI"],
+            rating: "4.7",
+            usage: "6.4k",
+            speed: "Fast",
+            path: "/agents/legal-document-classifier-ai-agent"
         },
         {
-            "id": 59,
-            "name": "Social Media Content AI Agent",
-            "description": "Create, schedule, and analyze social media content using AI.",
-            "icon": "📱",
-            "color": "from-pink-500 to-yellow-500",
-            "tags": ["Social Media", "Content", "Marketing"],
-            "rating": "4.8",
-            "usage": "13.2k",
-            "speed": "Fast"
+            id: 59,
+            name: "Social Media Content AI Agent",
+            description: "Create, schedule, and analyze social media content using AI.",
+            icon: <>📱</>,
+            color: "from-pink-500 to-yellow-500",
+            tags: ["Social Media", "Content", "Marketing"],
+            rating: "4.8",
+            usage: "13.2k",
+            speed: "Fast",
+            path: "/agents/social-media-content-ai-agent"
         },
         {
-            "id": 60,
-            "name": "ETL (Extract, Transform, Load) AI Agent",
-            "description": "Automate ETL pipelines for seamless data migration and analytics workflows.",
-            "icon": "🔄",
-            "color": "from-green-500 to-teal-600",
-            "tags": ["ETL", "Data", "Pipeline"],
-            "rating": "4.7",
-            "usage": "7.8k",
-            "speed": "Fast"
+            id: 60,
+            name: "ETL (Extract, Transform, Load) AI Agent",
+            description: "Automate ETL pipelines for seamless data migration and analytics workflows.",
+            icon: <>🔄</>,
+            color: "from-green-500 to-teal-600",
+            tags: ["ETL", "Data", "Pipeline"],
+            rating: "4.7",
+            usage: "7.8k",
+            speed: "Fast",
+            path: "/agents/etl-extract-transform-load-ai-agent"
         },
         {
-            "id": 61,
-            "name": "RFP AI Agent",
-            "description": "Generate, evaluate, and respond to Requests for Proposals using AI.",
-            "icon": "📌",
-            "color": "from-red-500 to-orange-600",
-            "tags": ["RFP", "Bidding", "Automation"],
-            "rating": "4.6",
-            "usage": "6.2k",
-            "speed": "Medium"
+            id: 61,
+            name: "RFP AI Agent",
+            description: "Generate, evaluate, and respond to Requests for Proposals using AI.",
+            icon: <>📌</>,
+            color: "from-red-500 to-orange-600",
+            tags: ["RFP", "Bidding", "Automation"],
+            rating: "4.6",
+            usage: "6.2k",
+            speed: "Medium",
+            path: "/agents/rfp-ai-agent"
         },
         {
-            "id": 62,
-            "name": "Loan Processing AI Agent",
-            "description": "Automate credit assessment, documentation, and loan approval workflows.",
-            "icon": "🏦",
-            "color": "from-blue-400 to-indigo-500",
-            "tags": ["Loans", "Finance", "Automation"],
-            "rating": "4.7",
-            "usage": "9.5k",
-            "speed": "Fast"
+            id: 62,
+            name: "Loan Processing AI Agent",
+            description: "Automate credit assessment, documentation, and loan approval workflows.",
+            icon: <>🏦</>,
+            color: "from-blue-400 to-indigo-500",
+            tags: ["Loans", "Finance", "Automation"],
+            rating: "4.7",
+            usage: "9.5k",
+            speed: "Fast",
+            path: "/agents/loan-processing-ai-agent"
         },
         {
-            "id": 63,
-            "name": "Suspicious Activity Reporting AI Agent",
-            "description": "Identify and report suspicious activities for regulatory compliance.",
-            "icon": "🚨",
-            "color": "from-red-600 to-pink-600",
-            "tags": ["Compliance", "Monitoring", "Security"],
-            "rating": "4.9",
-            "usage": "8.8k",
-            "speed": "Fast"
+            id: 63,
+            name: "Suspicious Activity Reporting AI Agent",
+            description: "Identify and report suspicious activities for regulatory compliance.",
+            icon: <>🚨</>,
+            color: "from-red-600 to-pink-600",
+            tags: ["Compliance", "Monitoring", "Security"],
+            rating: "4.9",
+            usage: "8.8k",
+            speed: "Fast",
+            path: "/agents/suspicious-activity-reporting-ai-agent"
         }
     ]
 };
@@ -800,12 +824,12 @@ export default function ProblemSolvingPage() {
                         </div>
 
                         <h2 className="text-5xl md:text-7xl font-bold max-w-6xl mx-auto mb-8 leading-tight">
-                        From Philosophical Logic to <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">AI-Powered Problem Solving</span>
+                            From Philosophical Logic to <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">AI-Powered Problem Solving</span>
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                        Problem-solving has evolved from ancient philosophical inquiry to today's AI-driven strategic intelligence. 
-                        Explore the fascinating timeline that brought us from human intuition to machine-powered solutions transforming every industry.
+                            Problem-solving has evolved from ancient philosophical inquiry to today's AI-driven strategic intelligence.
+                            Explore the fascinating timeline that brought us from human intuition to machine-powered solutions transforming every industry.
                         </p>
                     </div>
 
@@ -822,16 +846,16 @@ export default function ProblemSolvingPage() {
                                     <h3 className="text-2xl font-bold text-white">🧠 The AI Problem-Solving Revolution</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                    Today’s AI-powered problem solvers represent the culmination of centuries of innovation in logic, decision science, 
-                                    and strategic analysis. From ancient philosophical reasoning to modern systems thinking and agile innovation, 
+                                    Today’s AI-powered problem solvers represent the culmination of centuries of innovation in logic, decision science,
+                                    and strategic analysis. From ancient philosophical reasoning to modern systems thinking and agile innovation,
                                     the evolution of problem-solving has reached its most powerful form yet — autonomous, intelligent AI agents.
-                                    These AI agents can analyze millions of data points, generate optimized solutions in real time, and adapt continuously — 
+                                    These AI agents can analyze millions of data points, generate optimized solutions in real time, and adapt continuously —
                                     providing round-the-clock strategic support to businesses, governments, and industries worldwide.
-                                    
+
                                 </p>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                AI Problem-Solving Agents now resolve up to 73% of complex challenges faster, reduce inefficiencies by 71%, 
-                                and boost decision accuracy to 95%.
+                                    AI Problem-Solving Agents now resolve up to 73% of complex challenges faster, reduce inefficiencies by 71%,
+                                    and boost decision accuracy to 95%.
                                 </p>
                             </div>
 
@@ -843,9 +867,9 @@ export default function ProblemSolvingPage() {
                                     <h3 className="text-2xl font-bold text-white">What's Next?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                The future of AI in problem-solving is not just automation — it’s augmentation. AI agents will become real-time collaborators, capable of 
-                                Predicting complex issues before they arise Tailoring solutions to organization-specific environments 
-                                Learning from every decision made Coordinating teams and systems with intelligent precision
+                                    The future of AI in problem-solving is not just automation — it’s augmentation. AI agents will become real-time collaborators, capable of
+                                    Predicting complex issues before they arise Tailoring solutions to organization-specific environments
+                                    Learning from every decision made Coordinating teams and systems with intelligent precision
                                 </p>
                             </div>
                         </div>
@@ -863,12 +887,12 @@ export default function ProblemSolvingPage() {
                         </div>
 
                         <h2 className="text-5xl md:text-7xl font-bold max-w-6xl mx-auto mb-8 leading-tight">
-                        Why General Problem Solver AI Agents are <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">Game Changers</span>
+                            Why General Problem Solver AI Agents are <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">Game Changers</span>
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                        Discover how AI-powered problem solvers are transforming organizational decision-making, accelerating innovation, 
-                        and delivering strategic clarity at scale. These agents aren’t just tools — they’re always-on experts designed to turn complexity into actionable insight.
+                            Discover how AI-powered problem solvers are transforming organizational decision-making, accelerating innovation,
+                            and delivering strategic clarity at scale. These agents aren’t just tools — they’re always-on experts designed to turn complexity into actionable insight.
                         </p>
                     </div>
 
@@ -918,8 +942,8 @@ export default function ProblemSolvingPage() {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                        Specialized AI agents engineered to tackle complex challenges across departments and industries — from strategic bottlenecks to operational inefficiencies. 
-                        These always-on problem solvers work 24/7 to keep your business agile, intelligent, and resilient.
+                            Specialized AI agents engineered to tackle complex challenges across departments and industries — from strategic bottlenecks to operational inefficiencies.
+                            These always-on problem solvers work 24/7 to keep your business agile, intelligent, and resilient.
                         </p>
                     </div>
 
@@ -989,8 +1013,8 @@ export default function ProblemSolvingPage() {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                        Our AI problem solvers deliver quantifiable improvements across all key metrics,
-                        ensuring your investment generates real value for your business and organization.
+                            Our AI problem solvers deliver quantifiable improvements across all key metrics,
+                            ensuring your investment generates real value for your business and organization.
                         </p>
                     </div>
 
@@ -1013,9 +1037,9 @@ export default function ProblemSolvingPage() {
                             Average ROI: <span className="text-green-400">430% in First Year</span>
                         </h3>
                         <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-8">
-                        Organizations leveraging our General Problem Solver AI Agents experience an
-                         average return of $4.30 for every dollar invested, thanks to rapid resolution cycles, 
-                        intelligent automation, and strategic insights that
+                            Organizations leveraging our General Problem Solver AI Agents experience an
+                            average return of $4.30 for every dollar invested, thanks to rapid resolution cycles,
+                            intelligent automation, and strategic insights that
                         </p>
                         {/* <button className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105">
                             Calculate Your ROI
@@ -1029,11 +1053,11 @@ export default function ProblemSolvingPage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto mb-8 leading-tight">
-                        Ready to Transform the Way You <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Solve Problems?</span>
+                            Ready to Transform the Way You <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Solve Problems?</span>
                         </h2>
                         <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                        Join thousands of forward-thinking organizations already using AI agents to tackle their toughest challenges, 
-                        streamline operations, and unlock new growth opportunities.
+                            Join thousands of forward-thinking organizations already using AI agents to tackle their toughest challenges,
+                            streamline operations, and unlock new growth opportunities.
                         </p>
                     </div>
 

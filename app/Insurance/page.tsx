@@ -16,6 +16,7 @@ interface Agent {
     rating: string;
     usage: string;
     speed: string;
+    path?: string; // Added for routing
 }
 
 interface InsuranceCategory {
@@ -25,10 +26,10 @@ interface InsuranceCategory {
 }
 
 // Insurance agents data
-const insuranceCategory: InsuranceCategory = {
-    "name": "Insurance AI Agents",
-    "description": "Revolutionary AI agents transforming claims processing, risk assessment, fraud detection, and customer service across the insurance industry.",
-    "agents": [
+export const insuranceCategory: InsuranceCategory = {
+    name: "Insurance AI Agents",
+    description: "Revolutionary AI agents transforming claims processing, risk assessment, fraud detection, and customer service across the insurance industry.",
+    agents: [
         {
             id: 27,
             name: "Insurance Claims AI Agent",
@@ -38,18 +39,20 @@ const insuranceCategory: InsuranceCategory = {
             tags: ["Claims", "Assessment", "Fraud Detection"],
             rating: "4.8",
             usage: "14.3k",
-            speed: "Fast"
+            speed: "Fast",
+            path: "/aiAgents/insuranceClaimsAiAgent"
         },
         {
-            "id": 28,
-            "name": "Risk Assessment AI Agent",
-            "description": "Evaluate risk profiles, identify potential vulnerabilities, and provide recommendations for risk mitigation strategies.",
-            "icon": "📊",
-            "color": "from-yellow-500 to-orange-600",
-            "tags": ["Risk", "Assessment", "Mitigation"],
-            "rating": "4.7",
-            "usage": "10.8k",
-            "speed": "Medium"
+            id: 28,
+            name: "Risk Assessment AI Agent",
+            description: "Evaluate risk profiles, identify potential vulnerabilities, and provide recommendations for risk mitigation strategies.",
+            icon: "📊",
+            color: "from-yellow-500 to-orange-600",
+            tags: ["Risk", "Assessment", "Mitigation"],
+            rating: "4.7",
+            usage: "10.8k",
+            speed: "Medium",
+            path: "/aiAgents/riskAssessmentAiAgent"
         }
     ]
 };
@@ -588,12 +591,12 @@ export default function InsurancePage() {
                         </div>
 
                         <h2 className="text-5xl md:text-7xl font-bold max-w-6xl mx-auto mb-8 leading-tight">
-                        From Manual Underwriting to <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">AI-Powered Risk Intelligence</span>
+                            From Manual Underwriting to <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">AI-Powered Risk Intelligence</span>
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                        The insurance industry has evolved from paper-based risk assessment to intelligent automation systems. 
-                        Explore the transformative journey from traditional actuarial methods to AI-driven predictive analytics, smart claims processing, and personalized coverage solutions revolutionizing insurance operations worldwide.
+                            The insurance industry has evolved from paper-based risk assessment to intelligent automation systems.
+                            Explore the transformative journey from traditional actuarial methods to AI-driven predictive analytics, smart claims processing, and personalized coverage solutions revolutionizing insurance operations worldwide.
                         </p>
                     </div>
 
@@ -610,16 +613,16 @@ export default function InsurancePage() {
                                     <h3 className="text-2xl font-bold text-white">🛡️ The AI Insurance Revolution</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                    Today's AI-powered insurance systems represent the pinnacle of decades of innovation in risk assessment, fraud detection, 
-                                    and customer service automation. From traditional manual underwriting to modern predictive risk modeling and intelligent claims processing, 
+                                    Today's AI-powered insurance systems represent the pinnacle of decades of innovation in risk assessment, fraud detection,
+                                    and customer service automation. From traditional manual underwriting to modern predictive risk modeling and intelligent claims processing,
                                     the evolution of insurance has reached its most sophisticated form — autonomous, data-driven AI agents that understand risk patterns and customer needs.
-                                    These AI agents can analyze complex risk factors, detect fraudulent claims, automate policy underwriting, and provide personalized coverage recommendations — 
+                                    These AI agents can analyze complex risk factors, detect fraudulent claims, automate policy underwriting, and provide personalized coverage recommendations —
                                     delivering 24/7 intelligent insurance services to customers and unprecedented operational efficiency to insurers worldwide.
-                                    
+
                                 </p>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                AI Insurance Agents now improve claims processing speed by 75%, reduce fraud losses by 60%, 
-                                and enhance underwriting accuracy to 92% precision rates.
+                                    AI Insurance Agents now improve claims processing speed by 75%, reduce fraud losses by 60%,
+                                    and enhance underwriting accuracy to 92% precision rates.
                                 </p>
                             </div>
 
@@ -631,10 +634,10 @@ export default function InsurancePage() {
                                     <h3 className="text-2xl font-bold text-white">What's Next in Insurance AI?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                The future of AI in Insurance transcends automation — it's about predictive risk intelligence and personalized protection. AI Insurance agents will become intelligent risk partners, capable of 
-                                Predicting and preventing losses before they occur • Personalizing coverage based on individual risk profiles and lifestyle patterns 
-                                Creating seamless, instant claims resolution processes • Detecting sophisticated fraud schemes with advanced pattern recognition • 
-                                Optimizing premium pricing through real-time risk assessment and market analytics with unprecedented accuracy
+                                    The future of AI in Insurance transcends automation — it's about predictive risk intelligence and personalized protection. AI Insurance agents will become intelligent risk partners, capable of
+                                    Predicting and preventing losses before they occur • Personalizing coverage based on individual risk profiles and lifestyle patterns
+                                    Creating seamless, instant claims resolution processes • Detecting sophisticated fraud schemes with advanced pattern recognition •
+                                    Optimizing premium pricing through real-time risk assessment and market analytics with unprecedented accuracy
                                 </p>
                             </div>
                         </div>
@@ -652,12 +655,12 @@ export default function InsurancePage() {
                         </div>
 
                         <h2 className="text-5xl md:text-7xl font-bold max-w-6xl mx-auto mb-8 leading-tight">
-                        Why Insurance AI Agents are <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">Industry Game Changers</span>
+                            Why Insurance AI Agents are <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent">Industry Game Changers</span>
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                        Discover how AI-powered insurance systems are revolutionizing risk assessment, enhancing customer experience, 
-                        and delivering intelligent insights at enterprise scale. These agents aren't just insurance tools — they're intelligent risk partners designed to protect customers and drive profitable growth for insurers.
+                            Discover how AI-powered insurance systems are revolutionizing risk assessment, enhancing customer experience,
+                            and delivering intelligent insights at enterprise scale. These agents aren't just insurance tools — they're intelligent risk partners designed to protect customers and drive profitable growth for insurers.
                         </p>
                     </div>
 
@@ -707,8 +710,8 @@ export default function InsurancePage() {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                        Specialized AI agents designed to optimize every aspect of insurance operations — from risk assessment and claims processing to fraud detection and customer service. 
-                        These intelligent insurance partners work around the clock to enhance your insurance operations and deliver exceptional customer protection.
+                            Specialized AI agents designed to optimize every aspect of insurance operations — from risk assessment and claims processing to fraud detection and customer service.
+                            These intelligent insurance partners work around the clock to enhance your insurance operations and deliver exceptional customer protection.
                         </p>
                     </div>
 
@@ -772,8 +775,8 @@ export default function InsurancePage() {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                        Our Insurance AI agents deliver quantifiable improvements in claims processing, fraud detection, and risk assessment,
-                        ensuring your insurance operations generate exceptional value through reduced costs and enhanced customer satisfaction.
+                            Our Insurance AI agents deliver quantifiable improvements in claims processing, fraud detection, and risk assessment,
+                            ensuring your insurance operations generate exceptional value through reduced costs and enhanced customer satisfaction.
                         </p>
                     </div>
 
@@ -796,8 +799,8 @@ export default function InsurancePage() {
                             Average Insurance ROI: <span className="text-green-400">450% in First Year</span>
                         </h3>
                         <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-8">
-                        Organizations implementing our Insurance AI Agents achieve an average return of $4.50 for every dollar invested, through enhanced claims processing efficiency, 
-                        reduced fraud losses, improved risk assessment accuracy, and automated underwriting processes that drive sustainable competitive advantage in the insurance market.
+                            Organizations implementing our Insurance AI Agents achieve an average return of $4.50 for every dollar invested, through enhanced claims processing efficiency,
+                            reduced fraud losses, improved risk assessment accuracy, and automated underwriting processes that drive sustainable competitive advantage in the insurance market.
                         </p>
                     </div>
                 </div>
@@ -808,11 +811,11 @@ export default function InsurancePage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <h2 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto mb-8 leading-tight">
-                        Ready to Transform Your <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Insurance Operations?</span>
+                            Ready to Transform Your <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">Insurance Operations?</span>
                         </h2>
                         <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                        Join hundreds of forward-thinking insurance companies already leveraging AI agents to streamline claims processing, 
-                        enhance risk assessment, detect fraud, and deliver superior customer experiences that drive profitable growth and market leadership.
+                            Join hundreds of forward-thinking insurance companies already leveraging AI agents to streamline claims processing,
+                            enhance risk assessment, detect fraud, and deliver superior customer experiences that drive profitable growth and market leadership.
                         </p>
                     </div>
 
