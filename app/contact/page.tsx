@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import emailjs from '@emailjs/browser';
 import {
   ArrowRight,
   Calendar,
@@ -40,6 +41,7 @@ export default function ContactForm() {
     meeting_time: false,
     terms: false,
   });
+  const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     setIsVisible(true);
@@ -60,15 +62,24 @@ export default function ContactForm() {
     return Object.values(errs).every((v) => !v);
   };
 
-  const sendEmail = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!validate()) return;
-    setLoading(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitted(true);
-      setLoading(false);
-    }, 2000);
+    if (!form.current) return;
+    emailjs
+      .sendForm("service_57dccsx", "template_4ovd2wl", form.current, {
+        publicKey: "5_BKNco2OULcaqW0m",
+      })
+      .then(
+        () => {
+          alert(
+            "We have received your inquiry and will be contacting you via email shortly."
+          );
+          console.log("SUCCESS!");
+        },
+        (error: { text: string }) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
 
   // Enhanced: AI Agents Categories

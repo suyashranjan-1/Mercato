@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 interface Agent {
     id: number;
     name: string;
+    slug: string;
+    youtube: string;
     description: string;
     icon: string;
     color: string;
@@ -33,6 +35,8 @@ const ecommerceCategory: EcommerceCategory = {
         {
             "id": 45,
             "name": "Product Recommendation AI Agent",
+            "slug": "productRecommendationAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Increase conversions by delivering personalized product recommendations based on user behavior and preferences.",
             "icon": "🛍️",
             "color": "from-pink-500 to-rose-600",
@@ -44,6 +48,8 @@ const ecommerceCategory: EcommerceCategory = {
         {
             "id": 46,
             "name": "Inventory Forecasting AI Agent",
+            "slug": "inventoryForecastingAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Predict stock levels, avoid overstocking or understocking, and ensure timely restocking using historical sales data.",
             "icon": "📦",
             "color": "from-yellow-500 to-orange-600",
@@ -55,6 +61,8 @@ const ecommerceCategory: EcommerceCategory = {
         {
             "id": 47,
             "name": "Customer Review Summarizer AI Agent",
+            "slug": "customerReviewSummarizerAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Summarize product reviews to extract key sentiments and help customers quickly understand product pros and cons.",
             "icon": "📝",
             "color": "from-blue-500 to-indigo-600",
@@ -66,6 +74,8 @@ const ecommerceCategory: EcommerceCategory = {
         {
             "id": 48,
             "name": "Order Tracking AI Agent",
+            "slug": "orderTrackingAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Provide real-time order tracking updates and automated responses to customer delivery inquiries.",
             "icon": "🚚",
             "color": "from-green-500 to-emerald-600",
@@ -77,6 +87,8 @@ const ecommerceCategory: EcommerceCategory = {
         {
             "id": 49,
             "name": "Cart Abandonment Recovery AI Agent",
+            "slug": "cartAbandonmentRecoveryAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Recover lost sales by sending personalized follow-ups and discount offers to users who abandon their carts.",
             "icon": "🛒",
             "color": "from-violet-500 to-purple-600",
@@ -88,6 +100,8 @@ const ecommerceCategory: EcommerceCategory = {
         {
             "id": 50,
             "name": "Price Optimization AI Agent",
+            "slug": "priceOptimizationAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Analyze market trends and competitor pricing to dynamically adjust product prices for maximum profit and competitiveness.",
             "icon": "💲",
             "color": "from-amber-500 to-yellow-600",
@@ -99,6 +113,8 @@ const ecommerceCategory: EcommerceCategory = {
         {
             "id": 51,
             "name": "E-commerce Chatbot AI Agent",
+            "slug": "ecommerceChatbotAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Engage with online shoppers using natural language to answer questions, recommend products, and assist with checkout.",
             "icon": "🤖",
             "color": "from-cyan-500 to-blue-600",
@@ -110,6 +126,8 @@ const ecommerceCategory: EcommerceCategory = {
         {
             "id": 52,
             "name": "Return & Refund AI Agent",
+            "slug": "returnRefundAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Automate return and refund processes, ensure policy compliance, and provide quick resolutions to customer issues.",
             "icon": "↩️",
             "color": "from-red-500 to-rose-600",

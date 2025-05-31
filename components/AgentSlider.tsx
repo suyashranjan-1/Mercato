@@ -142,9 +142,7 @@ export const AgentSlider = ({
     };
 
     const handleViewDetails = (agent: Agent) => {
-        if (onViewDetails) onViewDetails(agent);
-        else if (agent.path) router.push(agent.path);
-        else alert(`Opening details for ${agent.name}`);
+        router.push(`/aiAgents/${agent.slug}`);
     };
 
     const checkScroll = () => {

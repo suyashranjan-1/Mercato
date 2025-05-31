@@ -71,16 +71,16 @@ function FloatingNavbar({ className }: { className?: string }) {
       title: "Solutions",
       items: [
         { name: "General Problem Solver", href: "/GeneralProblemSolver" },
-        { name: "Data Extraction", href: "/data-extraction" },
-        { name: "Customer Service", href: "/customer-service" },
-        { name: "E-Commerce", href: "/ecommerce" },
-        { name: "Sales", href: "/sales" },
-        { name: "Human Resources", href: "/human-resources" },
-        { name: "Finance & Accounting", href: "/finance-accounting" },
+        { name: "Data Extraction", href: "/DataExtraction" },
+        { name: "Customer Service", href: "/CustomerService" },
+        { name: "E-Commerce", href: "/E-Commerce" },
+        { name: "Sales", href: "/Sales" },
+        { name: "Human Resources", href: "/HumanResources" },
+        { name: "Finance & Accounting", href: "/financeAndAccounting" },
         { name: "Healthcare", href: "/healthcare" },
         { name: "Legal", href: "/legal" },
-        { name: "Property Management", href: "/property-management" },
-        { name: "Insurance", href: "/insurance" },
+        { name: "Property Management", href: "/propertyManagements" },
+        { name: "Insurance", href: "/Insurance" },
         { name: "Custom AI Agents", href: "/customMercatoAiAgent" }
       ]
     },
@@ -98,13 +98,13 @@ function FloatingNavbar({ className }: { className?: string }) {
     {
       title: "About",
       items: [
-        { name: "About Us", href: "/ui/Pages/aboutUs" }
+        { name: "About Us", href: "/about" }
       ]
     },
     {
       title: "Contact",
       items: [
-        { name: "Contact Us", href: "/ui/Pages/contactUs" }
+        { name: "Contact Us", href: "/contact" }
       ]
     }
   ];
@@ -162,19 +162,22 @@ function FloatingNavbar({ className }: { className?: string }) {
         {/* Main Navbar */}
         <div className="flex items-center justify-between bg-black/20 backdrop-blur-lg border-b border-white/10 px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           {/* Logo */}
-          <motion.div
-            className="flex items-center flex-shrink-0"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={isMobile ? 80 : 100}
-              height={isMobile ? 80 : 100}
-              className="w-auto h-8 sm:h-10 lg:h-12"
-            />
-          </motion.div>
+          
+<Link href="/" passHref>
+  <motion.div
+    className="flex items-center flex-shrink-0 cursor-pointer"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.2 }}
+  >
+    <Image
+      src="/logo/logo.png"
+      alt="Logo"
+      width={isMobile ? 80 : 100}
+      height={isMobile ? 80 : 100}
+      className="w-auto h-8 sm:h-10 lg:h-12"
+    />
+  </motion.div>
+</Link>
 
           {/* Desktop Menu */}
           {!isMobile && (

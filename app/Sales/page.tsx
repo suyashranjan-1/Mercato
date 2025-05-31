@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 interface Agent {
     id: number;
     name: string;
+    slug : string;
+    youtube: string;
     description: string;
     icon: string;
     color: string;
@@ -32,6 +34,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 11,
             "name": "Lead Qualification AI Agent",
+            "slug": "leadQualificationAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example1",
             "description": "Automatically qualify and score leads based on behavior, demographics, and engagement patterns to prioritize sales efforts.",
             "icon": "🎯",
             "color": "from-green-500 to-emerald-600",
@@ -43,6 +47,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 12,
             "name": "Sales Outreach AI Agent",
+            "slug": "salesOutreachAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example2",
             "description": "Personalize cold outreach campaigns with intelligent messaging, follow-up sequences, and response tracking.",
             "icon": "📧",
             "color": "from-blue-500 to-cyan-600",
@@ -54,6 +60,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 13,
             "name": "Sales Analytics AI Agent",
+            "slug": "salesAnalyticsAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example3",
             "description": "Analyze sales performance, predict revenue trends, and identify optimization opportunities with advanced analytics.",
             "icon": "📊",
             "color": "from-purple-500 to-pink-600",
@@ -65,6 +73,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 14,
             "name": "Deal Negotiation AI Agent",
+            "slug": "dealNegotiationAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example4",
             "description": "Assist with deal negotiations by providing pricing insights, competitor analysis, and optimal negotiation strategies.",
             "icon": "🤝",
             "color": "from-orange-500 to-red-600",
@@ -76,6 +86,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 66,
             "name": "Customer Experience AI Agent",
+            "slug": "customerExperienceAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example5",
             "description": "Monitor and enhance customer interactions to increase retention and improve the buyer journey through sentiment and behavior tracking.",
             "icon": "📈",
             "color": "from-pink-500 to-indigo-600",
@@ -87,6 +99,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 67,
             "name": "Billing Management AI Agent",
+            "slug": "billingManagementAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example6",
             "description": "Automate invoicing, payment reminders, and billing queries to streamline your financial workflows.",
             "icon": "💳",
             "color": "from-yellow-500 to-orange-500",
@@ -98,6 +112,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 68,
             "name": "Procurement Management AI Agent",
+            "slug": "procurementManagementAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example7",
             "description": "Optimize procurement decisions, supplier evaluations, and purchase workflows with data-driven intelligence.",
             "icon": "🛒",
             "color": "from-green-400 to-blue-500",
@@ -109,6 +125,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 69,
             "name": "Supply Chain Monitoring AI Agent",
+            "slug": "supplyChainMonitoringAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example8",
             "description": "Monitor logistics, detect disruptions, and optimize inventory flow across the entire supply chain.",
             "icon": "🚛",
             "color": "from-sky-500 to-teal-600",
@@ -120,6 +138,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 70,
             "name": "RFP AI Agent",
+            "slug": "rfpAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example9",
             "description": "Automate the creation, analysis, and response to Request for Proposals with intelligent drafting and review tools.",
             "icon": "📄",
             "color": "from-violet-600 to-indigo-700",
@@ -131,6 +151,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 71,
             "name": "Order Tracking AI Agent",
+            "slug": "orderTrackingAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example10",
             "description": "Provide real-time order updates, shipment status, and notifications for enhanced customer visibility.",
             "icon": "📦",
             "color": "from-yellow-400 to-lime-500",
@@ -142,6 +164,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 72,
             "name": "Return Handling AI Agent",
+            "slug": "returnHandlingAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example11",
             "description": "Manage return processes efficiently, including authorization, tracking, and resolution.",
             "icon": "↩️",
             "color": "from-red-400 to-yellow-500",
@@ -153,6 +177,8 @@ const salesCategory: SalesCategory = {
         {
             "id": 73,
             "name": "Inventory Management AI Agent",
+            "slug": "inventoryManagementAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example12",
             "description": "Track and forecast inventory needs to prevent stockouts and overstock, improving supply chain operations.",
             "icon": "📊",
             "color": "from-green-600 to-cyan-600",

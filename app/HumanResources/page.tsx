@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 interface Agent {
     id: number;
     name: string;
+    slug: string;
+    youtube: string;
     description: string;
     icon: string;
     color: string;
@@ -32,6 +34,8 @@ const hrCategory: HRCategory = {
         {
             "id": 15,
             "name": "Resume Screening AI Agent",
+            "slug": "resumeScreeningAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Automatically screen resumes, rank candidates, and identify the best matches based on job requirements and qualifications.",
             "icon": "📋",
             "color": "from-indigo-500 to-purple-600",
@@ -43,6 +47,8 @@ const hrCategory: HRCategory = {
         {
             "id": 16,
             "name": "Employee Onboarding AI Agent",
+            "slug": "employeeOnboardingAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Streamline new employee onboarding with automated workflows, document collection, and personalized guidance.",
             "icon": "👋",
             "color": "from-teal-500 to-blue-600",
@@ -54,6 +60,8 @@ const hrCategory: HRCategory = {
         {
             "id": 17,
             "name": "Performance Review AI Agent",
+            "slug": "performanceReviewAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Automate performance evaluations, generate insights, and provide data-driven feedback for employee development.",
             "icon": "⭐",
             "color": "from-yellow-500 to-orange-600",
@@ -65,6 +73,8 @@ const hrCategory: HRCategory = {
         {
             "id": 18,
             "name": "HR Chatbot AI Agent",
+            "slug": "hrChatbotAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Provide 24/7 HR support to employees with instant answers to policy questions, leave requests, and general inquiries.",
             "icon": "🤖",
             "color": "from-green-500 to-teal-600",
@@ -76,6 +86,8 @@ const hrCategory: HRCategory = {
         {
             "id": 74,
             "name": "Appointment Management AI Agent",
+            "slug": "appointmentManagementAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Handle internal scheduling, meeting coordination, and reminders for HR-related appointments and sessions.",
             "icon": "📅",
             "color": "from-pink-500 to-rose-600",
@@ -87,6 +99,8 @@ const hrCategory: HRCategory = {
         {
             "id": 75,
             "name": "Interview Scheduler AI Agent",
+            "slug": "interviewSchedulerAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Automate interview scheduling, candidate notifications, and interviewer coordination across time zones.",
             "icon": "🕒",
             "color": "from-blue-400 to-indigo-500",
@@ -98,6 +112,8 @@ const hrCategory: HRCategory = {
         {
             "id": 76,
             "name": "Payroll Calculation AI Agent",
+            "slug": "payrollCalculationAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Compute accurate payroll, deductions, bonuses, and generate salary slips for employees on schedule.",
             "icon": "💰",
             "color": "from-yellow-600 to-amber-500",
@@ -109,6 +125,8 @@ const hrCategory: HRCategory = {
         {
             "id": 77,
             "name": "Onboarding AI Agent",
+            "slug": "onboardingAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=example",
             "description": "Guide new hires through onboarding tasks, compliance documents, and training modules with an interactive experience.",
             "icon": "🚀",
             "color": "from-lime-500 to-green-600",

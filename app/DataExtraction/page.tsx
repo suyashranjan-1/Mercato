@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation";
 interface Agent {
     id: number;
     name: string;
+    slug: string; // Optional slug for URL routing
+    youtube: string; // Optional YouTube link for demo videos
     description: string;
     icon: string;
     color: string;
@@ -34,28 +36,35 @@ const dataExtractionCategory: DataExtractionCategory = {
         {
             "id": 4,
             "name": "Web Scraping AI Agent",
+            "slug":"webScrapingAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Extract structured data from websites efficiently with intelligent parsing and data cleaning capabilities.",
             "icon": "🌐",
             "color": "from-cyan-500 to-blue-600",
             "tags": ["Web Scraping", "Data Mining", "Automation"],
             "rating": "4.9",
             "usage": "15.2k",
-            "speed": "Fast"
+            "speed": "Fast",
         },
         {
             "id": 5,
             "name": "Document Parser AI Agent",
+            "slug": "documentParserAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Process and extract information from PDFs, documents, and forms with high accuracy and intelligent formatting.",
             "icon": "📄",
             "color": "from-violet-500 to-purple-600",
             "tags": ["Document Processing", "OCR", "Text Extraction"],
             "rating": "4.8",
             "usage": "11.7k",
-            "speed": "Medium"
+            "speed": "Medium",
+           
         },
         {
             "id": 6,
             "name": "Database Query AI Agent",
+            "slug": "databaseQueryAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Intelligent database querying and data extraction with natural language processing and automated reporting.",
             "icon": "🗄️",
             "color": "from-teal-500 to-green-600",
@@ -67,6 +76,8 @@ const dataExtractionCategory: DataExtractionCategory = {
         {
             "id": 45,
             "name": "Data Extraction AI Agent",
+            "slug": "dataExtractionAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Extract structured data from unstructured documents like PDFs, emails, and reports.",
             "icon": "📄",
             "color": "from-teal-500 to-cyan-600",
@@ -78,6 +89,8 @@ const dataExtractionCategory: DataExtractionCategory = {
         {
             "id": 49,
             "name": "Data Entry AI Agent",
+            "slug": "dataEntryAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Automate repetitive data entry tasks with high speed and accuracy.",
             "icon": "⌨️",
             "color": "from-gray-500 to-blue-500",
@@ -89,6 +102,8 @@ const dataExtractionCategory: DataExtractionCategory = {
         {
             "id": 53,
             "name": "Document Review AI Agent",
+            "slug": "documentReviewAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Analyze and summarize lengthy documents with legal or technical content.",
             "icon": "📚",
             "color": "from-blue-600 to-indigo-700",
@@ -100,6 +115,8 @@ const dataExtractionCategory: DataExtractionCategory = {
         {
             "id": 55,
             "name": "Data Collection AI Agent",
+            "slug": "dataCollectionAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Collect structured and unstructured data from multiple sources automatically.",
             "icon": "🔍",
             "color": "from-purple-400 to-blue-500",
@@ -111,6 +128,8 @@ const dataExtractionCategory: DataExtractionCategory = {
         {
             "id": 60,
             "name": "ETL (Extract, Transform, Load) AI Agent",
+            "slug": "etlAiAgent",
+            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Automate ETL pipelines for seamless data migration and analytics workflows.",
             "icon": "🔄",
             "color": "from-green-500 to-teal-600",
@@ -587,11 +606,14 @@ export default function DataExtractionPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-fade-in-up delay-400">
-                        <button className="group px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center text-lg">
+                        <button onClick={(e: React.MouseEvent) => {
+                                    e.preventDefault();
+                                    router.push('/contact');
+                                }} className="group px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center text-lg">
                             Start Free 30-Day Trial
                             <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
                         </button>
-                        <button className="group px-10 py-5 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 flex items-center text-lg">
+                        <button onClick={() => window.open("https://www.youtube.com/watch?v=YOUR_VIDEO_ID", "_blank")} className="group px-10 py-5 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 flex items-center text-lg">
                             <Play className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                             Watch 2-Min Demo
                         </button>
@@ -766,7 +788,7 @@ export default function DataExtractionPage() {
                                     </div>
             
                                     <h2 className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto mb-8 leading-tight">
-                                        Meet Your <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Data Extraction AI Team</span> Team
+                                        Meet Your <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Data Extraction AI Team</span> 
                                     </h2>
             
                                     <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
@@ -948,7 +970,10 @@ export default function DataExtractionPage() {
                                 Our experts are ready to help you get started with Customer Service AI Agents.
                             </p>
                             <button
-                                onClick={() => router.push('/contact')}
+                                onClick={(e: React.MouseEvent) => {
+                                    e.preventDefault();
+                                    router.push('/contact');
+                                }}
                                 className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 text-lg text-center"
                             >
                                 Contact Us

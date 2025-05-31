@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 interface Agent {
     id: number;
     name: string;
+    slug : string; // Added slug for better SEO and routing
+    youtube: string; // Added YouTube link for agent demo
     description: string;
     icon: string;
     color: string;
@@ -33,6 +35,8 @@ export const insuranceCategory: InsuranceCategory = {
         {
             id: 27,
             name: "Insurance Claims AI Agent",
+            slug : "insuranceClaimsAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example", // Example YouTube link
             description: "Streamline claims processing with automated assessment, fraud detection, and policy verification for faster claim resolution.",
             icon: "🏛️",
             color: "from-indigo-500 to-blue-600",
@@ -45,6 +49,8 @@ export const insuranceCategory: InsuranceCategory = {
         {
             id: 28,
             name: "Risk Assessment AI Agent",
+            slug : "riskAssessmentAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example2", // Example YouTube link
             description: "Evaluate risk profiles, identify potential vulnerabilities, and provide recommendations for risk mitigation strategies.",
             icon: "📊",
             color: "from-yellow-500 to-orange-600",
@@ -214,7 +220,7 @@ interface AnimatedCounterProps {
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterProps) => {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef();
+    const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(

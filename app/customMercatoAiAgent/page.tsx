@@ -320,52 +320,7 @@ const CustomAIAgentPage = () => {
                 </div>
             </section>
 
-            {/* Industries Section */}
-            <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-900/50 to-slate-800/30">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-12 sm:mb-20">
-                        <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300">
-                            <div className="w-2 h-2 bg-purple-400 rounded-full mr-2 sm:mr-3 animate-pulse"></div>
-                            Industries
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
-                            Automating tasks,<br className="hidden sm:block" />
-                            one <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">industry</span> at a time
-                        </h2>
-                        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
-                            From healthcare to finance, our custom AI agents are transforming businesses across every sector.
-                            Each solution is tailored to meet the unique challenges and opportunities of your industry.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                        {industries.map((industry, index) => (
-                            <div key={index} className="group cursor-pointer">
-                                <div className="p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 hover:bg-slate-800/50 transition-all duration-500 transform hover:scale-105">
-                                    <div className="text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                                        {industry.icon}
-                                    </div>
-                                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-white">
-                                        {industry.title}
-                                    </h3>
-                                    <p className="text-slate-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                                        {industry.description}
-                                    </p>
-                                    <div className="space-y-2">
-                                        {industry.features.map((feature, featureIndex) => (
-                                            <div key={featureIndex} className="flex items-center">
-                                                <Check className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 mr-2 sm:mr-3 flex-shrink-0" />
-                                                <span className="text-slate-300 text-xs sm:text-sm">{feature}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
+            
             {/* FAQ Section */}
             <section className="relative py-32 px-4 bg-gradient-to-r from-slate-900/30 to-slate-800/20">
                 <div className="max-w-4xl mx-auto">

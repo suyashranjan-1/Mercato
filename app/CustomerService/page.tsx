@@ -13,6 +13,8 @@ import ContactForm from "@/app/contact/page";
 interface Agent {
     id: number;
     name: string;
+    slug: string;
+    youtube: string;
     description: string;
     icon: string;
     color: string;
@@ -36,6 +38,8 @@ const customerServiceCategory: CustomerServiceCategory = {
         {
             id: 7,
             name: "Customer Support AI Agent",
+            slug:"customerSupportAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example",
             description: "Provide instant customer support with intelligent responses, ticket routing, and issue resolution capabilities. Enhance customer experience and boost loyalty with always-on AI-powered support.",
             icon: "🎧",
             color: "from-blue-500 to-indigo-600",
@@ -47,6 +51,8 @@ const customerServiceCategory: CustomerServiceCategory = {
         {
             id: 8,
             name: "Live Chat AI Agent",
+            slug :"liveChatAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example",
             description: "Engage customers in real-time with contextual conversations, product recommendations, and seamless handoffs. Increase conversion rates and customer engagement with AI live chat.",
             icon: "💬",
             color: "from-green-500 to-teal-600",
@@ -58,6 +64,8 @@ const customerServiceCategory: CustomerServiceCategory = {
         {
             id: 9,
             name: "Complaint Resolution AI Agent",
+            slug: "complaintResolutionAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example",
             description: "Handle customer complaints with empathy, systematic problem-solving, and satisfaction tracking. Reduce churn by resolving issues quickly and effectively.",
             icon: "🛠️",
             color: "from-red-500 to-pink-600",
@@ -70,6 +78,8 @@ const customerServiceCategory: CustomerServiceCategory = {
         {
             id: 61,
             name: "Customer Service AI Agent",
+            slug: "customerServiceAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example",
             description: "Assist customers across multiple channels with queries, issues, and requests using natural language processing. Deliver consistent, accurate answers and streamline customer journeys.",
             icon: "🤖",
             color: "from-sky-500 to-blue-700",
@@ -81,6 +91,8 @@ const customerServiceCategory: CustomerServiceCategory = {
         {
             id: 62,
             name: "Email Categorization & Triage AI Agent",
+            slug: "emailCategorizationTriageAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example",
             description: "Automatically sort and prioritize incoming customer emails for faster and more efficient resolution. Improve agent productivity and email response rates.",
             icon: "📬",
             color: "from-purple-500 to-indigo-700",
@@ -92,6 +104,8 @@ const customerServiceCategory: CustomerServiceCategory = {
         {
             id: 63,
             name: "Customer Experience AI Agent",
+            slug: "customerExperienceAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example",
             description: "Track and optimize customer satisfaction through surveys, sentiment analysis, and engagement insights. Drive continuous improvement with actionable analytics.",
             icon: "📊",
             color: "from-yellow-500 to-orange-600",
@@ -103,6 +117,8 @@ const customerServiceCategory: CustomerServiceCategory = {
         {
             id: 64,
             name: "Return Handling AI Agent",
+            slug: "returnHandlingAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example",
             description: "Automate return requests and refund processes, ensuring customer satisfaction and policy compliance. Simplify returns management and improve customer trust.",
             icon: "↩️",
             color: "from-red-400 to-yellow-500",
@@ -114,6 +130,8 @@ const customerServiceCategory: CustomerServiceCategory = {
         {
             id: 65,
             name: "Inventory Management AI Agent",
+            slug: "inventoryManagementAiAgent",
+            youtube: "https://www.youtube.com/watch?v=example",
             description: "Track inventory levels, manage restocking alerts, and reduce fulfillment delays. Ensure smooth operations and prevent stockouts with AI-driven inventory management.",
             icon: "📦",
             color: "from-orange-500 to-green-600",
@@ -831,7 +849,10 @@ export default function CustomerServicePage() {
                                 Our experts are ready to help you get started with Customer Service AI Agents.
                             </p>
                             <button
-                                onClick={() => router.push('/contact')}
+                                onClick={(e: React.MouseEvent) => {
+                                    e.preventDefault();
+                                    router.push('/contact');
+                                }}
                                 className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 text-lg text-center"
                             >
                                 Contact Us

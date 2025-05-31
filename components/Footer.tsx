@@ -5,6 +5,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
     Linkedin,
+    Target,
     Twitter,
     Youtube
 } from 'lucide-react';
@@ -20,31 +21,31 @@ const Footer = () => {
     ];
 
     const solutionLinks = [
-        { name: 'Customer Service', href: '#' },
-        { name: 'Insurance', href: '#' },
-        { name: 'BPO', href: '#' },
-        { name: 'Healthcare', href: '#' },
-        { name: 'Property Management', href: '#' },
-        { name: 'Custom AI Solutions', href: '#' }
+        { name: 'Customer Service', href: '/CustomerService' },
+        { name: 'Insurance', href: '/Insurance' },
+        // { name: 'BPO', href: '' },
+        { name: 'Healthcare', href: '/healthcare' },
+        { name: 'Property Management', href: '/propertyManagements' },
+        { name: 'Custom AI Solutions', href: '/customMercatoAiAgent' }
     ];
 
     const companyLinks = [
-        { name: 'About Us', href: '#' },
+        { name: 'About Us', href: '/about' },
         // { name: 'Career', href: '#' },
-        { name: 'Contact', href: '#' },
-        { name: 'Request Demo', href: '#' }
+        { name: 'Contact', href: '/contact' },
+        { name: 'Request Demo', href: '/contact' }
     ];
 
     const legalLinks = [
-        { name: 'Privacy Policy', href: '#' },
-        { name: 'Security', href: '#' },
-        { name: 'Terms of Use', href: '#' },
-        { name: 'Data Protection', href: '#' },
+        { name: 'Privacy Policy', href: '/PrivacyPolicy' },
+        { name: 'Security', href: '/SecurityPolicy' },
+        { name: 'Terms of Use', href: '/TermsOfUse' },
+        { name: 'Data Protection', href: '/databases' },
         // { name: 'Imprint', href: '#' }
     ];
 
     const socialLinks = [
-        { name: 'LinkedIn', href: '#', icon: Linkedin },
+        { name: 'LinkedIn', href: 'https://www.linkedin.com/company/mercatoagency/', icon: Linkedin },
         { name: 'Twitter', href: '#', icon: Twitter },
         { name: 'YouTube', href: '#', icon: Youtube }
     ];
@@ -63,7 +64,7 @@ const Footer = () => {
                     {/* Logo */}
                     <div className="mb-6 sm:mb-0">
                         <img 
-                            src="/logo.png" 
+                            src="/logo/logo.png" 
                             alt="Mercato Logo" 
                             className="h-12 w-auto" 
                         />
