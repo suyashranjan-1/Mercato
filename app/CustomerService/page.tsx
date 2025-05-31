@@ -20,6 +20,7 @@ interface Agent {
     rating: string;
     usage: string;
     speed: string;
+    path?: string;
 }
 
 interface CustomerServiceCategory {
@@ -63,7 +64,8 @@ const customerServiceCategory: CustomerServiceCategory = {
             tags: ["Complaints", "Resolution", "Satisfaction", "Retention"],
             rating: "4.7",
             usage: "7.9k",
-            speed: "Fast"
+            speed: "Fast",
+            path: "/agents/complaint-resolution-ai-agent"
         },
         {
             id: 61,

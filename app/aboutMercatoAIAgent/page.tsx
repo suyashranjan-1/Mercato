@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 // Add interface for isVisible state
 interface VisibilityState {
@@ -112,14 +113,14 @@ export default function AIAgentPage() {
                         <span className="text-white font-medium"> Transform your workflow with AI that thinks and acts like your best employee.</span>
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 px-4 animate-slide-up delay-400">
+                    {/* <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 px-4 animate-slide-up delay-400">
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl sm:rounded-2xl hover:shadow-2xl hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base">
                             Get Started
                         </button>
                         <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-xl sm:rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base">
                             Watch Demo
                         </button>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Hero Image Placeholder */}
@@ -412,7 +413,7 @@ export default function AIAgentPage() {
                         Join thousands of organizations already using AI agents to transform their workflows and boost productivity.
                     </p>
                     <button className="px-8 sm:px-12 py-4 sm:py-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl sm:rounded-2xl hover:shadow-2xl hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300 text-base sm:text-lg animate-pulse">
-                        Get Started Today
+                        <Link href="/contact">Contact Us</Link>
                     </button>
                 </div>
             </section>

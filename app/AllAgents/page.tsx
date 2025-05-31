@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 
 import { useState, useEffect } from 'react';
 import { Search, Bot } from 'lucide-react';
+import { useRouter } from "next/navigation";
 
 interface Agent {
     id: number;
@@ -17,6 +18,7 @@ interface Agent {
     rating: string;
     usage: string;
     speed: string;
+    path?: string;
 }
 
 interface Category {
@@ -26,6 +28,7 @@ interface Category {
 }
 
 export default function AIAgentsPage() {
+    const router = useRouter();
     const [searchQuery, setSearchQuery] = useState('');
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
@@ -41,7 +44,7 @@ export default function AIAgentsPage() {
 
         return () => {
             clearTimeout(timer);
-            window.removeEventListener('scroll', handleScroll);
+            // window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
@@ -58,356 +61,387 @@ export default function AIAgentsPage() {
 
     const categories = [
         {
-            "name": "General Problem Solver",
-            "description": "Versatile AI agents that can tackle a wide range of problems and provide intelligent solutions for various business challenges.",
-            "agents": [
-                {
-                    "id": 1,
-                    "name": "Universal Problem Solver",
-                    "description": "Advanced AI agent capable of analyzing complex problems across multiple domains and providing actionable solutions with detailed reasoning.",
-                    "icon": "🧠",
-                    "color": "from-blue-500 to-purple-600",
-                    "tags": ["Problem Solving", "Analysis", "Multi-domain"],
-                    "rating": "4.9",
-                    "usage": "12.5k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 2,
-                    "name": "Task Automation AI Agent",
-                    "description": "Streamline your workflow by automating repetitive tasks and optimizing business processes with intelligent task management.",
-                    "icon": "⚡",
-                    "color": "from-emerald-500 to-blue-600",
-                    "tags": ["Automation", "Workflow", "Efficiency"],
-                    "rating": "4.8",
-                    "usage": "8.3k",
-                    "speed": "Ultra Fast"
-                },
-                {
-                    "id": 3,
-                    "name": "Smart Decision Maker",
-                    "description": "Make informed decisions with AI-powered analysis that evaluates multiple factors and provides recommendations.",
-                    "icon": "🎯",
-                    "color": "from-orange-500 to-red-600",
-                    "tags": ["Decision Making", "Analysis", "Strategy"],
-                    "rating": "4.7",
-                    "usage": "6.8k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 44,
-                    "name": "Customer Service AI Agent",
-                    "description": "Automate and personalize customer support with 24/7 AI-driven interaction.",
-                    "icon": "💬",
-                    "color": "from-blue-400 to-indigo-500",
-                    "tags": ["Customer Support", "Chatbot", "Service"],
-                    "rating": "4.8",
-                    "usage": "14.2k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 45,
-                    "name": "Data Extraction AI Agent",
-                    "description": "Extract structured data from unstructured documents like PDFs, emails, and reports.",
-                    "icon": "📄",
-                    "color": "from-teal-500 to-cyan-600",
-                    "tags": ["Data Extraction", "OCR", "Documents"],
-                    "rating": "4.7",
-                    "usage": "10.9k",
-                    "speed": "Medium"
-                },
-                {
-                    "id": 46,
-                    "name": "Email Categorization & Triage AI Agent",
-                    "description": "Organize and prioritize incoming emails for better workflow efficiency.",
-                    "icon": "📧",
-                    "color": "from-green-400 to-blue-500",
-                    "tags": ["Email", "Productivity", "Categorization"],
-                    "rating": "4.6",
-                    "usage": "9.3k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 47,
-                    "name": "Appointment Management AI Agent",
-                    "description": "Automatically schedule, reschedule, and send reminders for appointments.",
-                    "icon": "📆",
-                    "color": "from-indigo-500 to-blue-600",
-                    "tags": ["Calendar", "Scheduling", "Productivity"],
-                    "rating": "4.7",
-                    "usage": "8.5k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 48,
-                    "name": "Interview Scheduler AI Agent",
-                    "description": "Coordinate interview times between candidates and recruiters efficiently.",
-                    "icon": "🗓️",
-                    "color": "from-purple-500 to-pink-500",
-                    "tags": ["HR", "Scheduling", "Interviews"],
-                    "rating": "4.8",
-                    "usage": "7.4k",
-                    "speed": "Medium"
-                },
-                {
-                    "id": 49,
-                    "name": "Data Entry AI Agent",
-                    "description": "Automate repetitive data entry tasks with high speed and accuracy.",
-                    "icon": "⌨️",
-                    "color": "from-gray-500 to-blue-500",
-                    "tags": ["Data Entry", "Automation", "Efficiency"],
-                    "rating": "4.6",
-                    "usage": "13.1k",
-                    "speed": "Ultra Fast"
-                },
-                {
-                    "id": 50,
-                    "name": "Billing Management AI Agent",
-                    "description": "Handle invoices, billing cycles, and payment reminders seamlessly.",
-                    "icon": "🧾",
-                    "color": "from-amber-500 to-orange-500",
-                    "tags": ["Billing", "Finance", "Automation"],
-                    "rating": "4.7",
-                    "usage": "10.3k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 51,
-                    "name": "Transaction Monitoring AI Agent",
-                    "description": "Detect and report suspicious transactions in real time.",
-                    "icon": "💳",
-                    "color": "from-red-500 to-pink-600",
-                    "tags": ["Finance", "Fraud Detection", "Monitoring"],
-                    "rating": "4.9",
-                    "usage": "11.7k",
-                    "speed": "Instant"
-                },
-                {
-                    "id": 52,
-                    "name": "Budget Management AI Agent",
-                    "description": "Track expenses, analyze budgets, and suggest savings opportunities.",
-                    "icon": "📊",
-                    "color": "from-lime-500 to-green-600",
-                    "tags": ["Budget", "Finance", "Tracking"],
-                    "rating": "4.8",
-                    "usage": "9.6k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 53,
-                    "name": "Document Review AI Agent",
-                    "description": "Analyze and summarize lengthy documents with legal or technical content.",
-                    "icon": "📚",
-                    "color": "from-blue-600 to-indigo-700",
-                    "tags": ["Documents", "Review", "Summarization"],
-                    "rating": "4.6",
-                    "usage": "7.2k",
-                    "speed": "Medium"
-                },
-                {
-                    "id": 54,
-                    "name": "Contract Management AI Agent",
-                    "description": "Automate contract lifecycle management and compliance monitoring.",
-                    "icon": "📝",
-                    "color": "from-gray-600 to-blue-700",
-                    "tags": ["Contracts", "Legal", "Compliance"],
-                    "rating": "4.8",
-                    "usage": "8.6k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 55,
-                    "name": "Data Collection AI Agent",
-                    "description": "Collect structured and unstructured data from multiple sources automatically.",
-                    "icon": "🔍",
-                    "color": "from-purple-400 to-blue-500",
-                    "tags": ["Data", "Automation", "Collection"],
-                    "rating": "4.7",
-                    "usage": "11.0k",
-                    "speed": "Medium"
-                },
-                {
-                    "id": 56,
-                    "name": "Invoice Processing AI Agent",
-                    "description": "Extract and process data from invoices with automated validation.",
-                    "icon": "🧮",
-                    "color": "from-pink-400 to-red-500",
-                    "tags": ["Invoices", "Finance", "Processing"],
-                    "rating": "4.9",
-                    "usage": "10.8k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 57,
-                    "name": "Payroll Calculation AI Agent",
-                    "description": "Calculate employee salaries, tax deductions, and generate payslips.",
-                    "icon": "💼",
-                    "color": "from-yellow-400 to-orange-500",
-                    "tags": ["Payroll", "HR", "Finance"],
-                    "rating": "4.8",
-                    "usage": "9.1k",
-                    "speed": "Medium"
-                },
-                {
-                    "id": 58,
-                    "name": "Legal Document Classifier AI Agent",
-                    "description": "Automatically categorize legal documents for faster retrieval and compliance.",
-                    "icon": "⚖️",
-                    "color": "from-indigo-600 to-blue-700",
-                    "tags": ["Legal", "Classification", "AI"],
-                    "rating": "4.7",
-                    "usage": "6.4k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 59,
-                    "name": "Social Media Content AI Agent",
-                    "description": "Create, schedule, and analyze social media content using AI.",
-                    "icon": "📱",
-                    "color": "from-pink-500 to-yellow-500",
-                    "tags": ["Social Media", "Content", "Marketing"],
-                    "rating": "4.8",
-                    "usage": "13.2k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 60,
-                    "name": "ETL (Extract, Transform, Load) AI Agent",
-                    "description": "Automate ETL pipelines for seamless data migration and analytics workflows.",
-                    "icon": "🔄",
-                    "color": "from-green-500 to-teal-600",
-                    "tags": ["ETL", "Data", "Pipeline"],
-                    "rating": "4.7",
-                    "usage": "7.8k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 61,
-                    "name": "RFP AI Agent",
-                    "description": "Generate, evaluate, and respond to Requests for Proposals using AI.",
-                    "icon": "📌",
-                    "color": "from-red-500 to-orange-600",
-                    "tags": ["RFP", "Bidding", "Automation"],
-                    "rating": "4.6",
-                    "usage": "6.2k",
-                    "speed": "Medium"
-                },
-                {
-                    "id": 62,
-                    "name": "Loan Processing AI Agent",
-                    "description": "Automate credit assessment, documentation, and loan approval workflows.",
-                    "icon": "🏦",
-                    "color": "from-blue-400 to-indigo-500",
-                    "tags": ["Loans", "Finance", "Automation"],
-                    "rating": "4.7",
-                    "usage": "9.5k",
-                    "speed": "Fast"
-                },
-                {
-                    "id": 63,
-                    "name": "Suspicious Activity Reporting AI Agent",
-                    "description": "Identify and report suspicious activities for regulatory compliance.",
-                    "icon": "🚨",
-                    "color": "from-red-600 to-pink-600",
-                    "tags": ["Compliance", "Monitoring", "Security"],
-                    "rating": "4.9",
-                    "usage": "8.8k",
-                    "speed": "Fast"
-                }
-            ]
+           name: "General Problem Solver",
+    description: "Versatile AI agents that can tackle a wide range of problems and provide intelligent solutions for various business challenges.",
+    agents: [
+        {
+            id: 1,
+            name: "Universal Problem Solver",
+            description: "Advanced AI agent capable of analyzing complex problems across multiple domains and providing actionable solutions with detailed reasoning.",
+            icon: "🧠",
+            color: "from-blue-500 to-purple-600",
+            tags: ["Problem Solving", "Analysis", "Multi-domain"],
+            rating: "4.9",
+            usage: "12.5k",
+            speed: "Fast",
+            path: "/generalProblemSolver"
+        },
+        {
+            id: 2,
+            name: "Task Automation AI Agent",
+            description: "Streamline your workflow by automating repetitive tasks and optimizing business processes with intelligent task management.",
+            icon: "⚡",
+            color: "from-emerald-500 to-blue-600",
+            tags: ["Automation", "Workflow", "Efficiency"],
+            rating: "4.8",
+            usage: "8.3k",
+            speed: "Ultra Fast",
+            path: "/taskAutomationAiAgent"
+        },
+        {
+            id: 3,
+            name: "Smart Decision Maker",
+            description: "Make informed decisions with AI-powered analysis that evaluates multiple factors and provides recommendations.",
+            icon: "🎯",
+            color: "from-orange-500 to-red-600",
+            tags: ["Decision Making", "Analysis", "Strategy"],
+            rating: "4.7",
+            usage: "6.8k",
+            speed: "Fast",
+            path: "/smartDecisionMaker"
+        },
+        {
+            id: 44,
+            name: "Customer Service AI Agent",
+            description: "Automate and personalize customer support with 24/7 AI-driven interaction.",
+            icon: "💬",
+            color: "from-blue-400 to-indigo-500",
+            tags: ["Customer Support", "Chatbot", "Service"],
+            rating: "4.8",
+            usage: "14.2k",
+            speed: "Fast",
+            path: "/customerServiceAiAgent"
+        },
+        {
+            id: 45,
+            name: "Data Extraction AI Agent",
+            description: "Extract structured data from unstructured documents like PDFs, emails, and reports.",
+            icon: "📄",
+            color: "from-teal-500 to-cyan-600",
+            tags: ["Data Extraction", "OCR", "Documents"],
+            rating: "4.7",
+            usage: "10.9k",
+            speed: "Medium",
+            path: "/dataExtractionAiAgent"
+        },
+        {
+            id: 46,
+            name: "Email Categorization & Triage AI Agent",
+            description: "Organize and prioritize incoming emails for better workflow efficiency.",
+            icon: "📧",
+            color: "from-green-400 to-blue-500",
+            tags: ["Email", "Productivity", "Categorization"],
+            rating: "4.6",
+            usage: "9.3k",
+            speed: "Fast",
+            path: "/emailCategorizationAiAgent"
+        },
+        {
+            id: 47,
+            name: "Appointment Management AI Agent",
+            description: "Automatically schedule, reschedule, and send reminders for appointments.",
+            icon: "📆",
+            color: "from-indigo-500 to-blue-600",
+            tags: ["Calendar", "Scheduling", "Productivity"],
+            rating: "4.7",
+            usage: "8.5k",
+            speed: "Fast",
+            path: "/appointmentManagementAiAgent"
+        },
+        {
+            id: 48,
+            name: "Interview Scheduler AI Agent",
+            description: "Coordinate interview times between candidates and recruiters efficiently.",
+            icon: "🗓️",
+            color: "from-purple-500 to-pink-500",
+            tags: ["HR", "Scheduling", "Interviews"],
+            rating: "4.8",
+            usage: "7.4k",
+            speed: "Medium",
+            path: "/interviewSchedulerAiAgent"
+        },
+        {
+            id: 49,
+            name: "Data Entry AI Agent",
+            description: "Automate repetitive data entry tasks with high speed and accuracy.",
+            icon: "⌨️",
+            color: "from-gray-500 to-blue-500",
+            tags: ["Data Entry", "Automation", "Efficiency"],
+            rating: "4.6",
+            usage: "13.1k",
+            speed: "Ultra Fast",
+            path: "/dataEntryAiAgent"
+        },
+        {
+            id: 50,
+            name: "Billing Management AI Agent",
+            description: "Handle invoices, billing cycles, and payment reminders seamlessly.",
+            icon: "🧾",
+            color: "from-amber-500 to-orange-500",
+            tags: ["Billing", "Finance", "Automation"],
+            rating: "4.7",
+            usage: "10.3k",
+            speed: "Fast",
+            path: "/billingManagementAiAgent"
+        },
+        {
+            id: 51,
+            name: "Transaction Monitoring AI Agent",
+            description: "Detect and report suspicious transactions in real time.",
+            icon: "💳",
+            color: "from-red-500 to-pink-600",
+            tags: ["Finance", "Fraud Detection", "Monitoring"],
+            rating: "4.9",
+            usage: "11.7k",
+            speed: "Instant",
+            path: "/transactionMonitoringAiAgent"
+        },
+        {
+            id: 52,
+            name: "Budget Management AI Agent",
+            description: "Track expenses, analyze budgets, and suggest savings opportunities.",
+            icon: "📊",
+            color: "from-lime-500 to-green-600",
+            tags: ["Budget", "Finance", "Tracking"],
+            rating: "4.8",
+            usage: "9.6k",
+            speed: "Fast",
+            path: "/budgetManagementAiAgent"
+        },
+        {
+            id: 53,
+            name: "Document Review AI Agent",
+            description: "Analyze and summarize lengthy documents with legal or technical content.",
+            icon: "📚",
+            color: "from-blue-600 to-indigo-700",
+            tags: ["Documents", "Review", "Summarization"],
+            rating: "4.6",
+            usage: "7.2k",
+            speed: "Medium",
+            path: "/documentReviewAiAgent"
+        },
+        {
+            id: 54,
+            name: "Contract Management AI Agent",
+            description: "Automate contract lifecycle management and compliance monitoring.",
+            icon: "📝",
+            color: "from-gray-600 to-blue-700",
+            tags: ["Contracts", "Legal", "Compliance"],
+            rating: "4.8",
+            usage: "8.6k",
+            speed: "Fast",
+            path: "/contractManagementAiAgent"
+        },
+        {
+            id: 55,
+            name: "Data Collection AI Agent",
+            description: "Collect structured and unstructured data from multiple sources automatically.",
+            icon: "🔍",
+            color: "from-purple-400 to-blue-500",
+            tags: ["Data", "Automation", "Collection"],
+            rating: "4.7",
+            usage: "11.0k",
+            speed: "Medium",
+            path: "/dataCollectionAiAgent"
+        },
+        {
+            id: 56,
+            name: "Invoice Processing AI Agent",
+            description: "Extract and process data from invoices with automated validation.",
+            icon: "🧮",
+            color: "from-pink-400 to-red-500",
+            tags: ["Invoices", "Finance", "Processing"],
+            rating: "4.9",
+            usage: "10.8k",
+            speed: "Fast",
+            path: "/invoiceProcessingAiAgent"
+        },
+        {
+            id: 57,
+            name: "Payroll Calculation AI Agent",
+            description: "Calculate employee salaries, tax deductions, and generate payslips.",
+            icon: "💼",
+            color: "from-yellow-400 to-orange-500",
+            tags: ["Payroll", "HR", "Finance"],
+            rating: "4.8",
+            usage: "9.1k",
+            speed: "Medium",
+            path: "/payrollCalculationAiAgent"
+        },
+        {
+            id: 58,
+            name: "Legal Document Classifier AI Agent",
+            description: "Automatically categorize legal documents for faster retrieval and compliance.",
+            icon: "⚖️",
+            color: "from-indigo-600 to-blue-700",
+            tags: ["Legal", "Classification", "AI"],
+            rating: "4.7",
+            usage: "6.4k",
+            speed: "Fast",
+            path: "/legalDocumentClassifierAiAgent"
+        },
+        {
+            id: 59,
+            name: "Social Media Content AI Agent",
+            description: "Create, schedule, and analyze social media content using AI.",
+            icon: "📱",
+            color: "from-pink-500 to-yellow-500",
+            tags: ["Social Media", "Content", "Marketing"],
+            rating: "4.8",
+            usage: "13.2k",
+            speed: "Fast",
+            path: "/socialMediaContentAiAgent"
+        },
+        {
+            id: 60,
+            name: "ETL (Extract, Transform, Load) AI Agent",
+            description: "Automate ETL pipelines for seamless data migration and analytics workflows.",
+            icon: "🔄",
+            color: "from-green-500 to-teal-600",
+            tags: ["ETL", "Data", "Pipeline"],
+            rating: "4.7",
+            usage: "7.8k",
+            speed: "Fast",
+            path: "/etlExtractTransformLoadAiAgent"
+        },
+        {
+            id: 61,
+            name: "RFP AI Agent",
+            description: "Generate, evaluate, and respond to Requests for Proposals using AI.",
+            icon: "📌",
+            color: "from-red-500 to-orange-600",
+            tags: ["RFP", "Bidding", "Automation"],
+            rating: "4.6",
+            usage: "6.2k",
+            speed: "Medium",
+            path: "/rfpAiAgent"
+        },
+        {
+            id: 62,
+            name: "Loan Processing AI Agent",
+            description: "Automate credit assessment, documentation, and loan approval workflows.",
+            icon: "🏦",
+            color: "from-blue-400 to-indigo-500",
+            tags: ["Loans", "Finance", "Automation"],
+            rating: "4.7",
+            usage: "9.5k",
+            speed: "Fast",
+            path: "/loanProcessingAiAgent"
+        },
+        {
+            id: 63,
+            name: "Suspicious Activity Reporting AI Agent",
+            description: "Identify and report suspicious activities for regulatory compliance.",
+            icon: "🚨",
+            color: "from-red-600 to-pink-600",
+            tags: ["Compliance", "Monitoring", "Security"],
+            rating: "4.9",
+            usage: "8.8k",
+            speed: "Fast",
+            path: "/suspiciousActivityReportingAiAgent"
+        }
+    ]
         },
 
         {
-            "name": "Data Extraction",
-            "description": "Powerful AI agents specialized in extracting, processing, and analyzing data from various sources and formats.",
-            "agents": [
+            name: "Data Extraction",
+            description: "Powerful AI agents specialized in extracting, processing, and analyzing data from various sources and formats.",
+            agents: [
                 {
-                    "id": 4,
-                    "name": "Web Scraping AI Agent",
-                    "description": "Extract structured data from websites efficiently with intelligent parsing and data cleaning capabilities.",
-                    "icon": "🌐",
-                    "color": "from-cyan-500 to-blue-600",
-                    "tags": ["Web Scraping", "Data Mining", "Automation"],
-                    "rating": "4.9",
-                    "usage": "15.2k",
-                    "speed": "Fast"
+                    id: 4,
+                    name: "Web Scraping AI Agent",
+                    description: "Extract structured data from websites efficiently with intelligent parsing and data cleaning capabilities.",
+                    icon: "🌐",
+                    color: "from-cyan-500 to-blue-600",
+                    tags: ["Web Scraping", "Data Mining", "Automation"],
+                    rating: "4.9",
+                    usage: "15.2k",
+                    speed: "Fast",
+                    path: "/webScrapingAiAgent"
                 },
                 {
-                    "id": 5,
-                    "name": "Document Parser AI Agent",
-                    "description": "Process and extract information from PDFs, documents, and forms with high accuracy and intelligent formatting.",
-                    "icon": "📄",
-                    "color": "from-violet-500 to-purple-600",
-                    "tags": ["Document Processing", "OCR", "Text Extraction"],
-                    "rating": "4.8",
-                    "usage": "11.7k",
-                    "speed": "Medium"
+                    id: 5,
+                    name: "Document Parser AI Agent",
+                    description: "Process and extract information from PDFs, documents, and forms with high accuracy and intelligent formatting.",
+                    icon: "📄",
+                    color: "from-violet-500 to-purple-600",
+                    tags: ["Document Processing", "OCR", "Text Extraction"],
+                    rating: "4.8",
+                    usage: "11.7k",
+                    speed: "Medium",
+                    path: "/documentParserAiAgent"
                 },
                 {
-                    "id": 6,
-                    "name": "Database Query AI Agent",
-                    "description": "Intelligent database querying and data extraction with natural language processing and automated reporting.",
-                    "icon": "🗄️",
-                    "color": "from-teal-500 to-green-600",
-                    "tags": ["Database", "SQL", "Reporting"],
-                    "rating": "4.8",
-                    "usage": "9.4k",
-                    "speed": "Fast"
+                    id: 6,
+                    name: "Database Query AI Agent",
+                    description: "Intelligent database querying and data extraction with natural language processing and automated reporting.",
+                    icon: "🗄️",
+                    color: "from-teal-500 to-green-600",
+                    tags: ["Database", "SQL", "Reporting"],
+                    rating: "4.8",
+                    usage: "9.4k",
+                    speed: "Fast",
+                    path: "/databaseQueryAiAgent"
                 },
                 {
-                    "id": 45,
-                    "name": "Data Extraction AI Agent",
-                    "description": "Extract structured data from unstructured documents like PDFs, emails, and reports.",
-                    "icon": "📄",
-                    "color": "from-teal-500 to-cyan-600",
-                    "tags": ["Data Extraction", "OCR", "Documents"],
-                    "rating": "4.7",
-                    "usage": "10.9k",
-                    "speed": "Medium"
+                    id: 45,
+                    name: "Data Extraction AI Agent",
+                    description: "Extract structured data from unstructured documents like PDFs, emails, and reports.",
+                    icon: "📄",
+                    color: "from-teal-500 to-cyan-600",
+                    tags: ["Data Extraction", "OCR", "Documents"],
+                    rating: "4.7",
+                    usage: "10.9k",
+                    speed: "Medium",
+                    path: "/dataExtractionAiAgent"
                 },
                 {
-                    "id": 49,
-                    "name": "Data Entry AI Agent",
-                    "description": "Automate repetitive data entry tasks with high speed and accuracy.",
-                    "icon": "⌨️",
-                    "color": "from-gray-500 to-blue-500",
-                    "tags": ["Data Entry", "Automation", "Efficiency"],
-                    "rating": "4.6",
-                    "usage": "13.1k",
-                    "speed": "Ultra Fast"
+                    id: 49,
+                    name: "Data Entry AI Agent",
+                    description: "Automate repetitive data entry tasks with high speed and accuracy.",
+                    icon: "⌨️",
+                    color: "from-gray-500 to-blue-500",
+                    tags: ["Data Entry", "Automation", "Efficiency"],
+                    rating: "4.6",
+                    usage: "13.1k",
+                    speed: "Ultra Fast",
+                    path: "/dataEntryAiAgent"
                 },
                 {
-                    "id": 53,
-                    "name": "Document Review AI Agent",
-                    "description": "Analyze and summarize lengthy documents with legal or technical content.",
-                    "icon": "📚",
-                    "color": "from-blue-600 to-indigo-700",
-                    "tags": ["Documents", "Review", "Summarization"],
-                    "rating": "4.6",
-                    "usage": "7.2k",
-                    "speed": "Medium"
+                    id: 53,
+                    name: "Document Review AI Agent",
+                    description: "Analyze and summarize lengthy documents with legal or technical content.",
+                    icon: "📚",
+                    color: "from-blue-600 to-indigo-700",
+                    tags: ["Documents", "Review", "Summarization"],
+                    rating: "4.6",
+                    usage: "7.2k",
+                    speed: "Medium",
+                    path: "/documentReviewAiAgent"
                 },
                 {
-                    "id": 55,
-                    "name": "Data Collection AI Agent",
-                    "description": "Collect structured and unstructured data from multiple sources automatically.",
-                    "icon": "🔍",
-                    "color": "from-purple-400 to-blue-500",
-                    "tags": ["Data", "Automation", "Collection"],
-                    "rating": "4.7",
-                    "usage": "11.0k",
-                    "speed": "Medium"
+                    id: 55,
+                    name: "Data Collection AI Agent",
+                    description: "Collect structured and unstructured data from multiple sources automatically.",
+                    icon: "🔍",
+                    color: "from-purple-400 to-blue-500",
+                    tags: ["Data", "Automation", "Collection"],
+                    rating: "4.7",
+                    usage: "11.0k",
+                    speed: "Medium",
+                    path: "/dataCollectionAiAgent"
                 },
                 {
-                    "id": 60,
-                    "name": "ETL (Extract, Transform, Load) AI Agent",
-                    "description": "Automate ETL pipelines for seamless data migration and analytics workflows.",
-                    "icon": "🔄",
-                    "color": "from-green-500 to-teal-600",
-                    "tags": ["ETL", "Data", "Pipeline"],
-                    "rating": "4.7",
-                    "usage": "7.8k",
-                    "speed": "Fast"
+                    id: 60,
+                    name: "ETL (Extract, Transform, Load) AI Agent",
+                    description: "Automate ETL pipelines for seamless data migration and analytics workflows.",
+                    icon: "🔄",
+                    color: "from-green-500 to-teal-600",
+                    tags: ["ETL", "Data", "Pipeline"],
+                    rating: "4.7",
+                    usage: "7.8k",
+                    speed: "Fast",
+                    path: "/etlAiAgent"
                 }
             ]
         },
@@ -416,183 +450,198 @@ export default function AIAgentsPage() {
             "description": "AI agents that enhance online shopping experiences, automate store operations, and drive sales through intelligent insights and automation.",
             "agents": [
                 {
-                    "id": 45,
-                    "name": "Product Recommendation AI Agent",
-                    "description": "Increase conversions by delivering personalized product recommendations based on user behavior and preferences.",
-                    "icon": "🛍️",
-                    "color": "from-pink-500 to-rose-600",
-                    "tags": ["Recommendation", "Personalization", "Conversion"],
-                    "rating": "4.9",
-                    "usage": "18.7k",
-                    "speed": "Instant"
+                    id: 45,
+                    name: "Product Recommendation AI Agent",
+                    description: "Increase conversions by delivering personalized product recommendations based on user behavior and preferences.",
+                    icon: "🛍️",
+                    color: "from-pink-500 to-rose-600",
+                    tags: ["Recommendation", "Personalization", "Conversion"],
+                    rating: "4.9",
+                    usage: "18.7k",
+                    speed: "Instant",
+                    path: "/productRecommendationAiAgent"
                 },
                 {
-                    "id": 46,
-                    "name": "Inventory Forecasting AI Agent",
-                    "description": "Predict stock levels, avoid overstocking or understocking, and ensure timely restocking using historical sales data.",
-                    "icon": "📦",
-                    "color": "from-yellow-500 to-orange-600",
-                    "tags": ["Forecasting", "Inventory", "Logistics"],
-                    "rating": "4.8",
-                    "usage": "13.4k",
-                    "speed": "Fast"
+                    id: 46,
+                    name: "Inventory Forecasting AI Agent",
+                    description: "Predict stock levels, avoid overstocking or understocking, and ensure timely restocking using historical sales data.",
+                    icon: "📦",
+                    color: "from-yellow-500 to-orange-600",
+                    tags: ["Forecasting", "Inventory", "Logistics"],
+                    rating: "4.8",
+                    usage: "13.4k",
+                    speed: "Fast",
+                    path: "/inventoryForecastingAiAgent"
                 },
                 {
-                    "id": 47,
-                    "name": "Customer Review Summarizer AI Agent",
-                    "description": "Summarize product reviews to extract key sentiments and help customers quickly understand product pros and cons.",
-                    "icon": "📝",
-                    "color": "from-blue-500 to-indigo-600",
-                    "tags": ["Reviews", "Summarization", "NLP"],
-                    "rating": "4.7",
-                    "usage": "10.2k",
-                    "speed": "Medium"
+                    id: 47,
+                    name: "Customer Review Summarizer AI Agent",
+                    description: "Summarize product reviews to extract key sentiments and help customers quickly understand product pros and cons.",
+                    icon: "📝",
+                    color: "from-blue-500 to-indigo-600",
+                    tags: ["Reviews", "Summarization", "NLP"],
+                    rating: "4.7",
+                    usage: "10.2k",
+                    speed: "Medium",
+                    path: "/customerReviewSummarizerAiAgent"
                 },
                 {
-                    "id": 48,
-                    "name": "Order Tracking AI Agent",
-                    "description": "Provide real-time order tracking updates and automated responses to customer delivery inquiries.",
-                    "icon": "🚚",
-                    "color": "from-green-500 to-emerald-600",
-                    "tags": ["Order Tracking", "Logistics", "Support"],
-                    "rating": "4.8",
-                    "usage": "15.6k",
-                    "speed": "Instant"
+                    id: 48,
+                    name: "Order Tracking AI Agent",
+                    description: "Provide real-time order tracking updates and automated responses to customer delivery inquiries.",
+                    icon: "🚚",
+                    color: "from-green-500 to-emerald-600",
+                    tags: ["Order Tracking", "Logistics", "Support"],
+                    rating: "4.8",
+                    usage: "15.6k",
+                    speed: "Instant",
+                    path: "/orderTrackingAiAgent"
                 },
                 {
-                    "id": 49,
-                    "name": "Cart Abandonment Recovery AI Agent",
-                    "description": "Recover lost sales by sending personalized follow-ups and discount offers to users who abandon their carts.",
-                    "icon": "🛒",
-                    "color": "from-violet-500 to-purple-600",
-                    "tags": ["Recovery", "Abandoned Carts", "Sales"],
-                    "rating": "4.9",
-                    "usage": "17.1k",
-                    "speed": "Fast"
+                    id: 49,
+                    name: "Cart Abandonment Recovery AI Agent",
+                    description: "Recover lost sales by sending personalized follow-ups and discount offers to users who abandon their carts.",
+                    icon: "🛒",
+                    color: "from-violet-500 to-purple-600",
+                    tags: ["Recovery", "Abandoned Carts", "Sales"],
+                    rating: "4.9",
+                    usage: "17.1k",
+                    path: "/cartAbandonmentRecoveryAiAgent",
+                    speed: "Fast"
+                   },
+                {
+                    id: 50,
+                    name: "Price Optimization AI Agent",
+                    description: "Analyze market trends and competitor pricing to dynamically adjust product prices for maximum profit and competitiveness.",
+                    icon: "💲",
+                    color: "from-amber-500 to-yellow-600",
+                    tags: ["Pricing", "Optimization", "Analytics"],
+                    rating: "4.8",
+                    usage: "11.9k",
+                    speed: "Medium",
+                    path: "/priceOptimizationAiAgent"
                 },
                 {
-                    "id": 50,
-                    "name": "Price Optimization AI Agent",
-                    "description": "Analyze market trends and competitor pricing to dynamically adjust product prices for maximum profit and competitiveness.",
-                    "icon": "💲",
-                    "color": "from-amber-500 to-yellow-600",
-                    "tags": ["Pricing", "Optimization", "Analytics"],
-                    "rating": "4.8",
-                    "usage": "11.9k",
-                    "speed": "Medium"
+                    id: 51,
+                    name: "E-commerce Chatbot AI Agent",
+                    description: "Engage with online shoppers using natural language to answer questions, recommend products, and assist with checkout.",
+                    icon: "🤖",
+                    color: "from-cyan-500 to-blue-600",
+                    tags: ["Chatbot", "Support", "Engagement"],
+                    rating: "4.9",
+                    usage: "20.3k",
+                    speed: "Instant",
+                    path: "/ecommerceChatbotAiAgent"
                 },
                 {
-                    "id": 51,
-                    "name": "E-commerce Chatbot AI Agent",
-                    "description": "Engage with online shoppers using natural language to answer questions, recommend products, and assist with checkout.",
-                    "icon": "🤖",
-                    "color": "from-cyan-500 to-blue-600",
-                    "tags": ["Chatbot", "Support", "Engagement"],
-                    "rating": "4.9",
-                    "usage": "20.3k",
-                    "speed": "Instant"
-                },
-                {
-                    "id": 52,
-                    "name": "Return & Refund AI Agent",
-                    "description": "Automate return and refund processes, ensure policy compliance, and provide quick resolutions to customer issues.",
-                    "icon": "↩️",
-                    "color": "from-red-500 to-rose-600",
-                    "tags": ["Returns", "Refunds", "Automation"],
-                    "rating": "4.7",
-                    "usage": "9.8k",
-                    "speed": "Fast"
+                    id: 52,
+                    name: "Return & Refund AI Agent",
+                    description: "Automate return and refund processes, ensure policy compliance, and provide quick resolutions to customer issues.",
+                    icon: "↩️",
+                    color: "from-red-500 to-rose-600",
+                    tags: ["Returns", "Refunds", "Automation"],
+                    rating: "4.7",
+                    usage: "9.8k",
+                    speed: "Fast",
+                    path: "/returnAndRefundAiAgent"
                 }
             ]
         },
         {
-            "name": "Customer Service",
-            "description": "AI agents that improve customer interactions, support resolution, and streamline service workflows.",
-            "agents": [
+            name: "Customer Service",
+            description: "AI agents that improve customer interactions, support resolution, and streamline service workflows.",
+            agents: [
                 {
-                    "id": 7,
-                    "name": "Customer Support AI Agent",
-                    "description": "Provide instant customer support with intelligent responses, ticket routing, and issue resolution capabilities.",
-                    "icon": "🎧",
-                    "color": "from-blue-500 to-indigo-600",
-                    "tags": ["Support", "Chat", "Tickets"],
-                    "rating": "4.9",
-                    "usage": "22.1k",
-                    "speed": "Instant"
+                    id: 7,
+                    name: "Customer Support AI Agent",
+                    description: "Provide instant customer support with intelligent responses, ticket routing, and issue resolution capabilities.",
+                    icon: "🎧",
+                    color: "from-blue-500 to-indigo-600",
+                    tags: ["Support", "Chat", "Tickets"],
+                    rating: "4.9",
+                    usage: "22.1k",
+                    speed: "Instant",
+                    path: "/customerSupportAiAgent"
                 },
                 {
-                    "id": 8,
-                    "name": "Live Chat AI Agent",
-                    "description": "Engage customers in real-time with contextual conversations, product recommendations, and seamless handoffs.",
-                    "icon": "💬",
-                    "color": "from-green-500 to-teal-600",
-                    "tags": ["Live Chat", "Real-time", "Engagement"],
-                    "rating": "4.8",
-                    "usage": "18.6k",
-                    "speed": "Instant"
+                    id: 8,
+                    name: "Live Chat AI Agent",
+                    description: "Engage customers in real-time with contextual conversations, product recommendations, and seamless handoffs.",
+                    icon: "💬",
+                    color: "from-green-500 to-teal-600",
+                    tags: ["Live Chat", "Real-time", "Engagement"],
+                    rating: "4.8",
+                    usage: "18.6k",
+                    speed: "Instant",
+                    path: "/liveChatAiAgent"
                 },
                 {
-                    "id": 9,
-                    "name": "Complaint Resolution AI Agent",
-                    "description": "Handle customer complaints with empathy, systematic problem-solving, and satisfaction tracking.",
-                    "icon": "🛠️",
-                    "color": "from-red-500 to-pink-600",
-                    "tags": ["Complaints", "Resolution", "Satisfaction"],
-                    "rating": "4.7",
-                    "usage": "7.9k",
-                    "speed": "Fast"
+                    id: 9,
+                    name: "Complaint Resolution AI Agent",
+                    description: "Handle customer complaints with empathy, systematic problem-solving, and satisfaction tracking.",
+                    icon: "🛠️",
+                    color: "from-red-500 to-pink-600",
+                    tags: ["Complaints", "Resolution", "Satisfaction"],
+                    rating: "4.7",
+                    usage: "7.9k",
+                    speed: "Fast",
+                    path: "/complaintResolutionAiAgent"
                 },
                 {
-                    "id": 61,
-                    "name": "Customer Service AI Agent",
-                    "description": "Assist customers across multiple channels with queries, issues, and requests using natural language processing.",
-                    "icon": "🤖",
-                    "color": "from-sky-500 to-blue-700",
-                    "tags": ["Customer Service", "Multichannel", "NLP"],
-                    "rating": "4.8",
-                    "usage": "20.3k",
-                    "speed": "Fast"
+                    id: 61,
+                    name: "Customer Service AI Agent",
+                    description: "Assist customers across multiple channels with queries, issues, and requests using natural language processing.",
+                    icon: "🤖",
+                    color: "from-sky-500 to-blue-700",
+                    tags: ["Customer Service", "Multichannel", "NLP"],
+                    rating: "4.8",
+                    usage: "20.3k",
+                    speed: "Fast",
+                    path: "/customerServiceAiAgent"
                 },
                 {
-                    "id": 62,
-                    "name": "Email Categorization & Triage AI Agent",
-                    "description": "Automatically sort and prioritize incoming customer emails for faster and more efficient resolution.",
-                    "icon": "📬",
-                    "color": "from-purple-500 to-indigo-700",
-                    "tags": ["Email", "Sorting", "Triage"],
-                    "rating": "4.7",
-                    "usage": "14.2k",
-                    "speed": "Medium"
+                    id: 62,
+                    name: "Email Categorization & Triage AI Agent",
+                    description: "Automatically sort and prioritize incoming customer emails for faster and more efficient resolution.",
+                    icon: "📬",
+                    color: "from-purple-500 to-indigo-700",
+                    tags: ["Email", "Sorting", "Triage"],
+                    rating: "4.7",
+                    usage: "14.2k",
+                    speed: "Medium",
+                    path: "/emailCategorizationAndTriageAiAgent"
                 },
                 {
-                    "id": 63,
-                    "name": "Customer Experience AI Agent",
-                    "description": "Track and optimize customer satisfaction through surveys, sentiment analysis, and engagement insights.",
-                    "icon": "📊",
-                    "color": "from-yellow-500 to-orange-600",
-                    "tags": ["Experience", "Satisfaction", "Sentiment Analysis"],
-                    "rating": "4.8",
-                    "usage": "9.8k",
-                    "speed": "Fast"
+                    id: 63,
+                    name: "Customer Experience AI Agent",
+                    description: "Track and optimize customer satisfaction through surveys, sentiment analysis, and engagement insights.",
+                    icon: "📊",
+                    color: "from-yellow-500 to-orange-600",
+                    tags: ["Experience", "Satisfaction", "Sentiment Analysis"],
+                    rating: "4.8",
+                    usage: "9.8k",
+                    speed: "Fast",
+                    path: "/customerExperienceAiAgent"
                 },
                 {
-                    "id": 64,
-                    "name": "Return Handling AI Agent",
-                    "description": "Automate return requests and refund processes, ensuring customer satisfaction and policy compliance.",
-                    "icon": "↩️",
-                    "color": "from-red-400 to-yellow-500",
-                    "tags": ["Returns", "Refunds", "Automation"],
-                    "rating": "4.6",
-                    "usage": "8.3k",
-                    "speed": "Fast"
+                    id: 64,
+                    name: "Return Handling AI Agent",
+                    description: "Automate return requests and refund processes, ensuring customer satisfaction and policy compliance.",
+                    icon: "↩️",
+                    color: "from-red-400 to-yellow-500",
+                    tags: ["Returns", "Refunds", "Automation"],
+                    rating: "4.6",
+                    usage: "8.3k",
+                    speed: "Fast",
+                    path: "/returnHandlingAiAgent"
                 },
                 {
-                    "id": 65,
-                    "name": "Inventory Management AI Agent",
-                    "description": "Track inventory levels, manage restocking alerts, and reduce fulfillment delays.",
-                    "icon": "📦",
-                    "color": "from-orange-500 to-green-600",
-                    "tags": ["Inventory", "Supply Chain", "Automation"],
+                    id: 65,
+                    name: "Inventory Management AI Agent",
+                    description: "Track inventory levels, manage restocking alerts, and reduce fulfillment delays.",
+                    icon: "📦",
+                    color: "from-orange-500 to-green-600",
+                    tags: ["Inventory", "Supply Chain", "Automation"],
                     "rating": "4.7",
                     "usage": "10.7k",
                     "speed": "Medium"
@@ -1200,18 +1249,20 @@ export default function AIAgentsPage() {
                     tags: ["Claims", "Assessment", "Fraud Detection"],
                     rating: "4.8",
                     usage: "14.3k",
-                    speed: "Fast"
+                    speed: "Fast",
+                    path: "/aiAgents/insuranceClaimsAiAgent"
                 },
                 {
-                    "id": 28,
-                    "name": "Risk Assessment AI Agent",
-                    "description": "Evaluate risk profiles, identify potential vulnerabilities, and provide recommendations for risk mitigation strategies.",
-                    "icon": "📊",
-                    "color": "from-yellow-500 to-orange-600",
-                    "tags": ["Risk", "Assessment", "Mitigation"],
-                    "rating": "4.7",
-                    "usage": "10.8k",
-                    "speed": "Medium"
+                    id: 28,
+                    name: "Risk Assessment AI Agent",
+                    description: "Evaluate risk profiles, identify potential vulnerabilities, and provide recommendations for risk mitigation strategies.",
+                    icon: "📊",
+                    color: "from-yellow-500 to-orange-600",
+                    tags: ["Risk", "Assessment", "Mitigation"],
+                    rating: "4.7",
+                    usage: "10.8k",
+                    speed: "Medium",
+                    path: "/aiAgents/riskAssessmentAiAgent"
                 }
             ]
         },
