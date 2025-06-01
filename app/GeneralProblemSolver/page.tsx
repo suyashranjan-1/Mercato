@@ -11,9 +11,9 @@ interface Agent {
     id: number;
     name: string;
     slug: string;
-    youtube: string;
+    youtubeUrl: string;
     description: string;
-    icon: string;
+    icon: JSX.Element;
     color: string;
     tags: string[];
     rating: string;
@@ -28,6 +28,12 @@ interface ProblemSolvingCategory {
     agents: Agent[];
 }
 
+interface Category {
+    name: string;
+    description: string;
+    agents: Agent[];
+}
+
 // Problem Solving agents data
 export const problemSolvingCategory: Category = {
     name: "Problem Solving AI Agents",
@@ -37,7 +43,7 @@ export const problemSolvingCategory: Category = {
             id: 1,
             name: "Universal Problem Solver",
             slug:"universalProblemSolverAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example",
+            youtubeUrl: "https://www.youtube.com/watch?v=example",
             description: "Advanced AI agent capable of analyzing complex problems across multiple domains and providing actionable solutions with detailed reasoning.",
             icon: <>🧠</>,
             color: "from-blue-500 to-purple-600",
@@ -51,7 +57,7 @@ export const problemSolvingCategory: Category = {
             id: 2,
             name: "Task Automation AI Agent",
             slug: "taskAutomationAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example2",
+            youtubeUrl: "https://www.youtube.com/watch?v=example2",
             description: "Streamline your workflow by automating repetitive tasks and optimizing business processes with intelligent task management.",
             icon: <>⚡</>,
             color: "from-emerald-500 to-blue-600",
@@ -65,7 +71,7 @@ export const problemSolvingCategory: Category = {
             id: 3,
             name: "Smart Decision Maker",
             slug: "smartDecisionMakerAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example3",
+            youtubeUrl: "https://www.youtube.com/watch?v=example3",
             description: "Make informed decisions with AI-powered analysis that evaluates multiple factors and provides recommendations.",
             icon: <>🎯</>,
             color: "from-orange-500 to-red-600",
@@ -79,7 +85,7 @@ export const problemSolvingCategory: Category = {
             id: 44,
             name: "Customer Service AI Agent",
             slug: "customerServiceAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example4",
+            youtubeUrl: "https://www.youtube.com/watch?v=example4",
             description: "Automate and personalize customer support with 24/7 AI-driven interaction.",
             icon: <>💬</>,
             color: "from-blue-400 to-indigo-500",
@@ -93,7 +99,7 @@ export const problemSolvingCategory: Category = {
             id: 45,
             name: "Data Extraction AI Agent",
             slug: "dataExtractionAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example5",
+            youtubeUrl: "https://www.youtube.com/watch?v=example5",
             description: "Extract structured data from unstructured documents like PDFs, emails, and reports.",
             icon: <>📄</>,
             color: "from-teal-500 to-cyan-600",
@@ -107,7 +113,7 @@ export const problemSolvingCategory: Category = {
             id: 46,
             name: "Email Categorization & Triage AI Agent",
             slug: "emailCategorizationAndTriageAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example6",
+            youtubeUrl: "https://www.youtube.com/watch?v=example6",
             description: "Organize and prioritize incoming emails for better workflow efficiency.",
             icon: <>📧</>,
             color: "from-green-400 to-blue-500",
@@ -121,7 +127,7 @@ export const problemSolvingCategory: Category = {
             id: 47,
             name: "Appointment Management AI Agent",
             slug: "appointmentManagementAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example7",
+            youtubeUrl: "https://www.youtube.com/watch?v=example7",
             description: "Automatically schedule, reschedule, and send reminders for appointments.",
             icon: <>📆</>,
             color: "from-indigo-500 to-blue-600",
@@ -135,7 +141,7 @@ export const problemSolvingCategory: Category = {
             id: 48,
             name: "Interview Scheduler AI Agent",
             slug: "interviewSchedulerAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example8",
+            youtubeUrl: "https://www.youtube.com/watch?v=example8",
             description: "Coordinate interview times between candidates and recruiters efficiently.",
             icon: <>🗓️</>,
             color: "from-purple-500 to-pink-500",
@@ -149,7 +155,7 @@ export const problemSolvingCategory: Category = {
             id: 49,
             name: "Data Entry AI Agent",
             slug: "dataEntryAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example9",
+            youtubeUrl: "https://www.youtube.com/watch?v=example9",
             description: "Automate repetitive data entry tasks with high speed and accuracy.",
             icon: <>⌨️</>,
             color: "from-gray-500 to-blue-500",
@@ -163,7 +169,7 @@ export const problemSolvingCategory: Category = {
             id: 50,
             name: "Billing Management AI Agent",
             slug: "billingManagementAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example10",
+            youtubeUrl: "https://www.youtube.com/watch?v=example10",
             description: "Handle invoices, billing cycles, and payment reminders seamlessly.",
             icon: <>🧾</>,
             color: "from-amber-500 to-orange-500",
@@ -177,7 +183,7 @@ export const problemSolvingCategory: Category = {
             id: 51,
             name: "Transaction Monitoring AI Agent",
             slug: "transactionMonitoringAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example11",
+            youtubeUrl: "https://www.youtube.com/watch?v=example11",
             description: "Detect and report suspicious transactions in real time.",
             icon: <>💳</>,
             color: "from-red-500 to-pink-600",
@@ -191,7 +197,7 @@ export const problemSolvingCategory: Category = {
             id: 52,
             name: "Budget Management AI Agent",
             slug: "budgetManagementAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example12",
+            youtubeUrl: "https://www.youtube.com/watch?v=example12",
             description: "Track expenses, analyze budgets, and suggest savings opportunities.",
             icon: <>📊</>,
             color: "from-lime-500 to-green-600",
@@ -205,7 +211,7 @@ export const problemSolvingCategory: Category = {
             id: 53,
             name: "Document Review AI Agent",
             slug: "documentReviewAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example13",
+            youtubeUrl: "https://www.youtube.com/watch?v=example13",
             description: "Analyze and summarize lengthy documents with legal or technical content.",
             icon: <>📚</>,
             color: "from-blue-600 to-indigo-700",
@@ -219,7 +225,7 @@ export const problemSolvingCategory: Category = {
             id: 54,
             name: "Contract Management AI Agent",
             slug: "contractManagementAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example14",
+            youtubeUrl: "https://www.youtube.com/watch?v=example14",
             description: "Automate contract lifecycle management and compliance monitoring.",
             icon: <>📝</>,
             color: "from-gray-600 to-blue-700",
@@ -233,7 +239,7 @@ export const problemSolvingCategory: Category = {
             id: 55,
             name: "Data Collection AI Agent",
             slug: "dataCollectionAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example15",
+            youtubeUrl: "https://www.youtube.com/watch?v=example15",
             description: "Collect structured and unstructured data from multiple sources automatically.",
             icon: <>🔍</>,
             color: "from-purple-400 to-blue-500",
@@ -247,7 +253,7 @@ export const problemSolvingCategory: Category = {
             id: 56,
             name: "Invoice Processing AI Agent",
             slug: "invoiceProcessingAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example16",
+            youtubeUrl: "https://www.youtube.com/watch?v=example16",
             description: "Extract and process data from invoices with automated validation.",
             icon: <>🧮</>,
             color: "from-pink-400 to-red-500",
@@ -261,7 +267,7 @@ export const problemSolvingCategory: Category = {
             id: 57,
             name: "Payroll Calculation AI Agent",
             slug: "payrollCalculationAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example17",
+            youtubeUrl: "https://www.youtube.com/watch?v=example17",
             description: "Calculate employee salaries, tax deductions, and generate payslips.",
             icon: <>💼</>,
             color: "from-yellow-400 to-orange-500",
@@ -275,7 +281,7 @@ export const problemSolvingCategory: Category = {
             id: 58,
             name: "Legal Document Classifier AI Agent",
             slug: "legalDocumentClassifierAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example18",
+            youtubeUrl: "https://www.youtube.com/watch?v=example18",
             description: "Automatically categorize legal documents for faster retrieval and compliance.",
             icon: <>⚖️</>,
             color: "from-indigo-600 to-blue-700",
@@ -289,7 +295,7 @@ export const problemSolvingCategory: Category = {
             id: 59,
             name: "Social Media Content AI Agent",
             slug: "socialMediaContentAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example19",
+            youtubeUrl: "https://www.youtube.com/watch?v=example19",
 
             description: "Create, schedule, and analyze social media content using AI.",
             icon: <>📱</>,
@@ -304,7 +310,7 @@ export const problemSolvingCategory: Category = {
             id: 60,
             name: "ETL (Extract, Transform, Load) AI Agent",
             slug: "etlExtractTransformLoadAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example20",
+            youtubeUrl: "https://www.youtube.com/watch?v=example20",
             description: "Automate ETL pipelines for seamless data migration and analytics workflows.",
             icon: <>🔄</>,
             color: "from-green-500 to-teal-600",
@@ -318,7 +324,7 @@ export const problemSolvingCategory: Category = {
             id: 61,
             name: "RFP AI Agent",
             slug: "rfpAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example21",
+            youtubeUrl: "https://www.youtube.com/watch?v=example21",
             description: "Generate, evaluate, and respond to Requests for Proposals using AI.",
             icon: <>📌</>,
             color: "from-red-500 to-orange-600",
@@ -332,7 +338,7 @@ export const problemSolvingCategory: Category = {
             id: 62,
             name: "Loan Processing AI Agent",
             slug: "loanProcessingAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example22",
+            youtubeUrl: "https://www.youtube.com/watch?v=example22",
             description: "Automate credit assessment, documentation, and loan approval workflows.",
             icon: <>🏦</>,
             color: "from-blue-400 to-indigo-500",
@@ -346,7 +352,7 @@ export const problemSolvingCategory: Category = {
             id: 63,
             name: "Suspicious Activity Reporting AI Agent",
             slug: "suspiciousActivityReportingAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example23",
+            youtubeUrl: "https://www.youtube.com/watch?v=example23",
             description: "Identify and report suspicious activities for regulatory compliance.",
             icon: <>🚨</>,
             color: "from-red-600 to-pink-600",
@@ -520,7 +526,7 @@ interface AnimatedCounterProps {
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterProps) => {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef();
+    const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -669,7 +675,7 @@ interface AgentCardProps {
 
 const AgentCard = ({ agent, index }: AgentCardProps) => {
     const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef();
+    const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -1014,7 +1020,7 @@ export default function ProblemSolvingPage() {
                                 </div>
 
                                 <div className="flex justify-center space-x-3 mb-8">
-                                    {problemSolvingCategory.agents[currentAgentIndex].tags.map((tag, index) => (
+                                    {problemSolvingCategory.agents[currentAgentIndex].tags.map((tag: string, index: number) => (
                                         <span key={index} className="px-4 py-2 bg-slate-700/50 text-slate-300 rounded-full text-sm border border-slate-600/50">
                                             {tag}
                                         </span>
@@ -1022,7 +1028,7 @@ export default function ProblemSolvingPage() {
                                 </div>
 
                                 <div className="flex justify-center space-x-2">
-                                    {problemSolvingCategory.agents.map((_, index) => (
+                                    {problemSolvingCategory.agents.map((_: any, index: number) => (
                                         <button
                                             key={index}
                                             className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentAgentIndex

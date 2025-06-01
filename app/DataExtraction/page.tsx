@@ -12,7 +12,7 @@ interface Agent {
     id: number;
     name: string;
     slug: string; // Optional slug for URL routing
-    youtube: string; // Optional YouTube link for demo videos
+    youtubeUrl: string; // Optional YouTube link for demo videos
     description: string;
     icon: string;
     color: string;
@@ -37,7 +37,7 @@ const dataExtractionCategory: DataExtractionCategory = {
             "id": 4,
             "name": "Web Scraping AI Agent",
             "slug":"webScrapingAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Extract structured data from websites efficiently with intelligent parsing and data cleaning capabilities.",
             "icon": "🌐",
             "color": "from-cyan-500 to-blue-600",
@@ -50,7 +50,7 @@ const dataExtractionCategory: DataExtractionCategory = {
             "id": 5,
             "name": "Document Parser AI Agent",
             "slug": "documentParserAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Process and extract information from PDFs, documents, and forms with high accuracy and intelligent formatting.",
             "icon": "📄",
             "color": "from-violet-500 to-purple-600",
@@ -64,7 +64,7 @@ const dataExtractionCategory: DataExtractionCategory = {
             "id": 6,
             "name": "Database Query AI Agent",
             "slug": "databaseQueryAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Intelligent database querying and data extraction with natural language processing and automated reporting.",
             "icon": "🗄️",
             "color": "from-teal-500 to-green-600",
@@ -77,7 +77,7 @@ const dataExtractionCategory: DataExtractionCategory = {
             "id": 45,
             "name": "Data Extraction AI Agent",
             "slug": "dataExtractionAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Extract structured data from unstructured documents like PDFs, emails, and reports.",
             "icon": "📄",
             "color": "from-teal-500 to-cyan-600",
@@ -90,7 +90,7 @@ const dataExtractionCategory: DataExtractionCategory = {
             "id": 49,
             "name": "Data Entry AI Agent",
             "slug": "dataEntryAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Automate repetitive data entry tasks with high speed and accuracy.",
             "icon": "⌨️",
             "color": "from-gray-500 to-blue-500",
@@ -103,7 +103,7 @@ const dataExtractionCategory: DataExtractionCategory = {
             "id": 53,
             "name": "Document Review AI Agent",
             "slug": "documentReviewAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Analyze and summarize lengthy documents with legal or technical content.",
             "icon": "📚",
             "color": "from-blue-600 to-indigo-700",
@@ -116,7 +116,7 @@ const dataExtractionCategory: DataExtractionCategory = {
             "id": 55,
             "name": "Data Collection AI Agent",
             "slug": "dataCollectionAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Collect structured and unstructured data from multiple sources automatically.",
             "icon": "🔍",
             "color": "from-purple-400 to-blue-500",
@@ -129,7 +129,7 @@ const dataExtractionCategory: DataExtractionCategory = {
             "id": 60,
             "name": "ETL (Extract, Transform, Load) AI Agent",
             "slug": "etlAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Automate ETL pipelines for seamless data migration and analytics workflows.",
             "icon": "🔄",
             "color": "from-green-500 to-teal-600",
