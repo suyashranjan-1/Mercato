@@ -270,12 +270,12 @@ export default function ContactForm() {
                       Fill out the form below and our AI specialists will contact you to tailor the perfect AI Agent for your needs.
                     </p>
                   </div>
-                  <form>
+                  <form ref={form} onSubmit={sendEmail}>
                   <div className="space-y-4 sm:space-y-6">
                     {/* Name and Email - Stack on Mobile */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                       <div className="group">
-                        <label className="block text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
+                        <label className="text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
                           <User size={16} className="text-blue-400" />
                           Full Name *
                         </label>
@@ -296,7 +296,7 @@ export default function ContactForm() {
                         {errors.first_name && <div className="text-xs text-red-400 mt-1">Full name is required.</div>}
                       </div>
                       <div className="group">
-                        <label className="block text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
+                        <label className="text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
                           <Mail size={16} className="text-blue-400" />
                           Email Address *
                         </label>
@@ -318,7 +318,7 @@ export default function ContactForm() {
                       </div>
                     </div>
                     <div className="group">
-                      <label className="block text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
+                      <label className="text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
                         <Building size={16} className="text-blue-400" />
                         Company Name
                       </label>
@@ -391,7 +391,7 @@ export default function ContactForm() {
                     </div>
                     {/* Meeting Schedule - Enhanced Mobile Layout */}
                     <div className="group">
-                      <label className="block text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
+                      <label className="text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
                         <Calendar size={16} className="text-blue-400" />
                         Schedule a Consultation *
                       </label>
@@ -431,7 +431,7 @@ export default function ContactForm() {
                       {(errors.meeting_date || errors.meeting_time) && <div className="text-xs text-red-400 mt-1">Please select date and time.</div>}
                     </div>
                     <div className="group">
-                      <label className="block text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
+                      <label className="text-sm font-medium text-slate-300 mb-2 sm:mb-3 flex items-center gap-2">
                         <MessageSquare size={16} className="text-blue-400" />
                         Additional Information
                       </label>
@@ -464,8 +464,7 @@ export default function ContactForm() {
                     </div>
                     {errors.terms && <div className="text-xs text-red-400 mt-1">You must agree to submit the inquiry.</div>}
                     <button
-                      type="button"
-                      onClick={sendEmail}
+                      type="submit"
                       disabled={loading}
                       className="group w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base"
                     >

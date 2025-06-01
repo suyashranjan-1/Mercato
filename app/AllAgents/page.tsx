@@ -8,20 +8,7 @@ import { Search, Bot } from "lucide-react";
 import { useRouter } from "next/navigation";
 // hii mukul
 
-interface Agent {
-  id: number;
-  name: string;
-  slug: string;
-  youtubeUrl: string;
-  description: string;
-  icon: string;
-  color: string;
-  tags: string[];
-  rating: string;
-  usage: string;
-  speed: string;
-  path?: string;
-}
+import { Agent } from "@/components/AgentSlider";
 
 interface Category {
   name: string;
@@ -1959,7 +1946,7 @@ export default function AIAgentsPage() {
       <NavbarDemo />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 px-4 py-20 pt-24 sm:py-32">
+      <section className="relative pb-16 px-4 py-20 pt-24 sm:py-32">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-purple-600/5"></div>
         <div

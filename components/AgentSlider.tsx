@@ -15,6 +15,7 @@ interface Agent {
     usage: string;
     speed: string;
     path?: string;
+    slug: string;
 }
 
 interface Category {

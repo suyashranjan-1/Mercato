@@ -299,7 +299,7 @@ interface AnimatedCounterProps {
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterProps) => {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef();
+    const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -448,7 +448,7 @@ interface AgentCardProps {
 
 const AgentCard = ({ agent, index }: AgentCardProps) => {
     const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef();
+    const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
