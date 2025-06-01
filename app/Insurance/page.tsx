@@ -10,7 +10,7 @@ interface Agent {
     id: number;
     name: string;
     slug : string; // Added slug for better SEO and routing
-    youtube: string; // Added YouTube link for agent demo
+    youtubeUrl: string; // Added YouTube link for agent demo
     description: string;
     icon: string;
     color: string;
@@ -36,7 +36,7 @@ export const insuranceCategory: InsuranceCategory = {
             id: 27,
             name: "Insurance Claims AI Agent",
             slug : "insuranceClaimsAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example", // Example YouTube link
+            youtubeUrl: "https://www.youtube.com/watch?v=example", // Example YouTube link
             description: "Streamline claims processing with automated assessment, fraud detection, and policy verification for faster claim resolution.",
             icon: "🏛️",
             color: "from-indigo-500 to-blue-600",
@@ -50,7 +50,7 @@ export const insuranceCategory: InsuranceCategory = {
             id: 28,
             name: "Risk Assessment AI Agent",
             slug : "riskAssessmentAiAgent",
-            youtube: "https://www.youtube.com/watch?v=example2", // Example YouTube link
+            youtubeUrl: "https://www.youtube.com/watch?v=example2", // Example YouTube link
             description: "Evaluate risk profiles, identify potential vulnerabilities, and provide recommendations for risk mitigation strategies.",
             icon: "📊",
             color: "from-yellow-500 to-orange-600",

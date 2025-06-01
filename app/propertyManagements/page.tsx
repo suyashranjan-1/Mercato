@@ -10,7 +10,7 @@ interface Agent {
     id: number;
     name: string;
     slug : string;
-    youtube: string;
+    youtubeUrl: string;
     description: string;
     icon: string;
     color: string;
@@ -35,7 +35,7 @@ const propertyCategory: PropertyCategory = {
             "id": 53,
             "name": "Tenant Screening AI Agent",
             "slug": "tenantScreeningAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example",
             "description": "Evaluate tenant applications by analyzing credit history, background checks, and rental history to ensure reliable occupancy.",
             "icon": "🔍",
             "color": "from-blue-500 to-indigo-600",
@@ -48,7 +48,7 @@ const propertyCategory: PropertyCategory = {
             "id": 54,
             "name": "Lease Management AI Agent",
             "slug": "leaseManagementAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example",
             "description": "Track lease agreements, automate renewals, and alert landlords and tenants about upcoming expirations.",
             "icon": "📑",
             "color": "from-teal-500 to-green-600",
@@ -61,7 +61,7 @@ const propertyCategory: PropertyCategory = {
             "id": 55,
             "name": "Maintenance Request AI Agent",
             "slug": "maintenanceRequestAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example",
             "description": "Handle tenant maintenance requests automatically and dispatch repair personnel based on availability and urgency.",
             "icon": "🛠️",
             "color": "from-orange-500 to-yellow-600",
@@ -74,7 +74,7 @@ const propertyCategory: PropertyCategory = {
             "id": 56,
             "name": "Rent Collection AI Agent",
             "slug": "rentCollectionAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example",
             "description": "Automate rent reminders, collect payments securely, and provide real-time reporting for landlords and tenants.",
             "icon": "💰",
             "color": "from-green-500 to-emerald-600",
@@ -87,7 +87,7 @@ const propertyCategory: PropertyCategory = {
             "id": 57,
             "name": "Virtual Property Tour AI Agent",
             "slug": "virtualPropertyTourAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example",
             "description": "Deliver immersive and interactive virtual property tours to prospective tenants and buyers, reducing site visit needs.",
             "icon": "🏡",
             "color": "from-pink-500 to-rose-600",
@@ -100,7 +100,7 @@ const propertyCategory: PropertyCategory = {
             "id": 58,
             "name": "Vacancy Prediction AI Agent",
             "slug": "vacancyPredictionAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example",
             "description": "Predict upcoming vacancies using historical data and tenant behavior patterns to reduce unoccupied periods.",
             "icon": "📊",
             "color": "from-purple-500 to-violet-600",
@@ -113,7 +113,7 @@ const propertyCategory: PropertyCategory = {
             "id": 59,
             "name": "Tenant Communication AI Agent",
             "slug": "tenantCommunicationAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example",
             
             "description": "Provide 24/7 communication with tenants for answering queries, sending notices, and managing disputes.",
             "icon": "💬",

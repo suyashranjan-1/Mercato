@@ -12,7 +12,7 @@ interface Agent {
     id: number;
     name: string;
     slug : string;
-    youtube : string;
+    youtubeUrl : string;
     description: string;
     icon: string;
     color: string;
@@ -38,7 +38,7 @@ const healthcareCategory: HealthcareCategory = {
             "name": "Medical Diagnosis AI Agent",
             "slug": "medicalDiagnosisAiAgent",
 
-            "youtube": "https://www.youtube.com/watch?v=example",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example",
             "description": "Assist healthcare professionals with preliminary diagnosis suggestions based on symptoms, medical history, and test results.",
             "icon": "🩺",
             "color": "from-red-500 to-rose-600",
@@ -51,7 +51,7 @@ const healthcareCategory: HealthcareCategory = {
             "id": 24,
             "name": "Patient Scheduling AI Agent",
             "slug": "patientSchedulingAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example2",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example2",
             "description": "Optimize patient scheduling, reduce no-shows, and manage appointment calendars with intelligent booking algorithms.",
             "icon": "📅",
             "color": "from-teal-500 to-cyan-600",
@@ -64,7 +64,7 @@ const healthcareCategory: HealthcareCategory = {
             "id": 25,
             "name": "Medical Records AI Agent",
             "slug": "medicalRecordsAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example3",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example3",
             "description": "Process and organize medical records, extract key information, and ensure HIPAA-compliant data management.",
             "icon": "📋",
             "color": "from-blue-500 to-indigo-600",
@@ -77,7 +77,7 @@ const healthcareCategory: HealthcareCategory = {
             "id": 26,
             "name": "Medication Reminder AI Agent",
             "slug": "medicationReminderAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example4",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example4",
             "description": "Send personalized medication reminders, track adherence, and provide drug interaction warnings to patients.",
             "icon": "💊",
             "color": "from-green-500 to-emerald-600",
@@ -90,7 +90,7 @@ const healthcareCategory: HealthcareCategory = {
             "id": 81,
             "name": "Patient Intake Scheduler AI Agent",
             "slug": "patientIntakeSchedulerAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example5",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example5",
             "description": "Efficiently manage and schedule patient intake appointments to streamline clinic workflows and reduce waiting times.",
             "icon": "🗓️",
             "color": "from-indigo-500 to-blue-600",
@@ -103,7 +103,7 @@ const healthcareCategory: HealthcareCategory = {
             "id": 82,
             "name": "Lab Results Extraction AI Agent",
             "slug": "labResultsExtractionAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example6",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example6",
             "description": "Extract and organize lab test results from various sources for easy access and integration into patient records.",
             "icon": "🧪",
             "color": "from-purple-500 to-violet-600",
@@ -116,7 +116,7 @@ const healthcareCategory: HealthcareCategory = {
             "id": 83,
             "name": "Healthcare AI Agent",
             "slug": "healthcareAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example7",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example7",
             "description": "General-purpose healthcare AI agent providing support for patient management, diagnostics, and administrative tasks.",
             "icon": "🏥",
             "color": "from-red-600 to-pink-700",
@@ -129,7 +129,7 @@ const healthcareCategory: HealthcareCategory = {
             "id": 84,
             "name": "Patient Service AI Agent",
             "slug": "patientServiceAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example8",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example8",
             "description": "Enhance patient experience with real-time support, information provision, and service coordination across healthcare facilities.",
             "icon": "🤝",
             "color": "from-green-600 to-teal-700",

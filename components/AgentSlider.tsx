@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { ChevronLeft, ChevronRight, ArrowRight, Sparkles, TrendingUp, Zap } from 'lucide-react';
 
-interface Agent {
+export interface Agent {
     id: number;
     name: string;
     description: string;
@@ -16,6 +16,7 @@ interface Agent {
     speed: string;
     path?: string;
     slug: string;
+    youtubeUrl: string;
 }
 
 interface Category {

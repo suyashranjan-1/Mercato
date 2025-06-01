@@ -12,7 +12,7 @@ interface Agent {
     id: number;
     name: string;
     slug: string;
-    youtube: string;
+    youtubeUrl: string;
     description: string;
     icon: string;
     color: string;
@@ -37,7 +37,7 @@ const financeCategory: FinanceCategory = {
             "id": 37,
             "name": "Expense Management AI Agent",
             "slug":"expenseManagementAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example1",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example1",
             "description": "Track, categorize, and analyze company expenses automatically, providing insights and reducing manual bookkeeping.",
             "icon": "💸",
             "color": "from-rose-500 to-red-600",
@@ -50,7 +50,7 @@ const financeCategory: FinanceCategory = {
             "id": 38,
             "name": "Invoice Processing AI Agent",
             "slug":"invoiceProcessingAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example2",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example2",
             "description": "Automate invoice reading, validation, and entry into your accounting system, reducing errors and speeding up workflows.",
             "icon": "🧾",
             "color": "from-indigo-500 to-blue-600",
@@ -63,7 +63,7 @@ const financeCategory: FinanceCategory = {
             "id": 39,
             "name": "Tax Calculation AI Agent",
             "slug":"taxCalculationAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example3",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example3",
             "description": "Handle tax calculations, rule compliance, and filing support with jurisdiction-specific automation.",
             "icon": "📊",
             "color": "from-green-500 to-emerald-600",
@@ -76,7 +76,7 @@ const financeCategory: FinanceCategory = {
             "id": 40,
             "name": "Financial Forecasting AI Agent",
             "slug":"financialForecastingAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example4",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example4",
             "description": "Predict financial trends, budget needs, and investment opportunities using advanced analytics and historical data.",
             "icon": "📈",
             "color": "from-blue-500 to-cyan-600",
@@ -89,7 +89,7 @@ const financeCategory: FinanceCategory = {
             "id": 41,
             "name": "Accounts Payable AI Agent",
             "slug":"accountsPayableAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example5",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example5",
             "description": "Manage the entire accounts payable process with automated invoice matching, approval workflows, and payment scheduling.",
             "icon": "🏦",
             "color": "from-yellow-500 to-amber-600",
@@ -102,7 +102,7 @@ const financeCategory: FinanceCategory = {
             "id": 42,
             "name": "Accounts Receivable AI Agent",
             "slug":"accountsReceivableAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example6",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example6",
             "description": "Track incoming payments, send automated reminders, and generate receivables reports to ensure healthy cash flow.",
             "icon": "📥",
             "color": "from-purple-500 to-pink-600",
@@ -115,7 +115,7 @@ const financeCategory: FinanceCategory = {
             "id": 43,
             "name": "Payroll Processing AI Agent",
             "slug":"payrollProcessingAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example7",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example7",
             "description": "Automate payroll calculations, deductions, and compliance checks to ensure accurate and timely employee payments.",
             "icon": "💼",
             "color": "from-teal-500 to-blue-600",
@@ -129,7 +129,7 @@ const financeCategory: FinanceCategory = {
 
             name: "Financial Compliance AI Agent",
             "slug":"financialComplianceAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example8",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example8",
             "description": "Monitor compliance with financial regulations, flag suspicious transactions, and generate audit-ready reports.",
             "icon": "🛡️",
             "color": "from-slate-500 to-gray-600",

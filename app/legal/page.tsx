@@ -11,7 +11,7 @@ interface Agent {
     id: number;
     name: string;
     slug : string;
-    youtube: string;
+    youtubeUrl: string;
     description: string;
     icon: string;
     color: string;
@@ -36,7 +36,7 @@ const legalCategory: LegalCategory = {
             "id": 19,
             "name": "Contract Analysis AI Agent",
             "slug":"contractAnalysisAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example1",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example1",
             "description": "Review and analyze contracts for key terms, risks, and compliance issues with detailed summaries and recommendations.",
             "icon": "📜",
             "color": "from-slate-500 to-gray-600",
@@ -49,7 +49,7 @@ const legalCategory: LegalCategory = {
             "id": 20,
             "name": "Legal Research AI Agent",
             "slug":"legalResearchAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example2",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example2",
             "description": "Conduct comprehensive legal research, find relevant case law, and generate detailed research reports with citations.",
             "icon": "⚖️",
             "color": "from-blue-500 to-indigo-600",
@@ -62,7 +62,7 @@ const legalCategory: LegalCategory = {
             "id": 21,
             "name": "Compliance Monitoring AI Agent",
             "slug":"complianceMonitoringAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example3",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example3",
             "description": "Monitor regulatory compliance, track changes in laws, and alert teams to potential compliance risks and requirements.",
             "icon": "🛡️",
             "color": "from-red-500 to-pink-600",
@@ -75,7 +75,7 @@ const legalCategory: LegalCategory = {
             "id": 22,
             "name": "Document Redaction AI Agent",
             "slug":"documentRedactionAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example4",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example4",
             "description": "Automatically identify and redact sensitive information from legal documents while maintaining document integrity.",
             "icon": "✂️",
             "color": "from-purple-500 to-violet-600",
@@ -88,7 +88,7 @@ const legalCategory: LegalCategory = {
             "id": 78,
             "name": "Document Review AI Agent",
             "slug":"documentReviewAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example5",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example5",
             "description": "Analyze and review legal documents for accuracy, consistency, and compliance with relevant standards and laws.",
             "icon": "📑",
             "color": "from-indigo-500 to-blue-600",
@@ -101,7 +101,7 @@ const legalCategory: LegalCategory = {
             "id": 79,
             "name": "Contract Management AI Agent",
             "slug":"contractManagementAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example6",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example6",
             "description": "Manage contract lifecycle including creation, tracking, renewals, and audit with automated alerts and version control.",
             "icon": "📝",
             "color": "from-green-500 to-teal-600",
@@ -114,7 +114,7 @@ const legalCategory: LegalCategory = {
             "id": 80,
             "name": "Legal Document Classifier AI Agent",
             "slug":"legalDocumentClassifierAiAgent",
-            "youtube": "https://www.youtube.com/watch?v=example7",
+            "youtubeUrl": "https://www.youtube.com/watch?v=example7",
             "description": "Classify legal documents into predefined categories for efficient organization, retrieval, and processing.",
             "icon": "📂",
             "color": "from-purple-600 to-pink-700",
