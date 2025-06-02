@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 const WorkplacePolicyPage = () => {
     const [activeSection, setActiveSection] = useState('');
     const [scrollProgress, setScrollProgress] = useState(0);
-    const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+    const sectionRefs = useRef<{[key: string]: HTMLElement | null}>({} as {[key: string]: HTMLElement | null});
 
     useEffect(() => {
         const handleScroll = () => {
@@ -116,7 +116,7 @@ const WorkplacePolicyPage = () => {
                 </div>
 
                 {/* Overview Section */}
-                <section id="overview" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['overview'] = el}>
+                <section id="overview" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['overview'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl flex items-center justify-center">
@@ -173,7 +173,7 @@ const WorkplacePolicyPage = () => {
                 </section>
 
                 {/* Hybrid Work Structure Section */}
-                <section id="hybrid" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['hybrid'] = el}>
+                <section id="hybrid" className="mb-16 scroll-mt-20" ref={(el) => {sectionRefs.current['hybrid'] = el}}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
@@ -278,7 +278,7 @@ const WorkplacePolicyPage = () => {
                 </section>
 
                 {/* Communication & Transparency Section */}
-                <section id="communication" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['communication'] = el}>
+                <section id="communication" className="mb-16 scroll-mt-20" ref={(el) => { sectionRefs.current['communication'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl flex items-center justify-center">
@@ -366,7 +366,7 @@ const WorkplacePolicyPage = () => {
                 </section>
 
                 {/* In-Person Expectations Section */}
-                <section id="inperson" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['inperson'] = el}>
+                <section id="inperson" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['inperson'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
@@ -441,7 +441,7 @@ const WorkplacePolicyPage = () => {
                 </section>
 
                 {/* Health & Wellbeing Section */}
-                <section id="wellbeing" className="mb-16 scroll-mt-20" ref={(el: HTMLElement | null) => sectionRefs.current['wellbeing'] = el}>
+                <section id="wellbeing" className="mb-16 scroll-mt-20" ref={(el) => {sectionRefs.current['wellbeing'] = el}}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center">
@@ -499,7 +499,7 @@ const WorkplacePolicyPage = () => {
                 </section>
 
                 {/* Equality & Inclusion Section */}
-                <section id="equality" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['equality'] = el}>
+                <section id="equality" className="mb-16 scroll-mt-20" ref={(el) => { sectionRefs.current['equality'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center">
@@ -595,7 +595,7 @@ const WorkplacePolicyPage = () => {
                 </section>
 
                 {/* Legal Compliance Section */}
-                <section id="compliance" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['compliance'] = el}>
+                <section id="compliance" className="mb-16 scroll-mt-20" ref={(el) => { sectionRefs.current['compliance'] = el }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center">
@@ -606,7 +606,7 @@ const WorkplacePolicyPage = () => {
 
                         <div className="space-y-6">
                             <p className="text-slate-300 leading-relaxed">
-                                Mercato's workplace policies comply with relevant employment regulations across all operating jurisdictions.
+                                Mercato&apos;s workplace policies comply with relevant employment regulations across all operating jurisdictions.
                                 We ensure full legal compliance while maintaining our commitment to flexible work arrangements.
                             </p>
 
@@ -712,7 +712,7 @@ const WorkplacePolicyPage = () => {
                             </div>
                             <h3 className="text-2xl font-bold mb-4">Balancing Flexibility with Collaboration</h3>
                             <p className="text-slate-300 leading-relaxed mb-6">
-                                Mercato's hybrid work policy is designed to attract talent and maintain productivity while respecting
+                                Mercato&apos;s hybrid work policy is designed to attract talent and maintain productivity while respecting
                                 personal needs. We strive for transparency by informing all candidates and employees of our flexible
                                 work model and any expected in-office commitments before they join.
                             </p>

@@ -360,9 +360,11 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
 };
 
 // Enhanced Timeline Component
+import { MutableRefObject } from 'react';
+
 const Timeline = () => {
     const [visibleItems, setVisibleItems] = useState<number[]>([]);
-    const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const itemRefs: MutableRefObject<HTMLDivElement[]> = useRef<HTMLDivElement[]>([]);
 
     useEffect(() => {
         const observers = itemRefs.current.map((ref, index) => {
@@ -392,7 +394,7 @@ const Timeline = () => {
             {legalTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el || null}
+                    ref={(el) => { if (el) itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
                         ? 'opacity-100 translate-x-0'
                         : 'opacity-0 translate-x-8'
@@ -682,7 +684,7 @@ export default function LegalPage() {
                                     <h3 className="text-2xl font-bold text-white">⚖️ The AI Legal Revolution</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                    Today's AI-powered legal systems represent the pinnacle of decades of innovation in legal research, contract analysis, 
+                                    Today&apos;s AI-powered legal systems represent the pinnacle of decades of innovation in legal research, contract analysis, 
                                     and litigation support automation. From traditional manual case briefing to modern predictive legal analytics and intelligent document review, 
                                     the evolution of legal technology has reached its most sophisticated form — autonomous, data-driven AI agents that understand legal precedents and case patterns.
                                     These AI legal agents can analyze complex legal documents, extract key contract terms, automate legal research, and provide intelligent case strategy recommendations — 
@@ -700,10 +702,10 @@ export default function LegalPage() {
                                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white">What's Next in Legal AI?</h3>
+                                    <h3 className="text-2xl font-bold text-white">What&apos;s Next in Legal AI?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                The future of AI in Legal transcends automation — it's about predictive legal intelligence and strategic case insights. AI Legal agents will become intelligent legal partners, capable of 
+                                The future of AI in Legal transcends automation — it&apos;s about predictive legal intelligence and strategic case insights. AI Legal agents will become intelligent legal partners, capable of 
                                 Predicting case outcomes based on historical precedent analysis • Personalizing legal strategies based on judge preferences and case history patterns 
                                 Creating seamless, automated contract generation and review processes • Detecting legal risks and compliance issues with advanced pattern recognition • 
                                 Optimizing litigation strategies through real-time case law analysis and legal market intelligence with unprecedented accuracy
@@ -729,7 +731,7 @@ export default function LegalPage() {
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
                         Discover how AI-powered legal systems are revolutionizing case research, enhancing client service, 
-                        and delivering intelligent legal insights at enterprise scale. These agents aren't just legal tools — they're intelligent legal partners designed to empower attorneys and drive profitable growth for law firms.
+                        and delivering intelligent legal insights at enterprise scale. These agents aren&apos;t just legal tools — they&apos;re intelligent legal partners designed to empower attorneys and drive profitable growth for law firms.
                         </p>
                     </div>
 

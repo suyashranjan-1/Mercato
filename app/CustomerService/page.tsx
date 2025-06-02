@@ -320,7 +320,10 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
             { threshold: 0.1 }
         );
         if (ref.current) observer.observe(ref.current);
-        return () => { if (ref.current) observer.unobserve(ref.current); };
+        return () => { 
+            const currentRef = ref.current;
+            if (currentRef) observer.unobserve(currentRef); 
+        };
     }, [isVisible]);
 
     useEffect(() => {
@@ -402,7 +405,7 @@ const Timeline = () => {
             {customerServiceTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el}
+                    ref={(el) => { itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index) ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
                     style={{ transitionDelay: `${index * 100}ms` }}
                 >
@@ -621,11 +624,11 @@ export default function CustomerServicePage() {
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
                                     Customer service has entered a new era — one driven by intelligent AI agents that deliver fast, accurate, and 
                                     empathetic support at scale. Building on centuries of innovation in logic, systems thinking, and decision science, 
-                                    today's AI-powered customer service systems are transforming how businesses connect with their customers.
+                                    today&apos;s AI-powered customer service systems are transforming how businesses connect with their customers.
                                 </p>
                                 <p className="text-slate-400 text-lg leading-relaxed">
                                     These advanced AI agents analyze millions of customer interactions, detect intent and emotion, resolve queries instantly, 
-                                    and continuously learn to improve future responses. They don't just answer questions — they deliver experiences
+                                    and continuously learn to improve future responses. They don&apos;t just answer questions — they deliver experiences
                                 </p>
                             </div>
                             <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 hover:bg-slate-800/60 transition-all duration-300">
@@ -633,7 +636,7 @@ export default function CustomerServicePage() {
                                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white">What's Next?</h3>
+                                    <h3 className="text-2xl font-bold text-white">What&apos;s Next?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
                                     The future of AI in customer service is not just automation — it’s augmentation. AI agents will become real-time collaborators, capable of 

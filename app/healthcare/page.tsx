@@ -409,7 +409,7 @@ const Timeline = () => {
             {healthcareTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el || null}
+                    ref={(el) => { itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
                             ? 'opacity-100 translate-x-0'
                             : 'opacity-0 translate-x-8'
@@ -557,7 +557,7 @@ export default function HealthcarePage() {
         <div className="w-full min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white overflow-hidden">
             
             
-            // Navbar Component
+            {/* Navbar Component */}
             <NavbarDemo />
             <FloatingElements />
 
@@ -655,7 +655,7 @@ export default function HealthcarePage() {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                            Healthcare has evolved dramatically from traditional herbal medicine to today's AI-driven precision care.
+                            Healthcare has evolved dramatically from traditional herbal medicine to today&apos;s AI-driven precision care.
                             Witness the remarkable journey that brought us to this revolutionary moment in medical history.
                         </p>
                     </div>
@@ -673,7 +673,7 @@ export default function HealthcarePage() {
                                     <h3 className="text-2xl font-bold text-white">The AI Healthcare Revolution</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                    Today's healthcare AI represents the culmination of centuries of medical advancement.
+                                    Today&apos;s healthcare AI represents the culmination of centuries of medical advancement.
                                     From ancient herbal remedies to the invention of the stethoscope in 1816, and now to
                                     AI diagnostic systems that can process millions of data points in seconds.
                                 </p>
@@ -689,11 +689,11 @@ export default function HealthcarePage() {
                                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white">What's Next?</h3>
+                                    <h3 className="text-2xl font-bold text-white">What&apos;s Next?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
                                     The future holds even more promise with predictive healthcare, personalized treatment protocols,
-                                    and AI companions that will monitor and optimize human health in real-time. We're just at the
+                                    and AI companions that will monitor and optimize human health in real-time. We&apos;re just at the
                                     beginning of this incredible transformation.
                                 </p>
                             </div>

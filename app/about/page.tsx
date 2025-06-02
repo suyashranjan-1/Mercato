@@ -149,8 +149,8 @@ export default function About() {
                     </h1>
 
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4 animate-slideUp animation-delay-200">
-                        We're a team of innovators, dreamers, and builders creating AI solutions that transform businesses
-                        and improve lives. <span className="text-white font-medium">Together, we're shaping tomorrow.</span>
+                        We&apos;re a team of innovators, dreamers, and builders creating AI solutions that transform businesses
+                        and improve lives. <span className="text-white font-medium">Together, we&apos;re shaping tomorrow.</span>
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 animate-slideUp animation-delay-400">
@@ -371,7 +371,7 @@ export default function About() {
                                 </h2>
 
                                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-                                    We're always looking for brilliant minds who share our passion for innovation,
+                                    We&apos;re always looking for brilliant minds who share our passion for innovation,
                                     ethics, and making a positive impact through AI technology.
                                 </p>
 

@@ -450,7 +450,7 @@ const Timeline = () => {
             {financeTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el}
+                    ref={(el) => { itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
                         ? 'opacity-100 translate-x-0'
                         : 'opacity-0 translate-x-8'
@@ -728,7 +728,7 @@ export default function FinancePage() {
                                                 <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                                     <TrendingUp className="w-6 h-6 text-white" />
                                                 </div>
-                                                <h3 className="text-2xl font-bold text-white">What's Next in Financial AI?</h3>
+                                                <h3 className="text-2xl font-bold text-white">What&apos;s Next in Financial AI?</h3>
                                             </div>
                                             <p className="text-slate-400 text-lg leading-relaxed">
                                             The future of finance lies in fully autonomous financial ecosystems.
@@ -758,8 +758,8 @@ export default function FinancePage() {
                                     </h2>
             
                                     <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                                    Finance AI Agents are revolutionizing financial management. These aren't just calculators — 
-                                    they're intelligent systems that analyze patterns, automate workflows, and drive financial performance. 
+                                    Finance AI Agents are revolutionizing financial management. These aren&apos;t just calculators — 
+                                    they&apos;re intelligent systems that analyze patterns, automate workflows, and drive financial performance. 
                                     From automated bookkeeping to predictive analytics, 
                                     AI agents are helping businesses achieve financial excellence, reduce costs, and accelerate growth.
                                     </p>
@@ -812,7 +812,7 @@ export default function FinancePage() {
             
                                     <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
                                     Your AI-powered financial crew works 24/7 — processing transactions, analyzing cash flows, 
-                                    generating reports, and monitoring compliance in real-time. Whether it's an AI bookkeeper that automates entries, 
+                                    generating reports, and monitoring compliance in real-time. Whether it&apos;s an AI bookkeeper that automates entries, 
                                     or a forecasting engine that predicts market trends, these agents are built to optimize financial performance and ensure accuracy.
                                     </p>
                                 </div>

@@ -662,7 +662,7 @@ export default function TaskAutomationAIAgent() {
                             Ready to Automate?
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-                            Unleash your team's productivity with
+                            Unleash your team&apos;s productivity with
                             <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> Task Automation AI</span>
                         </h2>
                         <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed">

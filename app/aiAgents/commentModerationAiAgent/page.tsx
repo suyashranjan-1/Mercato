@@ -294,7 +294,7 @@ export default function CommentModerationAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Comment: "This product sucks and so do the people who buy it!"</span>
+                                        <span className="text-sm">Comment: &quot;This product sucks and so do the people who buy it!&quot;</span>
                                         <span className="text-xs text-slate-400 mt-1 block">6:18 PM</span>
                                     </div>
                                 </div>
@@ -312,7 +312,7 @@ export default function CommentModerationAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Comment: "Does this support multi-language moderation?"</span>
+                                        <span className="text-sm">Comment: &quot;Does this support multi-language moderation?&quot;</span>
                                         <span className="text-xs text-slate-400 mt-1 block">6:19 PM</span>
                                     </div>
                                 </div>

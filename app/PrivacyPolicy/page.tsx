@@ -149,7 +149,7 @@ const PrivacyPolicyPage = () => {
                 </div>
 
                 {/* Overview Section */}
-                <section id="overview" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['overview'] = el}>
+                <section id="overview" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['overview'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl flex items-center justify-center">
@@ -160,7 +160,7 @@ const PrivacyPolicyPage = () => {
 
                         <div className="space-y-4 text-slate-300 leading-relaxed">
                             <p>
-                                Mercato Agency ("Mercato", "we", "us") is committed to protecting the personal data of our clients, partners,
+                                Mercato Agency (&quot;Mercato&quot;, &quot;we&quot;, &quot;us&quot;) is committed to protecting the personal data of our clients, partners,
                                 and website users. We are the data controller for personal information collected through our website and related
                                 services globally.
                             </p>
@@ -188,7 +188,7 @@ const PrivacyPolicyPage = () => {
                 </section>
 
                 {/* Information Collection Section */}
-                <section id="information" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['information'] = el}>
+                <section id="information" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['information'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
@@ -199,7 +199,7 @@ const PrivacyPolicyPage = () => {
 
                         <div className="space-y-6">
                             <p className="text-slate-300 leading-relaxed">
-                                We collect various categories of personal data when you use Mercato's website or services,
+                                We collect various categories of personal data when you use Mercato&apos;s website or services,
                                 or when we otherwise interact with you:
                             </p>
 
@@ -243,7 +243,7 @@ const PrivacyPolicyPage = () => {
                                         <h4 className="font-semibold text-blue-300 mb-2">Special Categories of Data</h4>
                                         <p className="text-slate-300">
                                             We may collect sensitive categories of data (health, race, etc.) only if you voluntarily provide them
-                                            and only with explicit consent. We never collect children's data under 16 without parental consent.
+                                            and only with explicit consent. We never collect children&apos;s data under 16 without parental consent.
                                         </p>
                                     </div>
                                 </div>
@@ -253,7 +253,7 @@ const PrivacyPolicyPage = () => {
                 </section>
 
                 {/* Data Usage Section */}
-                <section id="usage" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['usage'] = el}>
+                <section id="usage" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['usage'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl flex items-center justify-center">
@@ -310,7 +310,7 @@ const PrivacyPolicyPage = () => {
                 </section>
 
                 {/* Data Sharing Section */}
-                <section id="sharing" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['sharing'] = el}>
+                <section id="sharing" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['sharing'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
@@ -323,7 +323,7 @@ const PrivacyPolicyPage = () => {
                             <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-6">
                                 <div className="flex items-center space-x-3 mb-3">
                                     <CheckCircle className="w-6 h-6 text-green-400" />
-                                    <h4 className="font-semibold text-green-300">We Don't Sell Your Data</h4>
+                                    <h4 className="font-semibold text-green-300">We Don&apos;t Sell Your Data</h4>
                                 </div>
                                 <p className="text-slate-300">
                                     We do not sell personal data to third parties for profit. Your information is only shared with
@@ -366,7 +366,7 @@ const PrivacyPolicyPage = () => {
                 </section>
 
                 {/* Security Section */}
-                <section id="security" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['security'] = el}>
+                <section id="security" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['security'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl flex items-center justify-center">
@@ -432,7 +432,7 @@ const PrivacyPolicyPage = () => {
                 </section>
 
                 {/* Rights Section */}
-                <section id="rights" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['rights'] = el}>
+                <section id="rights" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['rights'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
@@ -505,7 +505,7 @@ const PrivacyPolicyPage = () => {
                 </section>
 
                 {/* Contact Section */}
-                <section id="contact" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['contact'] = el}>
+                <section id="contact" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['contact'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <div className="flex items-center space-x-4 mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center">

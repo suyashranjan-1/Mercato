@@ -605,7 +605,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
 // Enhanced Timeline Component
 const Timeline = () => {
     const [visibleItems, setVisibleItems] = useState<number[]>([]);
-    const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const itemRefs = useRef<HTMLDivElement[]>([])
 
     useEffect(() => {
         const observers = itemRefs.current.map((ref, index) => {
@@ -635,7 +635,7 @@ const Timeline = () => {
             {problemSolvingTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el || null}
+                    ref={el => { if (el) itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
                         ? 'opacity-100 translate-x-0'
                         : 'opacity-0 translate-x-8'
@@ -783,8 +783,7 @@ export default function ProblemSolvingPage() {
     return (
         <div className="w-full min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white overflow-hidden">
 
-
-            // Navbar Component
+            {/* Navbar Component */}
             <NavbarDemo />
             <FloatingElements />
 
@@ -883,7 +882,7 @@ export default function ProblemSolvingPage() {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-                            Problem-solving has evolved from ancient philosophical inquiry to today's AI-driven strategic intelligence.
+                            Problem-solving has evolved from ancient philosophical inquiry to today&apos;s AI-driven strategic intelligence.
                             Explore the fascinating timeline that brought us from human intuition to machine-powered solutions transforming every industry.
                         </p>
                     </div>
@@ -919,7 +918,7 @@ export default function ProblemSolvingPage() {
                                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white">What's Next?</h3>
+                                    <h3 className="text-2xl font-bold text-white">What&apos;s Next?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
                                     The future of AI in problem-solving is not just automation — it’s augmentation. AI agents will become real-time collaborators, capable of

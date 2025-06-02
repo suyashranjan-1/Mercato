@@ -359,7 +359,7 @@ export default function CustomerReviewSummarizerAIAgent() {
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '1.2s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm shadow">
-                                        <span className="text-sm">Top words: "sound", "comfort", "battery", "quality", "price". Word cloud generated and dashboard updated!</span>
+                                        <span className="text-sm">Top words: &quot;sound&quot;, &quot;comfort&quot;, &quot;battery&quot;, &quot;quality&quot;, &quot;price&quot;. Word cloud generated and dashboard updated!</span>
                                         <span className="text-xs text-blue-100 mt-1 block">2:35 PM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">

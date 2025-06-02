@@ -392,7 +392,7 @@ const Timeline = () => {
             {propertyTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el || null}
+                    ref={(el) => { itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
                         ? 'opacity-100 translate-x-0'
                         : 'opacity-0 translate-x-8'
@@ -682,7 +682,7 @@ export default function PropertyManagementPage() {
                                     <h3 className="text-2xl font-bold text-white">🏢 The AI Property Revolution</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                    Today's AI-powered property management systems represent the pinnacle of decades of innovation in tenant relations, maintenance coordination, 
+                                    Today&apos;s AI-powered property management systems represent the pinnacle of decades of innovation in tenant relations, maintenance coordination, 
                                     and property operations automation. From traditional manual rent collection to modern predictive maintenance analytics and intelligent tenant screening, 
                                     the evolution of property technology has reached its most sophisticated form — autonomous, data-driven AI agents that understand tenant behavior and property patterns.
                                     These AI property agents can analyze rental market trends, automate lease renewals, predict maintenance needs, and provide intelligent property investment recommendations — 
@@ -700,10 +700,10 @@ export default function PropertyManagementPage() {
                                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white">What's Next in Property AI?</h3>
+                                    <h3 className="text-2xl font-bold text-white">What&apos;s Next in Property AI?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                The future of AI in Property Management transcends automation — it's about predictive property intelligence and strategic investment insights. AI Property agents will become intelligent property partners, capable of 
+                                The future of AI in Property Management transcends automation — it&apos;s about predictive property intelligence and strategic investment insights. AI Property agents will become intelligent property partners, capable of 
                                 Predicting property values based on market trend analysis • Personalizing tenant experiences based on behavior patterns and preferences 
                                 Creating seamless, automated rent collection and lease management processes • Detecting property risks and compliance issues with advanced monitoring systems • 
                                 Optimizing property portfolios through real-time market analysis and investment intelligence with unprecedented accuracy
@@ -729,7 +729,7 @@ export default function PropertyManagementPage() {
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
                         Discover how AI-powered property systems are revolutionizing tenant management, enhancing property maintenance, 
-                        and delivering intelligent property insights at enterprise scale. These agents aren't just property tools — they're intelligent property partners designed to empower landlords and drive profitable growth for property management companies.
+                        and delivering intelligent property insights at enterprise scale. These agents aren&apos;t just property tools — they&apos;re intelligent property partners designed to empower landlords and drive profitable growth for property management companies.
                         </p>
                     </div>
 

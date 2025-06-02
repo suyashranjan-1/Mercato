@@ -333,6 +333,11 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
     }, [isVisible]);
 
     useEffect(() => {
+        let currentRef: HTMLSpanElement | null = null;
+        if (ref.current) {
+            currentRef = ref.current;
+        }
+
         if (isVisible) {
             let startTime: DOMHighResTimeStamp | undefined;
             const animate = (currentTime: DOMHighResTimeStamp) => {
@@ -417,7 +422,7 @@ const Timeline = () => {
             {ecommerceTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el}
+                    ref={(el) => { itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
                         ? 'opacity-100 translate-x-0'
                         : 'opacity-0 translate-x-8'
@@ -696,7 +701,7 @@ export default function EcommercePage() {
                                                 <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                                     <TrendingUp className="w-6 h-6 text-white" />
                                                 </div>
-                                                <h3 className="text-2xl font-bold text-white">What's Next in E-commerce AI?</h3>
+                                                <h3 className="text-2xl font-bold text-white">What&apos;s Next in E-commerce AI?</h3>
                                             </div>
                                             <p className="text-slate-400 text-lg leading-relaxed">
                                             The future of e-commerce lies in fully autonomous AI pipelines.

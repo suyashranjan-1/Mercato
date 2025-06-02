@@ -288,13 +288,13 @@ export default function ReturnHandlingAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">I'd like to return a shirt I ordered last week, order #4321.</span>
+                                        <span className="text-sm">I&apos;d like to return a shirt I ordered last week, order #4321.</span>
                                         <span className="text-xs text-slate-400 mt-1 block">11:05 AM</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">No problem! Your return for order #4321 is eligible. Please use the attached label for free shipping. You'll be notified when your refund is processed.</span>
+                                        <span className="text-sm">No problem! Your return for order #4321 is eligible. Please use the attached label for free shipping. You&apos;ll be notified when your refund is processed.</span>
                                         <span className="text-xs text-blue-100 mt-1 block">11:05 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
@@ -312,7 +312,7 @@ export default function ReturnHandlingAIAgent() {
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '1.2s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">Refunds are processed within 1 minute after we receive your returned item. You'll get an email and SMS update.</span>
+                                        <span className="text-sm">Refunds are processed within 1 minute after we receive your returned item. You&apos;ll get an email and SMS update.</span>
                                         <span className="text-xs text-blue-100 mt-1 block">11:06 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">

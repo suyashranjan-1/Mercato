@@ -329,7 +329,7 @@ const Timeline = () => {
             {insuranceTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el || null}
+                    ref={el => { if (el) itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
                         ? 'opacity-100 translate-x-0'
                         : 'opacity-0 translate-x-8'
@@ -619,7 +619,7 @@ export default function InsurancePage() {
                                     <h3 className="text-2xl font-bold text-white">🛡️ The AI Insurance Revolution</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                    Today's AI-powered insurance systems represent the pinnacle of decades of innovation in risk assessment, fraud detection,
+                                    Today&apos;s AI-powered insurance systems represent the pinnacle of decades of innovation in risk assessment, fraud detection,
                                     and customer service automation. From traditional manual underwriting to modern predictive risk modeling and intelligent claims processing,
                                     the evolution of insurance has reached its most sophisticated form — autonomous, data-driven AI agents that understand risk patterns and customer needs.
                                     These AI agents can analyze complex risk factors, detect fraudulent claims, automate policy underwriting, and provide personalized coverage recommendations —
@@ -637,10 +637,10 @@ export default function InsurancePage() {
                                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white">What's Next in Insurance AI?</h3>
+                                    <h3 className="text-2xl font-bold text-white">What&apos;s Next in Insurance AI?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                    The future of AI in Insurance transcends automation — it's about predictive risk intelligence and personalized protection. AI Insurance agents will become intelligent risk partners, capable of
+                                    The future of AI in Insurance transcends automation — it&apos;s about predictive risk intelligence and personalized protection. AI Insurance agents will become intelligent risk partners, capable of
                                     Predicting and preventing losses before they occur • Personalizing coverage based on individual risk profiles and lifestyle patterns
                                     Creating seamless, instant claims resolution processes • Detecting sophisticated fraud schemes with advanced pattern recognition •
                                     Optimizing premium pricing through real-time risk assessment and market analytics with unprecedented accuracy
@@ -666,7 +666,7 @@ export default function InsurancePage() {
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
                             Discover how AI-powered insurance systems are revolutionizing risk assessment, enhancing customer experience,
-                            and delivering intelligent insights at enterprise scale. These agents aren't just insurance tools — they're intelligent risk partners designed to protect customers and drive profitable growth for insurers.
+                            and delivering intelligent insights at enterprise scale. These agents aren&apos;t just insurance tools — they&apos;re intelligent risk partners designed to protect customers and drive profitable growth for insurers.
                         </p>
                     </div>
 

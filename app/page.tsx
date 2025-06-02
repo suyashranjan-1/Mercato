@@ -95,9 +95,11 @@ export default function Home() {
     };
   // Safe usage of useScroll for framer-motion >=10, fallback for older versions or SSR
   let scrollYProgress: MotionValue<number>;
+  // @ts-ignore
+  let scrollYProgressValue = useScroll().scrollYProgress;
   try {
     // @ts-ignore
-    scrollYProgress = useScroll().scrollYProgress;
+    scrollYProgress = scrollYProgressValue;
   } catch (e) {
     // fallback: static MotionValue(1)
     // @ts-ignore
@@ -519,7 +521,7 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-gray-300 leading-relaxed italic">
-                    "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                   </p>
                 </motion.article>
               ))}

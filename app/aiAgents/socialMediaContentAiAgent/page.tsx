@@ -298,14 +298,14 @@ export default function SocialMediaContentAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">What's a catchy caption for our new summer collection?</span>
+                                        <span className="text-sm">What&apos;s a catchy caption for our new summer collection?</span>
                                         <span className="text-xs text-slate-400 mt-1 block">10:21 AM</span>
                                     </div>
                                 </div>
                                 
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">"Make every day a splash! 🌞 Dive into our summer styles now. #SummerVibes #NewArrivals"</span>
+                                        <span className="text-sm">&quot;Make every day a splash! 🌞 Dive into our summer styles now. #SummerVibes #NewArrivals&quot;</span>
                                         <span className="text-xs text-blue-100 mt-1 block">10:21 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">

@@ -174,7 +174,7 @@ export default function ContactForm() {
               Thank you for reaching out!
             </h2>
             <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-              We've received your inquiry and will be contacting you via email shortly to discuss how
+              We&apos;ve received your inquiry and will be contacting you via email shortly to discuss how
               <span className="text-white font-medium"> Mercato Agency</span> can empower your business with customized AI Agents.
             </p>
             <button
@@ -202,7 +202,7 @@ export default function ContactForm() {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed px-4">
-                Ready to automate, optimize, and accelerate your business? Discover how Mercato's <span className="text-white font-medium">AI Agents</span> can handle your challenges—no matter the industry.
+                Ready to automate, optimize, and accelerate your business? Discover how Mercato&apos;s <span className="text-white font-medium">AI Agents</span> can handle your challenges—no matter the industry.
               </p>
             </div>
           </section>

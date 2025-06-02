@@ -445,7 +445,7 @@ const SecurityPolicyPage = () => {
                                 <p className="mb-3">All security incidents are recorded in an internal register as required by GDPR Article 33.</p>
                                 <div className="bg-red-500/5 rounded-lg p-4">
                                     <p className="text-sm font-semibold text-red-200">72-Hour Notification Rule</p>
-                                    <p className="text-sm mt-2">Under GDPR, we notify the lead data protection authority "without undue delay and, where feasible, not later than 72 hours" after becoming aware of any breach involving personal data.</p>
+                                    <p className="text-sm mt-2">Under GDPR, we notify the lead data protection authority &quot;without undue delay and, where feasible, not later than 72 hours&quot; after becoming aware of any breach involving personal data.</p>
                                 </div>
                             </div>
                         </div>

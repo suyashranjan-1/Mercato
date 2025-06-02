@@ -292,13 +292,13 @@ export default function TrendDetectionAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Spike detected in "AI-powered marketing" keyword, +350% in 48h. Source: Twitter, Reddit, News.</span>
+                                        <span className="text-sm">Spike detected in &quot;AI-powered marketing&quot; keyword, +350% in 48h. Source: Twitter, Reddit, News.</span>
                                         <span className="text-xs text-slate-400 mt-1 block">10:34 AM</span>
                                     </div>
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-cyan-600 to-pink-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">Trend forecast: "AI-powered marketing" will sustain for 7 days. Notable influencer mentions. Alert sent to #marketing team.</span>
+                                        <span className="text-sm">Trend forecast: &quot;AI-powered marketing&quot; will sustain for 7 days. Notable influencer mentions. Alert sent to #marketing team.</span>
                                         <span className="text-xs text-blue-100 mt-1 block">10:34 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-pink-600 rounded-full flex items-center justify-center">
@@ -310,7 +310,7 @@ export default function TrendDetectionAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">Negative sentiment spike on "BrandX" in APAC region. Possible reputational risk.</span>
+                                        <span className="text-sm">Negative sentiment spike on &quot;BrandX&quot; in APAC region. Possible reputational risk.</span>
                                         <span className="text-xs text-slate-400 mt-1 block">10:35 AM</span>
                                     </div>
                                 </div>

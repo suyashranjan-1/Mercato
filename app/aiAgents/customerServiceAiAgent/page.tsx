@@ -300,14 +300,14 @@ export default function CustomerServiceAIAgent() {
                                         <Users className="w-4 h-4 text-slate-300" />
                                     </div>
                                     <div className="bg-slate-800/50 rounded-2xl p-3 flex-1 max-w-xs">
-                                        <span className="text-sm">My package says delivered but I didn't receive it. Order #7890 from 2 hours ago.</span>
+                                        <span className="text-sm">My package says delivered but I didn&apos;t receive it. Order #7890 from 2 hours ago.</span>
                                         <span className="text-xs text-slate-400 mt-1 block">2:34 PM</span>
                                     </div>
                                 </div>
                                 
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">I've initiated a GPS verification on the delivery. Your package is currently at 123 Main St. I've shared real-time tracking with the driver and escalated to our logistics team. Expect an update within 15 minutes.</span>
+                                        <span className="text-sm">I&apos;ve initiated a GPS verification on the delivery. Your package is currently at 123 Main St. I&apos;ve shared real-time tracking with the driver and escalated to our logistics team. Expect an update within 15 minutes.</span>
                                         <span className="text-xs text-blue-100 mt-1 block">2:34 PM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">

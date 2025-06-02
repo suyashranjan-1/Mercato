@@ -102,7 +102,7 @@ const TermsOfUsePage = () => {
 
                     <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
                         Effective Date: [Month Day, 2025]<br />
-                        These Terms of Use ("Terms") govern your access to and use of the Mercato Agency website, platform, and services (collectively, the "Service"). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service. These Terms apply to all users, including individuals and businesses (B2B and D2C clients).
+                        These Terms of Use (&quot;Terms&quot;) govern your access to and use of the Mercato Agency website, platform, and services (collectively, the &quot;Service&quot;). By accessing or using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service. These Terms apply to all users, including individuals and businesses (B2B and D2C clients).
                     </p>
 
                     <div className="mt-8 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 text-sm text-slate-500">
@@ -122,27 +122,27 @@ const TermsOfUsePage = () => {
                 </div>
 
                 {/* Overview Section */}
-                <section id="overview" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['overview'] = el}>
+                <section id="overview" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['overview'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <FileText className="w-8 h-8 text-blue-400" />
                             Agreement Overview
                         </h2>
                         <div className="space-y-6 text-slate-300 leading-relaxed">
-                            <p className="text-lg">These Terms of Use ("Terms") govern your access to and use of the Mercato Agency website, platform, and services (collectively, the "Service"). Please read these Terms carefully. By accessing or using the Service (by browsing our website, using our software or APIs, or engaging our consulting services), you agree to be bound by these Terms. If you do not agree, do not use the Service. These Terms apply to all users, including individuals and businesses (B2B and D2C clients).</p>
+                            <p className="text-lg">These Terms of Use (&quot;Terms&quot;) govern your access to and use of the Mercato Agency website, platform, and services (collectively, the &quot;Service&quot;). Please read these Terms carefully. By accessing or using the Service (by browsing our website, using our software or APIs, or engaging our consulting services), you agree to be bound by these Terms. If you do not agree, do not use the Service. These Terms apply to all users, including individuals and businesses (B2B and D2C clients).</p>
                         </div>
                     </div>
                 </section>
 
                 {/* Service Use Section */}
-                <section id="service-use" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['service-use'] = el}>
+                <section id="service-use" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['service-use'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <User className="w-8 h-8 text-purple-400" />
                             Use of the Service
                         </h2>
                         <div className="space-y-6 text-slate-300 leading-relaxed">
-                            <p>Mercato provides AI-driven marketing and lead generation tools and services via our website and related software ("Platform"), as well as consulting services ("Consulting Services"). Subject to these Terms, Mercato grants you a limited, non-exclusive, non-transferable, revocable license to access and use the Platform for your internal business purposes only. You may also access Mercato's public content and documentation. All rights not expressly granted herein are reserved by Mercato.</p>
+                            <p>Mercato provides AI-driven marketing and lead generation tools and services via our website and related software (&quot;Platform&quot;), as well as consulting services (&quot;Consulting Services&quot;). Subject to these Terms, Mercato grants you a limited, non-exclusive, non-transferable, revocable license to access and use the Platform for your internal business purposes only. You may also access Mercato&apos;s public content and documentation. All rights not expressly granted herein are reserved by Mercato.</p>
 
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="bg-purple-500/10 border border-purple-500/20 rounded-xl p-6">
@@ -177,14 +177,14 @@ const TermsOfUsePage = () => {
                                     <Cloud className="w-5 h-5 text-emerald-400 mr-2" />
                                     <h3 className="font-semibold text-emerald-300">Third-Party Services</h3>
                                 </div>
-                                <p className="text-sm">The Service may integrate with or link to third-party tools and content (for example, LinkedIn APIs, Google services, social media platforms, or analytics tools). Mercato does not endorse and is not responsible for any third-party services. You use such services at your own risk and subject to the third party's terms.</p>
+                                <p className="text-sm">The Service may integrate with or link to third-party tools and content (for example, LinkedIn APIs, Google services, social media platforms, or analytics tools). Mercato does not endorse and is not responsible for any third-party services. You use such services at your own risk and subject to the third party&apos;s terms.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Content & IP Section */}
-                <section id="content-ip" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['content-ip'] = el}>
+                <section id="content-ip" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['content-ip'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <Shield className="w-8 h-8 text-emerald-400" />
@@ -213,7 +213,7 @@ const TermsOfUsePage = () => {
                 </section>
 
                 {/* Subscriptions Section */}
-                <section id="subscriptions" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['subscriptions'] = el}>
+                <section id="subscriptions" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['subscriptions'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <CreditCard className="w-8 h-8 text-green-400" />
@@ -228,7 +228,7 @@ const TermsOfUsePage = () => {
                 </section>
 
                 {/* Warranties Section */}
-                <section id="warranties" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['warranties'] = el}>
+                <section id="warranties" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['warranties'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <AlertTriangle className="w-8 h-8 text-yellow-400" />
@@ -236,14 +236,14 @@ const TermsOfUsePage = () => {
                         </h2>
                         <div className="space-y-6 text-slate-300 leading-relaxed">
                             <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-6">
-                                <p>The Service is provided "AS IS" and "AS AVAILABLE," without warranties of any kind. Mercato expressly disclaims all warranties, whether express, implied, statutory or otherwise, including any implied warranties of merchantability, fitness for a particular purpose, accuracy, or non-infringement.</p>
+                                <p>The Service is provided &quot;AS IS&quot; and &quot;AS AVAILABLE,&quot; without warranties of any kind. Mercato expressly disclaims all warranties, whether express, implied, statutory or otherwise, including any implied warranties of merchantability, fitness for a particular purpose, accuracy, or non-infringement.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Liability Section */}
-                <section id="liability" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['liability'] = el}>
+                <section id="liability" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['liability'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <Scale className="w-8 h-8 text-red-400" />
@@ -258,7 +258,7 @@ const TermsOfUsePage = () => {
                 </section>
 
                 {/* Termination Section */}
-                <section id="termination" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['termination'] = el}>
+                <section id="termination" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['termination'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <Settings className="w-8 h-8 text-indigo-400" />
@@ -273,7 +273,7 @@ const TermsOfUsePage = () => {
                 </section>
 
                 {/* Contact Section */}
-                <section id="contact" className="mb-16 scroll-mt-20" ref={el => sectionRefs.current['contact'] = el}>
+                <section id="contact" className="mb-16 scroll-mt-20" ref={(el) => { if (el) sectionRefs.current['contact'] = el; }}>
                     <div className="bg-gradient-to-r from-slate-800/40 to-slate-800/20 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-8 hover:border-slate-600/50 transition-all duration-500">
                         <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                             <Mail className="w-8 h-8 text-cyan-400" />

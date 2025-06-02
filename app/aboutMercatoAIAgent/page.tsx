@@ -153,7 +153,7 @@ export default function AIAgentPage() {
                         </h2>
 
                         <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed px-4">
-                            Our AI agents don't just execute tasks—they understand context, make decisions, and adapt to solve problems autonomously.
+                            Our AI agents don&apos;t just execute tasks—they understand context, make decisions, and adapt to solve problems autonomously.
                         </p>
                     </div>
 
@@ -239,7 +239,7 @@ export default function AIAgentPage() {
                             Agent <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Character</span>
                         </h2>
                         <p className="text-base sm:text-lg lg:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
-                            Customize your AI agent's personality and capabilities to match your specific needs and workflow requirements.
+                            Customize your AI agent&apos;s personality and capabilities to match your specific needs and workflow requirements.
                         </p>
 
                         <div className="flex flex-wrap gap-3 sm:gap-4 justify-center mb-6 sm:mb-8 px-4">

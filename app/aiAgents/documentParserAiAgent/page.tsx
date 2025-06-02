@@ -488,7 +488,7 @@ export default function DocumentParserAIAgent() {
                             Business Value
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold max-w-5xl mx-auto mb-6 sm:mb-8 leading-tight px-4">
-                            Unlock your documents'
+                            Unlock your documents&apos;
                             <span className="bg-gradient-to-r from-emerald-400 to-blue-600 bg-clip-text text-transparent"> full potential</span>
                         </h2>
                     </div>

@@ -567,7 +567,7 @@ export default function EmailCategorizationTriageAiAgent() {
                         </h2>
 
                         <p className="text-lg sm:text-xl text-slate-300 mb-8 sm:mb-12 leading-relaxed">
-                            Join thousands of teams who've transformed their email management with AI.
+                            Join thousands of teams who&apos;ve transformed their email management with AI.
                             Start processing emails smarter in under 5 minutes.
                         </p>
 

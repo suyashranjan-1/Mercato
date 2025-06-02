@@ -493,7 +493,7 @@ export default function DatabasePage() {
                                 </div>
                                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
                                     Start Building
-                                    <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"> Tomorrow's Agents</span>
+                                    <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"> Tomorrow&apos;s Agents</span>
                                     <br />
                                     Automate Processes
                                 </h2>

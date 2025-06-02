@@ -426,7 +426,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
 // Enhanced Timeline Component
 const Timeline = () => {
     const [visibleItems, setVisibleItems] = useState<number[]>([]);
-    const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const itemRefs = useRef<HTMLDivElement[]>([])
 
     useEffect(() => {
         const observers = itemRefs.current.map((ref, index) => {
@@ -456,7 +456,7 @@ const Timeline = () => {
             {salesTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el || null}
+                    ref={el => { if (el) itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
                         ? 'opacity-100 translate-x-0'
                         : 'opacity-0 translate-x-8'
@@ -748,7 +748,7 @@ export default function SalesPage() {
                                     <h3 className="text-2xl font-bold text-white">🚀 The AI Sales Revolution</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                    Today's AI-powered sales systems represent the pinnacle of decades of innovation in lead generation, customer relationship management, 
+                                    Today&apos;s AI-powered sales systems represent the pinnacle of decades of innovation in lead generation, customer relationship management, 
                                     and sales process automation. From traditional manual prospecting to modern predictive sales analytics and intelligent lead scoring, 
                                     the evolution of sales technology has reached its most sophisticated form — autonomous, data-driven AI agents that understand buyer behavior and sales patterns.
                                     These AI sales agents can analyze market trends, automate follow-ups, predict deal closure probability, and provide intelligent sales recommendations — 
@@ -766,10 +766,10 @@ export default function SalesPage() {
                                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white">What's Next in Sales AI?</h3>
+                                    <h3 className="text-2xl font-bold text-white">What&apos;s Next in Sales AI?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                The future of AI in Sales transcends automation — it's about predictive sales intelligence and strategic revenue insights. AI Sales agents will become intelligent sales partners, capable of 
+                                The future of AI in Sales transcends automation — it&apos;s about predictive sales intelligence and strategic revenue insights. AI Sales agents will become intelligent sales partners, capable of 
                                 Predicting customer buying intent based on behavioral analysis • Personalizing sales pitches based on prospect preferences and pain points 
                                 Creating seamless, automated lead nurturing and follow-up sequences • Detecting sales opportunities and market trends with advanced analytics • 
                                 Optimizing sales strategies through real-time performance analysis and revenue intelligence with unprecedented accuracy
@@ -795,7 +795,7 @@ export default function SalesPage() {
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
                         Discover how AI-powered sales systems are revolutionizing lead generation, enhancing customer engagement, 
-                        and delivering intelligent sales insights at enterprise scale. These agents aren't just sales tools — they're intelligent sales partners designed to empower sales teams and drive explosive revenue growth for businesses.
+                        and delivering intelligent sales insights at enterprise scale. These agents aren&apos;t just sales tools — they&apos;re intelligent sales partners designed to empower sales teams and drive explosive revenue growth for businesses.
                         </p>
                     </div>
 

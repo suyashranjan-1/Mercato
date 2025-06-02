@@ -408,7 +408,7 @@ const Timeline = () => {
             {hrTimeline.map((item, index) => (
                 <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el || null}
+                    ref={(el) => { if (el) itemRefs.current[index] = el; }}
                     className={`relative flex items-center mb-16 group transition-all duration-700 ${visibleItems.includes(index)
                         ? 'opacity-100 translate-x-0'
                         : 'opacity-0 translate-x-8'
@@ -583,7 +583,7 @@ export default function HumanResourcesPage() {
         <div className="w-full min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white overflow-hidden">
 
 
-            // Navbar Component
+            {/* Navbar Component */}
             <NavbarDemo />
             <FloatingElements />
 
@@ -700,7 +700,7 @@ export default function HumanResourcesPage() {
                                     <h3 className="text-2xl font-bold text-white">🧠 The AI Human Resources Revolution</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                                    Today's AI-powered HR systems represent the pinnacle of decades of innovation in workforce management, behavioral analytics, 
+                                    Today&apos;s AI-powered HR systems represent the pinnacle of decades of innovation in workforce management, behavioral analytics, 
                                     and talent intelligence. From traditional personnel administration to modern predictive people analytics and intelligent recruitment, 
                                     the evolution of HR has reached its most sophisticated form — autonomous, data-driven AI agents that understand human potential.
                                     These AI agents can analyze employee engagement patterns, predict turnover risks, optimize talent acquisition, and personalize career development — 
@@ -718,10 +718,10 @@ export default function HumanResourcesPage() {
                                     <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mr-4">
                                         <TrendingUp className="w-6 h-6 text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white">What's Next in HR AI?</h3>
+                                    <h3 className="text-2xl font-bold text-white">What&apos;s Next in HR AI?</h3>
                                 </div>
                                 <p className="text-slate-400 text-lg leading-relaxed">
-                                The future of AI in Human Resources transcends automation — it's about human augmentation and workforce empowerment. AI HR agents will become intelligent people partners, capable of 
+                                The future of AI in Human Resources transcends automation — it&apos;s about human augmentation and workforce empowerment. AI HR agents will become intelligent people partners, capable of 
                                 Predicting employee needs before they express them • Personalizing career paths based on individual strengths and market trends 
                                 Creating bias-free recruitment and promotion processes • Fostering inclusive workplace cultures through intelligent insights • 
                                 Optimizing team dynamics and collaboration patterns with precision analytics
@@ -747,7 +747,7 @@ export default function HumanResourcesPage() {
 
                         <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
                         Discover how AI-powered HR systems are revolutionizing talent management, enhancing employee experience, 
-                        and delivering people-centered insights at enterprise scale. These agents aren't just HR tools — they're intelligent workforce partners designed to unlock human potential and drive organizational success.
+                        and delivering people-centered insights at enterprise scale. These agents aren&apos;t just HR tools — they&apos;re intelligent workforce partners designed to unlock human potential and drive organizational success.
                         </p>
                     </div>
 

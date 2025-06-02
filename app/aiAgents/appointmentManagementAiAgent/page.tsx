@@ -330,7 +330,7 @@ export default function AppointmentManagementAIAgent() {
 
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '1.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">Perfect! You're booked with Dr. Smith next Tuesday at 2:15pm. I'll send SMS and email reminders 24 hours before. Would you like me to add this to your Google Calendar?</span>
+                                        <span className="text-sm">Perfect! You&apos;re booked with Dr. Smith next Tuesday at 2:15pm. I&apos;ll send SMS and email reminders 24 hours before. Would you like me to add this to your Google Calendar?</span>
                                         <span className="text-xs text-blue-100 mt-1 block">2:35 PM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">

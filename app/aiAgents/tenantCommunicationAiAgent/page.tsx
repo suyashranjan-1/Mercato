@@ -293,7 +293,7 @@ export default function TenantCommunicationAIAgent() {
                                 </div>
                                 <div className="flex gap-3 justify-end animate-slideInRight" style={{ animationDelay: '0.5s' }}>
                                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-3 max-w-sm">
-                                        <span className="text-sm">I've notified the maintenance team. You’ll receive a confirmation and ETA shortly.</span>
+                                        <span className="text-sm">I&apos;ve notified the maintenance team. You’ll receive a confirmation and ETA shortly.</span>
                                         <span className="text-xs text-blue-100 mt-1 block">11:03 AM</span>
                                     </div>
                                     <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">

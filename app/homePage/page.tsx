@@ -85,14 +85,16 @@ const GoogleGeminiEffect = ({ pathLengths }: { pathLengths: MotionValue<number>[
 
 const MercatoHomepage = () => {
     // Safe usage of useScroll for framer-motion >=10, fallback for older versions or SSR
-    let scrollYProgress: MotionValue<number>;
+    // @ts-ignore
+    const { scrollYProgress } = useScroll();
+    let scrollYProgressValue: MotionValue<number>;
     try {
         // @ts-ignore
-        scrollYProgress = useScroll().scrollYProgress;
+        scrollYProgressValue = scrollYProgress;
     } catch (e) {
         // fallback: static MotionValue(1)
         // @ts-ignore
-        scrollYProgress = { get: () => 1, onChange: () => {}, set: () => {}, destroy: () => {} };
+        scrollYProgressValue = { get: () => 1, onChange: () => {}, set: () => {}, destroy: () => {} };
     }
     const pathLengths = [
         useTransform(scrollYProgress, [0, 0.2], [0, 1]),
@@ -446,7 +448,7 @@ const MercatoHomepage = () => {
                                         ))}
                                     </div>
                                     <p className="text-gray-300 leading-relaxed italic">
-                                        "{testimonial.content}"
+                                        &quot;{testimonial.content}&quot;
                                     </p>
                                 </motion.article>
                             ))}
