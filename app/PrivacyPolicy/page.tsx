@@ -1,7 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { NavbarDemo } from "@/components/navbar";
 import { X, Menu, ChevronRight, Shield, Lock, Eye, Globe, Clock, Users, FileText, AlertCircle, CheckCircle } from 'lucide-react';
 
@@ -12,6 +12,22 @@ const PrivacyPolicyPage = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
     const footerRef = useRef<HTMLElement>(null);
+
+    interface Section {
+        id: string;
+        title: string;
+        icon: React.ElementType;
+    }
+
+    const sections: Section[] = useMemo<Section[]>(() => [
+        { id: 'overview', title: 'Overview', icon: Shield },
+        { id: 'information', title: 'Information We Collect', icon: FileText },
+        { id: 'usage', title: 'How We Use Data', icon: Eye },
+        { id: 'sharing', title: 'Data Sharing', icon: Users },
+        { id: 'security', title: 'Security Measures', icon: Lock },
+        { id: 'rights', title: 'Your Rights', icon: CheckCircle },
+        { id: 'contact', title: 'Contact Us', icon: Globe }
+    ], []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -45,17 +61,7 @@ const PrivacyPolicyPage = () => {
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll(); // Initial call
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const sections = [
-        { id: 'overview', title: 'Overview', icon: Shield },
-        { id: 'information', title: 'Information We Collect', icon: FileText },
-        { id: 'usage', title: 'How We Use Data', icon: Eye },
-        { id: 'sharing', title: 'Data Sharing', icon: Users },
-        { id: 'security', title: 'Security Measures', icon: Lock },
-        { id: 'rights', title: 'Your Rights', icon: CheckCircle },
-        { id: 'contact', title: 'Contact Us', icon: Globe }
-    ];
+    }, [sections]);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);

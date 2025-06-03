@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { ChevronRight, Home, Users, Globe, Clock, Monitor, Calendar, MapPin, Shield, CheckCircle, AlertCircle, Briefcase, Coffee, Laptop, Video, Heart } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
@@ -9,6 +9,16 @@ const WorkplacePolicyPage = () => {
     const [activeSection, setActiveSection] = useState('');
     const [scrollProgress, setScrollProgress] = useState(0);
     const sectionRefs = useRef<{[key: string]: HTMLElement | null}>({} as {[key: string]: HTMLElement | null});
+
+    const sections = useMemo(() => [
+        { id: 'overview', title: 'Overview', icon: Home },
+        { id: 'hybrid', title: 'Hybrid Structure', icon: Monitor },
+        { id: 'communication', title: 'Communication', icon: Video },
+        { id: 'inperson', title: 'In-Person Expectations', icon: Users },
+        { id: 'wellbeing', title: 'Health & Wellbeing', icon: Heart },
+        { id: 'equality', title: 'Equality & Inclusion', icon: Globe },
+        { id: 'compliance', title: 'Legal Compliance', icon: Shield }
+    ], []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,17 +42,7 @@ const WorkplacePolicyPage = () => {
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const sections = [
-        { id: 'overview', title: 'Overview', icon: Home },
-        { id: 'hybrid', title: 'Hybrid Structure', icon: Monitor },
-        { id: 'communication', title: 'Communication', icon: Video },
-        { id: 'inperson', title: 'In-Person Expectations', icon: Users },
-        { id: 'wellbeing', title: 'Health & Wellbeing', icon: Heart },
-        { id: 'equality', title: 'Equality & Inclusion', icon: Globe },
-        { id: 'compliance', title: 'Legal Compliance', icon: Shield }
-    ];
+    }, [sections]);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);

@@ -319,9 +319,10 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
             },
             { threshold: 0.1 }
         );
+        const currentRef = ref.current;
         if (ref.current) observer.observe(ref.current);
         return () => { 
-            const currentRef = ref.current;
+            
             if (currentRef) observer.unobserve(currentRef); 
         };
     }, [isVisible]);

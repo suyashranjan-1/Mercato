@@ -301,26 +301,25 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLSpanElement>(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && !isVisible) {
-                    setIsVisible(true);
-                }
-            },
-            { threshold: 0.1 }
-        );
+useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
 
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting && !isVisible) {
+                setIsVisible(true);
             }
-        };
-    }, [isVisible]);
+        },
+        { threshold: 0.1 }
+    );
+
+    observer.observe(node);
+
+    return () => {
+        observer.unobserve(node);
+    };
+}, [isVisible]);
 
     useEffect(() => {
         if (isVisible) {
@@ -450,26 +449,25 @@ const AgentCard = ({ agent, index }: AgentCardProps) => {
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => setIsVisible(true), index * 100);
-                }
-            },
-            { threshold: 0.1 }
-        );
+useEffect(() => {
+    const node = ref.current; // cache current ref value
+    if (!node) return;
 
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => setIsVisible(true), index * 100);
             }
-        };
-    }, [index]);
+        },
+        { threshold: 0.1 }
+    );
+
+    observer.observe(node);
+
+    return () => {
+        observer.unobserve(node); // use cached node here
+    };
+}, [index]);
 
     return (
         <div

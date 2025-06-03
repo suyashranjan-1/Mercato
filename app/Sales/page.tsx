@@ -359,18 +359,21 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
             { threshold: 0.1 }
         );
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        const currentRef = ref.current;
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [isVisible]);
 
     useEffect(() => {
+        const currentRef = ref.current;
+        const currentEnd = end; // Capture the 'end' value
         if (isVisible) {
             let startTime: DOMHighResTimeStamp | undefined;
             const animate = (currentTime: DOMHighResTimeStamp) => {
@@ -427,9 +430,9 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
 const Timeline = () => {
     const [visibleItems, setVisibleItems] = useState<number[]>([]);
     const itemRefs = useRef<HTMLDivElement[]>([])
-
     useEffect(() => {
-        const observers = itemRefs.current.map((ref, index) => {
+        const currentRefs = [...itemRefs.current];
+        const observers = currentRefs.map((ref, index) => {
             if (!ref) return null;
 
             const observer = new IntersectionObserver(
@@ -499,25 +502,27 @@ const AgentCard = ({ agent, index }: AgentCardProps) => {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => setIsVisible(true), index * 100);
-                }
-            },
-            { threshold: 0.1 }
-        );
+    const currentRef = ref.current;
 
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => setIsVisible(true), index * 100);
             }
-        };
-    }, [index]);
+        },
+        { threshold: 0.1 }
+    );
+
+    if (currentRef) {
+        observer.observe(currentRef);
+    }
+
+    return () => {
+        if (currentRef) {
+            observer.unobserve(currentRef);
+        }
+    };
+}, [index]);
 
     return (
         <div

@@ -538,13 +538,14 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
             { threshold: 0.1 }
         );
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        const currentRef = ref.current;
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [isVisible]);
@@ -676,7 +677,6 @@ interface AgentCardProps {
 const AgentCard = ({ agent, index }: AgentCardProps) => {
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
-
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -687,13 +687,14 @@ const AgentCard = ({ agent, index }: AgentCardProps) => {
             { threshold: 0.1 }
         );
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        const currentRef = ref.current;
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [index]);
@@ -1043,7 +1044,7 @@ export default function ProblemSolvingPage() {
                     </div>
 
                     {/* Agent Slider */}
-                    <AgentSlider category={problemSolvingCategory} />
+                    <AgentSlider category={problemSolvingCategory as ProblemSolvingCategory} />
 
                     {/* <div className="text-center">
                         <button className="px-10 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-slate-100 hover:shadow-2xl hover:shadow-white/10 transform hover:scale-105 transition-all duration-300 text-lg">

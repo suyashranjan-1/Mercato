@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { ChevronRight, Shield, Lock, Eye, AlertTriangle, Users, Cloud, Server, FileText, Mail, Globe, Clock, CheckCircle, Key, Monitor, Database, Wifi, HardDrive, RefreshCw } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
@@ -9,6 +9,17 @@ const SecurityPolicyPage = () => {
     const [activeSection, setActiveSection] = useState('');
     const [scrollProgress, setScrollProgress] = useState(0);
     const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+    const sections = useMemo(()=>[
+        { id: 'overview', title: 'Overview', icon: Shield },
+        { id: 'governance', title: 'Security Governance', icon: Users },
+        { id: 'technical', title: 'Technical Controls', icon: Lock },
+        { id: 'organizational', title: 'Organizational Measures', icon: FileText },
+        { id: 'incident', title: 'Incident Response', icon: AlertTriangle },
+        { id: 'monitoring', title: 'Monitoring & Auditing', icon: Eye },
+        { id: 'physical', title: 'Physical Security', icon: Server },
+        // { id: 'contact', title: 'Contact', icon: Mail }
+    ], []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -32,18 +43,7 @@ const SecurityPolicyPage = () => {
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const sections = [
-        { id: 'overview', title: 'Overview', icon: Shield },
-        { id: 'governance', title: 'Security Governance', icon: Users },
-        { id: 'technical', title: 'Technical Controls', icon: Lock },
-        { id: 'organizational', title: 'Organizational Measures', icon: FileText },
-        { id: 'incident', title: 'Incident Response', icon: AlertTriangle },
-        { id: 'monitoring', title: 'Monitoring & Auditing', icon: Eye },
-        { id: 'physical', title: 'Physical Security', icon: Server },
-        // { id: 'contact', title: 'Contact', icon: Mail }
-    ];
+    }, [sections]);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);

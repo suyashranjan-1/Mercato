@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { NavbarDemo } from "@/components/navbar";
 import { ChevronRight, FileText, User, CreditCard, Shield, AlertTriangle, Scale, Settings, Mail, Globe, Clock, CheckCircle, Lock, Users, Cloud, Server } from 'lucide-react';
 import Footer from "@/components/Footer";
@@ -9,6 +9,19 @@ const TermsOfUsePage = () => {
     const [activeSection, setActiveSection] = useState('');
     const [scrollProgress, setScrollProgress] = useState(0);
     const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+    const sections = useMemo(()=> [
+        { id: 'overview', title: 'Overview', icon: FileText },
+        { id: 'service-use', title: 'Use of Service', icon: User },
+        { id: 'content-ip', title: 'Content & IP', icon: Shield },
+        { id: 'subscriptions', title: 'Subscriptions', icon: CreditCard },
+        { id: 'warranties', title: 'Warranties', icon: AlertTriangle },
+        { id: 'liability', title: 'Liability', icon: Scale },
+        { id: 'termination', title: 'Termination', icon: Settings },
+        { id: 'contact', title: 'Contact', icon: Mail }
+    ],[]);
+
+    const sectionsMemo = React.useMemo(() => sections, [sections]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,23 +40,11 @@ const TermsOfUsePage = () => {
                     }
                 }
             }
-            setActiveSection(current);
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const sections = [
-        { id: 'overview', title: 'Overview', icon: FileText },
-        { id: 'service-use', title: 'Use of Service', icon: User },
-        { id: 'content-ip', title: 'Content & IP', icon: Shield },
-        { id: 'subscriptions', title: 'Subscriptions', icon: CreditCard },
-        { id: 'warranties', title: 'Warranties', icon: AlertTriangle },
-        { id: 'liability', title: 'Liability', icon: Scale },
-        { id: 'termination', title: 'Termination', icon: Settings },
-        { id: 'contact', title: 'Contact', icon: Mail }
-    ];
+    }, [sections]);
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -312,5 +313,6 @@ const TermsOfUsePage = () => {
         </div>
     );
 };
+
 
 export default TermsOfUsePage;

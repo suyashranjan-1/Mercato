@@ -312,6 +312,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
     const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
+        const node = ref.current;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !isVisible) {
@@ -321,24 +322,21 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
             { threshold: 0.1 }
         );
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        if (node) {
+            observer.observe(node);
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            if (node) {
+                observer.unobserve(node);
             }
         };
     }, [isVisible]);
 
     useEffect(() => {
-        let currentRef: HTMLSpanElement | null = null;
-        if (ref.current) {
-            currentRef = ref.current;
-        }
+        const node = ref.current;
 
-        if (isVisible) {
+        if (isVisible && node) {
             let startTime: DOMHighResTimeStamp | undefined;
             const animate = (currentTime: DOMHighResTimeStamp) => {
                 if (!startTime) startTime = currentTime;
@@ -465,25 +463,27 @@ const AgentCard = ({ agent, index }: AgentCardProps) => {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => setIsVisible(true), index * 100);
-                }
-            },
-            { threshold: 0.1 }
-        );
+  const node = ref.current; // ✅ Capture the value here
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => setIsVisible(true), index * 100);
+      }
+    },
+    { threshold: 0.1 }
+  );
 
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
+  if (node) {
+    observer.observe(node);
+  }
 
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, [index]);
+  return () => {
+    if (node) {
+      observer.unobserve(node); // ✅ Safe to use
+    }
+  };
+}, [index]);
+
 
     return (
         <div

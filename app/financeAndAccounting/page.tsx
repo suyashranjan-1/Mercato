@@ -315,14 +315,6 @@ const advantages = [
 ];
 
 // ROI Statistics
-const roiStats = [
-    { metric: "85%", label: "Reduction in Manual Processing", icon: Timer },
-    { metric: "73%", label: "Decrease in Financial Errors", icon: CheckCircle },
-    { metric: "62%", label: "Faster Month-End Closing", icon: Calendar },
-    { metric: "91%", label: "Improvement in Compliance", icon: Shield },
-    { metric: "68%", label: "Cost Savings on Operations", icon: DollarSign },
-    { metric: "420%", label: "Average ROI in First Year", icon: TrendingUp }
-];
 
 // Industry Impact Stats
 const industryStats = [
@@ -345,6 +337,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
     const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
+        const currentRef = ref.current;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !isVisible) {
@@ -354,13 +347,13 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: AnimatedCounterP
             { threshold: 0.1 }
         );
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [isVisible]);
@@ -491,27 +484,6 @@ interface AgentCardProps {
 const AgentCard = ({ agent, index }: AgentCardProps) => {
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => setIsVisible(true), index * 100);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (ref.current) {
-            observer.observe(ref.current);
-        }
-
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, [index]);
 
     return (
         <div
