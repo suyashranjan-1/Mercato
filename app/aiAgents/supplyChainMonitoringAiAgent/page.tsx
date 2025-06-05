@@ -5,6 +5,32 @@ import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 import Link from 'next/link';
 
+// --------- FIX: Deterministic floating dot positions for SSR/CSR match ---------
+function getFloatingDotPositions(count: number) {
+    function mulberry32(a: number) {
+        return function() {
+            let t = a += 0x6D2B79F5;
+            t = Math.imul(t ^ t >>> 15, t | 1);
+            t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+            return ((t ^ t >>> 14) >>> 0) / 4294967296;
+        };
+    }
+    const rand = mulberry32(20240605); // Any fixed seed
+    const arr = [];
+    for (let i = 0; i < count; i++) {
+        arr.push({
+            left: rand() * 100,
+            top: rand() * 100,
+            animationDelay: rand() * 5,
+            animationDuration: 3 + rand() * 4,
+        });
+    }
+    return arr;
+}
+
+const floatingDots = getFloatingDotPositions(20);
+
+
 export default function SupplyChainMonitoringAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
@@ -220,17 +246,17 @@ export default function SupplyChainMonitoringAIAgent() {
                     style={{ transform: `translateY(${scrollY * -0.1}px)`, animationDelay: '1s' }}
                 ></div>
 
-                {/* Floating AI Elements */}
+                {/* FIX: Hydration-safe floating AI Elements */}
                 <div className="absolute inset-0 pointer-events-none">
-                    {[...Array(20)].map((_, i) => (
+                    {floatingDots.map((dot, i) => (
                         <div
                             key={i}
                             className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-float"
                             style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 5}s`,
-                                animationDuration: `${3 + Math.random() * 4}s`
+                                left: `${dot.left}%`,
+                                top: `${dot.top}%`,
+                                animationDelay: `${dot.animationDelay}s`,
+                                animationDuration: `${dot.animationDuration}s`
                             }}
                         ></div>
                     ))}

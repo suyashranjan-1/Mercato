@@ -196,7 +196,8 @@ export default function AccountsPayableAIAgent() {
                     className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
                     style={{ transform: `translateY(${scrollY * -0.1}px)`, animationDelay: '1s' }}
                 ></div>
-                {/* Floating AI Elements */}
+
+                {/* FIX: Hydration-safe floating AI Elements */}
                 <div className="absolute inset-0 pointer-events-none">
                     {floatingDots.map((dot, i) => (
                         <div

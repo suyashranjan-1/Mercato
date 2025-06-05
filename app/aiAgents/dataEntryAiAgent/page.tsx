@@ -5,6 +5,32 @@ import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 import Link from 'next/link';
 
+// --------- FIX: Deterministic floating dot positions for SSR/CSR match ---------
+function getFloatingDotPositions(count: number) {
+    function mulberry32(a: number) {
+        return function() {
+            let t = a += 0x6D2B79F5;
+            t = Math.imul(t ^ t >>> 15, t | 1);
+            t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+            return ((t ^ t >>> 14) >>> 0) / 4294967296;
+        };
+    }
+    const rand = mulberry32(20240605); // Any fixed seed
+    const arr = [];
+    for (let i = 0; i < count; i++) {
+        arr.push({
+            left: rand() * 100,
+            top: rand() * 100,
+            animationDelay: rand() * 5,
+            animationDuration: 3 + rand() * 4,
+        });
+    }
+    return arr;
+}
+
+const floatingDots = getFloatingDotPositions(20);
+
+
 export default function DataEntryAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
@@ -214,22 +240,21 @@ export default function DataEntryAIAgent() {
                     style={{ transform: `translateY(${scrollY * -0.1}px)`, animationDelay: '1s' }}
                 ></div>
 
-                {/* Floating AI Elements */}
-                <div className="absolute inset-0 pointer-events-none">
-                    {[...Array(20)].map((_, i) => (
+               {/* FIX: Hydration-safe floating AI Elements */}
+               <div className="absolute inset-0 pointer-events-none">
+                    {floatingDots.map((dot, i) => (
                         <div
                             key={i}
                             className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-float"
                             style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 5}s`,
-                                animationDuration: `${3 + Math.random() * 4}s`
+                                left: `${dot.left}%`,
+                                top: `${dot.top}%`,
+                                animationDelay: `${dot.animationDelay}s`,
+                                animationDuration: `${dot.animationDuration}s`
                             }}
                         ></div>
                     ))}
                 </div>
-
                 <div className={`w-full max-w-7xl mx-auto text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <div className="inline-flex items-center px-4 sm:px-6 py-2 mb-6 sm:mb-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-sm text-xs sm:text-sm text-slate-300 hover:border-slate-600/50 transition-all duration-300">
                         <Bot className="w-4 h-4 mr-2 text-blue-400 animate-pulse" />
