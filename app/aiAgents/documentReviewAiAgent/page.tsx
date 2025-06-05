@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Clock, Star, CheckCircle, Zap, BarChart3, Database, Users, Shield, Settings, Cpu, Brain, ArrowRight, Bot, Play, ChevronRight, MessageCircle, Mail, Smartphone, Globe, FileText } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
+import Link from 'next/link';
 
 export default function DocumentReviewAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
@@ -249,10 +250,10 @@ export default function DocumentReviewAIAgent() {
                             Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        <Link href="#" target="_blank" className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             <Play className="w-4 h-4" />
                             Watch Demo
-                        </button>
+                        </Link>
                     </div>
                     {/* Enhanced AI Agent Preview */}
                     <div className="relative max-w-5xl mx-auto">

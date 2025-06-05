@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, Clock, Users, Star, CheckCircle, ArrowRight, Bot, Calendar, Shield, Zap, BarChart3, Globe, Play, ChevronRight, Brain, Cpu, Database, Settings, Phone, Mail, MessageSquare, Smartphone, CalendarCheck, Bell, MapPin, CreditCard, Headphones } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
+import Link from 'next/link';
 
 
 export default function AppointmentManagementAIAgent() {
@@ -258,10 +259,10 @@ export default function AppointmentManagementAIAgent() {
                             Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        <Link href="#" target="_blank" className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             <Play className="w-4 h-4" />
                             Watch Demo
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Enhanced AI Agent Preview */}

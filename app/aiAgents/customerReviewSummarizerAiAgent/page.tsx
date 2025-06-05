@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Bot, Star, BarChart3, Globe, Zap, Brain, Users, ArrowRight, Play, ChevronRight, MessageSquare, ThumbsUp, ThumbsDown, ListOrdered, Sparkles, Shield, MonitorSmartphone, PieChart, MessageCircle, Settings, Database, Smartphone, Mail, Phone } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
+import Link from 'next/link';
 
 export default function CustomerReviewSummarizerAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
@@ -288,14 +289,14 @@ export default function CustomerReviewSummarizerAIAgent() {
                         Instantly analyze and summarize thousands of <span className="text-white font-medium">customer reviews</span> with AI. Discover sentiment, trends, and actionable insights across all your platforms—no manual reading required.
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg">
+                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        <Link href="#" target="_blank" className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             <Play className="w-4 h-4" />
                             Watch Demo
-                        </button>
+                        </Link>
                     </div>
                     {/* Enhanced AI Agent Preview */}
                     <div className="relative max-w-5xl mx-auto">

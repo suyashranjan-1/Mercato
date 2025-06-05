@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Clock, Star, CheckCircle, Zap, BarChart3, Database, Users, Shield, Settings, Cpu, Brain, ArrowRight, Bot, Play, ChevronRight, MessageCircle, Mail, Phone, Smartphone, Globe } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
+import Link from 'next/link';
 
 export default function BudgetManagementAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
@@ -247,16 +248,18 @@ export default function BudgetManagementAIAgent() {
                     <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-8 sm:mb-12 px-4">
                         Effortlessly track, optimize, and forecast your budgets with real-time AI. Gain control over spending, maximize savings, and ensure financial compliance—all with one intelligent agent.
                     </div>
+                    
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-green-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        <Link href="#" target="_blank" className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             <Play className="w-4 h-4" />
                             Watch Demo
-                        </button>
+                        </Link>
                     </div>
+                    
                     {/* Enhanced AI Agent Preview */}
                     <div className="relative max-w-5xl mx-auto">
                         <div className="relative bg-slate-900/50 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-500 group">

@@ -7,6 +7,31 @@ import Link from 'next/link';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 
+// Deterministic pseudo-random for hydration-safe floating dots
+function getFloatingDotPositions(count: number) {
+    function mulberry32(a: number) {
+        return function() {
+            let t = a += 0x6D2B79F5;
+            t = Math.imul(t ^ t >>> 15, t | 1);
+            t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+            return ((t ^ t >>> 14) >>> 0) / 4294967296;
+        };
+    }
+    const rand = mulberry32(123456);
+    const arr = [];
+    for (let i = 0; i < count; i++) {
+        arr.push({
+            left: rand() * 100,
+            top: rand() * 100,
+            animationDelay: rand() * 5,
+            animationDuration: 3 + rand() * 4,
+        });
+    }
+    return arr;
+}
+
+const floatingDots = getFloatingDotPositions(20);
+
 export default function AccountsPayableAIAgent() {
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
@@ -56,54 +81,14 @@ export default function AccountsPayableAIAgent() {
     ];
 
     const features = [
-        {
-            title: 'Invoice Data Capture',
-            description: 'AI extracts line items, amounts, and vendor details from invoices, emails, PDFs, and scans.',
-            icon: Cpu,
-            gradient: 'from-blue-500 to-cyan-500'
-        },
-        {
-            title: 'Automated PO Matching',
-            description: 'Checks each invoice against purchase orders and receipts for 2-way/3-way match.',
-            icon: Database,
-            gradient: 'from-purple-500 to-pink-500'
-        },
-        {
-            title: 'Real-Time Policy Validation',
-            description: 'Flags duplicates, outliers, and policy violations before invoices reach approval.',
-            icon: Shield,
-            gradient: 'from-orange-500 to-red-500'
-        },
-        {
-            title: 'Intelligent Approval Routing',
-            description: 'AI routes invoices to the right approver, notifies delays, and escalates exceptions.',
-            icon: Users,
-            gradient: 'from-emerald-500 to-teal-500'
-        },
-        {
-            title: 'Touchless Payments',
-            description: 'Seamlessly schedules and executes payments via ACH, wire, or card after approval.',
-            icon: Settings,
-            gradient: 'from-indigo-500 to-purple-500'
-        },
-        {
-            title: 'Advanced AP Analytics',
-            description: 'Dashboards for aging, DPO, vendor concentration, and early payment discounts.',
-            icon: BarChart3,
-            gradient: 'from-pink-500 to-rose-500'
-        },
-        {
-            title: 'ERP & Bank Integration',
-            description: 'Connects with SAP, Oracle, NetSuite, QuickBooks, banks, and payment networks.',
-            icon: Database,
-            gradient: 'from-yellow-500 to-orange-500'
-        },
-        {
-            title: 'Mobile & Multi-Channel',
-            description: 'Approve and track invoices from web, app, email, or chat—anywhere, anytime.',
-            icon: Smartphone,
-            gradient: 'from-cyan-500 to-blue-500'
-        }
+        { title: 'Invoice Data Capture', description: 'AI extracts line items, amounts, and vendor details from invoices, emails, PDFs, and scans.', icon: Cpu, gradient: 'from-blue-500 to-cyan-500' },
+        { title: 'Automated PO Matching', description: 'Checks each invoice against purchase orders and receipts for 2-way/3-way match.', icon: Database, gradient: 'from-purple-500 to-pink-500' },
+        { title: 'Real-Time Policy Validation', description: 'Flags duplicates, outliers, and policy violations before invoices reach approval.', icon: Shield, gradient: 'from-orange-500 to-red-500' },
+        { title: 'Intelligent Approval Routing', description: 'AI routes invoices to the right approver, notifies delays, and escalates exceptions.', icon: Users, gradient: 'from-emerald-500 to-teal-500' },
+        { title: 'Touchless Payments', description: 'Seamlessly schedules and executes payments via ACH, wire, or card after approval.', icon: Settings, gradient: 'from-indigo-500 to-purple-500' },
+        { title: 'Advanced AP Analytics', description: 'Dashboards for aging, DPO, vendor concentration, and early payment discounts.', icon: BarChart3, gradient: 'from-pink-500 to-rose-500' },
+        { title: 'ERP & Bank Integration', description: 'Connects with SAP, Oracle, NetSuite, QuickBooks, banks, and payment networks.', icon: Database, gradient: 'from-yellow-500 to-orange-500' },
+        { title: 'Mobile & Multi-Channel', description: 'Approve and track invoices from web, app, email, or chat—anywhere, anytime.', icon: Smartphone, gradient: 'from-cyan-500 to-blue-500' }
     ];
 
     const howItWorks = [
@@ -213,15 +198,15 @@ export default function AccountsPayableAIAgent() {
                 ></div>
                 {/* Floating AI Elements */}
                 <div className="absolute inset-0 pointer-events-none">
-                    {[...Array(20)].map((_, i) => (
+                    {floatingDots.map((dot, i) => (
                         <div
                             key={i}
                             className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-float"
                             style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 5}s`,
-                                animationDuration: `${3 + Math.random() * 4}s`
+                                left: `${dot.left}%`,
+                                top: `${dot.top}%`,
+                                animationDelay: `${dot.animationDelay}s`,
+                                animationDuration: `${dot.animationDuration}s`
                             }}
                         ></div>
                     ))}
@@ -250,7 +235,7 @@ export default function AccountsPayableAIAgent() {
                             Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
-                        <Link href="https://www.youtube.com/watch?v=example_video_id" target="_blank" className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        <Link href="#" target="_blank" className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             <Play className="w-4 h-4" />
                             Watch Demo
                         </Link>
