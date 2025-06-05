@@ -2,10 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ArrowRight, Check, Star, Globe, Zap, Shield, Users, Bot, Cpu, Code, Database, Menu, X } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 
 const CustomAIAgentPage = () => {
+    const router = useRouter();
     const [isVisible, setIsVisible] = useState(false);
     const [activeTab, setActiveTab] = useState(-1);
     const [scrollY, setScrollY] = useState(0);
@@ -174,11 +176,11 @@ const CustomAIAgentPage = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 px-4 sm:px-0">
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl sm:rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base">
-                            Start Your Custom Project
-                        </button>
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-xl sm:rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base">
-                            View Case Studies
+                        <button 
+                            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl sm:rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
+                            onClick={() => router.push('/contact')}
+                        >
+                            Contact Us
                         </button>
                     </div>
                 </div>

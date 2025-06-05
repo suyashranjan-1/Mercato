@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -7,31 +6,30 @@ import {
     Linkedin,
     Target,
     Twitter,
-    Youtube
+    Youtube,
+    Instagram
 } from 'lucide-react';
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+    const router = useRouter();
     const platformLinks = [
-        // { name: 'AI Agent Platform', href: '#' },
-        { name: 'AI Agents', href: '#' },
-        { name: 'Agentic Workflows', href: '#' },
-        { name: 'AgentOS', href: '#' },
-        { name: 'Database, Memory & Rag', href: '#' },
-        { name: 'Integrations', href: '#' }
+        { name: 'AI Agents', href: '/aboutMercatoAIAgent' },
+        // { name: 'Agentic Workflows', href: '/agenticWorkflows' },
+        { name: 'Database, Memory & Rag', href: '/databases' }
     ];
 
     const solutionLinks = [
         { name: 'Customer Service', href: '/CustomerService' },
-        { name: 'Insurance', href: '/Insurance' },
-        // { name: 'BPO', href: '' },
-        { name: 'Healthcare', href: '/healthcare' },
-        { name: 'Property Management', href: '/propertyManagements' },
-        { name: 'Custom AI Solutions', href: '/customMercatoAiAgent' }
+        { name: "E-Commerce", href: "/E-Commerce" },
+        { name: "Human Resources", href: "/HumanResources" },
+        { name: "Healthcare", href: "/healthcare" },
+        { name: "Legal", href: "/legal" },
+        { name: "Custom AI Solutions", href: "/customMercatoAiAgent" }
     ];
 
     const companyLinks = [
         { name: 'About Us', href: '/about' },
-        // { name: 'Career', href: '#' },
         { name: 'Contact', href: '/contact' },
         { name: 'Request Demo', href: '/contact' }
     ];
@@ -45,9 +43,10 @@ const Footer = () => {
     ];
 
     const socialLinks = [
-        { name: 'LinkedIn', href: 'https://www.linkedin.com/company/mercatoagency/', icon: Linkedin },
+        { name: 'LinkedIn', href: 'https://in.linkedin.com/company/mercato-ai-agency', icon: Linkedin },
         { name: 'Twitter', href: '#', icon: Twitter },
-        { name: 'YouTube', href: '#', icon: Youtube }
+        { name: 'YouTube', href: '#', icon: Youtube },
+        { name: 'Instagram', href: 'https://www.instagram.com/mercato.agency/', icon: Instagram }
     ];
 
     return (
@@ -101,7 +100,7 @@ const Footer = () => {
                     >
                         <h4 className="text-lg font-semibold mb-6 text-white">Platform</h4>
                         <ul className="space-y-3">
-                            {platformLinks.map((link, index) => (
+                            {platformLinks.map((link, index)    => (
                                 <li key={index}>
                                     <a
                                         href={link.href}

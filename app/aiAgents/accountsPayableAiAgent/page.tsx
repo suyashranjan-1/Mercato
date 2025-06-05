@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import {
     Users, Clock, Star, CheckCircle, ArrowRight, Bot, Shield, Zap, BarChart3, Globe, Play, ChevronRight, Brain, Cpu, Database, Settings, Mail, Smartphone, MessageCircle
 } from 'lucide-react';
+import Link from 'next/link';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 
@@ -249,10 +250,10 @@ export default function AccountsPayableAIAgent() {
                             Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        <Link href="https://www.youtube.com/watch?v=example_video_id" target="_blank" className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
                             <Play className="w-4 h-4" />
                             Watch Demo
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Enhanced AI Agent Preview */}

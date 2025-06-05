@@ -58,7 +58,7 @@ export default function AIAgentsPage() {
           id: 1,
           name: "Universal Problem Solver",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           slug: "universalProblemSolverAiAgent",
           description:
             "Advanced AI agent capable of analyzing complex problems across multiple domains and providing actionable solutions with detailed reasoning.",
@@ -76,7 +76,7 @@ export default function AIAgentsPage() {
 
           slug: "taskAutomationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
 
           description:
             "Streamline your workflow by automating repetitive tasks and optimizing business processes with intelligent task management.",
@@ -93,7 +93,7 @@ export default function AIAgentsPage() {
           name: "Smart Decision Maker",
           slug: "smartDecisionMakerAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Make informed decisions with AI-powered analysis that evaluates multiple factors and provides recommendations.",
           icon: "🎯",
@@ -109,7 +109,7 @@ export default function AIAgentsPage() {
           name: "Customer Service AI Agent",
           slug: "customerServiceAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate and personalize customer support with 24/7 AI-driven interaction.",
           icon: "💬",
@@ -125,7 +125,7 @@ export default function AIAgentsPage() {
           name: "Data Extraction AI Agent",
           slug: "dataExtractionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Extract structured data from unstructured documents like PDFs, emails, and reports.",
           icon: "📄",
@@ -141,7 +141,7 @@ export default function AIAgentsPage() {
           name: "Email Categorization & Triage AI Agent",
           slug: "emailCategorizationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Organize and prioritize incoming emails for better workflow efficiency.",
           icon: "📧",
@@ -157,7 +157,7 @@ export default function AIAgentsPage() {
           name: "Appointment Management AI Agent",
           slug: "appointmentManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automatically schedule, reschedule, and send reminders for appointments.",
           icon: "📆",
@@ -173,7 +173,7 @@ export default function AIAgentsPage() {
           name: "Interview Scheduler AI Agent",
           slug: "interviewSchedulerAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Coordinate interview times between candidates and recruiters efficiently.",
           icon: "🗓️",
@@ -189,7 +189,7 @@ export default function AIAgentsPage() {
           name: "Data Entry AI Agent",
           slug: "dataEntryAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate repetitive data entry tasks with high speed and accuracy.",
           icon: "⌨️",
@@ -205,7 +205,7 @@ export default function AIAgentsPage() {
           name: "Billing Management AI Agent",
           slug: "billingManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Handle invoices, billing cycles, and payment reminders seamlessly.",
           icon: "🧾",
@@ -221,7 +221,7 @@ export default function AIAgentsPage() {
           name: "Transaction Monitoring AI Agent",
           slug: "transactionMonitoringAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Detect and report suspicious transactions in real time.",
           icon: "💳",
@@ -237,7 +237,7 @@ export default function AIAgentsPage() {
           name: "Budget Management AI Agent",
           slug: "budgetManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Track expenses, analyze budgets, and suggest savings opportunities.",
           icon: "📊",
@@ -253,7 +253,7 @@ export default function AIAgentsPage() {
           name: "Document Review AI Agent",
           slug: "documentReviewAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Analyze and summarize lengthy documents with legal or technical content.",
           icon: "📚",
@@ -269,7 +269,7 @@ export default function AIAgentsPage() {
           name: "Contract Management AI Agent",
           slug: "contractManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate contract lifecycle management and compliance monitoring.",
           icon: "📝",
@@ -285,7 +285,7 @@ export default function AIAgentsPage() {
           name: "Data Collection AI Agent",
           slug: "dataCollectionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Collect structured and unstructured data from multiple sources automatically.",
           icon: "🔍",
@@ -301,7 +301,7 @@ export default function AIAgentsPage() {
           name: "Invoice Processing AI Agent",
           slug: "invoiceProcessingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Extract and process data from invoices with automated validation.",
           icon: "🧮",
@@ -317,7 +317,7 @@ export default function AIAgentsPage() {
           name: "Payroll Calculation AI Agent",
           slug: "payrollCalculationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Calculate employee salaries, tax deductions, and generate payslips.",
           icon: "💼",
@@ -333,7 +333,7 @@ export default function AIAgentsPage() {
           name: "Legal Document Classifier AI Agent",
           slug: "legalDocumentClassifierAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automatically categorize legal documents for faster retrieval and compliance.",
           icon: "⚖️",
@@ -349,7 +349,7 @@ export default function AIAgentsPage() {
           name: "Social Media Content AI Agent",
           slug: "socialMediaContentAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Create, schedule, and analyze social media content using AI.",
           icon: "📱",
@@ -365,7 +365,7 @@ export default function AIAgentsPage() {
           name: "ETL (Extract, Transform, Load) AI Agent",
           slug: "etlExtractTransformLoadAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate ETL pipelines for seamless data migration and analytics workflows.",
           icon: "🔄",
@@ -381,7 +381,7 @@ export default function AIAgentsPage() {
           name: "RFP AI Agent",
           slug: "rfpAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Generate, evaluate, and respond to Requests for Proposals using AI.",
           icon: "📌",
@@ -397,7 +397,7 @@ export default function AIAgentsPage() {
           name: "Loan Processing AI Agent",
           slug: "loanProcessingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate credit assessment, documentation, and loan approval workflows.",
           icon: "🏦",
@@ -413,7 +413,7 @@ export default function AIAgentsPage() {
           name: "Suspicious Activity Reporting AI Agent",
           slug: "suspiciousActivityReportingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
 
           description:
             "Identify and report suspicious activities for regulatory compliance.",
@@ -438,7 +438,7 @@ export default function AIAgentsPage() {
           name: "Web Scraping AI Agent",
           slug: "webScrapingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Extract structured data from websites efficiently with intelligent parsing and data cleaning capabilities.",
           icon: "🌐",
@@ -454,7 +454,7 @@ export default function AIAgentsPage() {
           name: "Document Parser AI Agent",
           slug: "documentParserAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Process and extract information from PDFs, documents, and forms with high accuracy and intelligent formatting.",
           icon: "📄",
@@ -470,7 +470,7 @@ export default function AIAgentsPage() {
           name: "Database Query AI Agent",
           slug: "databaseQueryAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Intelligent database querying and data extraction with natural language processing and automated reporting.",
           icon: "🗄️",
@@ -486,7 +486,7 @@ export default function AIAgentsPage() {
           name: "Data Extraction AI Agent",
           slug: "dataExtractionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Extract structured data from unstructured documents like PDFs, emails, and reports.",
           icon: "📄",
@@ -502,7 +502,7 @@ export default function AIAgentsPage() {
           name: "Data Entry AI Agent",
           slug: "dataEntryAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate repetitive data entry tasks with high speed and accuracy.",
           icon: "⌨️",
@@ -518,7 +518,7 @@ export default function AIAgentsPage() {
           name: "Document Review AI Agent",
           slug: "documentReviewAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Analyze and summarize lengthy documents with legal or technical content.",
           icon: "📚",
@@ -534,7 +534,7 @@ export default function AIAgentsPage() {
           name: "Data Collection AI Agent",
           slug: "dataCollectionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Collect structured and unstructured data from multiple sources automatically.",
           icon: "🔍",
@@ -550,7 +550,7 @@ export default function AIAgentsPage() {
           name: "ETL (Extract, Transform, Load) AI Agent",
           slug: "etlAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate ETL pipelines for seamless data migration and analytics workflows.",
           icon: "🔄",
@@ -573,7 +573,7 @@ export default function AIAgentsPage() {
           name: "Product Recommendation AI Agent",
           slug: "productRecommendationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Increase conversions by delivering personalized product recommendations based on user behavior and preferences.",
           icon: "🛍️",
@@ -589,7 +589,7 @@ export default function AIAgentsPage() {
           name: "Inventory Forecasting AI Agent",
           slug: "inventoryForecastingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Predict stock levels, avoid overstocking or understocking, and ensure timely restocking using historical sales data.",
           icon: "📦",
@@ -605,7 +605,7 @@ export default function AIAgentsPage() {
           name: "Customer Review Summarizer AI Agent",
           slug: "customerReviewSummarizerAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Summarize product reviews to extract key sentiments and help customers quickly understand product pros and cons.",
           icon: "📝",
@@ -621,7 +621,7 @@ export default function AIAgentsPage() {
           name: "Order Tracking AI Agent",
           slug: "orderTrackingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Provide real-time order tracking updates and automated responses to customer delivery inquiries.",
           icon: "🚚",
@@ -637,7 +637,7 @@ export default function AIAgentsPage() {
           name: "Cart Abandonment Recovery AI Agent",
           slug: "cartAbandonmentRecoveryAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Recover lost sales by sending personalized follow-ups and discount offers to users who abandon their carts.",
           icon: "🛒",
@@ -653,7 +653,7 @@ export default function AIAgentsPage() {
           name: "Price Optimization AI Agent",
           slug: "priceOptimizationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Analyze market trends and competitor pricing to dynamically adjust product prices for maximum profit and competitiveness.",
           icon: "💲",
@@ -669,7 +669,7 @@ export default function AIAgentsPage() {
           name: "E-commerce Chatbot AI Agent",
           slug: "ecommerceChatbotAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "https://www.youtube.com/watch? v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
           description:
             "Engage with online shoppers using natural language to answer questions, recommend products, and assist with checkout.",
           icon: "🤖",
@@ -685,7 +685,7 @@ export default function AIAgentsPage() {
           name: "Return & Refund AI Agent",
           slug: "returnAndRefundAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate return and refund processes, ensure policy compliance, and provide quick resolutions to customer issues.",
           icon: "↩️",
@@ -708,7 +708,7 @@ export default function AIAgentsPage() {
           name: "Customer Support AI Agent",
           slug: "customerSupportAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Provide instant customer support with intelligent responses, ticket routing, and issue resolution capabilities.",
           icon: "🎧",
@@ -724,7 +724,7 @@ export default function AIAgentsPage() {
           name: "Live Chat AI Agent",
           slug: "liveChatAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Engage customers in real-time with contextual conversations, product recommendations, and seamless handoffs.",
           icon: "💬",
@@ -740,7 +740,7 @@ export default function AIAgentsPage() {
           name: "Complaint Resolution AI Agent",
           slug: "complaintResolutionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Handle customer complaints with empathy, systematic problem-solving, and satisfaction tracking.",
           icon: "🛠️",
@@ -756,7 +756,7 @@ export default function AIAgentsPage() {
           name: "Customer Service AI Agent",
           slug: "customerServiceAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Assist customers across multiple channels with queries, issues, and requests using natural language processing.",
           icon: "🤖",
@@ -772,7 +772,7 @@ export default function AIAgentsPage() {
           name: "Email Categorization & Triage AI Agent",
           slug: "emailCategorizationAndTriageAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automatically sort and prioritize incoming customer emails for faster and more efficient resolution.",
           icon: "📬",
@@ -788,7 +788,7 @@ export default function AIAgentsPage() {
           name: "Customer Experience AI Agent",
           slug: "customerExperienceAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Track and optimize customer satisfaction through surveys, sentiment analysis, and engagement insights.",
           icon: "📊",
@@ -804,7 +804,7 @@ export default function AIAgentsPage() {
           name: "Return Handling AI Agent",
           slug: "returnHandlingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate return requests and refund processes, ensuring customer satisfaction and policy compliance.",
           icon: "↩️",
@@ -820,7 +820,7 @@ export default function AIAgentsPage() {
           name: "Inventory Management AI Agent",
           slug: "inventoryManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Track inventory levels, manage restocking alerts, and reduce fulfillment delays.",
           icon: "📦",
@@ -842,7 +842,7 @@ export default function AIAgentsPage() {
           name: "Lead Qualification AI Agent",
           slug: "leadQualificationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automatically qualify and score leads based on behavior, demographics, and engagement patterns to prioritize sales efforts.",
           icon: "🎯",
@@ -857,7 +857,7 @@ export default function AIAgentsPage() {
           name: "Sales Outreach AI Agent",
           slug: "salesOutreachAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Personalize cold outreach campaigns with intelligent messaging, follow-up sequences, and response tracking.",
           icon: "📧",
@@ -872,7 +872,7 @@ export default function AIAgentsPage() {
           name: "Sales Analytics AI Agent",
           slug: "salesAnalyticsAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Analyze sales performance, predict revenue trends, and identify optimization opportunities with advanced analytics.",
           icon: "📊",
@@ -887,7 +887,7 @@ export default function AIAgentsPage() {
           name: "Deal Negotiation AI Agent",
           slug: "dealNegotiationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Assist with deal negotiations by providing pricing insights, competitor analysis, and optimal negotiation strategies.",
           icon: "🤝",
@@ -902,7 +902,7 @@ export default function AIAgentsPage() {
           name: "Customer Experience AI Agent",
           slug: "customerExperienceAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Monitor and enhance customer interactions to increase retention and improve the buyer journey through sentiment and behavior tracking.",
           icon: "📈",
@@ -917,7 +917,7 @@ export default function AIAgentsPage() {
           name: "Billing Management AI Agent",
           slug: "billingManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate invoicing, payment reminders, and billing queries to streamline your financial workflows.",
           icon: "💳",
@@ -932,7 +932,7 @@ export default function AIAgentsPage() {
           name: "Procurement Management AI Agent",
           slug: "procurementManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Optimize procurement decisions, supplier evaluations, and purchase workflows with data-driven intelligence.",
           icon: "🛒",
@@ -947,7 +947,7 @@ export default function AIAgentsPage() {
           name: "Supply Chain Monitoring AI Agent",
           slug: "supplyChainMonitoringAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Monitor logistics, detect disruptions, and optimize inventory flow across the entire supply chain.",
           icon: "🚛",
@@ -962,7 +962,7 @@ export default function AIAgentsPage() {
           name: "RFP AI Agent",
           slug: "rfpAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate the creation, analysis, and response to Request for Proposals with intelligent drafting and review tools.",
           icon: "📄",
@@ -977,7 +977,7 @@ export default function AIAgentsPage() {
           name: "Order Tracking AI Agent",
           slug: "orderTrackingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Provide real-time order updates, shipment status, and notifications for enhanced customer visibility.",
           icon: "📦",
@@ -992,7 +992,7 @@ export default function AIAgentsPage() {
           name: "Return Handling AI Agent",
           slug: "returnHandlingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Manage return processes efficiently, including authorization, tracking, and resolution.",
           icon: "↩️",
@@ -1007,7 +1007,7 @@ export default function AIAgentsPage() {
           name: "Inventory Management AI Agent",
           slug: "inventoryManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Track and forecast inventory needs to prevent stockouts and overstock, improving supply chain operations.",
           icon: "📊",
@@ -1029,7 +1029,7 @@ export default function AIAgentsPage() {
           name: "Resume Screening AI Agent",
           slug: "resumeScreeningAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automatically screen resumes, rank candidates, and identify the best matches based on job requirements and qualifications.",
           icon: "📋",
@@ -1044,7 +1044,7 @@ export default function AIAgentsPage() {
           name: "Employee Onboarding AI Agent",
           slug: "employeeOnboardingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Streamline new employee onboarding with automated workflows, document collection, and personalized guidance.",
           icon: "👋",
@@ -1059,7 +1059,7 @@ export default function AIAgentsPage() {
           name: "Performance Review AI Agent",
           slug: "performanceReviewAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate performance evaluations, generate insights, and provide data-driven feedback for employee development.",
           icon: "⭐",
@@ -1074,7 +1074,7 @@ export default function AIAgentsPage() {
           name: "HR Chatbot AI Agent",
           slug: "hrChatbotAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Provide 24/7 HR support to employees with instant answers to policy questions, leave requests, and general inquiries.",
           icon: "🤖",
@@ -1089,7 +1089,7 @@ export default function AIAgentsPage() {
           name: "Appointment Management AI Agent",
           slug: "appointmentManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Handle internal scheduling, meeting coordination, and reminders for HR-related appointments and sessions.",
           icon: "📅",
@@ -1104,7 +1104,7 @@ export default function AIAgentsPage() {
           name: "Interview Scheduler AI Agent",
           slug: "interviewSchedulerAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate interview scheduling, candidate notifications, and interviewer coordination across time zones.",
           icon: "🕒",
@@ -1119,7 +1119,7 @@ export default function AIAgentsPage() {
           name: "Payroll Calculation AI Agent",
           slug: "payrollCalculationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Compute accurate payroll, deductions, bonuses, and generate salary slips for employees on schedule.",
           icon: "💰",
@@ -1135,7 +1135,7 @@ export default function AIAgentsPage() {
 
           slug: "onboardingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Guide new hires through onboarding tasks, compliance documents, and training modules with an interactive experience.",
           icon: "🚀",
@@ -1157,7 +1157,7 @@ export default function AIAgentsPage() {
           name: "Expense Management AI Agent",
           slug: "expenseManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Track, categorize, and analyze company expenses automatically, providing insights and reducing manual bookkeeping.",
           icon: "💸",
@@ -1172,7 +1172,7 @@ export default function AIAgentsPage() {
           name: "Invoice Processing AI Agent",
           slug: "invoiceProcessingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate invoice reading, validation, and entry into your accounting system, reducing errors and speeding up workflows.",
           icon: "🧾",
@@ -1187,7 +1187,7 @@ export default function AIAgentsPage() {
           name: "Tax Calculation AI Agent",
           slug: "taxCalculationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Handle tax calculations, rule compliance, and filing support with jurisdiction-specific automation.",
           icon: "📊",
@@ -1202,7 +1202,7 @@ export default function AIAgentsPage() {
           name: "Financial Forecasting AI Agent",
           slug: "financialForecastingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Predict financial trends, budget needs, and investment opportunities using advanced analytics and historical data.",
           icon: "📈",
@@ -1217,7 +1217,7 @@ export default function AIAgentsPage() {
           name: "Accounts Payable AI Agent",
           slug: "accountsPayableAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Manage the entire accounts payable process with automated invoice matching, approval workflows, and payment scheduling.",
           icon: "🏦",
@@ -1232,7 +1232,7 @@ export default function AIAgentsPage() {
           name: "Accounts Receivable AI Agent",
           slug: "accountsReceivableAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Track incoming payments, send automated reminders, and generate receivables reports to ensure healthy cash flow.",
           icon: "📥",
@@ -1247,7 +1247,7 @@ export default function AIAgentsPage() {
           name: "Payroll Processing AI Agent",
           slug: "payrollProcessingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate payroll calculations, deductions, and compliance checks to ensure accurate and timely employee payments.",
           icon: "💼",
@@ -1262,7 +1262,7 @@ export default function AIAgentsPage() {
           name: "Financial Compliance AI Agent",
           slug: "financialComplianceAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Monitor compliance with financial regulations, flag suspicious transactions, and generate audit-ready reports.",
           icon: "🛡️",
@@ -1284,7 +1284,7 @@ export default function AIAgentsPage() {
           name: "Content Creation AI Agent",
           slug: "contentCreationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Generate engaging posts, captions, and hashtags tailored for your audience across platforms like Instagram, LinkedIn, and Twitter.",
           icon: "📝",
@@ -1299,7 +1299,7 @@ export default function AIAgentsPage() {
           name: "Post Scheduler AI Agent",
           slug: "postSchedulerAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Plan and automatically publish posts at optimal times for maximum visibility and engagement.",
           icon: "🗓️",
@@ -1314,7 +1314,7 @@ export default function AIAgentsPage() {
           name: "Engagement Tracker AI Agent",
           slug: "engagementTrackerAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Monitor likes, shares, comments, and follower growth to evaluate campaign effectiveness in real-time.",
           icon: "📈",
@@ -1329,7 +1329,7 @@ export default function AIAgentsPage() {
           name: "Comment Moderation AI Agent",
           slug: "commentModerationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automatically moderate comments by filtering spam, hate speech, and inappropriate content across platforms.",
           icon: "🛡️",
@@ -1344,7 +1344,7 @@ export default function AIAgentsPage() {
           name: "Social Listening AI Agent",
           slug: "socialListeningAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Track brand mentions, sentiment, and competitor activity to stay ahead in your market niche.",
           icon: "👂",
@@ -1359,7 +1359,7 @@ export default function AIAgentsPage() {
           name: "Influencer Outreach AI Agent",
           slug: "influencerOutreachAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Identify and connect with relevant influencers, automate outreach messages, and track collaboration performance.",
           icon: "🤝",
@@ -1374,7 +1374,7 @@ export default function AIAgentsPage() {
           name: "Trend Detection AI Agent",
           slug: "trendDetectionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Analyze real-time social data to spot emerging trends, hashtags, and viral topics before competitors.",
           icon: "📊",
@@ -1397,7 +1397,7 @@ export default function AIAgentsPage() {
           name: "Contract Analysis AI Agent",
           slug: "contractAnalysisAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Review and analyze contracts for key terms, risks, and compliance issues with detailed summaries and recommendations.",
           icon: "📜",
@@ -1412,7 +1412,7 @@ export default function AIAgentsPage() {
           name: "Legal Research AI Agent",
           slug: "legalResearchAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Conduct comprehensive legal research, find relevant case law, and generate detailed research reports with citations.",
           icon: "⚖️",
@@ -1427,7 +1427,7 @@ export default function AIAgentsPage() {
           name: "Compliance Monitoring AI Agent",
           slug: "complianceMonitoringAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Monitor regulatory compliance, track changes in laws, and alert teams to potential compliance risks and requirements.",
           icon: "🛡️",
@@ -1442,7 +1442,7 @@ export default function AIAgentsPage() {
           name: "Document Redaction AI Agent",
           slug: "documentRedactionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automatically identify and redact sensitive information from legal documents while maintaining document integrity.",
           icon: "✂️",
@@ -1457,7 +1457,7 @@ export default function AIAgentsPage() {
           name: "Document Review AI Agent",
           slug: "documentReviewAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Analyze and review legal documents for accuracy, consistency, and compliance with relevant standards and laws.",
           icon: "📑",
@@ -1472,7 +1472,7 @@ export default function AIAgentsPage() {
           name: "Contract Management AI Agent",
           slug: "contractManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Manage contract lifecycle including creation, tracking, renewals, and audit with automated alerts and version control.",
           icon: "📝",
@@ -1487,7 +1487,7 @@ export default function AIAgentsPage() {
           name: "Legal Document Classifier AI Agent",
           slug: "legalDocumentClassifierAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Classify legal documents into predefined categories for efficient organization, retrieval, and processing.",
           icon: "📂",
@@ -1509,7 +1509,7 @@ export default function AIAgentsPage() {
           name: "Medical Diagnosis AI Agent",
           slug: "medicalDiagnosisAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Assist healthcare professionals with preliminary diagnosis suggestions based on symptoms, medical history, and test results.",
           icon: "🩺",
@@ -1524,7 +1524,7 @@ export default function AIAgentsPage() {
           name: "Patient Scheduling AI Agent",
           slug: "patientSchedulingAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Optimize patient scheduling, reduce no-shows, and manage appointment calendars with intelligent booking algorithms.",
           icon: "📅",
@@ -1539,7 +1539,7 @@ export default function AIAgentsPage() {
           name: "Medical Records AI Agent",
           slug: "medicalRecordsAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Process and organize medical records, extract key information, and ensure HIPAA-compliant data management.",
           icon: "📋",
@@ -1554,7 +1554,7 @@ export default function AIAgentsPage() {
           name: "Medication Reminder AI Agent",
           slug: "medicationReminderAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Send personalized medication reminders, track adherence, and provide drug interaction warnings to patients.",
           icon: "💊",
@@ -1569,7 +1569,7 @@ export default function AIAgentsPage() {
           name: "Patient Intake Scheduler AI Agent",
           slug: "patientIntakeSchedulerAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Efficiently manage and schedule patient intake appointments to streamline clinic workflows and reduce waiting times.",
           icon: "🗓️",
@@ -1584,7 +1584,7 @@ export default function AIAgentsPage() {
           name: "Lab Results Extraction AI Agent",
           slug: "labResultsExtractionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Extract and organize lab test results from various sources for easy access and integration into patient records.",
           icon: "🧪",
@@ -1599,7 +1599,7 @@ export default function AIAgentsPage() {
           name: "Healthcare AI Agent",
           slug: "healthcareAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "General-purpose healthcare AI agent providing support for patient management, diagnostics, and administrative tasks.",
           icon: "🏥",
@@ -1614,7 +1614,7 @@ export default function AIAgentsPage() {
           name: "Patient Service AI Agent",
           slug: "patientServiceAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Enhance patient experience with real-time support, information provision, and service coordination across healthcare facilities.",
           icon: "🤝",
@@ -1636,7 +1636,7 @@ export default function AIAgentsPage() {
           name: "Insurance Claims AI Agent",
           slug: "insuranceClaimsAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Streamline claims processing with automated assessment, fraud detection, and policy verification for faster claim resolution.",
           icon: "🏛️",
@@ -1652,7 +1652,7 @@ export default function AIAgentsPage() {
           name: "Risk Assessment AI Agent",
           slug: "riskAssessmentAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Evaluate risk profiles, identify potential vulnerabilities, and provide recommendations for risk mitigation strategies.",
           icon: "📊",
@@ -1675,7 +1675,7 @@ export default function AIAgentsPage() {
           name: "Tenant Screening AI Agent",
           slug: "tenantScreeningAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Evaluate tenant applications by analyzing credit history, background checks, and rental history to ensure reliable occupancy.",
           icon: "🔍",
@@ -1690,7 +1690,7 @@ export default function AIAgentsPage() {
           name: "Lease Management AI Agent",
           slug: "leaseManagementAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Track lease agreements, automate renewals, and alert landlords and tenants about upcoming expirations.",
           icon: "📑",
@@ -1705,7 +1705,7 @@ export default function AIAgentsPage() {
           name: "Maintenance Request AI Agent",
           slug: "maintenanceRequestAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Handle tenant maintenance requests automatically and dispatch repair personnel based on availability and urgency.",
           icon: "🛠️",
@@ -1720,7 +1720,7 @@ export default function AIAgentsPage() {
           name: "Rent Collection AI Agent",
           slug: "rentCollectionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Automate rent reminders, collect payments securely, and provide real-time reporting for landlords and tenants.",
           icon: "💰",
@@ -1735,7 +1735,7 @@ export default function AIAgentsPage() {
           name: "Virtual Property Tour AI Agent",
           slug: "virtualPropertyTourAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Deliver immersive and interactive virtual property tours to prospective tenants and buyers, reducing site visit needs.",
           icon: "🏡",
@@ -1750,7 +1750,7 @@ export default function AIAgentsPage() {
           name: "Vacancy Prediction AI Agent",
           slug: "vacancyPredictionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Predict upcoming vacancies using historical data and tenant behavior patterns to reduce unoccupied periods.",
           icon: "📊",
@@ -1765,7 +1765,7 @@ export default function AIAgentsPage() {
           name: "Tenant Communication AI Agent",
           slug: "tenantCommunicationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Provide 24/7 communication with tenants for answering queries, sending notices, and managing disputes.",
           icon: "💬",
@@ -1788,7 +1788,7 @@ export default function AIAgentsPage() {
           name: "Custom Business AI Agent",
           slug: "customBusinessAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Create AI agents specifically designed for your unique business processes, workflows, and industry requirements.",
           icon: "🔧",
@@ -1803,7 +1803,7 @@ export default function AIAgentsPage() {
           name: "Industry-Specific AI Agent",
           slug: "industrySpecificAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Develop specialized AI agents for niche industries with custom training data and domain-specific knowledge.",
           icon: "🏭",
@@ -1818,7 +1818,7 @@ export default function AIAgentsPage() {
           name: "AI Agent Builder Platform",
           slug: "aiAgentBuilderPlatform",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "No-code platform for building custom AI agents with drag-and-drop interface and pre-built components.",
           icon: "🎨",
@@ -1833,7 +1833,7 @@ export default function AIAgentsPage() {
           name: "Enterprise AI Agent Solution",
           slug: "enterpriseAiAgentSolution",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Full-scale enterprise AI agent deployment with custom integrations, security, and dedicated support.",
           icon: "🏢",
@@ -1848,7 +1848,7 @@ export default function AIAgentsPage() {
           name: "Custom Analytics AI Agent",
           slug: "customAnalyticsAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Build AI agents tailored for your custom data analytics and reporting needs with adaptive algorithms.",
           icon: "📈",
@@ -1863,7 +1863,7 @@ export default function AIAgentsPage() {
           name: "Custom NLP AI Agent",
           slug: "customNlpAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Develop AI agents focused on custom natural language processing tasks such as sentiment analysis and language translation.",
           icon: "🗣️",
@@ -1878,7 +1878,7 @@ export default function AIAgentsPage() {
           name: "Custom Computer Vision AI Agent",
           slug: "customComputerVisionAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Create AI agents specialized in custom image recognition, object detection, and visual data analysis.",
           icon: "📷",
@@ -1893,7 +1893,7 @@ export default function AIAgentsPage() {
           name: "Custom Workflow Automation AI Agent",
           slug: "customWorkflowAutomationAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Design AI agents that automate your unique business workflows and processes with full customization.",
           icon: "⚙️",
@@ -1908,7 +1908,7 @@ export default function AIAgentsPage() {
           name: "Custom Chatbot AI Agent",
           slug: "customChatbotAiAgent",
           youtubeUrl:
-            "https://www.youtube.com/watch?v=H58vbez_m4E&ab_channel=KendrickLamarVEVO",
+            "#",
           description:
             "Build chatbots customized to your brand voice, customer interaction style, and domain knowledge.",
           icon: "💬",
@@ -1986,7 +1986,7 @@ export default function AIAgentsPage() {
           </p>
 
           {/* Search Bar */}
-          <div className="max-w-2xl mx-auto mb-12">
+          {/* <div className="max-w-2xl mx-auto mb-12">
             <div className="relative group">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5 group-focus-within:text-blue-400 transition-colors duration-300" />
               <input
@@ -1997,7 +1997,7 @@ export default function AIAgentsPage() {
                 className="w-full pl-12 pr-4 py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl text-white placeholder-slate-400 focus:border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
               />
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" passHref>
