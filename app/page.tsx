@@ -551,15 +551,15 @@ export default function Home() {
 
               {/* Contact form or button */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <motion.a
-                  href="contact@mercato.agency"
+              <motion.a
+                  href="/contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center text-lg"
-                  aria-label="Email Mercato"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center cursor-pointer"
+                  aria-label="Contact Us"
                 >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Email Us
+                  <Phone className="w-5 h-5 mr-2" />
+                  Contact Us
                 </motion.a>
                 {/* <motion.a
                   href="tel:+1234567890"
