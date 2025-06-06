@@ -1,6 +1,10 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { 
   Eye, 
   EyeOff, 
@@ -14,6 +18,7 @@ import {
 } from 'lucide-react';
 
 const MercatoAuthPage = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const [currentView, setCurrentView] = useState<'login' | 'signup'>('login');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -149,18 +154,27 @@ const MercatoAuthPage = () => {
         ))}
       </div>
 
-      {/* Header with Logo */}
-      <header className={`relative z-20 p-4 sm:p-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5'}`}>
-        <div className="flex items-center gap-3 sm:gap-4">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-lg sm:text-xl font-bold hover:scale-105 transition-transform duration-300">
-            M
-          </div>
-          <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
-            Mercato Agency
-          </div>
-        </div>
-      </header>
-
+      {/* ----- FIXED: LOGO LIKE NAVBAR ----- */}
+      <nav className="fixed z-30 top-0 left-0 w-full flex items-center bg-black/30 backdrop-blur border-b border-white/10 px-4 py-2">
+        <Link href="/" passHref>
+          <motion.div
+            className="flex items-center flex-shrink-0 cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Image
+              src="/logo/logo.png"
+              alt="Logo"
+              width={isMobile ? 80 : 100}
+              height={isMobile ? 80 : 100}
+              className="w-auto h-8 sm:h-10 lg:h-12"
+              priority
+            />
+          </motion.div>
+        </Link>
+      </nav>
+      <div className="pt-20" /> {/* Padding for fixed navbar */}
+      
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-center min-h-[calc(100vh-100px)] px-4 py-8">
         <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
