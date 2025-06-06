@@ -614,12 +614,8 @@ export default function DataExtractionPage() {
                                     e.preventDefault();
                                     router.push('/contact');
                                 }} className="group px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center text-lg">
-                            Start Free 30-Day Trial
+                            Create Agent
                             <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-                        </button>
-                        <button onClick={() => window.open("https://www.youtube.com/watch?v=YOUR_VIDEO_ID", "_blank")} className="group px-10 py-5 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 flex items-center text-lg">
-                            <Play className="mr-3 w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                            Watch 2-Min Demo
                         </button>
                     </div>
 

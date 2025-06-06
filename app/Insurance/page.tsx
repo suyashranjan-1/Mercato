@@ -539,6 +539,17 @@ export default function InsurancePage() {
                         </span>
                     </p>
 
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-fade-in-up delay-400">
+                                            <button onClick={(e: React.MouseEvent) => {
+                                                        e.preventDefault();
+                                                        router.push('/contact');
+                                                    }} className="group px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center text-lg">
+                                                Create Agent
+                                                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                                            </button>
+                                        </div>
+                    
+
                     {/* Enhanced Stats Section */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-fade-in-up delay-600">
                         {stats.map((stat, index) => (
