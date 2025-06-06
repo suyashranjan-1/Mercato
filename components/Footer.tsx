@@ -7,7 +7,8 @@ import {
     Target,
     Twitter,
     Youtube,
-    Instagram
+    Instagram,
+    Facebook,
 } from 'lucide-react';
 import { useRouter } from "next/navigation";
 
@@ -44,9 +45,10 @@ const Footer = () => {
 
     const socialLinks = [
         { name: 'LinkedIn', href: 'https://in.linkedin.com/company/mercato-ai-agency', icon: Linkedin },
-        { name: 'Twitter', href: '#', icon: Twitter },
-        { name: 'YouTube', href: '#', icon: Youtube },
-        { name: 'Instagram', href: 'https://www.instagram.com/mercato.agency/', icon: Instagram }
+        { name: 'Twitter', href: 'https://x.com/Mercatoaiagency', icon: Twitter },
+        { name: 'YouTube', href: 'https://www.youtube.com/@MercatoAgency', icon: Youtube },
+        { name: 'Instagram', href: 'https://www.instagram.com/mercato.agency/', icon: Instagram },
+        { name: 'Facebook', href: '#', icon: Facebook }
     ];
 
     return (
