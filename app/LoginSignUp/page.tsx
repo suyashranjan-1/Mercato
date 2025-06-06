@@ -10,7 +10,6 @@ import {
   ArrowRight, 
   Zap,
   CheckCircle,
-  Chrome,
   Phone,
 } from 'lucide-react';
 
@@ -105,6 +104,22 @@ const MercatoAuthPage = () => {
     { icon: '🌍', label: 'Global Reach', desc: 'Serving 17+ Countries' }
   ];
 
+  // Generate floating particles only on the client, not during SSR
+  const [particles, setParticles] = useState<
+    { left: number; top: number; animationDelay: number; animationDuration: number }[]
+  >([]);
+
+  useEffect(() => {
+    // Only run on client
+    const arr = Array.from({ length: 15 }, () => ({
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      animationDelay: Math.random() * 5,
+      animationDuration: 3 + Math.random() * 4,
+    }));
+    setParticles(arr);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white overflow-hidden">
       {/* Enhanced Animated Background Elements */}
@@ -120,15 +135,15 @@ const MercatoAuthPage = () => {
 
       {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {particles.map((particle, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-float"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
+              animationDelay: `${particle.animationDelay}s`,
+              animationDuration: `${particle.animationDuration}s`
             }}
           ></div>
         ))}
@@ -410,19 +425,12 @@ const MercatoAuthPage = () => {
                   </div>
                   <div className="relative flex justify-center text-sm">
                     <span className="px-4 bg-slate-900/80 text-slate-400">
-                      Or continue with
+                      Or
                     </span>
                   </div>
                 </div>
 
-                {/* Google Sign In */}
-                <button
-                  type="button"
-                  className="w-full flex items-center justify-center gap-3 py-3 sm:py-4 px-4 border border-slate-700/50 rounded-xl bg-slate-800/30 text-white hover:bg-slate-800/50 hover:border-slate-600/50 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 hover:scale-[1.02] transform"
-                >
-                  <Chrome className="w-5 h-5" />
-                  <span className="font-medium">Continue with Google</span>
-                </button>
+                {/* Google Sign In removed as requested */}
 
                 {/* Switch View */}
                 <div className="text-center mt-6 sm:mt-8">
