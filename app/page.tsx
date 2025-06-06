@@ -461,7 +461,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section
+        {/* <section
           id="testimonials"
           className="py-24 px-4 bg-gradient-to-r from-gray-900/30 to-gray-800/20 backdrop-blur-sm"
         >
@@ -527,7 +527,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Final CTA Section */}
         <section className="py-24 px-4" id="contact">
