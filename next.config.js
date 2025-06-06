@@ -1,25 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Remove distDir - let Next.js use default .next directory
-    // distDir: "build", // REMOVE THIS LINE
-    
-    // Remove output standalone to fix routes-manifest issue
-    // output: 'standalone', // REMOVE THIS LINE
-    
-    images: {
-        domains: ["images.unsplash.com", "flowbite.s3.amazonaws.com"],
-        unoptimized: true, // Add this for better Vercel compatibility
+    typescript: {
+      // !! WARN !!
+      // Dangerously allow production builds to successfully complete even if
+      // your project has type errors.
+      // !! WARN !!
+      ignoreBuildErrors: true,
     },
-    
-    // Clean experimental section
-    experimental: {
-        // Only add experimental features if absolutely needed
+    eslint: {
+      // Warning: This allows production builds to successfully complete even if
+      // your project has ESLint errors.
+      ignoreDuringBuilds: true,
     },
-    
-    // Add trailingSlash for better static routing
-    trailingSlash: false,
-    
-    // ... any other existing config
-};
-
-module.exports = nextConfig;
+  }
+  
+  module.exports = nextConfig

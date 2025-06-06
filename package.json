@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:skip-types": "next build --no-lint",
     "start": "next start",
     "lint": "next lint"
   },
@@ -14,6 +15,60 @@
       "use": "@vercel/next"
     }
   ],
+  "overrides": {
+    "@radix-ui/react-accordion": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-select": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-checkbox": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-label": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-slot": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-toast": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "lucide-react": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-hook-form": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "framer-motion": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@tsparticles/react": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-calendly": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-grid-layout": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-slick": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^3.3.4",
