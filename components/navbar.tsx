@@ -84,17 +84,6 @@ function FloatingNavbar({ className }: { className?: string }) {
         { name: "Custom AI Agents", href: "/customMercatoAiAgent" }
       ]
     },
-    // {
-    //   title: "Social Media",
-    //   items: [
-    //     { name: "Instagram", href: "/social-media/instagram" },
-    //     { name: "Facebook", href: "/social-media/facebook" },
-    //     { name: "LinkedIn", href: "/social-media/linkedin" },
-    //     { name: "Twitter (X)", href: "/social-media/twitter" },
-    //     { name: "YouTube", href: "/social-media/youtube" },
-    //     { name: "TikTok", href: "/social-media/tiktok" }
-    //   ]
-    // },
     {
       title: "About",
       items: [
@@ -162,22 +151,26 @@ function FloatingNavbar({ className }: { className?: string }) {
         {/* Main Navbar */}
         <div className="flex items-center justify-between bg-black/20 backdrop-blur-lg border-b border-white/10 px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           {/* Logo */}
-
           <Link href="/" passHref>
-  <motion.div
-    className="flex items-center flex-shrink-0 cursor-pointer"
-    whileHover={{ scale: 1.05 }}
-    transition={{ duration: 0.2 }}
-  >
-    <Image
-      src="/logo/logo.png"
-      alt="Logo"
-      width={isMobile ? 80 : 100}
-      height={isMobile ? 80 : 100}
-      className="w-auto h-8 sm:h-10 lg:h-12"
-    />
-  </motion.div>
-</Link>
+            <motion.div
+              className="flex items-center flex-shrink-0 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Image
+                src="/logo/logo.png"
+                alt="Logo"
+                width={isMobile ? 80 : 100}
+                height={isMobile ? 80 : 100}
+                className="w-auto h-8 sm:h-10 lg:h-12"
+                priority // <--- Fix: Add priority for LCP
+                style={{
+                  width: isMobile ? "auto" : undefined, // <--- Fix: preserve aspect ratio
+                  height: "auto"
+                }}
+              />
+            </motion.div>
+          </Link>
 
           {/* Desktop Menu */}
           {!isMobile && (

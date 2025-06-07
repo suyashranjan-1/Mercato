@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import { Pill, Clock, Star, CheckCircle, ArrowRight, Zap, BarChart3, Globe, Play, ChevronRight, Brain, CalendarClock, Bell, Users, Smartphone, Mail, Cpu, Database, Settings, Shield, ServerCog } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
@@ -32,6 +33,7 @@ const floatingDots = getFloatingDotPositions(20);
 
 
 export default function MedicationReminderAIAgent() {
+    const router = useRouter();
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [visibleSections, setVisibleSections] = useState(new Set());
@@ -267,11 +269,19 @@ export default function MedicationReminderAIAgent() {
                         Never miss a dose again. <span className="text-white font-medium">Get personalized, multi-channel medication reminders</span> and boost your health with smart AI.
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
-                            Create Agent 
+                        {/* Create Agent button now uses router.push */}
+                        <button
+                            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2"
+                            onClick={() => router.push("/contact")}
+                        >
+                            Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
-                        <Link href="#" target="_blank" className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        <Link
+                            href="#"
+                            target="_blank"
+                            className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2"
+                        >
                             <Play className="w-4 h-4" />
                             Watch Demo
                         </Link>

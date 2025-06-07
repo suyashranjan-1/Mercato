@@ -444,8 +444,6 @@ const MercatoAuthPage = () => {
                   </div>
                 </div>
 
-                {/* Google Sign In removed as requested */}
-
                 {/* Switch View */}
                 <div className="text-center mt-6 sm:mt-8">
                   <p className="text-slate-400 text-sm sm:text-base">

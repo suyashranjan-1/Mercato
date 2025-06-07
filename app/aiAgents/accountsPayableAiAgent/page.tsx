@@ -1,11 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-import {
-    Users, Clock, Star, CheckCircle, ArrowRight, Bot, Shield, Zap, BarChart3, Globe, Play, ChevronRight, Brain, Cpu, Database, Settings, Mail, Smartphone, MessageCircle
-} from 'lucide-react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { MessageCircle, Clock, Users, Star, CheckCircle, ArrowRight, Bot, Headphones, Shield, Zap, BarChart3, Globe, Play, ChevronRight, Brain, Cpu, Database, Settings, Phone, Mail, MessageSquare, Smartphone } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
+import Link from 'next/link';
 
 // Deterministic pseudo-random for hydration-safe floating dots
 function getFloatingDotPositions(count: number) {

@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { BarChart3, PieChart, LineChart, Clock, Zap, Star, CheckCircle, Users, Bot, ArrowRight, Play, Brain, Cpu, Database, Settings, ChevronRight, Globe, Smartphone, Mail, Phone, Code2, Shield, LayoutGrid, FileText, MessageCircle } from 'lucide-react';
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
-import Link from 'next/link';
 
 // --------- FIX: Deterministic floating dot positions for SSR/CSR match ---------
 function getFloatingDotPositions(count: number) {
@@ -32,6 +33,7 @@ const floatingDots = getFloatingDotPositions(20);
 
 
 export default function CustomAnalyticsAIAgent() {
+    const router = useRouter();
     const [isVisible, setIsVisible] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [visibleSections, setVisibleSections] = useState(new Set());
@@ -266,11 +268,19 @@ export default function CustomAnalyticsAIAgent() {
                         Transform raw data into actionable insights with an AI agent that automates analytics, reporting, and dashboarding—tailored for your unique business needs.
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 mb-16">
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        {/* Create Agent button now uses router.push */}
+                        <button
+                            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2"
+                            onClick={() => router.push("/contact")}
+                        >
                             Create Agent
                             <ArrowRight className="w-4 h-4" />
                         </button>
-                        <Link href="#" target="_blank" className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2">
+                        <Link
+                            href="#"
+                            target="_blank"
+                            className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base flex items-center justify-center gap-2"
+                        >
                             <Play className="w-4 h-4" />
                             Watch Demo
                         </Link>
