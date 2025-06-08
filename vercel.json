@@ -1,18 +1,25 @@
 {
-    "version": 2,
-    "framework": "nextjs",
-    "buildCommand": "npm run build",
-    "outputDirectory": ".next",
-    "installCommand": "npm install",
-    "functions": {
-        "app/api/contact/route.js": {
-            "maxDuration": 10
-        }
-    },
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/$1"
-        }
-    ]
+  "version": 2,
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "functions": {
+    "app/api/contact/route.js": {
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "http://mercato.agency/:path*",
+      "destination": "https://mercato.agency/:path*",
+      "statusCode": 301
+    }
+  ]
 }
