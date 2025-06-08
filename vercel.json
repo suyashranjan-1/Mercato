@@ -9,15 +9,19 @@
       "maxDuration": 10
     }
   },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
-    }
-  ],
   "redirects": [
     {
-      "source": "http://mercato.agency/:path*",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mercato.agency"
+        },
+        {
+          "type": "protocol",
+          "value": "http"
+        }
+      ],
       "destination": "https://mercato.agency/:path*",
       "statusCode": 301
     }
