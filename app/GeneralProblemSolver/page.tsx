@@ -112,7 +112,7 @@ export const problemSolvingCategory: Category = {
         {
             id: 46,
             name: "Email Categorization & Triage AI Agent",
-            slug: "emailCategorizationAndTriageAiAgent",
+            slug: "emailCategorizationTriageAiAgent",
             youtubeUrl: "https://www.youtube.com/watch?v=example6",
             description: "Organize and prioritize incoming emails for better workflow efficiency.",
             icon: <>📧</>,

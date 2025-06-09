@@ -113,7 +113,7 @@ const ecommerceCategory: EcommerceCategory = {
         {
             "id": 51,
             "name": "E-commerce Chatbot AI Agent",
-            "slug": "ecommerceChatbotAiAgent",
+            "slug": "eCommerceChatbotAiAgent",
             "youtubeUrl": "https://www.youtube.com/watch?v=example",
             "description": "Engage with online shoppers using natural language to answer questions, recommend products, and assist with checkout.",
             "icon": "🤖",

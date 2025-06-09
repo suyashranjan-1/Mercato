@@ -128,7 +128,7 @@ const dataExtractionCategory: DataExtractionCategory = {
         {
             "id": 60,
             "name": "ETL (Extract, Transform, Load) AI Agent",
-            "slug": "etlAiAgent",
+            "slug": "etlExtractTransformLoadAiAgent",
             "youtubeUrl": "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
             "description": "Automate ETL pipelines for seamless data migration and analytics workflows.",
             "icon": "🔄",
