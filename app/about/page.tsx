@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 import { Phone } from "lucide-react";
-
+import { FaLinkedin } from "react-icons/fa";
 /**
  * Utility to deterministically generate N particle positions, delays, and durations
  * so that SSR and CSR output are identical and hydration does not fail.
@@ -83,29 +83,24 @@ export default function About() {
   const teamMembers = [
     {
       id: 1,
-      name: "Alex Johnson",
-      title: "CEO & Founder",
+      name: "Suyash Ranjan",
+      title: "Founder",
       description:
-        "Visionary leader with 10+ years in AI and digital transformation",
+        "leading the future of business automation through AI agents and digital innovation",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      linkedin: "https://www.linkedin.com/in/suyash-ranjan",
     },
     {
       id: 2,
-      name: "Mei Lin",
-      title: "CTO",
-      description: "AI expert specializing in machine learning and scalable systems",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b332c796?w=400&h=400&fit=crop&crop=face",
-    },
-    {
-      id: 3,
-      name: "David Smith",
-      title: "Lead Developer",
+      name: "Mukulraj",
+      title: "Co-Founder",
       description:
-        "Full-stack architect building next-generation AI solutions",
+        "building transformative AI agent solutions for modern enterprises",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      linkedin: "https://www.linkedin.com/in/hi-mukul",
+
     },
   ];
 
@@ -460,8 +455,11 @@ export default function About() {
                   <h3 className="text-xl sm:text-2xl font-bold mb-2 text-white">
                     {member.name}
                   </h3>
-                  <p className="text-base sm:text-lg text-blue-400 mb-3 sm:mb-4 font-medium">
+                  <p className="text-base sm:text-lg text-blue-400 mb-3 sm:mb-4 font-medium flex items-center gap-3">
+                    
                     {member.title}
+                    <FaLinkedin className="w-6 h-6 text-blue-400 " />
+
                   </p>
                   <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
                     {member.description}
