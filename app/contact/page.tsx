@@ -66,7 +66,7 @@ export default function ContactForm() {
     e.preventDefault();
     if (!form.current) return;
     emailjs
-      .sendForm("service_57dccsx", "template_4ovd2wl", form.current, {
+      .sendForm("service_thm3r8p", "template_lnjoh7o", form.current, {
         publicKey: "5_BKNco2OULcaqW0m",
       })
       .then(
