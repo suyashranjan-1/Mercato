@@ -1567,7 +1567,7 @@ export default function AIAgentsPage() {
         {
           id: 81,
           name: "Patient Intake Scheduler AI Agent",
-          slug: "patientIntakeSchedulerAiAgent",
+          slug: "PatientIntakeSchedulerAIAgent",
           youtubeUrl:
             "#",
           description:

@@ -6,6 +6,7 @@ import { NavbarDemo } from "@/components/navbar";
 import Footer from "@/components/Footer";
 import { Phone } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
+
 /**
  * Utility to deterministically generate N particle positions, delays, and durations
  * so that SSR and CSR output are identical and hydration does not fail.
@@ -86,9 +87,8 @@ export default function About() {
       name: "Suyash Ranjan",
       title: "Founder",
       description:
-        "leading the future of business automation through AI agents and digital innovation",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+        "Leading the future of business automation through AI agents and digital innovation.",
+      image: "images/Suyash.png",
       linkedin: "https://www.linkedin.com/in/suyash-ranjan",
     },
     {
@@ -96,11 +96,9 @@ export default function About() {
       name: "Mukulraj",
       title: "Co-Founder",
       description:
-        "building transformative AI agent solutions for modern enterprises",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+        "Building & Managing transformative AI agent solutions for modern enterprises.",
+      image: "images/mukul.png",
       linkedin: "https://www.linkedin.com/in/hi-mukul",
-
     },
   ];
 
@@ -114,25 +112,25 @@ export default function About() {
   const values = [
     {
       title: "Innovation First",
-      description: "We push the boundaries of what's possible with AI technology",
+      description: "We push the boundaries of what's possible with AI technology.",
       icon: "🚀",
       color: "from-blue-500 to-purple-600",
     },
     {
       title: "Ethical AI",
-      description: "Building responsible AI that benefits humanity",
+      description: "Building responsible AI that benefits humanity.",
       icon: "⚖️",
       color: "from-emerald-500 to-teal-600",
     },
     {
       title: "Collaboration",
-      description: "Working together to create extraordinary solutions",
+      description: "Working together to create extraordinary solutions.",
       icon: "🤝",
       color: "from-orange-500 to-red-600",
     },
     {
       title: "Excellence",
-      description: "Delivering exceptional quality in everything we do",
+      description: "Delivering exceptional quality in everything we do.",
       icon: "⭐",
       color: "from-purple-500 to-pink-600",
     },
@@ -199,14 +197,14 @@ export default function About() {
             and improve lives. <span className="text-white font-medium">Together, we&apos;re shaping tomorrow.</span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 animate-slideUp animation-delay-400">
+          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 animate-slideUp animation-delay-400">
             <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base">
               Join Our Mission
             </button>
             <button className="px-6 sm:px-8 py-3 sm:py-4 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-white font-semibold rounded-2xl hover:bg-slate-700/50 hover:border-slate-600/50 transition-all duration-300 text-sm sm:text-base">
               Our Story
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -456,10 +454,18 @@ export default function About() {
                     {member.name}
                   </h3>
                   <p className="text-base sm:text-lg text-blue-400 mb-3 sm:mb-4 font-medium flex items-center gap-3">
-                    
                     {member.title}
-                    <FaLinkedin className="w-6 h-6 text-blue-400 " />
-
+                    {/* Fixed: LinkedIn icon wrapped in <a> for clickability */}
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`LinkedIn profile of ${member.name}`}
+                      className="inline-flex items-center hover:text-blue-500 transition-colors"
+                      tabIndex={0}
+                    >
+                      <FaLinkedin className="w-6 h-6" />
+                    </a>
                   </p>
                   <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
                     {member.description}
@@ -504,22 +510,22 @@ export default function About() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-                <motion.a
-                  href="/contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center cursor-pointer"
-                  aria-label="Contact Us"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Contact Us
-                </motion.a>
+                  <motion.a
+                    href="/contact"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center cursor-pointer"
+                    aria-label="Contact Us"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Contact Us
+                  </motion.a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section> 
+      </section>
 
       <style jsx>{`
         @keyframes fadeIn {
