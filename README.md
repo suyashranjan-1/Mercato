@@ -179,47 +179,6 @@ trackButtonClick('Get Started', 'Hero Section');
 trackFormSubmission('Contact Form');
 ```
 
-### Testing
-Visit `/test-analytics` in development to verify GA implementation.
-
-
-## 🤝 Contributing
-
-We welcome contributions to improve the Mercato Agency website! Here's how you can help:
-
-### Getting Started
-
-1. **Fork the repository**
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Make your changes**
-4. **Commit your changes**
-   ```bash
-   git commit -m 'Add some amazing feature'
-   ```
-5. **Push to the branch**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-6. **Open a Pull Request**
-
-### Development Guidelines
-
-- **Code Style**: Follow existing TypeScript and React patterns
-- **Components**: Create reusable, well-documented components
-- **Testing**: Test your changes thoroughly before submitting
-- **Documentation**: Update documentation for new features
-- **Performance**: Ensure changes don't negatively impact performance
-
-### Areas for Contribution
-
-- 🐛 **Bug Fixes** - Report and fix issues
-- ✨ **New Features** - Add new AI agents or functionality
-- 📚 **Documentation** - Improve guides and documentation
-- 🎨 **UI/UX** - Enhance design and user experience
-- ⚡ **Performance** - Optimize loading and runtime performance
 
 ## 📄 License
 
