@@ -18,11 +18,8 @@
 - [Technology Stack](#-technology-stack)
 - [Features](#-features)
 - [Installation](#-installation)
-- [Environment Configuration](#-environment-configuration)
-- [Development Commands](#-development-commands)
 - [Project Structure](#-project-structure)
 - [Google Analytics Integration](#-google-analytics-integration)
-- [Deployment](#-deployment)
 - [Contributing](#-contributing)
 - [License](#-license)
 - [Contact](#-contact)
@@ -105,89 +102,11 @@ Mercato Agency is a cutting-edge digital marketing agency website that specializ
 - **npm** or **yarn** package manager
 - **Git** for version control
 
-### Step-by-Step Setup
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/suyashranjan-1/Mercato.git
-   cd Mercato
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
-   Edit `.env.local` with your configuration values.
-
-4. **Start the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 🔧 Environment Configuration
-
-Create a `.env.local` file in the root directory with the following variables:
-
-```env
-# Google Analytics Configuration
-NEXT_PUBLIC_GA_ID=G-VV9C03QMLN
-
-# Email Configuration (Optional)
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
-
-# Vercel Configuration (Auto-configured on Vercel)
-NEXT_PUBLIC_VERCEL_URL=your_domain.com
-
-# Additional API Keys (if needed)
-# NEXT_PUBLIC_API_KEY=your_api_key
-```
-
-### Required Environment Variables
-- `NEXT_PUBLIC_GA_ID` - Google Analytics tracking ID (required for analytics)
-
 ### Optional Environment Variables
 - Email service configuration for contact forms
 - Custom API keys for additional integrations
 
-## 📜 Development Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server on `http://localhost:3000` |
-| `npm run build` | Build the application for production |
-| `npm run build:skip-types` | Build without TypeScript type checking |
-| `npm run start` | Start production server (requires build first) |
-| `npm run lint` | Run ESLint for code quality checks |
-
-### Development Workflow
-
-```bash
-# Start development
-npm run dev
-
-# Build for production
-npm run build
-
-# Test production build locally
-npm run build && npm run start
-
-# Lint code
-npm run lint
-```
 
 ## 📁 Project Structure
 
@@ -263,47 +182,6 @@ trackFormSubmission('Contact Form');
 ### Testing
 Visit `/test-analytics` in development to verify GA implementation.
 
-## 🚀 Deployment
-
-### Vercel Deployment (Recommended)
-
-1. **Connect to Vercel**
-   ```bash
-   # Install Vercel CLI
-   npm i -g vercel
-
-   # Deploy
-   vercel
-   ```
-
-2. **Set Environment Variables**
-   - Go to Vercel Dashboard → Project Settings → Environment Variables
-   - Add `NEXT_PUBLIC_GA_ID` and other required variables
-
-3. **Automatic Deployments**
-   - Push to `main` branch for production
-   - Push to other branches for preview deployments
-
-### Manual Deployment
-
-1. **Build the application**
-   ```bash
-   npm run build
-   ```
-
-2. **Export static files** (if needed)
-   ```bash
-   npm run export
-   ```
-
-3. **Deploy to your hosting provider**
-   - Upload the `.next` folder or `out` folder (for static export)
-   - Configure environment variables on your hosting platform
-
-### Environment Variables for Production
-Ensure these are set in your production environment:
-- `NEXT_PUBLIC_GA_ID` - Google Analytics tracking ID
-- Other optional variables as needed
 
 ## 🤝 Contributing
 
@@ -345,23 +223,15 @@ We welcome contributions to improve the Mercato Agency website! Here's how you c
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Mercato Agency License - see the [LICENSE](LICENSE) file for details.
 
 ## 📞 Contact
 
 **Mercato Agency**
-- **Website**: [https://mercato-agency.com](https://mercato-agency.com)
-- **Email**: contact@mercato-agency.com
-- **GitHub**: [@suyashranjan-1](https://github.com/suyashranjan-1)
+- **Website**: [https://mercato.agency](https://mercato-agency.com)
+- **Email**: contact@mercato.agency
 
-### Support
 
-For technical support or questions:
-- 📧 **Email**: support@mercato-agency.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/suyashranjan-1/Mercato/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/suyashranjan-1/Mercato/discussions)
-
----
 
 <div align="center">
   <p>Built with ❤️ by the Mercato Agency Team</p>
