@@ -187,7 +187,7 @@ This project is licensed under the Mercato Agency License - see the [LICENSE](LI
 ## 📞 Contact
 
 **Mercato Agency**
-- **Website**: [https://mercato.agency](https://mercato-agency.com)
+- **Website**: [https://mercato.agency](https://mercato.agency)
 - **Email**: contact@mercato.agency
 
 
