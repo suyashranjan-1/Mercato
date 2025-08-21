@@ -1,15 +1,17 @@
 
 import { Analytics } from '@vercel/analytics/react';
+import { GoogleAnalytics, GoogleAnalyticsPageTracker } from '@/lib/google-analytics';
 
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
 const font = Poppins(
-  { subsets: ["latin"],
+  {
+    subsets: ["latin"],
     weight: '400'
-}
-  );
+  }
+);
 
 export const metadata: Metadata = {
   title: "Mercato Agency",
@@ -23,14 +25,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body 
-      
-      suppressHydrationWarning={true}
-      className={font.className}>
+      <GoogleAnalytics />
+      <body
+
+        suppressHydrationWarning={true}
+        className={font.className}>
+        <GoogleAnalyticsPageTracker />
         <Analytics />
         {children}
-        
-        </body>
+
+      </body>
     </html>
   );
 }

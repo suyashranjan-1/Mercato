@@ -110,9 +110,19 @@ export const ProductItem = ({
 };
 
 export const HoveredLink = ({ children, ...rest }: any) => {
+  const handleClick = () => {
+    // Import trackButtonClick dynamically to avoid SSR issues
+    if (typeof window !== 'undefined') {
+      import('@/lib/google-analytics').then(({ trackButtonClick }) => {
+        trackButtonClick(children, 'Navigation Menu');
+      });
+    }
+  };
+
   return (
     <a
       {...rest}
+      onClick={handleClick}
       className="text-white dark:text-neutral-200 hover:text-white "
     >
       {children}

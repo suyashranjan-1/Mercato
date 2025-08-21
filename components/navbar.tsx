@@ -5,6 +5,7 @@ import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { trackButtonClick } from "@/lib/google-analytics";
 
 export function NavbarDemo() {
   return <FloatingNavbar className="" />;
@@ -156,6 +157,7 @@ function FloatingNavbar({ className }: { className?: string }) {
               className="flex items-center flex-shrink-0 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
+              onClick={() => trackButtonClick('Logo', 'Navbar')}
             >
               <Image
                 src="/logo/logo.png"
