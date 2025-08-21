@@ -1,0 +1,374 @@
+# Mercato Agency Website
+
+<div align="center">
+  <img src="public/logo/logo.png" alt="Mercato Agency Logo" width="200" height="200">
+
+  **AI-Powered Business Automation Solutions**
+
+  [![Next.js](https://img.shields.io/badge/Next.js-15.3.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+  [![React](https://img.shields.io/badge/React-19.1.0-blue?style=flat-square&logo=react)](https://reactjs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.0-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+  [![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com/)
+</div>
+
+## 📋 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Technology Stack](#-technology-stack)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Environment Configuration](#-environment-configuration)
+- [Development Commands](#-development-commands)
+- [Project Structure](#-project-structure)
+- [Google Analytics Integration](#-google-analytics-integration)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
+
+## 🚀 Project Overview
+
+Mercato Agency is a cutting-edge digital marketing agency website that specializes in AI-powered business automation solutions. The platform showcases a comprehensive suite of AI agents designed to streamline various business processes including content creation, customer service, data analysis, and workflow automation.
+
+### Purpose
+- **Showcase AI Solutions**: Present 80+ specialized AI agents for different business needs
+- **Lead Generation**: Capture and convert potential clients through interactive forms
+- **Service Portfolio**: Display comprehensive digital marketing and automation services
+- **Client Engagement**: Provide seamless user experience with modern web technologies
+
+## 🛠 Technology Stack
+
+### Core Framework
+- **[Next.js 15.3.3](https://nextjs.org/)** - React framework with App Router
+- **[React 19.1.0](https://reactjs.org/)** - UI library with latest features
+- **[TypeScript 5.0](https://www.typescriptlang.org/)** - Type-safe JavaScript
+
+### Styling & UI
+- **[Tailwind CSS 3.3.0](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Framer Motion 11.18.2](https://www.framer.com/motion/)** - Animation library
+- **[Radix UI](https://www.radix-ui.com/)** - Accessible component primitives
+- **[Lucide React](https://lucide.dev/)** - Beautiful icon library
+
+### Analytics & Monitoring
+- **[Google Analytics 4](https://analytics.google.com/)** - Web analytics and tracking
+- **[Vercel Analytics](https://vercel.com/analytics)** - Performance monitoring
+- **[Vercel Speed Insights](https://vercel.com/docs/speed-insights)** - Core Web Vitals tracking
+
+### Communication & Forms
+- **[EmailJS](https://www.emailjs.com/)** - Client-side email sending
+- **[Nodemailer](https://nodemailer.com/)** - Server-side email handling
+- **[React Hook Form](https://react-hook-form.com/)** - Form validation and handling
+- **[Zod](https://zod.dev/)** - Schema validation
+
+### Additional Libraries
+- **[React Calendly](https://github.com/tcampb/react-calendly)** - Scheduling integration
+- **[TSParticles](https://particles.js.org/)** - Interactive particle effects
+- **[React Slick](https://react-slick.neostack.com/)** - Carousel components
+
+## ✨ Features
+
+### 🤖 AI Agent Showcase
+- **80+ Specialized AI Agents** across multiple industries
+- **Interactive Agent Cards** with detailed descriptions
+- **Category-based Organization** (Customer Service, Sales, HR, etc.)
+- **Real-time Agent Demonstrations**
+
+### 🎨 Modern UI/UX
+- **Responsive Design** - Mobile-first approach
+- **Dark Theme** - Sleek, professional appearance
+- **Smooth Animations** - Framer Motion powered transitions
+- **Interactive Elements** - Hover effects and micro-interactions
+
+### 📊 Analytics & Tracking
+- **Google Analytics 4** - Comprehensive user behavior tracking
+- **Custom Event Tracking** - Button clicks, form submissions, page sections
+- **Real-time Monitoring** - Performance and user engagement metrics
+- **Conversion Tracking** - Lead generation and goal completion
+
+### 📧 Communication Systems
+- **Contact Forms** - Multi-step lead capture forms
+- **Email Integration** - Automated email responses
+- **Calendly Integration** - Direct meeting scheduling
+- **Real-time Notifications** - Instant form submission alerts
+
+### 🔧 Developer Experience
+- **TypeScript Support** - Full type safety
+- **Component Library** - Reusable UI components
+- **Code Splitting** - Optimized bundle sizes
+- **Hot Reloading** - Fast development workflow
+
+## 🚀 Installation
+
+### Prerequisites
+- **Node.js** (version 18.0 or higher)
+- **npm** or **yarn** package manager
+- **Git** for version control
+
+### Step-by-Step Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/suyashranjan-1/Mercato.git
+   cd Mercato
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   ```
+   Edit `.env.local` with your configuration values.
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🔧 Environment Configuration
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+# Google Analytics Configuration
+NEXT_PUBLIC_GA_ID=G-VV9C03QMLN
+
+# Email Configuration (Optional)
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+
+# Vercel Configuration (Auto-configured on Vercel)
+NEXT_PUBLIC_VERCEL_URL=your_domain.com
+
+# Additional API Keys (if needed)
+# NEXT_PUBLIC_API_KEY=your_api_key
+```
+
+### Required Environment Variables
+- `NEXT_PUBLIC_GA_ID` - Google Analytics tracking ID (required for analytics)
+
+### Optional Environment Variables
+- Email service configuration for contact forms
+- Custom API keys for additional integrations
+
+## 📜 Development Commands
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server on `http://localhost:3000` |
+| `npm run build` | Build the application for production |
+| `npm run build:skip-types` | Build without TypeScript type checking |
+| `npm run start` | Start production server (requires build first) |
+| `npm run lint` | Run ESLint for code quality checks |
+
+### Development Workflow
+
+```bash
+# Start development
+npm run dev
+
+# Build for production
+npm run build
+
+# Test production build locally
+npm run build && npm run start
+
+# Lint code
+npm run lint
+```
+
+## 📁 Project Structure
+
+```
+Mercato/
+├── app/                          # Next.js App Router pages
+│   ├── layout.tsx               # Root layout with GA integration
+│   ├── page.tsx                 # Homepage
+│   ├── globals.css              # Global styles
+│   ├── aiAgents/                # AI Agent pages
+│   │   ├── customAnalyticsAiAgent/
+│   │   ├── customerServiceAiAgent/
+│   │   └── ...                  # 80+ AI agent pages
+│   ├── api/                     # API routes
+│   │   └── contact/             # Contact form handler
+│   ├── contact/                 # Contact page
+│   ├── about/                   # About page
+│   └── ...                      # Other pages
+├── components/                   # Reusable React components
+│   ├── ui/                      # Base UI components
+│   │   ├── navbar-menu.tsx      # Navigation components
+│   │   └── ...                  # Other UI components
+│   ├── navbar.tsx               # Main navigation
+│   ├── Footer.tsx               # Site footer
+│   ├── GoogleGeminiEffect.tsx   # Background effects
+│   └── ...                      # Other components
+├── lib/                         # Utility libraries
+│   ├── google-analytics.tsx     # GA4 implementation
+│   └── utils.ts                 # Helper functions
+├── public/                      # Static assets
+│   ├── logo/                    # Brand assets
+│   ├── images/                  # Image assets
+│   └── ...                      # Other static files
+├── docs/                        # Documentation
+├── .env.example                 # Environment variables template
+├── .env.local                   # Local environment variables
+├── next.config.js               # Next.js configuration
+├── tailwind.config.ts           # Tailwind CSS configuration
+├── tsconfig.json                # TypeScript configuration
+└── package.json                 # Dependencies and scripts
+```
+
+### Key Directories
+
+- **`app/`** - Next.js 13+ App Router structure with file-based routing
+- **`components/`** - Reusable React components with TypeScript
+- **`lib/`** - Utility functions and configurations
+- **`public/`** - Static assets served directly
+- **`docs/`** - Project documentation and guides
+
+## 📊 Google Analytics Integration
+
+The website includes comprehensive Google Analytics 4 (GA4) tracking:
+
+### Features
+- **Automatic Page Tracking** - All route changes tracked
+- **Custom Event Tracking** - Button clicks, form submissions, downloads
+- **Real-time Analytics** - Live user behavior monitoring
+- **Conversion Tracking** - Goal completion and lead generation
+
+### Implementation
+```typescript
+// Example usage
+import { trackButtonClick, trackFormSubmission } from '@/lib/google-analytics';
+
+// Track button clicks
+trackButtonClick('Get Started', 'Hero Section');
+
+// Track form submissions
+trackFormSubmission('Contact Form');
+```
+
+### Testing
+Visit `/test-analytics` in development to verify GA implementation.
+
+## 🚀 Deployment
+
+### Vercel Deployment (Recommended)
+
+1. **Connect to Vercel**
+   ```bash
+   # Install Vercel CLI
+   npm i -g vercel
+
+   # Deploy
+   vercel
+   ```
+
+2. **Set Environment Variables**
+   - Go to Vercel Dashboard → Project Settings → Environment Variables
+   - Add `NEXT_PUBLIC_GA_ID` and other required variables
+
+3. **Automatic Deployments**
+   - Push to `main` branch for production
+   - Push to other branches for preview deployments
+
+### Manual Deployment
+
+1. **Build the application**
+   ```bash
+   npm run build
+   ```
+
+2. **Export static files** (if needed)
+   ```bash
+   npm run export
+   ```
+
+3. **Deploy to your hosting provider**
+   - Upload the `.next` folder or `out` folder (for static export)
+   - Configure environment variables on your hosting platform
+
+### Environment Variables for Production
+Ensure these are set in your production environment:
+- `NEXT_PUBLIC_GA_ID` - Google Analytics tracking ID
+- Other optional variables as needed
+
+## 🤝 Contributing
+
+We welcome contributions to improve the Mercato Agency website! Here's how you can help:
+
+### Getting Started
+
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Make your changes**
+4. **Commit your changes**
+   ```bash
+   git commit -m 'Add some amazing feature'
+   ```
+5. **Push to the branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+6. **Open a Pull Request**
+
+### Development Guidelines
+
+- **Code Style**: Follow existing TypeScript and React patterns
+- **Components**: Create reusable, well-documented components
+- **Testing**: Test your changes thoroughly before submitting
+- **Documentation**: Update documentation for new features
+- **Performance**: Ensure changes don't negatively impact performance
+
+### Areas for Contribution
+
+- 🐛 **Bug Fixes** - Report and fix issues
+- ✨ **New Features** - Add new AI agents or functionality
+- 📚 **Documentation** - Improve guides and documentation
+- 🎨 **UI/UX** - Enhance design and user experience
+- ⚡ **Performance** - Optimize loading and runtime performance
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+**Mercato Agency**
+- **Website**: [https://mercato-agency.com](https://mercato-agency.com)
+- **Email**: contact@mercato-agency.com
+- **GitHub**: [@suyashranjan-1](https://github.com/suyashranjan-1)
+
+### Support
+
+For technical support or questions:
+- 📧 **Email**: support@mercato-agency.com
+- 🐛 **Issues**: [GitHub Issues](https://github.com/suyashranjan-1/Mercato/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/suyashranjan-1/Mercato/discussions)
+
+---
+
+<div align="center">
+  <p>Built with ❤️ by the Mercato Agency Team</p>
+  <p>
+    <a href="https://nextjs.org">Next.js</a> •
+    <a href="https://reactjs.org">React</a> •
+    <a href="https://tailwindcss.com">Tailwind CSS</a> •
+    <a href="https://vercel.com">Vercel</a>
+  </p>
+</div>
