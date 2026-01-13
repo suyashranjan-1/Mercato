@@ -141,7 +141,7 @@ export const testGoogleAnalytics = () => {
   }
 };
 
-// Extend the Window interface to include gtag and dataLayer
+// Extend the Window interface to include gtag and 
 declare global {
   interface Window {
     gtag: (
